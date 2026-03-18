@@ -85,7 +85,7 @@ def md_to_html(text):
         # inline code
         t = re.sub(r'`(.+?)`', r'<code>\1</code>', t)
         # links
-        t = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', t)
+        t = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', t)
         # strikethrough
         t = re.sub(r'~~(.+?)~~', r'<del>\1</del>', t)
         return t
