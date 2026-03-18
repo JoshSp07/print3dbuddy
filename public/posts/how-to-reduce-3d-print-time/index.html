@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Reduce 3D Print Time Without Ruining Quality | Print3DBuddy</title>
+  <meta name="description" content="How to reduce 3D print time without ruining quality — layer height, infill, speed, and nozzle changes that actually work.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/how-to-reduce-3d-print-time/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Settings Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>How to Reduce 3D Print Time Without Ruining Quality</h1>
+  <p>A print that takes 8 hours doesn't have to. Most prints can be cut to 3-4 hours with the right slicer settings - without meaningfully affecting how the finished part looks or performs.</p>
+<p>Here's how to print faster without sacrificing what matters.</p>
+<hr>
+<h2 id="1-increase-layer-height">1. Increase Layer Height</h2>
+<p>Layer height has the biggest single impact on print time. Doubling layer height roughly halves print time.</p>
+<table><thead><tr>
+<th>Layer Height</th>
+<th>Quality</th>
+<th>Time</th>
+</tr></thead><tbody>
+<tr>
+<td>0.1mm</td>
+<td>Very high detail</td>
+<td>Very slow</td>
+</tr>
+<tr>
+<td>0.2mm</td>
+<td>Standard</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>0.25mm</td>
+<td>Good</td>
+<td>~20% faster</td>
+</tr>
+<tr>
+<td>0.3mm</td>
+<td>Functional</td>
+<td>~35% faster</td>
+</tr>
+</tbody></table>
+<p><strong>For functional parts</strong> where surface finish isn't critical, 0.3mm is often the right call. <strong>For visible display pieces</strong>, stay at 0.2mm.</p>
+<hr>
+<h2 id="2-reduce-infill">2. Reduce Infill</h2>
+<p>Most prints don't need more than 15-20% infill. Reducing infill from 40% to 20% cuts print time noticeably while keeping the part functional for most purposes.</p>
+<p><strong>Rule:</strong> Use the minimum infill that meets your strength requirements. Check our <a href="/posts/3d-printing-infill-patterns-guide/" target="_blank" rel="noopener">infill guide</a> for recommendations.</p>
+<p>Also switch to <strong>lightning infill</strong> for purely decorative items - it's the fastest pattern available.</p>
+<hr>
+<h2 id="3-increase-print-speed-carefully">3. Increase Print Speed (Carefully)</h2>
+<p>Modern printers can print significantly faster than their defaults suggest. The key is understanding what you can push without degrading quality.</p>
+<p><strong>What you can usually speed up:</strong></p>
+<ul>
+<li><strong>Infill:</strong> Push to 100-150mm/s without visible quality loss</li>
+<li><strong>Travel moves:</strong> 150-200mm/s is generally fine</li>
+<li><strong>Inner walls:</strong> 80-100mm/s</li>
+</ul>
+<p><strong>What to keep slower:</strong></p>
+<ul>
+<li><strong>Outer walls:</strong> Keep at 40-60mm/s - this is what you see</li>
+<li><strong>First layer:</strong> Always 20-25mm/s</li>
+</ul>
+<p>A practical approach: set your overall speed to 80-100mm/s and manually reduce outer wall speed to 50mm/s. You get fast prints that still look good.</p>
+<hr>
+<h2 id="4-increase-nozzle-size">4. Increase Nozzle Size</h2>
+<p>Swapping from 0.4mm to 0.6mm nozzle dramatically increases flow rate, allowing faster printing or thicker layer heights without under-extrusion.</p>
+<p>A 0.6mm nozzle at 0.3mm layer height produces prints that are:</p>
+<ul>
+<li>Much faster (often 50-60% less time)</li>
+<li>Slightly coarser in appearance</li>
+<li>Often stronger (thicker layers bond differently)</li>
+</ul>
+<p><a href="https://www.amazon.com/s?k=0.6mm+MK8+brass+nozzle" target="_blank" rel="noopener">0.6mm nozzle for Ender 3 / MK8</a> costs a few pounds and is one of the best speed upgrades available.</p>
+<hr>
+<h2 id="5-reduce-perimeterwall-count">5. Reduce Perimeter/Wall Count</h2>
+<p>More walls = stronger print but longer print time. For decorative items that won't be stressed, 2 walls is plenty. For functional parts, 3 walls is usually sufficient - you rarely need more than 4.</p>
+<hr>
+<h2 id="6-optimise-support-settings">6. Optimise Support Settings</h2>
+<p>Supports are slow to print and slow to remove. Minimise them where possible:</p>
+<ul>
+<li><strong>Reorient the model</strong> to reduce overhangs - sometimes rotating 90 degrees eliminates supports entirely</li>
+<li><strong>Use support enforcers/blockers</strong> to add supports only where truly needed</li>
+<li><strong>Reduce support density</strong> - 10-15% is usually enough</li>
+<li><strong>Use tree supports</strong> (in PrusaSlicer or Bambu Studio) - faster to print and easier to remove than grid supports</li>
+</ul>
+<hr>
+<h2 id="7-use-adaptive-layer-heights">7. Use Adaptive Layer Heights</h2>
+<p>PrusaSlicer and Bambu Studio both support variable/adaptive layer heights - thick layers on simple geometry, thin layers only where detail matters.</p>
+<p>Enable it under <strong>Layer Height > Variable Layer Height</strong>. The result: detail where it counts, speed everywhere else.</p>
+<hr>
+<h2 id="8-reduce-top-and-bottom-layers">8. Reduce Top and Bottom Layers</h2>
+<p>Default top/bottom layer counts are often conservative. For non-functional parts:</p>
+<ul>
+<li><strong>Bottom layers:</strong> 2-3 is usually enough</li>
+<li><strong>Top layers:</strong> 3-4 is enough for most infill percentages</li>
+</ul>
+<p>Reducing from 5 top layers to 3 won't affect appearance much but saves meaningful time on flat-topped models.</p>
+<hr>
+<h2 id="9-combine-settings-for-maximum-impact">9. Combine Settings for Maximum Impact</h2>
+<p>The biggest gains come from combining settings. Example transformation:</p>
+<p><strong>Original settings:</strong></p>
+<ul>
+<li>0.2mm layer height</li>
+<li>20% infill (grid)</li>
+<li>50mm/s print speed</li>
+<li>4 walls, 5 top/bottom layers</li>
+</ul>
+<p><strong>Optimised for speed (functional part):</strong></p>
+<ul>
+<li>0.3mm layer height</li>
+<li>15% infill (lightning)</li>
+<li>80mm/s print speed (outer walls at 50mm/s)</li>
+<li>3 walls, 3 top/bottom layers</li>
+</ul>
+<p><strong>Result:</strong> Often 50-60% faster with little visible quality difference for everyday parts.</p>
+<hr>
+<h2 id="10-enable-arachne-perimeter-generator">10. Enable Arachne Perimeter Generator</h2>
+<p>Arachne (available in PrusaSlicer and Cura) produces more efficient wall paths than the classic perimeter generator. It's particularly effective for thin features and reduces redundant moves.</p>
+<p>Enable under <strong>Perimeters > Perimeter generator > Arachne</strong> in PrusaSlicer.</p>
+<hr>
+<h2 id="when-not-to-optimise-for-speed">When NOT to Optimise for Speed</h2>
+<p>Some situations where you should print slower and with more care:</p>
+<ul>
+<li><strong>Miniatures and detailed models</strong> - detail is the point</li>
+<li><strong>First prints on a new filament</strong> - understand the material before pushing it</li>
+<li><strong>Parts under significant mechanical stress</strong> - more walls and infill matter</li>
+<li><strong>Overhangs and bridges</strong> - slow down in these areas to avoid drooping</li>
+</ul>
+<hr>
+<h2 id="summary-quick-wins-in-order">Summary: Quick Wins in Order</h2>
+<ol>
+<li><strong>Layer height to 0.3mm</strong> - biggest single time saving</li>
+<li><strong>Infill to 15-20%</strong> if strength allows</li>
+<li><strong>Increase infill speed</strong> to 100mm/s, keep outer walls at 50mm/s</li>
+<li><strong>Lightning infill</strong> for decorative items</li>
+<li><strong>0.6mm nozzle</strong> if you print large functional parts regularly</li>
+</ol>
+<p>Making just the first two changes will cut most prints by 30-40% without any visible quality difference.</p>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

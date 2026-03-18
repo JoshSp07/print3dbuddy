@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printing Infill: Patterns, Percentages, and When to Use Each | Print3DBuddy</title>
+  <meta name="description" content="Complete guide to 3D printing infill — patterns, percentages, and which to use for strength, speed, or flexibility.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/3d-printing-infill-patterns-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Settings Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>3D Printing Infill: Patterns, Percentages, and When to Use Each</h1>
+  <p>Infill is the internal structure of a 3D print - the lattice of plastic inside solid-looking parts. Choosing the right infill pattern and percentage has a bigger impact on strength, weight, and print time than most beginners realise.</p>
+<hr>
+<h2 id="what-is-infill">What Is Infill?</h2>
+<p>When your slicer processes a model, it creates:</p>
+<ul>
+<li><strong>Outer walls/perimeters</strong> - the visible shell</li>
+<li><strong>Top and bottom layers</strong> - solid flat surfaces</li>
+<li><strong>Infill</strong> - the internal structure connecting everything</li>
+</ul>
+<p>The infill percentage controls how densely packed this internal structure is. 0% infill = completely hollow (fragile). 100% infill = completely solid (strong but heavy and slow).</p>
+<p>Most prints don't need 100% infill. A 20% infill with the right pattern is surprisingly strong.</p>
+<hr>
+<h2 id="infill-percentage-guide">Infill Percentage Guide</h2>
+<table><thead><tr>
+<th>Percentage</th>
+<th>Strength</th>
+<th>Use Case</th>
+</tr></thead><tbody>
+<tr>
+<td>0%</td>
+<td>Very weak</td>
+<td>Display models, decorative items you won't handle</td>
+</tr>
+<tr>
+<td>5-10%</td>
+<td>Weak</td>
+<td>Lightweight decorative items</td>
+</tr>
+<tr>
+<td>15-20%</td>
+<td>Moderate</td>
+<td>General household objects, display pieces</td>
+</tr>
+<tr>
+<td>25-40%</td>
+<td>Good</td>
+<td>Functional parts with moderate loads</td>
+</tr>
+<tr>
+<td>50-60%</td>
+<td>Strong</td>
+<td>Load-bearing parts, brackets, clips</td>
+</tr>
+<tr>
+<td>80-100%</td>
+<td>Very strong</td>
+<td>Maximum strength parts, impact-absorbing pieces</td>
+</tr>
+</tbody></table>
+<p><strong>Default starting point:</strong> 15-20% for decorative items, 40% for functional parts. You rarely need more than 40% unless the part will be under significant stress.</p>
+<hr>
+<h2 id="infill-patterns-explained">Infill Patterns Explained</h2>
+<h3 id="grid-lines">Grid / Lines</h3>
+<p>The simplest pattern - two sets of lines crossing at 90 degrees. Fast to print and reasonably strong in the XY plane.</p>
+<p><strong>Best for:</strong> General use, fast printing. The default in most slicers.</p>
+<h3 id="gyroid">Gyroid</h3>
+<p>A complex three-dimensional wave pattern. Strong in all directions, good for flexible materials, and has an unusual aesthetic when visible through walls.</p>
+<p><strong>Best for:</strong> Parts that need strength in multiple directions, especially those under torsion or multi-axis loads. Popular choice for functional parts.</p>
+<h3 id="honeycomb">Honeycomb</h3>
+<p>Hexagonal cells, similar to natural honeycomb structure. Excellent strength-to-weight ratio, though slower to print than grid.</p>
+<p><strong>Best for:</strong> Lightweight structural parts where strength matters.</p>
+<h3 id="cubic-3d-honeycomb">Cubic / 3D Honeycomb</h3>
+<p>A 3D version of honeycomb with diagonal bracing in all three planes. Very strong in all directions.</p>
+<p><strong>Best for:</strong> Parts under compression or multi-directional loading.</p>
+<h3 id="concentric">Concentric</h3>
+<p>Follows the outline of the model inward in concentric rings. Weak structurally but produces beautiful top surfaces and is excellent for flexible prints.</p>
+<p><strong>Best for:</strong> Flexible parts (TPU), artistic pieces where top surface matters.</p>
+<h3 id="lightning">Lightning</h3>
+<p>Minimal internal structure that just supports the top layers - not a traditional infill pattern. Produces the lightest prints possible.</p>
+<p><strong>Best for:</strong> Display items and decorative pieces where weight and material savings matter. Not suitable for functional parts.</p>
+<h3 id="rectilinear-lines-directional">Rectilinear / Lines (Directional)</h3>
+<p>Lines printed in a single direction per layer. Very fast, less strong than grid in one axis.</p>
+<p><strong>Best for:</strong> Fast drafts and prototypes.</p>
+<hr>
+<h2 id="how-infill-affects-print-time-and-strength">How Infill Affects Print Time and Strength</h2>
+<p>Increasing infill from 15% to 40% roughly doubles print time for the infill layers, but doesn't double strength. The majority of a part's strength comes from:</p>
+<ol>
+<li><strong>Perimeter/wall count</strong> - more walls = more strength, often more effectively than more infill</li>
+<li><strong>Top/bottom layer count</strong> - affects surface quality and part integrity</li>
+<li><strong>Print orientation</strong> - direction of layers relative to load</li>
+</ol>
+<p>For maximum strength with minimal print time increase: <strong>increase wall count to 4-5 before increasing infill beyond 30%</strong>. This is often more effective.</p>
+<hr>
+<h2 id="practical-recommendations">Practical Recommendations</h2>
+<h3 id="decorative-display-items">Decorative / Display Items</h3>
+<ul>
+<li><strong>Infill:</strong> 10-15%</li>
+<li><strong>Pattern:</strong> Grid or lightning</li>
+<li><strong>Walls:</strong> 2-3</li>
+<li><strong>Result:</strong> Light, fast, looks good</li>
+</ul>
+<h3 id="general-functional-parts-hooks-brackets-clips">General Functional Parts (Hooks, Brackets, Clips)</h3>
+<ul>
+<li><strong>Infill:</strong> 30-40%</li>
+<li><strong>Pattern:</strong> Gyroid or cubic</li>
+<li><strong>Walls:</strong> 3-4</li>
+<li><strong>Result:</strong> Good strength, reasonable print time</li>
+</ul>
+<h3 id="high-stress-parts-tool-handles-load-bearing-brackets">High-Stress Parts (Tool handles, load-bearing brackets)</h3>
+<ul>
+<li><strong>Infill:</strong> 50-60%</li>
+<li><strong>Pattern:</strong> Gyroid or cubic</li>
+<li><strong>Walls:</strong> 4-5</li>
+<li><strong>Result:</strong> Strong and durable</li>
+</ul>
+<h3 id="flexible-parts-tpu-gaskets-phone-cases">Flexible Parts (TPU gaskets, phone cases)</h3>
+<ul>
+<li><strong>Infill:</strong> 20-40%</li>
+<li><strong>Pattern:</strong> Concentric or gyroid</li>
+<li><strong>Walls:</strong> 3-4</li>
+<li><strong>Result:</strong> Flexible with good durability</li>
+</ul>
+<h3 id="maximum-strength-impact-resistance-safety-critical">Maximum Strength (Impact resistance, safety-critical)</h3>
+<ul>
+<li><strong>Infill:</strong> 80-100%</li>
+<li><strong>Pattern:</strong> Rectilinear or cubic</li>
+<li><strong>Walls:</strong> 5+</li>
+<li><strong>Result:</strong> Very strong, heavy, slow to print</li>
+</ul>
+<hr>
+<h2 id="infill-overlap">Infill Overlap</h2>
+<p>Most slicers have an "infill overlap" setting - how much the infill overlaps with the inner wall. A value of 20-25% is typical and ensures good bonding between infill and walls.</p>
+<p>If you're seeing separation between infill and walls, increase infill overlap slightly.</p>
+<hr>
+<h2 id="visual-infill-seeing-through-the-top">Visual Infill (Seeing Through the Top)</h2>
+<p>If your top layers look bumpy or you can see the infill pattern through them, you need more top layers. Most slicers default to 3-4 top layers - increase to 5-6 for a smoother top surface, especially at low infill percentages.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Default:</strong> 15-20% gyroid or grid for most prints</li>
+<li><strong>Functional parts:</strong> 40% gyroid with 4 walls</li>
+<li><strong>Increase wall count before increasing infill</strong> for better strength</li>
+<li><strong>Lightning infill</strong> for lightweight decorative pieces</li>
+<li><strong>Concentric</strong> for flexible parts and aesthetic tops</li>
+</ul>
+<p>Most of the time, changing the infill pattern matters less than the percentage and wall count. Gyroid is a solid default for anything functional - it's strong in all directions and the extra print time is minimal.</p>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

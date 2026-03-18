@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPU Flexible Filament: A Beginner's Guide | Print3DBuddy</title>
+  <meta name="description" content="TPU flexible filament guide for beginners — settings, direct drive vs Bowden, avoiding jams, and what to print.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/tpu-flexible-filament-beginners-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Filament Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>TPU Flexible Filament: A Beginner's Guide</h1>
+  <p>TPU (Thermoplastic Polyurethane) is the material that makes 3D printing genuinely useful for a whole category of things other plastics can't touch - phone cases, gaskets, wheels, grips, wearables, and anything that needs to flex or absorb impact.</p>
+<p>It's also one of the trickier filaments to print well. Here's everything you need to know.</p>
+<hr>
+<h2 id="what-is-tpu">What Is TPU?</h2>
+<p>TPU is a flexible, rubber-like plastic. It ranges from very soft and stretchy (Shore 85A - similar to a rubber band) to relatively firm and only slightly flexible (Shore 98A - similar to a hard rubber sole).</p>
+<p>For beginners, <strong>95A hardness</strong> is the sweet spot - flexible enough for most applications, firm enough to print reliably.</p>
+<p><strong>Popular TPU filaments:</strong></p>
+<ul>
+<li><a href="https://www.amazon.com/s?k=eSUN+TPU+95A+filament+1.75mm" target="_blank" rel="noopener">eSUN TPU 95A</a> - consistent, affordable, widely available</li>
+<li><a href="https://www.amazon.com/s?k=Polymaker+PolyFlex+TPU95" target="_blank" rel="noopener">Polymaker PolyFlex TPU95</a> - excellent quality, slightly easier to print</li>
+<li><a href="https://www.amazon.com/s?k=SainSmart+TPU+filament+flexible" target="_blank" rel="noopener">SainSmart TPU</a> - budget option, good results</li>
+</ul>
+<hr>
+<h2 id="tpu-print-settings">TPU Print Settings</h2>
+<table><thead><tr>
+<th>Setting</th>
+<th>Recommended Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Nozzle temperature</td>
+<td>220-235°C</td>
+</tr>
+<tr>
+<td>Bed temperature</td>
+<td>30-60°C</td>
+</tr>
+<tr>
+<td>Print speed</td>
+<td>20-30mm/s</td>
+</tr>
+<tr>
+<td>Retraction</td>
+<td>0-2mm (direct drive) / Minimal (Bowden)</td>
+</tr>
+<tr>
+<td>Cooling</td>
+<td>Moderate (30-50%)</td>
+</tr>
+<tr>
+<td>Infill</td>
+<td>20-40% for flexibility, 60%+ for rigidity</td>
+</tr>
+</tbody></table>
+<p><strong>Slow down.</strong> TPU does not respond well to speed. 25mm/s is a safe starting point - you can push to 40mm/s once you understand how your printer handles it, but anything faster risks bunching and jams.</p>
+<hr>
+<h2 id="direct-drive-vs-bowden-this-actually-matters-for-tpu">Direct Drive vs Bowden: This Actually Matters for TPU</h2>
+<p>This is the most important thing to know about printing TPU:</p>
+<p><strong>Direct drive printers</strong> (extruder motor on the toolhead) handle TPU well. The short, direct path from extruder to nozzle gives the flexible filament no room to buckle or bunch.</p>
+<p><strong>Bowden printers</strong> (motor on the frame, long PTFE tube to hotend) struggle badly with TPU. The flexible filament compresses and buckles in the long tube, causing massive under-extrusion, jams, and inconsistent flow.</p>
+<p>If you have a Bowden printer like an older Ender 3 (non-SE/V3), TPU is possible but frustrating. Slow way down (15-20mm/s) and reduce retraction to near zero.</p>
+<p>If you have a direct drive printer (Ender 3 V3 SE, Bambu Lab, Prusa MK4, etc.), TPU prints reasonably well with the settings above.</p>
+<hr>
+<h2 id="retraction-settings-for-tpu">Retraction Settings for TPU</h2>
+<p>This trips up most beginners.</p>
+<p>Too much retraction with flexible filament causes the extruder to grind against the soft material or cause the filament to buckle in the drive path.</p>
+<p><strong>Direct drive:</strong> Start with 0-2mm retraction at slow speed (20mm/s). Many TPU prints work better with retraction off entirely.</p>
+<p><strong>Bowden:</strong> Retraction should be 0-1mm maximum, or disabled. Counter-intuitive, but less retraction usually means fewer jams with TPU.</p>
+<hr>
+<h2 id="why-tpu-jams-and-how-to-avoid-it">Why TPU Jams (and How to Avoid It)</h2>
+<p>The most common TPU problem is the filament bunching up between the extruder gear and the hotend entry. This happens because:</p>
+<ol>
+<li><strong>Speed too high</strong> - TPU can't keep up and buckles</li>
+<li><strong>Too much retraction</strong> - pulls the soft filament back into the extruder mechanism where it jams</li>
+<li><strong>Bowden tube gap</strong> - any gap between the PTFE tube and nozzle gives TPU room to bunch</li>
+</ol>
+<p>Prevention:</p>
+<ul>
+<li>Slow print speed (25mm/s)</li>
+<li>Minimal or no retraction</li>
+<li>Make sure your PTFE tube seats fully against the nozzle</li>
+<li>Use a <a href="https://www.amazon.com/s?k=Capricorn+PTFE+tube+1.75mm" target="_blank" rel="noopener">Capricorn PTFE tube</a> with its tighter 1.9mm inner diameter</li>
+</ul>
+<hr>
+<h2 id="bed-adhesion-for-tpu">Bed Adhesion for TPU</h2>
+<p>TPU sticks well to most surfaces - sometimes too well.</p>
+<ul>
+<li><strong>PEI textured sheet</strong> - excellent adhesion, but parts can be hard to remove. Let the bed cool fully before removal.</li>
+<li><strong>Glass with glue stick</strong> - good adhesion and easier removal</li>
+<li><strong>Blue painter's tape</strong> - works well, parts release easily</li>
+</ul>
+<p>If parts stick too aggressively to your PEI sheet, try a thin layer of hairspray or glue stick on top of it as a release agent.</p>
+<hr>
+<h2 id="useful-things-to-print-in-tpu">Useful Things to Print in TPU</h2>
+<p>TPU really shines for functional, everyday items:</p>
+<ul>
+<li><strong>Phone cases</strong> - custom-fitted, shock-absorbing</li>
+<li><strong>Cable ties and clips</strong> - flexible and reusable</li>
+<li><strong>Gaskets and seals</strong> - custom shapes for enclosures and projects</li>
+<li><strong>Wheels and tyres</strong> for RC cars and robots</li>
+<li><strong>Grips and handles</strong> - tool handles, jar openers</li>
+<li><strong>Watch straps</strong> - surprisingly good quality</li>
+<li><strong>Shoe insoles</strong> - with the right infill settings</li>
+<li><strong>Ear tips</strong> for earphones</li>
+<li><strong>Vibration dampeners</strong> for printers and electronics</li>
+</ul>
+<p>Find TPU designs at <a href="https://www.printables.com/search/models?q=tpu&ctx=models" target="_blank" rel="noopener">Printables.com</a> and <a href="https://www.thingiverse.com/search?q=tpu&type=things" target="_blank" rel="noopener">Thingiverse</a>.</p>
+<hr>
+<h2 id="tpu-storage">TPU Storage</h2>
+<p>TPU is highly hygroscopic - it absorbs moisture quickly and prints worse when wet. Signs of wet TPU: popping sounds, surface bubbles, weaker parts.</p>
+<p>Store in an airtight container with <a href="https://www.amazon.com/s?k=silica+gel+desiccant+packets" target="_blank" rel="noopener">silica gel desiccant</a>. Dry at 45-50°C for 4-6 hours in a <a href="https://www.amazon.com/s?k=filament+dryer+box+3d+printing" target="_blank" rel="noopener">filament dryer</a> if prints are coming out poorly.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>TPU is rewarding once dialled in. The key rules:</p>
+<ol>
+<li><strong>Slow down</strong> - 25mm/s, no exceptions until you know your setup</li>
+<li><strong>Minimal retraction</strong> - 0-2mm direct drive, 0-1mm Bowden</li>
+<li><strong>Direct drive printer</strong> is much easier than Bowden</li>
+<li><strong>Keep it dry</strong> - store with desiccant</li>
+</ol>
+<p>Start with a simple test print - a small cube or a phone case - before attempting anything complex. Once you've got clean TPU prints, you'll wonder how you managed without it.</p>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

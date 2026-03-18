@@ -266,6 +266,17 @@ POST_TAGS = {
     'how-to-fix-3d-print-warping': ('Troubleshooting', 'Warping ruining your prints? Here\'s how to fix it — bed adhesion, enclosures, brims, and material-specific tips.'),
     'where-to-download-free-3d-print-files': ('Resources', 'The best sites to download free 3D print files in 2025 — Printables, Thingiverse, Makerworld and more compared.'),
     '3d-printing-speed-vs-quality-guide': ('Settings Guide', 'How to balance 3D printing speed and quality — what limits speed, key settings, and profiles for different goals.'),
+    'how-to-store-filament-properly': ('Filament Guide', 'How to store 3D printer filament properly — airtight containers, desiccant, drying wet filament, and which materials need the most care.'),
+    'best-3d-printer-upgrades-under-50': ('Upgrades', 'The best 3D printer upgrades under $50 — PEI sheets, Capricorn tubes, BLTouch, calipers, and more ranked by impact.'),
+    'how-to-post-process-3d-prints': ('Finishing Guide', 'How to sand, prime, paint, and finish 3D prints — from removing supports to a professional painted result.'),
+    'tpu-flexible-filament-beginners-guide': ('Filament Guide', 'TPU flexible filament guide for beginners — settings, direct drive vs Bowden, avoiding jams, and what to print.'),
+    'how-to-design-3d-models-for-beginners': ('Software Guide', 'How to design your own 3D models — Tinkercad, Fusion 360, FreeCAD compared for beginners.'),
+    '3d-printing-layer-adhesion-problems-fixes': ('Troubleshooting', 'Layer adhesion problems in 3D printing — causes, fixes, and a checklist to get strong, bonded prints every time.'),
+    'complete-nozzle-guide-3d-printing': ('Hardware Guide', 'Complete 3D printer nozzle guide — sizes, materials (brass, hardened steel, ruby), when to replace, and how to clean.'),
+    '3d-printing-first-layer-problems-fixes': ('Troubleshooting', 'Every first layer problem in 3D printing and how to fix it — not sticking, warping, gaps, blobs and more.'),
+    'best-3d-printers-for-beginners-2025': ('Printer Reviews', 'Best 3D printers for beginners in 2025 — Bambu Lab A1 Mini, Ender 3 V3 SE, Prusa MK4 compared honestly.'),
+    '3d-printing-infill-patterns-guide': ('Settings Guide', 'Complete guide to 3D printing infill — patterns, percentages, and which to use for strength, speed, or flexibility.'),
+    'how-to-reduce-3d-print-time': ('Settings Guide', 'How to reduce 3D print time without ruining quality — layer height, infill, speed, and nozzle changes that actually work.'),
 }
 
 
