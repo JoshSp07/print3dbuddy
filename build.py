@@ -244,6 +244,7 @@ def base_html(title, body, description='', canonical=''):
   {canon_tag}
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
 </head>
 <body>
 {nav_html()}
