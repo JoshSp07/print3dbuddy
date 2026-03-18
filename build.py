@@ -384,26 +384,72 @@ def build_homepage(posts):
 # ── Build posts index ──────────────────────────────────────────────────────
 
 def build_posts_index(posts):
-    cards = ''
+    # Group posts by tag/category
+    categories = {}
     for p in posts:
-        cards += f'''<article class="card">
+        cat = p['tag']
+        categories.setdefault(cat, []).append(p)
+
+    sections = ''
+    for cat, cat_posts in categories.items():
+        cards = ''
+        for p in cat_posts:
+            cards += f'''<article class="card">
   <span class="tag">{p["tag"]}</span>
   <h2><a href="{p["url"]}">{p["title"]}</a></h2>
   <p>{p["excerpt"]}</p>
   <a href="{p["url"]}" class="read-more">Read more &rarr;</a>
 </article>
 '''
-    body = f'''<main>
-  <h1 class="section-title">All Guides</h1>
-  <p class="section-sub">Every article on Budget3DPrint</p>
+        sections += f'''<section class="cat-section">
+  <h2 class="section-title">{cat}</h2>
   <div class="articles">
 {cards}  </div>
+</section>
+'''
+
+    body = f'''<main>
+  <h1 class="section-title">All Guides</h1>
+  <p class="section-sub">Every article on Print3DBuddy — practical help for 3D printing on a budget.</p>
+
+  {sections}
+
+  <section class="resources-box">
+    <h2 class="section-title">Useful External Resources</h2>
+    <p class="section-sub">Trusted sites we reference and recommend</p>
+    <div class="resources-grid">
+      <a href="https://www.printables.com" target="_blank" rel="noopener" class="resource-card">
+        <strong>Printables</strong>
+        <span>The best place to find free 3D models — run by Prusa Research</span>
+      </a>
+      <a href="https://www.reddit.com/r/3Dprinting/" target="_blank" rel="noopener" class="resource-card">
+        <strong>r/3Dprinting</strong>
+        <span>Huge community for troubleshooting, inspiration, and advice</span>
+      </a>
+      <a href="https://www.thingiverse.com" target="_blank" rel="noopener" class="resource-card">
+        <strong>Thingiverse</strong>
+        <span>Largest library of free 3D print files — 3 million+ models</span>
+      </a>
+      <a href="https://github.com/prusa3d/PrusaSlicer/releases" target="_blank" rel="noopener" class="resource-card">
+        <strong>PrusaSlicer</strong>
+        <span>Free, open-source slicer trusted by the community</span>
+      </a>
+      <a href="https://www.bambulab.com/en/software" target="_blank" rel="noopener" class="resource-card">
+        <strong>Bambu Studio</strong>
+        <span>Fast, modern slicer — works with any printer, not just Bambu</span>
+      </a>
+      <a href="https://reprap.org/wiki/RepRap" target="_blank" rel="noopener" class="resource-card">
+        <strong>RepRap Wiki</strong>
+        <span>The original open-source 3D printing knowledge base</span>
+      </a>
+    </div>
+  </section>
 </main>'''
 
     page = base_html(
         title=f'All Guides | {SITE_NAME}',
         body=body,
-        description='All 3D printing guides, filament reviews, and beginner tutorials on Budget3DPrint.',
+        description='All 3D printing guides, filament reviews, and beginner tutorials on Print3DBuddy. Organised by category.',
         canonical='/posts/'
     )
     posts_index = OUTPUT_DIR / 'posts'
