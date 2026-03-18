@@ -16,14 +16,14 @@ PLA (Polylactic Acid) is a plant-based thermoplastic made from corn starch or su
 
 ### PLA Print Settings
 
-- **Nozzle temperature:** 190–220°C
-- **Bed temperature:** 0–60°C (heated bed not required)
+- **Nozzle temperature:** 190 - 220°C
+- **Bed temperature:** 0 - 60°C (heated bed not required)
 - **Enclosure:** Not needed
-- **Cooling:** Needs good part cooling — run your fan at 100%
+- **Cooling:** Needs good part cooling  -  run your fan at 100%
 
 ### PLA Strengths
 
-- Easiest filament to dial in — great for first-time users
+- Easiest filament to dial in  -  great for first-time users
 - Wide range of colours and finishes (matte, silk, wood-filled, glow-in-the-dark)
 - Low warping, prints stick well to glass, PEI, or painter's tape
 - Available everywhere and very affordable
@@ -31,8 +31,8 @@ PLA (Polylactic Acid) is a plant-based thermoplastic made from corn starch or su
 
 ### PLA Weaknesses
 
-- Poor heat resistance — starts to soften around 55–60°C, which means it can warp in a hot car or near a window in summer
-- More brittle than PETG or ABS — can snap under impact
+- Poor heat resistance  -  starts to soften around 55 - 60°C, which means it can warp in a hot car or near a window in summer
+- More brittle than PETG or ABS  -  can snap under impact
 - Not great for parts under sustained mechanical stress
 - Degrades over time with UV exposure (not ideal for outdoors)
 
@@ -41,9 +41,9 @@ PLA (Polylactic Acid) is a plant-based thermoplastic made from corn starch or su
 Use PLA for: decorative prints, miniatures, household organizers, phone stands, hobby models, learning projects, and anything that won't be exposed to heat or heavy stress.
 
 **Recommended PLA filaments:**
-- Bambu Lab PLA Basic ([BAMBU_LINK]) — well-tuned for Bambu printers
-- Hatchbox PLA ([AMAZON_LINK]) — reliable budget option
-- eSUN PLA+ ([AMAZON_LINK]) — slightly tougher than standard PLA
+- Bambu Lab PLA Basic (https://bambulab.com/en/filament/pla-basic)  -  well-tuned for Bambu printers
+- Hatchbox PLA (https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm)  -  reliable budget option
+- eSUN PLA+ (https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm)  -  slightly tougher than standard PLA
 
 ---
 
@@ -55,24 +55,24 @@ PETG (Polyethylene Terephthalate Glycol) is a modified version of the same plast
 
 ### PETG Print Settings
 
-- **Nozzle temperature:** 230–250°C
-- **Bed temperature:** 70–85°C
+- **Nozzle temperature:** 230 - 250°C
+- **Bed temperature:** 70 - 85°C
 - **Enclosure:** Not required but helpful
-- **Cooling:** Moderate — too much cooling causes layer adhesion issues
+- **Cooling:** Moderate  -  too much cooling causes layer adhesion issues
 
 ### PETG Strengths
 
 - Significantly tougher and more impact-resistant than PLA
-- Better heat resistance — typically handles up to 70–80°C
+- Better heat resistance  -  typically handles up to 70 - 80°C
 - Good chemical resistance (handles some cleaning products and mild acids)
-- Less brittle than PLA — more suitable for functional parts
+- Less brittle than PLA  -  more suitable for functional parts
 - Food-safe options exist (though print hygiene matters more than material)
 
 ### PETG Weaknesses
 
-- Strings more than PLA — requires careful retraction tuning
-- More sensitive to moisture — needs dry storage (or a filament dryer)
-- Sticks too well to some surfaces — can rip chunks from glass beds
+- Strings more than PLA  -  requires careful retraction tuning
+- More sensitive to moisture  -  needs dry storage (or a filament dryer)
+- Sticks too well to some surfaces  -  can rip chunks from glass beds
 - Slightly more difficult to get dialled in than PLA
 
 ### When to Use PETG
@@ -80,9 +80,9 @@ PETG (Polyethylene Terephthalate Glycol) is a modified version of the same plast
 Use PETG for: mechanical brackets, phone cases, tool holders, outdoor-adjacent parts, prints that need some flex or toughness, and anything that might see moderate heat.
 
 **Recommended PETG filaments:**
-- Bambu Lab PETG HF ([BAMBU_LINK]) — high-flow version for Bambu printers
-- Polymaker PolyLite PETG ([AMAZON_LINK]) — consistent and easy to tune
-- Overture PETG ([AMAZON_LINK]) — solid budget option
+- Bambu Lab PETG HF (https://bambulab.com/en/filament/petg-hf)  -  high-flow version for Bambu printers
+- Polymaker PolyLite PETG (https://www.amazon.com/s?k=Polymaker+PolyLite+PETG)  -  consistent and easy to tune
+- Overture PETG (https://www.amazon.com/s?k=Overture+PETG+filament)  -  solid budget option
 
 ---
 
@@ -90,38 +90,38 @@ Use PETG for: mechanical brackets, phone cases, tool holders, outdoor-adjacent p
 
 ### What Is ABS?
 
-ABS (Acrylonitrile Butadiene Styrene) is the plastic used in LEGO bricks and car interior panels. It's strong, heat-resistant, and machinable — but it's also significantly harder to print than PLA or PETG.
+ABS (Acrylonitrile Butadiene Styrene) is the plastic used in LEGO bricks and car interior panels. It's strong, heat-resistant, and machinable  -  but it's also significantly harder to print than PLA or PETG.
 
 ### ABS Print Settings
 
-- **Nozzle temperature:** 230–250°C
-- **Bed temperature:** 100–110°C
+- **Nozzle temperature:** 230 - 250°C
+- **Bed temperature:** 100 - 110°C
 - **Enclosure:** Almost always required
-- **Cooling:** Minimal — ABS hates rapid cooling and will crack
+- **Cooling:** Minimal  -  ABS hates rapid cooling and will crack
 
 ### ABS Strengths
 
-- Excellent heat resistance — typically handles 90–100°C+
+- Excellent heat resistance  -  typically handles 90 - 100°C+
 - Strong and impact-resistant
 - Can be sanded, drilled, and acetone-smoothed for a near-injection-moulded finish
 - Lighter than PETG for equivalent strength in some applications
 
 ### ABS Weaknesses
 
-- Warps aggressively — needs a fully enclosed printer and heated bed
-- Emits fumes (styrene) — must be printed in a ventilated area or enclosed space with filtration
+- Warps aggressively  -  needs a fully enclosed printer and heated bed
+- Emits fumes (styrene)  -  must be printed in a ventilated area or enclosed space with filtration
 - More prone to layer delamination if printing conditions aren't perfect
-- Not beginner-friendly — lots of failed prints while learning
+- Not beginner-friendly  -  lots of failed prints while learning
 
 ### When to Use ABS
 
 Use ABS for: automotive parts, high-heat environments, functional mechanical components, and projects where you want to acetone-smooth the surface finish.
 
 **Recommended ABS filaments:**
-- eSUN ABS+ ([AMAZON_LINK]) — easier to print than standard ABS
-- Bambu Lab ABS ([BAMBU_LINK]) — tuned for Bambu enclosed printers
+- eSUN ABS+ (https://www.amazon.com/s?k=eSUN+ABS+Plus+filament)  -  easier to print than standard ABS
+- Bambu Lab ABS (https://bambulab.com/en/filament/abs)  -  tuned for Bambu enclosed printers
 
-**Note:** If you need heat resistance but want something easier to print than ABS, look at **ASA** — it behaves similarly but with better UV resistance and slightly less warping. It's worth a try before committing to ABS.
+**Note:** If you need heat resistance but want something easier to print than ABS, look at **ASA**  -  it behaves similarly but with better UV resistance and slightly less warping. It's worth a try before committing to ABS.
 
 ---
 
@@ -162,6 +162,6 @@ You'll see a lot of branded variants on the market:
 
 ## Ready to Start Printing?
 
-If you're still shopping for a printer, the **Bambu Lab A1 Mini** ([BAMBU_LINK]) is one of the best beginner machines available — it handles PLA and PETG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE** ([AMAZON_LINK]) is a solid first printer for those who want to learn the ropes.
+If you're still shopping for a printer, the **Bambu Lab A1 Mini** (https://bambulab.com/en/bambu-lab/a1-mini) is one of the best beginner machines available  -  it handles PLA and PETG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE** (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is a solid first printer for those who want to learn the ropes.
 
-Whatever printer you go with, grab a couple of spools of PLA to start — check the current price on Amazon for Hatchbox PLA ([AMAZON_LINK]) or eSUN PLA+ ([AMAZON_LINK]) and get printing.
+Whatever printer you go with, grab a couple of spools of PLA to start  -  check the current price on Amazon for Hatchbox PLA (https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) or eSUN PLA+ (https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) and get printing.

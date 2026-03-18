@@ -27,7 +27,7 @@
 <p><strong>This guide covers everything you need to calibrate a new 3D printer</strong>, in the order you should actually do it. Follow these steps and you'll avoid the most common beginner pitfalls.</p>
 <hr>
 <h2 id="why-calibration-matters">Why Calibration Matters</h2>
-<p>Calibration isn't just a one-time setup step — it's an ongoing process, especially in the early days with a new machine. Think of it like tuning a musical instrument: even a great guitar sounds off if it hasn't been set up properly.</p>
+<p>Calibration isn't just a one-time setup step  -  it's an ongoing process, especially in the early days with a new machine. Think of it like tuning a musical instrument: even a great guitar sounds off if it hasn't been set up properly.</p>
 <p>The good news is that most calibration steps only need to be done once (or after major maintenance). And modern printers like the Bambu Lab series handle much of this automatically. But understanding what each step does will help you troubleshoot problems down the line, whatever printer you're using.</p>
 <hr>
 <h2 id="step-1-level-the-bed-or-check-auto-levelling">Step 1: Level the Bed (or Check Auto-Levelling)</h2>
@@ -39,11 +39,11 @@
 <li>Home all axes</li>
 <li>Disable steppers so you can move the print head by hand</li>
 <li>Move the nozzle to each corner of the bed</li>
-<li>Slide a piece of paper under the nozzle — you want slight friction, not tight resistance</li>
+<li>Slide a piece of paper under the nozzle  -  you want slight friction, not tight resistance</li>
 <li>Adjust the bed knobs until the paper drags consistently at all four corners</li>
 <li>Check the centre last</li>
 </ol>
-<p><strong>Repeat this process 2–3 times</strong>, because adjusting one corner affects the others slightly.</p>
+<p><strong>Repeat this process 2 - 3 times</strong>, because adjusting one corner affects the others slightly.</p>
 <h3 id="auto-bed-levelling-abl">Auto Bed Levelling (ABL)</h3>
 <p>Many modern printers include automatic bed levelling using a probe (BLTouch, CRTouch, or built-in inductive sensors). With ABL:</p>
 <ul>
@@ -51,7 +51,7 @@
 <li>The printer maps the height variations across the bed and compensates during printing</li>
 <li>You still need to set your Z offset correctly (see Step 2)</li>
 </ul>
-<p>The <strong>Bambu Lab A1 Mini</strong> ([BAMBU<em>LINK]) and <strong>P1S</strong> ([BAMBU</em>LINK]) use multi-point automatic levelling that's exceptionally accurate out of the box — one of the reasons they're so popular with beginners.</p>
+<p>The <strong>Bambu Lab A1 Mini</strong> (https://bambulab.com/en/bambu-lab/a1-mini) and <strong>P1S</strong> (https://bambulab.com/en/bambu-lab/p1s) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.</p>
 <hr>
 <h2 id="step-2-set-your-z-offset-first-layer-height">Step 2: Set Your Z Offset (First Layer Height)</h2>
 <p>Your Z offset is the gap between the nozzle and the bed when printing starts. Get this wrong and your first layer either won't stick (too high) or will be smashed flat and cause a clog (too low).</p>
@@ -60,8 +60,8 @@
 <ol>
 <li>Start a first-layer calibration print (most slicers include one, or print a single-layer square)</li>
 <li>Watch the first layer carefully</li>
-<li>If the filament isn't sticking or is coming out as a rounded blob, the nozzle is too high — reduce your Z offset (move nozzle closer to bed)</li>
-<li>If the nozzle is dragging through what it just laid down, or the filament looks squashed flat with rough edges, you're too low — increase your Z offset</li>
+<li>If the filament isn't sticking or is coming out as a rounded blob, the nozzle is too high  -  reduce your Z offset (move nozzle closer to bed)</li>
+<li>If the nozzle is dragging through what it just laid down, or the filament looks squashed flat with rough edges, you're too low  -  increase your Z offset</li>
 </ol>
 <p>Adjust in 0.05mm increments and reprint until it looks right. This step is worth taking your time on.</p>
 <hr>
@@ -72,18 +72,18 @@
 <li>Mark your filament 100mm and 120mm from the entry point of your extruder</li>
 <li>Command your printer to extrude exactly 100mm of filament (via the control menu or a terminal)</li>
 <li>Measure how much filament actually moved</li>
-<li>If it extruded 95mm instead of 100mm, your e-steps are too low — calculate the correction:</li>
+<li>If it extruded 95mm instead of 100mm, your e-steps are too low  -  calculate the correction:</li>
 </ol>
 <p><strong>New E-steps = (Current E-steps × 100) ÷ Actual mm extruded</strong></p>
 <ol>
 <li>Update the value in your printer's firmware settings and save</li>
 </ol>
-<p><strong>Note:</strong> Many modern printers come factory-calibrated for e-steps. Check if yours needs this step before diving in — Bambu Lab printers, for example, handle this automatically.</p>
+<p><strong>Note:</strong> Many modern printers come factory-calibrated for e-steps. Check if yours needs this step before diving in  -  Bambu Lab printers, for example, handle this automatically.</p>
 <hr>
 <h2 id="step-4-run-a-temperature-tower-test">Step 4: Run a Temperature Tower Test</h2>
 <p>Different filament brands and even different colours of the same brand can behave differently at various temperatures. A temperature tower is a single print that tests multiple temperatures in one go.</p>
 <ol>
-<li>Download a temperature tower model from Printables (free) — [search "temp tower"]</li>
+<li>Download a temperature tower model from Printables (free)  -  [search "temp tower"]</li>
 <li>Use your slicer's "change filament at height" or custom G-code feature to step the temperature down every 5mm or so</li>
 <li>Test from 230°C down to 190°C for PLA (adjust range for other materials)</li>
 <li>Look at each section: where does stringing stop? Where does surface quality peak? Where do overhangs start drooping?</li>
@@ -95,12 +95,12 @@
 <h3 id="simple-flow-rate-test">Simple Flow Rate Test</h3>
 <ol>
 <li>Print a single-wall cube (20mm × 20mm × 20mm, 0 infill, 0 top layers, 1 perimeter)</li>
-<li>Measure the wall thickness with digital calipers ([AMAZON_LINK])</li>
-<li>Your slicer's set line width is what you're aiming for (usually 0.4–0.45mm for a 0.4mm nozzle)</li>
-<li>If your wall is 0.48mm thick, you're over-extruding — reduce flow rate proportionally</li>
-<li>If it's 0.37mm, you're under-extruding — increase flow rate</li>
+<li>Measure the wall thickness with digital calipers (https://www.amazon.com/s?k=digital+calipers+3d+printing)</li>
+<li>Your slicer's set line width is what you're aiming for (usually 0.4 - 0.45mm for a 0.4mm nozzle)</li>
+<li>If your wall is 0.48mm thick, you're over-extruding  -  reduce flow rate proportionally</li>
+<li>If it's 0.37mm, you're under-extruding  -  increase flow rate</li>
 </ol>
-<p>Adjust in 2–3% increments. A good set of digital calipers is essential for this step — check the current price on Amazon ([AMAZON_LINK]).</p>
+<p>Adjust in 2 - 3% increments. A good set of digital calipers is essential for this step  -  check the current price on Amazon (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).</p>
 <hr>
 <h2 id="step-6-test-retraction-settings">Step 6: Test Retraction Settings</h2>
 <p>Retraction controls how much filament is pulled back when the nozzle travels between two parts of a print. Incorrect retraction causes stringing or gaps.</p>
@@ -114,7 +114,7 @@
 <p>Once you've worked through the steps above, print a 20mm calibration cube. This is the classic final test.</p>
 <p><strong>What to check:</strong></p>
 <ul>
-<li>Dimensions: measure with calipers — should be within 0.2mm of 20mm on all sides</li>
+<li>Dimensions: measure with calipers  -  should be within 0.2mm of 20mm on all sides</li>
 <li>Top surface: should be smooth with no gaps or blobs</li>
 <li>Corners: should be sharp, not rounded or blobby</li>
 <li>Walls: should be smooth, no visible layer lines wobbling or shifting</li>
@@ -123,10 +123,10 @@
 <hr>
 <h2 id="calibration-tools-worth-having">Calibration Tools Worth Having</h2>
 <ul>
-<li><strong>Digital calipers</strong> — essential for measuring prints accurately ([AMAZON_LINK])</li>
-<li><strong>Filament dryer</strong> — wet filament causes all kinds of calibration headaches ([AMAZON_LINK])</li>
-<li><strong>Bed adhesion spray or PEI sheet</strong> — consistent bed adhesion makes calibration much easier ([AMAZON_LINK])</li>
-<li><strong>Good lighting</strong> — being able to see your first layer clearly makes a huge difference</li>
+<li><strong>Digital calipers</strong>  -  essential for measuring prints accurately (https://www.amazon.com/s?k=digital+calipers+3d+printing)</li>
+<li><strong>Filament dryer</strong>  -  wet filament causes all kinds of calibration headaches (https://www.amazon.com/s?k=filament+dryer+box+3d+printing)</li>
+<li><strong>Bed adhesion spray or PEI sheet</strong>  -  consistent bed adhesion makes calibration much easier (https://www.amazon.com/s?k=PEI+sheet+3d+printer)</li>
+<li><strong>Good lighting</strong>  -  being able to see your first layer clearly makes a huge difference</li>
 </ul>
 <hr>
 <h2 id="how-often-do-you-need-to-calibrate">How Often Do You Need to Calibrate?</h2>
@@ -139,8 +139,8 @@
 </ul>
 <hr>
 <h2 id="final-thoughts">Final Thoughts</h2>
-<p>Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30–60 minutes total, and once done, you'll be getting clean prints consistently.</p>
-<p>If you're still choosing a printer and want something that minimises calibration effort, the <strong>Bambu Lab A1 Mini</strong> ([BAMBU<em>LINK]) automates most of these steps. For a hands-on learning experience with a budget machine, the <strong>Creality Ender 3 V3 SE</strong> ([AMAZON</em>LINK]) is a classic choice — check the current price on Amazon ([AMAZON_LINK]).</p>
+<p>Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.</p>
+<p>If you're still choosing a printer and want something that minimises calibration effort, the <strong>Bambu Lab A1 Mini</strong> (https://bambulab.com/en/bambu-lab/a1-mini) automates most of these steps. For a hands-on learning experience with a budget machine, the <strong>Creality Ender 3 V3 SE</strong> (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is a classic choice  -  check the current price on Amazon (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).</p>
 </div>
 <footer>
   <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>

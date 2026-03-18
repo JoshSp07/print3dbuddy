@@ -1,6 +1,6 @@
 # Best Slicer Software for Beginners (Free Options Compared)
 
-Before a 3D printer can print anything, it needs instructions — and that's what slicer software does. It takes a 3D model (an STL or 3MF file) and converts it into the layer-by-layer movements your printer understands.
+Before a 3D printer can print anything, it needs instructions  -  and that's what slicer software does. It takes a 3D model (an STL or 3MF file) and converts it into the layer-by-layer movements your printer understands.
 
 The good news: the best slicers are free. Here's how they compare, and which one you should start with.
 
@@ -11,9 +11,9 @@ The good news: the best slicers are free. Here's how they compare, and which one
 A slicer:
 
 1. Takes your 3D model file
-2. Slices it into horizontal layers (typically 0.1–0.3mm thick)
+2. Slices it into horizontal layers (typically 0.1 - 0.3mm thick)
 3. Calculates the exact path the print head needs to travel for each layer
-4. Generates G-code — the instruction file your printer reads
+4. Generates G-code  -  the instruction file your printer reads
 
 Most slicer decisions happen automatically. You set a few key parameters (layer height, infill, support settings) and the slicer handles the rest.
 
@@ -21,15 +21,15 @@ Most slicer decisions happen automatically. You set a few key parameters (layer 
 
 ## The Three Main Free Slicers
 
-### 1. Bambu Studio — Best for Bambu Printers, Excellent for Everyone
+### 1. Bambu Studio  -  Best for Bambu Printers, Excellent for Everyone
 
 Originally built for Bambu Lab printers, Bambu Studio is now a fully capable slicer for any printer. It's fast, clean, and has one of the best auto-support systems available.
 
 **Strengths:**
 - Fastest slicing of any option (uses multi-threading aggressively)
-- Excellent auto-support generation — fewer failed prints
-- Clean, modern UI — easy to learn
-- Great preset system — sensible defaults for most common printers
+- Excellent auto-support generation  -  fewer failed prints
+- Clean, modern UI  -  easy to learn
+- Great preset system  -  sensible defaults for most common printers
 - Network printing built in (for compatible printers)
 
 **Weaknesses:**
@@ -40,15 +40,15 @@ Originally built for Bambu Lab printers, Bambu Studio is now a fully capable sli
 
 ---
 
-### 2. PrusaSlicer — The Gold Standard for Reliability
+### 2. PrusaSlicer  -  The Gold Standard for Reliability
 
 PrusaSlicer is maintained by Prusa Research (makers of the MK4 and Mini printers) and has been the community standard for years. It's deeply trusted, extensively documented, and has a massive library of community profiles.
 
 **Strengths:**
-- Extremely well-documented — answers to every question exist
+- Extremely well-documented  -  answers to every question exist
 - Excellent support for exotic materials (nylon, PC, ASA)
-- Highly configurable — every parameter is exposed
-- Variable layer height — beautiful detail where you need it
+- Highly configurable  -  every parameter is exposed
+- Variable layer height  -  beautiful detail where you need it
 - Reliable, stable releases
 
 **Weaknesses:**
@@ -60,13 +60,13 @@ PrusaSlicer is maintained by Prusa Research (makers of the MK4 and Mini printers
 
 ---
 
-### 3. Cura — Most Widely Used
+### 3. Cura  -  Most Widely Used
 
 Cura by Ultimaker is the most installed slicer in the world by a large margin. It has the largest plugin ecosystem and the widest printer profile database.
 
 **Strengths:**
-- Huge community — endless tutorials, profiles, and help
-- Plugin system — add features and printer profiles from the marketplace
+- Huge community  -  endless tutorials, profiles, and help
+- Plugin system  -  add features and printer profiles from the marketplace
 - Supports virtually every printer ever made
 - Good basic workflow for beginners
 
@@ -103,7 +103,7 @@ Thinner layers = more detail, slower prints. 0.2mm is the standard starting poin
 The internal density of your print. 15-20% for decorative items, 40-60% for functional parts, 80%+ for maximum strength.
 
 ### Supports
-Overhangs greater than ~45 degrees need support material to print correctly. Slicers generate this automatically — you remove it after printing. Bambu Studio's auto-support is best at minimising unnecessary supports.
+Overhangs greater than ~45 degrees need support material to print correctly. Slicers generate this automatically  -  you remove it after printing. Bambu Studio's auto-support is best at minimising unnecessary supports.
 
 ### Print Speed
 Faster = more risk of quality issues. Start at 50-80mm/s until you understand your printer, then increase.
@@ -119,7 +119,7 @@ How many outer shells your print has. 3-4 walls for strong functional parts, 2 w
 
 **Printing on a Prusa or want to go deep on settings:** PrusaSlicer. The documentation is unmatched.
 
-**Following YouTube tutorials:** Install whatever the tutorial uses — usually Cura or PrusaSlicer. You can switch later.
+**Following YouTube tutorials:** Install whatever the tutorial uses  -  usually Cura or PrusaSlicer. You can switch later.
 
 All three are free. There's no penalty for trying more than one.
 
