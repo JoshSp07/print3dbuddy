@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://print3dbuddy.com/sitemap.xml
