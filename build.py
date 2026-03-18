@@ -226,8 +226,8 @@ def nav_html(active=None):
 def footer_html():
     year = datetime.now().year
     return f'''<footer>
-  <p>&copy; {year} {SITE_NAME} &mdash; Independent reviews, no fluff.</p>
-  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a></p>
+  <p>&copy; {year} {SITE_NAME} &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
 </footer>'''
 
 
@@ -416,8 +416,8 @@ def build_posts_index(posts):
 
 def build_about():
     body = '''<div class="article-wrap">
-  <h1>About Budget3DPrint</h1>
-  <p>Budget3DPrint is an independent site covering everything a beginner needs to get started with 3D printing — without spending a fortune.</p>
+  <h1>About Print3DBuddy</h1>
+  <p>Print3DBuddy is an independent site covering everything a beginner needs to get started with 3D printing — without spending a fortune.</p>
   <p>We cover printer calibration, filament selection, troubleshooting, and practical ideas for what to actually print. Our goal is plain-English guides that get you from "unboxing" to "printing confidently" as fast as possible.</p>
   <p>We don't take money from manufacturers and we don't pad reviews. If something is bad value, we say so.</p>
   <h2>What We Cover</h2>
@@ -444,6 +444,26 @@ def build_about():
 
 
 # ── Build privacy page ─────────────────────────────────────────────────────
+
+def build_contact():
+    body = '''<div class="article-wrap">
+  <h1>Contact</h1>
+  <p>Got a question, a topic suggestion, or spotted an error in one of our guides? I'd love to hear from you.</p>
+  <p>Email: <a href="mailto:CobyCane01@outlook.com">CobyCane01@outlook.com</a></p>
+  <p>I aim to reply within 24 hours.</p>
+</div>'''
+
+    page = base_html(
+        title=f'Contact | {SITE_NAME}',
+        body=body,
+        description='Get in touch with Print3DBuddy — questions, suggestions, and corrections welcome.',
+        canonical='/contact/'
+    )
+    contact_dir = OUTPUT_DIR / 'contact'
+    contact_dir.mkdir(exist_ok=True)
+    (contact_dir / 'index.html').write_text(page, encoding='utf-8')
+    print('  Built: /contact/')
+
 
 def build_privacy():
     body = f'''<div class="article-wrap">
@@ -491,7 +511,7 @@ def build_seo_files(posts):
     )
 
     # sitemap.xml
-    urls = ['/', '/posts/', '/about/', '/privacy/']
+    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/']
     for p in posts:
         urls.append(p['url'])
 
@@ -516,6 +536,7 @@ def main():
     build_homepage(posts)
     build_posts_index(posts)
     build_about()
+    build_contact()
     build_privacy()
     build_seo_files(posts)
 
