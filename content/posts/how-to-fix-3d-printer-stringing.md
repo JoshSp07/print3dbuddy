@@ -98,7 +98,7 @@ If you've adjusted all the settings above and still have issues:
 
 ## Best Printers for Low-Stringing Out of the Box
 
-Some printers are b[etter tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) [and **Bambu Lab P1S**](https://bambulab.com/en/bambu-lab/p1s) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
+Some printers are b[etter tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) [and **Bambu Lab P1S**](https://www.amazon.com/s?k=Bambu+Lab+P1S) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
 
 [The **Creality Ender 3 V3**](https://www.amazon.com/s?k=Creality+Ender+3+V3) is a great budget option but uses a Bowden setup, so you'll likely spend a bit more time tuning retraction.
 

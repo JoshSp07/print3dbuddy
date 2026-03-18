@@ -157,7 +157,7 @@ Print in a colour that matches your hallway, mount it at the door, and stop losi
 
 ## Get Started Today
 
-[If you don't have a printer yet, the **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurat[e, and requires almost no setup. Check the current price on the Bambu Lab website](https://bambulab.com/en/bambu-lab/a1-mini).
+[If you don't have a printer yet, the **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurat[e, and requires almost no setup. Check the current price on the Bambu Lab website](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini).
 
 [On a tighter budget? The **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is one [of the best entry-level printers available  -  check the current price on Amazon](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).
 

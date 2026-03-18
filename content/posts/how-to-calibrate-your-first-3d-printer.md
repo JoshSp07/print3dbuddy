@@ -40,7 +40,7 @@ Many modern printers include automatic bed levelling using a probe (BLTouch, CRT
 - The printer maps the height variations across the bed and compensates during printing
 - You still need to set your Z offset correctly (see Step 2)
 
-[The **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) [and **P1S**](https://bambulab.com/en/bambu-lab/p1s) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.
+[The **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) [and **P1S**](https://www.amazon.com/s?k=Bambu+Lab+P1S) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.
 
 ---
 
@@ -156,4 +156,4 @@ If something's off, you now know what each setting controls, so you can go back 
 
 Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.
 
-If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) [is a classic choice  -  check the current price on Amazon](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).
+If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) [is a classic choice  -  check the current price on Amazon](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).

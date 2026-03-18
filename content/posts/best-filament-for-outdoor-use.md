@@ -42,7 +42,7 @@ With that in mind, let's look at how each filament holds up.
 
 **Recommended ASA filaments:**
 - [Polymaker PolyLite ASA](https://www.amazon.com/s?k=Polymaker+PolyLite+ASA)  -  one of the most popular and consistent ASA options
-- [Bambu Lab ASA](https://bambulab.com/en/filament/asa)  -  dialled in for Bambu enclosed printers, minimal tuning required
+- [Bambu Lab ASA](https://www.amazon.com/s?k=Bambu+Lab+ASA+filament)  -  dialled in for Bambu enclosed printers, minimal tuning required
 - [eSUN ASA](https://www.amazon.com/s?k=eSUN+ASA+filament)  -  good budget option
 
 ---
@@ -67,7 +67,7 @@ With that in mind, let's look at how each filament holds up.
 
 **Recommended PETG:**
 - [Polymaker PolyLite PETG](https://www.amazon.com/s?k=Polymaker+PolyLite+PETG)
-- [Bambu Lab PETG HF](https://bambulab.com/en/filament/petg-hf)
+- [Bambu Lab PETG HF](https://www.amazon.com/s?k=Bambu+Lab+PETG+filament)
 - [Overture PETG](https://www.amazon.com/s?k=Overture+PETG+filament)
 
 ---
@@ -80,7 +80,7 @@ Nylon that has absorbed water (which it will, because it's outdoors) will swell 
 
 **When nylon makes sense outdoors:** mechanical parts that need flex and toughness (hinges, clips, gear components), used in climates with relatively dry outdoor conditions, or in applications where it's not constantly exposed to standing water.
 
-[**Recommended:** Bambu Lab PA6-CF](https://bambulab.com/en/filament/pa6-cf) for structural parts where stiffness matters.
+[**Recommended:** Bambu Lab PA6-CF](https://www.amazon.com/s?k=Bambu+Lab+PA6+CF+filament) for structural parts where stiffness matters.
 
 ---
 
@@ -141,7 +141,7 @@ Even with the right material, how you print matters:
 
 For most outdoor 3D printing needs, here's what to do:
 
-1. **Get an enclosed p[rinter** if you don't have one  -  ASA really does need it. The **Bambu Lab P1S**](https://bambulab.com/en/bambu-lab/p1s) is an excellent enclosed option with pre-tuned ASA profiles.
+1. **Get an enclosed p[rinter** if you don't have one  -  ASA really does need it. The **Bambu Lab P1S**](https://www.amazon.com/s?k=Bambu+Lab+P1S) is an excellent enclosed option with pre-tuned ASA profiles.
 2. [**Buy Polymaker PolyLite ASA**](https://www.amazon.com/s?k=Polymaker+PolyLite+ASA) as your go-to outdoor filament
 3. [**Use PETG**](https://www.amazon.com/s?k=Polymaker+PolyLite+PETG) for less critical outdoor parts or if you only have an open-frame printer
 
