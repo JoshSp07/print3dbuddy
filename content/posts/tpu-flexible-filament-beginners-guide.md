@@ -13,9 +13,9 @@ TPU is a flexible, rubber-like plastic. It ranges from very soft and stretchy (S
 For beginners, **95A hardness** is the sweet spot - flexible enough for most applications, firm enough to print reliably.
 
 **Popular TPU filaments:**
-- [eSUN TPU 95A](https://www.amazon.com/s?k=eSUN+TPU+95A+filament+1.75mm) - consistent, affordable, widely available
-- [Polymaker PolyFlex TPU95](https://www.amazon.com/s?k=Polymaker+PolyFlex+TPU95) - excellent quality, slightly easier to print
-- [SainSmart TPU](https://www.amazon.com/s?k=SainSmart+TPU+filament+flexible) - budget option, good results
+- [eSUN TPU 95A](https://www.amazon.co.uk/s?k=eSUN+TPU+95A+filament+1.75mm&tag=print3dbuddy21-21) - consistent, affordable, widely available
+- [Polymaker PolyFlex TPU95](https://www.amazon.co.uk/s?k=Polymaker+PolyFlex+TPU95&tag=print3dbuddy21-21) - excellent quality, slightly easier to print
+- [SainSmart TPU](https://www.amazon.co.uk/s?k=SainSmart+TPU+filament+flexible&tag=print3dbuddy21-21) - budget option, good results
 
 ---
 
@@ -72,7 +72,7 @@ Prevention:
 - Slow print speed (25mm/s)
 - Minimal or no retraction
 - Make sure your PTFE tube seats fully against the nozzle
-- Use a [Capricorn PTFE tube](https://www.amazon.com/s?k=Capricorn+PTFE+tube+1.75mm) with its tighter 1.9mm inner diameter
+- Use a [Capricorn PTFE tube](https://www.amazon.co.uk/s?k=Capricorn+PTFE+tube+1.75mm&tag=print3dbuddy21-21) with its tighter 1.9mm inner diameter
 
 ---
 
@@ -110,7 +110,7 @@ Find TPU designs at [Printables.com](https://www.printables.com/search/models?q=
 
 TPU is highly hygroscopic - it absorbs moisture quickly and prints worse when wet. Signs of wet TPU: popping sounds, surface bubbles, weaker parts.
 
-Store in an airtight container with [silica gel desiccant](https://www.amazon.com/s?k=silica+gel+desiccant+packets). Dry at 45-50°C for 4-6 hours in a [filament dryer](https://www.amazon.com/s?k=filament+dryer+box+3d+printing) if prints are coming out poorly.
+Store in an airtight container with [silica gel desiccant](https://www.amazon.co.uk/s?k=silica+gel+desiccant+packets&tag=print3dbuddy21-21). Dry at 45-50°C for 4-6 hours in a [filament dryer](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy21-21) if prints are coming out poorly.
 
 ---
 

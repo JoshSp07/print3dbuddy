@@ -81,7 +81,7 @@ If you're using 0.3mm layers and getting adhesion issues, drop to 0.2mm.
 
 Moisture in filament turns to steam during printing, creating micro-bubbles between layers that destroy adhesion. If your prints sound like popcorn or have a rough, bubbly texture, wet filament is likely the cause.
 
-**Fix:** Dry your filament in a [filament dryer](https://www.amazon.com/s?k=filament+dryer+box+3d+printing) or [food dehydrator](https://www.amazon.com/s?k=food+dehydrator+filament) before printing.
+**Fix:** Dry your filament in a [filament dryer](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy21-21) or [food dehydrator](https://www.amazon.co.uk/s?k=food+dehydrator+filament&tag=print3dbuddy21-21) before printing.
 
 Drying temperatures:
 - PLA: 45°C for 4-6 hours
@@ -95,7 +95,7 @@ Drying temperatures:
 
 If your printer isn't pushing out enough filament, each layer is thinner than intended and doesn't bond properly to the layer below.
 
-**How to check:** Print a single-wall cube (no infill, no top layers, 1 perimeter) and measure the wall with [digital calipers](https://www.amazon.com/s?k=digital+calipers+3d+printing). It should match your set line width (typically 0.4-0.45mm for a 0.4mm nozzle).
+**How to check:** Print a single-wall cube (no infill, no top layers, 1 perimeter) and measure the wall with [digital calipers](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy21-21). It should match your set line width (typically 0.4-0.45mm for a 0.4mm nozzle).
 
 **Fix:** Increase flow rate / extrusion multiplier in your slicer by 2-5% increments until the wall matches target thickness.
 

@@ -57,7 +57,7 @@ A 0.6mm nozzle at 0.3mm layer height produces prints that are:
 - Slightly coarser in appearance
 - Often stronger (thicker layers bond differently)
 
-[0.6mm nozzle for Ender 3 / MK8](https://www.amazon.com/s?k=0.6mm+MK8+brass+nozzle) costs a few pounds and is one of the best speed upgrades available.
+[0.6mm nozzle for Ender 3 / MK8](https://www.amazon.co.uk/s?k=0.6mm+MK8+brass+nozzle&tag=print3dbuddy21-21) costs a few pounds and is one of the best speed upgrades available.
 
 ---
 

@@ -18,7 +18,7 @@ The most common beginner problem. The filament comes out fine but just won't sta
 
 **Bed temperature too low** - check recommended bed temps: PLA 55-65°C, PETG 70-85°C, ABS 100-110°C. Make sure the bed has reached temperature and soaked for a few minutes before printing.
 
-**Wrong bed surface for the material** - glass beds can be poor for PETG (sticks too well and rips chunks) and poor for ABS (doesn't stick well enough). A [textured PEI sheet](https://www.amazon.com/s?k=textured+PEI+spring+steel+sheet) works for almost everything.
+**Wrong bed surface for the material** - glass beds can be poor for PETG (sticks too well and rips chunks) and poor for ABS (doesn't stick well enough). A [textured PEI sheet](https://www.amazon.co.uk/s?k=textured+PEI+spring+steel+sheet&tag=print3dbuddy21-21) works for almost everything.
 
 **First layer speed too fast** - slow your first layer to 20-25mm/s in your slicer settings.
 
@@ -139,9 +139,9 @@ The best way to calibrate this is to print a single-layer square (just a flat re
 
 ## Tools That Help
 
-- [Digital calipers](https://www.amazon.com/s?k=digital+calipers+3d+printing) - measuring first layer thickness
-- [Textured PEI sheet](https://www.amazon.com/s?k=textured+PEI+spring+steel+sheet) - the best all-round bed surface for first layer adhesion
-- [Isopropyl alcohol (IPA)](https://www.amazon.com/s?k=isopropyl+alcohol+70+percent+cleaning) - clean the bed before every print
+- [Digital calipers](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy21-21) - measuring first layer thickness
+- [Textured PEI sheet](https://www.amazon.co.uk/s?k=textured+PEI+spring+steel+sheet&tag=print3dbuddy21-21) - the best all-round bed surface for first layer adhesion
+- [Isopropyl alcohol (IPA)](https://www.amazon.co.uk/s?k=isopropyl+alcohol+70+percent+cleaning&tag=print3dbuddy21-21) - clean the bed before every print
 
 ---
 
