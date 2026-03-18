@@ -19,9 +19,7 @@ OUTPUT_DIR = Path("public")
 STATIC_DIR = Path("static")
 
 NAV_LINKS = [
-    ("Guides", "/guides/"),
-    ("Reviews", "/reviews/"),
-    ("Filament", "/filament/"),
+    ("All Guides", "/posts/"),
     ("About", "/about/"),
 ]
 
@@ -244,6 +242,7 @@ def base_html(title, body, description='', canonical=''):
   <title>{title}</title>
   {meta_desc}
   {canon_tag}
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -315,9 +314,10 @@ def build_posts():
         content_html = md_to_html(body_no_title)
 
         article_body = f'''<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
   <div class="article-meta">
     <span class="tag">{tag}</span>
-    &nbsp;&middot;&nbsp; Budget3DPrint
+    &nbsp;&middot;&nbsp; Print3DBuddy
   </div>
   <h1>{title}</h1>
   {content_html}
