@@ -147,3 +147,9 @@ If your top layers look bumpy or you can see the infill pattern through them, yo
 - **Concentric** for flexible parts and aesthetic tops
 
 Most of the time, changing the infill pattern matters less than the percentage and wall count. Gyroid is a solid default for anything functional - it's strong in all directions and the extra print time is minimal.
+
+---
+
+## Know Exactly How Much Filament You'll Use
+
+Choosing your infill percentage is much easier when you can see the impact on filament usage before you print. Our free [STL Filament Estimator](https://tools.print3dbuddy.com) lets you upload your model and test different infill percentages, wall counts, and layer heights - instantly showing you the estimated weight, filament length, and cost. No guesswork, no wasted plastic. [Try it free at tools.print3dbuddy.com](https://tools.print3dbuddy.com).

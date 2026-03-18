@@ -47,9 +47,11 @@ nav {
   letter-spacing: -0.5px;
 }
 .logo span { color: var(--accent); }
-nav ul { list-style: none; display: flex; gap: 24px; }
+nav ul { list-style: none; display: flex; gap: 24px; align-items: center; }
 nav ul a { color: #ccc; font-size: 0.95rem; }
 nav ul a:hover { color: #fff; text-decoration: none; }
+.nav-tools-btn { background: var(--accent); color: #fff !important; padding: 5px 14px; border-radius: 6px; font-weight: 600; font-size: 0.9rem !important; }
+.nav-tools-btn:hover { background: #c44d00; color: #fff !important; }
 
 /* HERO */
 .hero {

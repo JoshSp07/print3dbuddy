@@ -132,3 +132,9 @@ All three are free. There's no penalty for trying more than one.
 - **Cura:** ultimaker.com/software/ultimaker-cura (free, Windows/Mac/Linux)
 
 Download, import your printer profile, and you're ready to slice your first model.
+
+---
+
+## Not Sure Which Slicer to Pick?
+
+If you're still on the fence, our free [Slicer Recommender tool](https://tools.print3dbuddy.com) asks you three quick questions about your printer, experience level, and priorities - and gives you a personalised recommendation with download links. No sign-up needed for your first use. [Try it at tools.print3dbuddy.com](https://tools.print3dbuddy.com).

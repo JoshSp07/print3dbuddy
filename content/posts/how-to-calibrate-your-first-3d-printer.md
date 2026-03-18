@@ -157,3 +157,9 @@ If something's off, you now know what each setting controls, so you can go back 
 Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.
 
 If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) [is a classic choice  -  check the current price on Amazon](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).
+
+---
+
+## Recommended Settings for Every Material
+
+Once you're calibrated, the next question is always "what temperature and speed should I use for this filament?" Our free [Print Settings Cheat Sheet](https://tools.print3dbuddy.com) covers 15 materials including PLA, PETG, ABS, ASA, TPU, Nylon, and PC - with nozzle temperature, bed temperature, retraction, cooling, and first layer speed, adjusted for your extruder type. [Look up your filament at tools.print3dbuddy.com](https://tools.print3dbuddy.com).

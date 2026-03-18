@@ -144,3 +144,9 @@ Some situations where you should print slower and with more care:
 5. **0.6mm nozzle** if you print large functional parts regularly
 
 Making just the first two changes will cut most prints by 30-40% without any visible quality difference.
+
+---
+
+## See the Impact Before You Print
+
+Wondering how much time and filament you'll actually save by bumping infill down or switching to a larger nozzle? Our free [STL Filament Estimator](https://tools.print3dbuddy.com) lets you upload your model and instantly compare filament usage across different settings. It's the fastest way to find the right balance between speed and material cost. [Try it free at tools.print3dbuddy.com](https://tools.print3dbuddy.com).

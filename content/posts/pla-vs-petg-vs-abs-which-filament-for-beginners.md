@@ -165,3 +165,9 @@ You'll see a lot of branded variants on the market:
 [If you're still shopping for a printer, the **Bambu Lab A1 Mini**](https://www.amazon.com/s?k=Bambu+Lab+A1+Mini) is one of the best beginner machines available  -  it handles PLA and PE[TG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is a solid first printer for those who want to learn the ropes.
 
 Whatever printer you go with, grab a couple [of spools of PLA to start  -  check the current price on Amazon for Hatchbox PLA](https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) [or eSUN PLA+](https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) and get printing.
+
+---
+
+## Get the Right Settings Instantly
+
+Every material in this guide has different temperature, speed, and retraction requirements - and getting them wrong is the top cause of failed prints. Our free [Print Settings Cheat Sheet](https://tools.print3dbuddy.com) gives you the exact recommended settings for PLA, PETG, ABS, and 12 other materials, with separate values for direct drive and Bowden extruders. [Look up your material at tools.print3dbuddy.com](https://tools.print3dbuddy.com).

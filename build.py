@@ -20,6 +20,7 @@ STATIC_DIR = Path("static")
 
 NAV_LINKS = [
     ("All Guides", "/posts/"),
+    ("Tools", "https://tools.print3dbuddy.com"),
     ("About", "/about/"),
 ]
 
@@ -214,7 +215,12 @@ def md_to_html(text):
 def nav_html(active=None):
     links = ''
     for label, href in NAV_LINKS:
-        links += f'<li><a href="{href}">{label}</a></li>'
+        external = href.startswith('http')
+        target = ' target="_blank" rel="noopener"' if external else ''
+        if label == 'Tools':
+            links += f'<li><a href="{href}" class="nav-tools-btn"{target}>{label}</a></li>'
+        else:
+            links += f'<li><a href="{href}"{target}>{label}</a></li>'
     return f'''<header>
   <nav>
     <a href="/" class="logo">Print3D<span>Buddy</span></a>
