@@ -90,17 +90,17 @@ If your slicer is set to only retract when moving more than 5mm, short hops betw
 
 If you've adjusted all the settings above and still have issues:
 
-- **Wet filament** strings badly. PLA and PETG both absorb moisture from the air. Try drying your filament in a food dehydrator (https://www.amazon.com/s?k=food+dehydrator+filament+drying) or a filament dryer box (https://www.amazon.com/s?k=filament+dryer+box+3d+printing) for 4 - 6 hours.
-- **Worn nozzle**: A partially blocked or worn brass nozzle can cause inconsistent flow and stringing. Replacement nozzles are cheap  -  grab a pack (https://www.amazon.com/s?k=replacement+brass+nozzle+0.4mm+3d+printer).
+- **Wet filament** strings badly. PLA and PETG [both absorb moisture from the air. Try drying your filament in a food dehydrator](https://www.amazon.com/s?k=food+dehydrator+filament+drying) [or a filament dryer box](https://www.amazon.com/s?k=filament+dryer+box+3d+printing) for 4 - 6 hours.
+- **Worn nozzle**: A partially blocked or worn brass nozzle can cau[se inconsistent flow and stringing. Replacement nozzles are cheap  -  grab a pack](https://www.amazon.com/s?k=replacement+brass+nozzle+0.4mm+3d+printer).
 - **Calibrate your extruder**: If your e-steps are off, you may be over-extruding consistently, which makes stringing much worse.
 
 ---
 
 ## Best Printers for Low-Stringing Out of the Box
 
-Some printers are better tuned for stringing from the factory than others. The **Bambu Lab A1 Mini** (https://bambulab.com/en/bambu-lab/a1-mini) and **Bambu Lab P1S** (https://bambulab.com/en/bambu-lab/p1s) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
+Some printers are b[etter tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) [and **Bambu Lab P1S**](https://bambulab.com/en/bambu-lab/p1s) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
 
-The **Creality Ender 3 V3** (https://www.amazon.com/s?k=Creality+Ender+3+V3) is a great budget option but uses a Bowden setup, so you'll likely spend a bit more time tuning retraction.
+[The **Creality Ender 3 V3**](https://www.amazon.com/s?k=Creality+Ender+3+V3) is a great budget option but uses a Bowden setup, so you'll likely spend a bit more time tuning retraction.
 
 ---
 
@@ -122,4 +122,4 @@ Stringing is frustrating, but it's one of those problems that clicks once you un
 
 If you want to speed up your testing, print a dedicated stringing test model (free on Printables)  -  it only takes 10 - 15 minutes and gives you clear results.
 
-Ready to upgrade your setup? Check the current price on Amazon for a quality filament dryer (https://www.amazon.com/s?k=filament+dryer+box+3d+printing)  -  it's one of the best investments you can make for consistent prints.
+Ready to u[pgrade your setup? Check the current price on Amazon for a quality filament dryer](https://www.amazon.com/s?k=filament+dryer+box+3d+printing)  -  it's one of the best investments you can make for consistent prints.

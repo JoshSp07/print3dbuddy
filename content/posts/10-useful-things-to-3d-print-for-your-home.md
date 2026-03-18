@@ -81,7 +81,7 @@ If your printer came with a basic spool holder, upgrading to a bearing-mounted v
 
 **Search term:** "spool holder bearing" on Printables  -  there are versions for almost every popular printer model
 
-**Bearings needed:** most designs use 608 bearings (the same ones in fidget spinners)  -  you can grab a pack cheaply on Amazon (https://www.amazon.com/s?k=608+bearings+pack)
+**Bearings needed:** most designs use 608 bearings ([the same ones in fidget spinners)  -  you can grab a pack cheaply on Amazon](https://www.amazon.com/s?k=608+bearings+pack)
 
 ---
 
@@ -157,10 +157,10 @@ Print in a colour that matches your hallway, mount it at the door, and stop losi
 
 ## Get Started Today
 
-If you don't have a printer yet, the **Bambu Lab A1 Mini** (https://bambulab.com/en/bambu-lab/a1-mini) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurate, and requires almost no setup. Check the current price on the Bambu Lab website (https://bambulab.com/en/bambu-lab/a1-mini).
+[If you don't have a printer yet, the **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurat[e, and requires almost no setup. Check the current price on the Bambu Lab website](https://bambulab.com/en/bambu-lab/a1-mini).
 
-On a tighter budget? The **Creality Ender 3 V3 SE** (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is one of the best entry-level printers available  -  check the current price on Amazon (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).
+[On a tighter budget? The **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is one [of the best entry-level printers available  -  check the current price on Amazon](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE).
 
-And pick up a couple of spools of PLA to start  -  Hatchbox (https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) and eSUN PLA+ (https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) are reliable, affordable choices that print beautifully for home organisation projects.
+[And pick up a couple of spools of PLA to start  -  Hatchbox](https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) [and eSUN PLA+](https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) are reliable, affordable choices that print beautifully for home organisation projects.
 
 Happy printing  -  your home is about to get a lot more organised.

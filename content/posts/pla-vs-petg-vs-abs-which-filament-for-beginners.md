@@ -41,9 +41,9 @@ PLA (Polylactic Acid) is a plant-based thermoplastic made from corn starch or su
 Use PLA for: decorative prints, miniatures, household organizers, phone stands, hobby models, learning projects, and anything that won't be exposed to heat or heavy stress.
 
 **Recommended PLA filaments:**
-- Bambu Lab PLA Basic (https://bambulab.com/en/filament/pla-basic)  -  well-tuned for Bambu printers
-- Hatchbox PLA (https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm)  -  reliable budget option
-- eSUN PLA+ (https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm)  -  slightly tougher than standard PLA
+- [Bambu Lab PLA Basic](https://bambulab.com/en/filament/pla-basic)  -  well-tuned for Bambu printers
+- [Hatchbox PLA](https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm)  -  reliable budget option
+- [eSUN PLA+](https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm)  -  slightly tougher than standard PLA
 
 ---
 
@@ -80,9 +80,9 @@ PETG (Polyethylene Terephthalate Glycol) is a modified version of the same plast
 Use PETG for: mechanical brackets, phone cases, tool holders, outdoor-adjacent parts, prints that need some flex or toughness, and anything that might see moderate heat.
 
 **Recommended PETG filaments:**
-- Bambu Lab PETG HF (https://bambulab.com/en/filament/petg-hf)  -  high-flow version for Bambu printers
-- Polymaker PolyLite PETG (https://www.amazon.com/s?k=Polymaker+PolyLite+PETG)  -  consistent and easy to tune
-- Overture PETG (https://www.amazon.com/s?k=Overture+PETG+filament)  -  solid budget option
+- [Bambu Lab PETG HF](https://bambulab.com/en/filament/petg-hf)  -  high-flow version for Bambu printers
+- [Polymaker PolyLite PETG](https://www.amazon.com/s?k=Polymaker+PolyLite+PETG)  -  consistent and easy to tune
+- [Overture PETG](https://www.amazon.com/s?k=Overture+PETG+filament)  -  solid budget option
 
 ---
 
@@ -118,8 +118,8 @@ ABS (Acrylonitrile Butadiene Styrene) is the plastic used in LEGO bricks and car
 Use ABS for: automotive parts, high-heat environments, functional mechanical components, and projects where you want to acetone-smooth the surface finish.
 
 **Recommended ABS filaments:**
-- eSUN ABS+ (https://www.amazon.com/s?k=eSUN+ABS+Plus+filament)  -  easier to print than standard ABS
-- Bambu Lab ABS (https://bambulab.com/en/filament/abs)  -  tuned for Bambu enclosed printers
+- [eSUN ABS+](https://www.amazon.com/s?k=eSUN+ABS+Plus+filament)  -  easier to print than standard ABS
+- [Bambu Lab ABS](https://bambulab.com/en/filament/abs)  -  tuned for Bambu enclosed printers
 
 **Note:** If you need heat resistance but want something easier to print than ABS, look at **ASA**  -  it behaves similarly but with better UV resistance and slightly less warping. It's worth a try before committing to ABS.
 
@@ -162,6 +162,6 @@ You'll see a lot of branded variants on the market:
 
 ## Ready to Start Printing?
 
-If you're still shopping for a printer, the **Bambu Lab A1 Mini** (https://bambulab.com/en/bambu-lab/a1-mini) is one of the best beginner machines available  -  it handles PLA and PETG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE** (https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is a solid first printer for those who want to learn the ropes.
+[If you're still shopping for a printer, the **Bambu Lab A1 Mini**](https://bambulab.com/en/bambu-lab/a1-mini) is one of the best beginner machines available  -  it handles PLA and PE[TG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE**](https://www.amazon.com/s?k=Creality+Ender+3+V3+SE) is a solid first printer for those who want to learn the ropes.
 
-Whatever printer you go with, grab a couple of spools of PLA to start  -  check the current price on Amazon for Hatchbox PLA (https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) or eSUN PLA+ (https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) and get printing.
+Whatever printer you go with, grab a couple [of spools of PLA to start  -  check the current price on Amazon for Hatchbox PLA](https://www.amazon.com/s?k=Hatchbox+PLA+1.75mm) [or eSUN PLA+](https://www.amazon.com/s?k=eSUN+PLA+Plus+1.75mm) and get printing.
