@@ -26,7 +26,7 @@ What beginners don't need:
 
 The Bambu Lab A1 Mini is the closest thing to a plug-and-play 3D printer available. It's fast, quiet, accurate, and requires almost no setup.
 
-[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy21-21)
+[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21)
 
 **Why it's the top pick:**
 - Multi-point automatic calibration handles bed levelling and Z offset automatically
@@ -54,7 +54,7 @@ The Bambu Lab A1 Mini is the closest thing to a plug-and-play 3D printer availab
 
 The Ender 3 V3 SE is the spiritual successor to the original Ender 3 - the printer that introduced millions of people to 3D printing. The SE adds auto levelling and a direct drive extruder to the proven platform.
 
-[Check current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy21-21)
+[Check current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21)
 
 **Why it's a great budget pick:**
 - Enormous community - there's a tutorial or forum post for every problem
@@ -81,7 +81,7 @@ The Ender 3 V3 SE is the spiritual successor to the original Ender 3 - the print
 
 The full-size A1 gives you the Bambu Lab experience with a larger 256x256x256mm build volume. If the A1 Mini's smaller bed is a concern, the A1 is the natural step up.
 
-[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+A1&tag=print3dbuddy21-21)
+[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+A1&tag=print3dbuddy2-21)
 
 **Best for:** Anyone who wants the A1 Mini experience but needs a larger build volume.
 
@@ -91,7 +91,7 @@ The full-size A1 gives you the Bambu Lab experience with a larger 256x256x256mm 
 
 The P1S is Bambu's fully enclosed printer. The enclosure makes it capable of printing ABS, ASA, and Nylon reliably - materials that are difficult or impossible on open-frame printers.
 
-[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy21-21)
+[Check current price on Amazon](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21)
 
 **Best for:** Anyone who specifically wants to print engineering-grade materials (ABS, ASA, Nylon, PC) without the hassle of DIY enclosure solutions.
 
@@ -135,7 +135,7 @@ However, for beginners:
 - Resin fumes require ventilation
 - Parts are more brittle than FDM
 
-If you specifically want miniatures or ultra-fine detail, look at the [Elegoo Mars 4](https://www.amazon.co.uk/s?k=Elegoo+Mars+4+resin+printer&tag=print3dbuddy21-21) or [Anycubic Photon Mono 4](https://www.amazon.co.uk/s?k=Anycubic+Photon+Mono+4&tag=print3dbuddy21-21). Otherwise, start with FDM.
+If you specifically want miniatures or ultra-fine detail, look at the [Elegoo Mars 4](https://www.amazon.co.uk/s?k=Elegoo+Mars+4+resin+printer&tag=print3dbuddy2-21) or [Anycubic Photon Mono 4](https://www.amazon.co.uk/s?k=Anycubic+Photon+Mono+4&tag=print3dbuddy2-21). Otherwise, start with FDM.
 
 ---
 

@@ -29,19 +29,19 @@ The minimum you need:
 1. An **airtight container** — a large zip-lock bag works, but a sealed plastic storage box is better
 2. **Silica gel desiccant packets** — absorb moisture inside the container
 
-[Silica gel desiccant packs](https://www.amazon.co.uk/s?k=silica+gel+desiccant+packets+reusable&tag=print3dbuddy21-21) are cheap and reusable — bake them at 120°C for a few hours to regenerate when they're saturated. Most change colour when full (orange to green, or blue to pink depending on the type).
+[Silica gel desiccant packs](https://www.amazon.co.uk/s?k=silica+gel+desiccant+packets+reusable&tag=print3dbuddy2-21) are cheap and reusable — bake them at 120°C for a few hours to regenerate when they're saturated. Most change colour when full (orange to green, or blue to pink depending on the type).
 
 ### Dedicated Filament Storage Boxes
 
 Purpose-built filament dry boxes are a step up:
 
-- [eSUN eBOX Lite](https://www.amazon.co.uk/s?k=eSUN+eBOX+filament+dryer&tag=print3dbuddy21-21) — dry box with built-in heating and humidity display. Keeps filament dry while printing.
-- [Sunlu FilaDryer S2](https://www.amazon.co.uk/s?k=Sunlu+FilaDryer+S2&tag=print3dbuddy21-21) — popular mid-range option with accurate temperature control
+- [eSUN eBOX Lite](https://www.amazon.co.uk/s?k=eSUN+eBOX+filament+dryer&tag=print3dbuddy2-21) — dry box with built-in heating and humidity display. Keeps filament dry while printing.
+- [Sunlu FilaDryer S2](https://www.amazon.co.uk/s?k=Sunlu+FilaDryer+S2&tag=print3dbuddy2-21) — popular mid-range option with accurate temperature control
 - DIY option: a large airtight food storage container with desiccant and a PTFE tube hole for feeding directly to the printer
 
 ### Vacuum Bags
 
-[Vacuum storage bags](https://www.amazon.co.uk/s?k=vacuum+storage+bags+filament&tag=print3dbuddy21-21) remove air entirely. Excellent for long-term storage of spools you won't use for months.
+[Vacuum storage bags](https://www.amazon.co.uk/s?k=vacuum+storage+bags+filament&tag=print3dbuddy2-21) remove air entirely. Excellent for long-term storage of spools you won't use for months.
 
 ---
 
@@ -78,7 +78,7 @@ When in doubt, listen. A dry spool should extrude almost silently. Crackling = m
 
 ### Food Dehydrator (Best Budget Option)
 
-A [food dehydrator](https://www.amazon.co.uk/s?k=food+dehydrator+filament+drying&tag=print3dbuddy21-21) set to 45-50°C for PLA (65°C for PETG, 70-80°C for ABS/Nylon) works excellently. Most spools fit easily.
+A [food dehydrator](https://www.amazon.co.uk/s?k=food+dehydrator+filament+drying&tag=print3dbuddy2-21) set to 45-50°C for PLA (65°C for PETG, 70-80°C for ABS/Nylon) works excellently. Most spools fit easily.
 
 Drying times:
 | Filament | Temperature | Time |
@@ -91,7 +91,7 @@ Drying times:
 
 ### Dedicated Filament Dryer
 
-A [filament dryer box](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy21-21) like the Sunlu S2 or eSUN eBOX does the same job as a food dehydrator but is designed specifically for filament — you can even print directly from some models while drying.
+A [filament dryer box](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21) like the Sunlu S2 or eSUN eBOX does the same job as a food dehydrator but is designed specifically for filament — you can even print directly from some models while drying.
 
 ### Oven (Use With Caution)
 
@@ -107,7 +107,7 @@ A standard oven works but is risky — most ovens are inaccurate and can warp or
 
 **Don't leave spools on the printer.** If you're not printing for more than a day, put the filament back in storage. This is the most common mistake beginners make.
 
-**Buy a hygrometer.** A [cheap digital hygrometer](https://www.amazon.co.uk/s?k=digital+hygrometer+thermometer&tag=print3dbuddy21-21) (~£5) inside your storage box tells you the humidity level. Aim for below 15% RH.
+**Buy a hygrometer.** A [cheap digital hygrometer](https://www.amazon.co.uk/s?k=digital+hygrometer+thermometer&tag=print3dbuddy2-21) (~£5) inside your storage box tells you the humidity level. Aim for below 15% RH.
 
 **Colour-changing desiccant is worth the small premium.** You can see at a glance whether it needs regenerating without guessing.
 

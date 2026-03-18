@@ -49,7 +49,7 @@ Brass nozzles come with almost every printer and work well for:
 
 **Do not use for:** Carbon fibre, glow-in-the-dark, metal-filled, or ceramic-filled filaments - the abrasive particles destroy brass quickly (sometimes within a single spool).
 
-[Replacement brass nozzles](https://www.amazon.co.uk/s?k=MK8+brass+nozzle+0.4mm+pack&tag=print3dbuddy21-21) are cheap - keep a pack on hand.
+[Replacement brass nozzles](https://www.amazon.co.uk/s?k=MK8+brass+nozzle+0.4mm+pack&tag=print3dbuddy2-21) are cheap - keep a pack on hand.
 
 ### Hardened Steel - For Abrasive Materials
 
@@ -59,7 +59,7 @@ Hardened steel nozzles are the solution for any abrasive filament. They're rough
 
 **Lifespan:** 1000+ hours on abrasive materials.
 
-[Hardened steel nozzles](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+0.4mm+3d+printer&tag=print3dbuddy21-21) cost more than brass but are essential if you print abrasive filaments regularly.
+[Hardened steel nozzles](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+0.4mm+3d+printer&tag=print3dbuddy2-21) cost more than brass but are essential if you print abrasive filaments regularly.
 
 ### Stainless Steel
 
@@ -113,7 +113,7 @@ Signs a nozzle needs replacing:
 
 1. Heat the hotend to printing temperature (this is important - never change a cold nozzle)
 2. Hold the heater block with pliers or a wrench to prevent it rotating
-3. Use a [nozzle wrench or 7mm socket](https://www.amazon.co.uk/s?k=3d+printer+nozzle+wrench+socket&tag=print3dbuddy21-21) to unscrew the nozzle
+3. Use a [nozzle wrench or 7mm socket](https://www.amazon.co.uk/s?k=3d+printer+nozzle+wrench+socket&tag=print3dbuddy2-21) to unscrew the nozzle
 4. Screw in the new nozzle finger-tight, then snug it down with the wrench while hot
 5. Do not overtighten - nozzle threads strip easily
 
@@ -134,11 +134,11 @@ Before replacing, try cleaning:
 
 ### Acupuncture Needle / Nozzle Cleaning Needles
 
-[Nozzle cleaning needles](https://www.amazon.co.uk/s?k=nozzle+cleaning+needle+0.4mm+3d+printer&tag=print3dbuddy21-21) can clear partial clogs by pushing debris through while at temperature.
+[Nozzle cleaning needles](https://www.amazon.co.uk/s?k=nozzle+cleaning+needle+0.4mm+3d+printer&tag=print3dbuddy2-21) can clear partial clogs by pushing debris through while at temperature.
 
 ### Nozzle Cleaning Filament
 
-[Cleaning filament](https://www.amazon.co.uk/s?k=3d+printer+nozzle+cleaning+filament&tag=print3dbuddy21-21) is designed to flush out old material and residue when changing filament types.
+[Cleaning filament](https://www.amazon.co.uk/s?k=3d+printer+nozzle+cleaning+filament&tag=print3dbuddy2-21) is designed to flush out old material and residue when changing filament types.
 
 ---
 
@@ -150,4 +150,4 @@ Before replacing, try cleaning:
 - **Want more detail:** Try 0.2mm
 - **Replace when:** Quality degrades and cleaning doesn't fix it
 
-Nozzles are cheap. Keeping a pack of [replacement brass nozzles](https://www.amazon.co.uk/s?k=MK8+brass+nozzle+0.4mm+pack&tag=print3dbuddy21-21) and a [hardened steel nozzle](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+0.4mm+3d+printer&tag=print3dbuddy21-21) on hand means you're never stuck waiting for a delivery when a nozzle gives up.
+Nozzles are cheap. Keeping a pack of [replacement brass nozzles](https://www.amazon.co.uk/s?k=MK8+brass+nozzle+0.4mm+pack&tag=print3dbuddy2-21) and a [hardened steel nozzle](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+0.4mm+3d+printer&tag=print3dbuddy2-21) on hand means you're never stuck waiting for a delivery when a nozzle gives up.

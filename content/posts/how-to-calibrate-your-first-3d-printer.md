@@ -40,7 +40,7 @@ Many modern printers include automatic bed levelling using a probe (BLTouch, CRT
 - The printer maps the height variations across the bed and compensates during printing
 - You still need to set your Z offset correctly (see Step 2)
 
-[The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy21-21) [and **P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy21-21) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.
+[The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) [and **P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.
 
 ---
 
@@ -100,12 +100,12 @@ Even with correct e-steps, flow rate can be slightly off due to filament diamete
 ### Simple Flow Rate Test
 
 1. Print a single-wall cube (20mm × 20mm × 20mm, 0 infill, 0 top layers, 1 perimeter)
-2. [Measure the wall thickness with digital calipers](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy21-21)
+2. [Measure the wall thickness with digital calipers](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21)
 3. Your slicer's set line width is what you're aiming for (usually 0.4 - 0.45mm for a 0.4mm nozzle)
 4. If your wall is 0.48mm thick, you're over-extruding  -  reduce flow rate proportionally
 5. If it's 0.37mm, you're under-extruding  -  increase flow rate
 
-Adjust in 2 - 3% increments. A good set of [digital calipers is essential for this step  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy21-21).
+Adjust in 2 - 3% increments. A good set of [digital calipers is essential for this step  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21).
 
 ---
 
@@ -135,9 +135,9 @@ If something's off, you now know what each setting controls, so you can go back 
 
 ## Calibration Tools Worth Having
 
-- [**Digital calipers**  -  essential for measuring prints accurately](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy21-21)
-- [**Filament dryer**  -  wet filament causes all kinds of calibration headaches](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy21-21)
-- **Bed adhesi[on spray or PEI sheet**  -  consistent bed adhesion makes calibration much easier](https://www.amazon.co.uk/s?k=PEI+sheet+3d+printer&tag=print3dbuddy21-21)
+- [**Digital calipers**  -  essential for measuring prints accurately](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21)
+- [**Filament dryer**  -  wet filament causes all kinds of calibration headaches](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)
+- **Bed adhesi[on spray or PEI sheet**  -  consistent bed adhesion makes calibration much easier](https://www.amazon.co.uk/s?k=PEI+sheet+3d+printer&tag=print3dbuddy2-21)
 - **Good lighting**  -  being able to see your first layer clearly makes a huge difference
 
 ---
@@ -156,7 +156,7 @@ If something's off, you now know what each setting controls, so you can go back 
 
 Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.
 
-If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy21-21) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy21-21) [is a classic choice  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy21-21).
+If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) [is a classic choice  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21).
 
 ---
 

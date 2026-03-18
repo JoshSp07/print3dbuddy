@@ -12,11 +12,11 @@ Before any finishing, clean the print thoroughly.
 
 ### Removing Supports
 
-Use [flush cutters](https://www.amazon.co.uk/s?k=flush+cutters+electronics&tag=print3dbuddy21-21) or [needle-nose pliers](https://www.amazon.co.uk/s?k=needle+nose+pliers&tag=print3dbuddy21-21) to remove support structures. Work slowly near the model surface to avoid gouging.
+Use [flush cutters](https://www.amazon.co.uk/s?k=flush+cutters+electronics&tag=print3dbuddy2-21) or [needle-nose pliers](https://www.amazon.co.uk/s?k=needle+nose+pliers&tag=print3dbuddy2-21) to remove support structures. Work slowly near the model surface to avoid gouging.
 
 Tips:
 - Remove supports when the part is still slightly warm — they snap off more cleanly
-- A [dental pick or scalpel](https://www.amazon.co.uk/s?k=craft+knife+scalpel+set&tag=print3dbuddy21-21) helps with support material in tight spaces
+- A [dental pick or scalpel](https://www.amazon.co.uk/s?k=craft+knife+scalpel+set&tag=print3dbuddy2-21) helps with support material in tight spaces
 - Support marks are inevitable — plan for sanding them
 
 ### Removing Stringing and Blobs
@@ -33,7 +33,7 @@ Sanding removes layer lines and creates a smooth surface for painting or display
 
 ### What You Need
 
-- [Wet/dry sandpaper assortment](https://www.amazon.co.uk/s?k=wet+dry+sandpaper+assortment+3d+printing&tag=print3dbuddy21-21) — 120, 220, 400, 800, 1000, 2000 grit
+- [Wet/dry sandpaper assortment](https://www.amazon.co.uk/s?k=wet+dry+sandpaper+assortment+3d+printing&tag=print3dbuddy2-21) — 120, 220, 400, 800, 1000, 2000 grit
 - A bowl of water (for wet sanding)
 - Patience
 
@@ -62,15 +62,15 @@ Sanding alone won't fix large layer gaps, cracks, or deep support marks.
 
 ### Filler Primer
 
-[Filler primer spray](https://www.amazon.co.uk/s?k=filler+primer+spray+can+plastic&tag=print3dbuddy21-21) fills minor imperfections in one coat. Apply a thin coat, let dry, sand with 400 grit, repeat. 2-3 coats of filler primer + sanding produces a very smooth base.
+[Filler primer spray](https://www.amazon.co.uk/s?k=filler+primer+spray+can+plastic&tag=print3dbuddy2-21) fills minor imperfections in one coat. Apply a thin coat, let dry, sand with 400 grit, repeat. 2-3 coats of filler primer + sanding produces a very smooth base.
 
 ### Body Filler / Spot Putty
 
-For larger gaps, [automotive spot putty](https://www.amazon.co.uk/s?k=automotive+spot+putty+filler&tag=print3dbuddy21-21) fills deep marks. Apply with a spatula, sand once dry. Works well on flat and curved surfaces.
+For larger gaps, [automotive spot putty](https://www.amazon.co.uk/s?k=automotive+spot+putty+filler&tag=print3dbuddy2-21) fills deep marks. Apply with a spatula, sand once dry. Works well on flat and curved surfaces.
 
 ### Epoxy Coating (XTC-3D)
 
-[XTC-3D](https://www.amazon.co.uk/s?k=XTC-3D+smooth+on+epoxy+coating&tag=print3dbuddy21-21) is a two-part epoxy coating designed for 3D prints. Brush it on and it self-levels, filling layer lines and creating a hard, smooth surface. Probably the most effective single product for a smooth finish without heavy sanding.
+[XTC-3D](https://www.amazon.co.uk/s?k=XTC-3D+smooth+on+epoxy+coating&tag=print3dbuddy2-21) is a two-part epoxy coating designed for 3D prints. Brush it on and it self-levels, filling layer lines and creating a hard, smooth surface. Probably the most effective single product for a smooth finish without heavy sanding.
 
 ---
 
@@ -80,7 +80,7 @@ If you printed in ABS, acetone vapour smoothing produces a near-injection-moulde
 
 ### Cold Acetone Smoothing Method
 
-1. Pour a small amount of [acetone](https://www.amazon.co.uk/s?k=acetone+nail+polish+remover+pure&tag=print3dbuddy21-21) into a container (a tin or glass jar — acetone dissolves some plastics)
+1. Pour a small amount of [acetone](https://www.amazon.co.uk/s?k=acetone+nail+polish+remover+pure&tag=print3dbuddy2-21) into a container (a tin or glass jar — acetone dissolves some plastics)
 2. Place the print on a small platform above the acetone (not touching it)
 3. Seal the container and leave for 5-15 minutes
 4. The acetone vapour dissolves and reflows the surface
@@ -100,7 +100,7 @@ Never paint directly onto bare plastic. Primer:
 - Reveals surface imperfections you missed during sanding
 - Creates a uniform base colour
 
-Use [plastic primer spray](https://www.amazon.co.uk/s?k=plastic+primer+spray+can&tag=print3dbuddy21-21) in light, even coats from 20-30cm away. Let each coat dry fully before adding the next. Two coats is usually enough.
+Use [plastic primer spray](https://www.amazon.co.uk/s?k=plastic+primer+spray+can&tag=print3dbuddy2-21) in light, even coats from 20-30cm away. Let each coat dry fully before adding the next. Two coats is usually enough.
 
 Grey primer is easiest to paint over. White primer is better under light colours.
 
@@ -110,7 +110,7 @@ Grey primer is easiest to paint over. White primer is better under light colours
 
 ### Spray Paint
 
-[Spray paint](https://www.amazon.co.uk/s?k=Rustoleum+spray+paint+plastic&tag=print3dbuddy21-21) gives the most even finish on 3D prints. Rustoleum and Montana are popular choices.
+[Spray paint](https://www.amazon.co.uk/s?k=Rustoleum+spray+paint+plastic&tag=print3dbuddy2-21) gives the most even finish on 3D prints. Rustoleum and Montana are popular choices.
 
 Technique:
 - Thin, even coats — heavy coats drip and look terrible
@@ -120,13 +120,13 @@ Technique:
 
 ### Hand Painting
 
-For detailed miniatures, props, or multi-colour pieces, [acrylic paints](https://www.amazon.co.uk/s?k=acrylic+paint+set+miniature+painting&tag=print3dbuddy21-21) applied with a brush give full control.
+For detailed miniatures, props, or multi-colour pieces, [acrylic paints](https://www.amazon.co.uk/s?k=acrylic+paint+set+miniature+painting&tag=print3dbuddy2-21) applied with a brush give full control.
 
 Thin your acrylics slightly with water for smoother coverage. Multiple thin layers always beats one thick one.
 
 ### Airbrush
 
-An [airbrush kit](https://www.amazon.co.uk/s?k=airbrush+kit+beginner+compressor&tag=print3dbuddy21-21) produces the smoothest hand-applied finish possible, and is worth it if you paint regularly. Steep learning curve, but the results are excellent.
+An [airbrush kit](https://www.amazon.co.uk/s?k=airbrush+kit+beginner+compressor&tag=print3dbuddy2-21) produces the smoothest hand-applied finish possible, and is worth it if you paint regularly. Steep learning curve, but the results are excellent.
 
 ---
 
@@ -138,7 +138,7 @@ Always seal your finished paint job with a clear coat to protect it:
 - **Satin clear coat** — slight sheen, natural-looking
 - **Gloss clear coat** — shiny, durable
 
-[Rustoleum clear coat spray](https://www.amazon.co.uk/s?k=Rustoleum+clear+coat+spray+matte+satin&tag=print3dbuddy21-21) works well for most applications. Two light coats is enough.
+[Rustoleum clear coat spray](https://www.amazon.co.uk/s?k=Rustoleum+clear+coat+spray+matte+satin&tag=print3dbuddy2-21) works well for most applications. Two light coats is enough.
 
 ---
 

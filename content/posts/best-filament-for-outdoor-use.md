@@ -41,9 +41,9 @@ With that in mind, let's look at how each filament holds up.
 **Best for:** outdoor enclosures, garden labels, camera mounts, mailbox parts, automotive trim, anything that will see direct sunlight
 
 **Recommended ASA filaments:**
-- [Polymaker PolyLite ASA](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+ASA&tag=print3dbuddy21-21)  -  one of the most popular and consistent ASA options
-- [Bambu Lab ASA](https://www.amazon.co.uk/s?k=Bambu+Lab+ASA+filament&tag=print3dbuddy21-21)  -  dialled in for Bambu enclosed printers, minimal tuning required
-- [eSUN ASA](https://www.amazon.co.uk/s?k=eSUN+ASA+filament&tag=print3dbuddy21-21)  -  good budget option
+- [Polymaker PolyLite ASA](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+ASA&tag=print3dbuddy2-21)  -  one of the most popular and consistent ASA options
+- [Bambu Lab ASA](https://www.amazon.co.uk/s?k=Bambu+Lab+ASA+filament&tag=print3dbuddy2-21)  -  dialled in for Bambu enclosed printers, minimal tuning required
+- [eSUN ASA](https://www.amazon.co.uk/s?k=eSUN+ASA+filament&tag=print3dbuddy2-21)  -  good budget option
 
 ---
 
@@ -66,9 +66,9 @@ With that in mind, let's look at how each filament holds up.
 **Best for:** plant pot holders, outdoor hooks, cable management clips, shade structures, less critical outdoor parts in temperate climates
 
 **Recommended PETG:**
-- [Polymaker PolyLite PETG](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+PETG&tag=print3dbuddy21-21)
-- [Bambu Lab PETG HF](https://www.amazon.co.uk/s?k=Bambu+Lab+PETG+filament&tag=print3dbuddy21-21)
-- [Overture PETG](https://www.amazon.co.uk/s?k=Overture+PETG+filament&tag=print3dbuddy21-21)
+- [Polymaker PolyLite PETG](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+PETG&tag=print3dbuddy2-21)
+- [Bambu Lab PETG HF](https://www.amazon.co.uk/s?k=Bambu+Lab+PETG+filament&tag=print3dbuddy2-21)
+- [Overture PETG](https://www.amazon.co.uk/s?k=Overture+PETG+filament&tag=print3dbuddy2-21)
 
 ---
 
@@ -80,7 +80,7 @@ Nylon that has absorbed water (which it will, because it's outdoors) will swell 
 
 **When nylon makes sense outdoors:** mechanical parts that need flex and toughness (hinges, clips, gear components), used in climates with relatively dry outdoor conditions, or in applications where it's not constantly exposed to standing water.
 
-[**Recommended:** Bambu Lab PA6-CF](https://www.amazon.co.uk/s?k=Bambu+Lab+PA6+CF+filament&tag=print3dbuddy21-21) for structural parts where stiffness matters.
+[**Recommended:** Bambu Lab PA6-CF](https://www.amazon.co.uk/s?k=Bambu+Lab+PA6+CF+filament&tag=print3dbuddy2-21) for structural parts where stiffness matters.
 
 ---
 
@@ -88,7 +88,7 @@ Nylon that has absorbed water (which it will, because it's outdoors) will swell 
 
 **PETG-CF** adds chopped carbon fibre to PETG, making it stiffer and dimensionally more stable. It retains most of PETG's outdoor-friendly properties while adding rigidity. Useful for brackets, structural mounts, and parts that can't flex.
 
-Requires a hardened steel nozzle  -  the carbon fibre will wreck a stan[dard brass nozzle quickly. Check the current price for hardened nozzles on Amazon](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+3d+printer&tag=print3dbuddy21-21).
+Requires a hardened steel nozzle  -  the carbon fibre will wreck a stan[dard brass nozzle quickly. Check the current price for hardened nozzles on Amazon](https://www.amazon.co.uk/s?k=hardened+steel+nozzle+3d+printer&tag=print3dbuddy2-21).
 
 ---
 
@@ -118,7 +118,7 @@ Even with the right material, how you print matters:
 
 - **Print at 100% infill or high infill** for outdoor parts  -  more solid structure means fewer stress points
 - **Use more perimeters/walls**  -  4+ walls for structural outdoor parts
-- **Consider post-processing:** UV-resistant spray paint or clear coat can significantly extend the l[ife of PETG outdoor parts. Rustoleum and Krylon both make UV-blocking clear coats](https://www.amazon.co.uk/s?k=UV+resistant+clear+coat+spray&tag=print3dbuddy21-21)
+- **Consider post-processing:** UV-resistant spray paint or clear coat can significantly extend the l[ife of PETG outdoor parts. Rustoleum and Krylon both make UV-blocking clear coats](https://www.amazon.co.uk/s?k=UV+resistant+clear+coat+spray&tag=print3dbuddy2-21)
 - **Avoid thin walls**  -  fine details and thin sections crack faster under UV and thermal stress
 - **Dry your filament before printing**  -  wet filament causes weak layer bonds that fail faster outdoors
 
@@ -141,8 +141,8 @@ Even with the right material, how you print matters:
 
 For most outdoor 3D printing needs, here's what to do:
 
-1. **Get an enclosed p[rinter** if you don't have one  -  ASA really does need it. The **Bambu Lab P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy21-21) is an excellent enclosed option with pre-tuned ASA profiles.
-2. [**Buy Polymaker PolyLite ASA**](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+ASA&tag=print3dbuddy21-21) as your go-to outdoor filament
-3. [**Use PETG**](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+PETG&tag=print3dbuddy21-21) for less critical outdoor parts or if you only have an open-frame printer
+1. **Get an enclosed p[rinter** if you don't have one  -  ASA really does need it. The **Bambu Lab P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) is an excellent enclosed option with pre-tuned ASA profiles.
+2. [**Buy Polymaker PolyLite ASA**](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+ASA&tag=print3dbuddy2-21) as your go-to outdoor filament
+3. [**Use PETG**](https://www.amazon.co.uk/s?k=Polymaker+PolyLite+PETG&tag=print3dbuddy2-21) for less critical outdoor parts or if you only have an open-frame printer
 
 Check the current prices on Amazon and make sure you're comparing like-for-like  -  ASA is typically only slightly more expensive than PETG, and for outdoor parts that actually last, it's absolutely worth it.
