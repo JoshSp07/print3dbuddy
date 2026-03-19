@@ -22,6 +22,7 @@ NAV_LINKS = [
     ("All Guides", "/posts/"),
     ("Tools", "https://tools.print3dbuddy.com"),
     ("About", "/about/"),
+    ("Search", "/search/"),
 ]
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -578,6 +579,62 @@ def copy_static():
 
 # ── Build robots.txt and sitemap ───────────────────────────────────────────
 
+def build_search(posts):
+    import json as _json
+    # Write search index JSON
+    index = [{'title': p['title'], 'url': p['url'], 'tag': p['tag'], 'excerpt': p['excerpt']} for p in posts]
+    (OUTPUT_DIR / 'search-index.json').write_text(_json.dumps(index), encoding='utf-8')
+
+    body = '''<div class="article-wrap search-page">
+  <h1>Search Guides</h1>
+  <p>Search all 3D printing articles on Print3DBuddy.</p>
+  <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  <div id="search-results"></div>
+</div>
+<script>
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  let index = [];
+
+  fetch('/search-index.json')
+    .then(r => r.json())
+    .then(data => { index = data; });
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (q.length < 2) { results.innerHTML = ''; return; }
+    const matches = index.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q) ||
+      p.tag.toLowerCase().includes(q)
+    );
+    if (matches.length === 0) {
+      results.innerHTML = '<p class="no-results">No articles found. Try a different search term.</p>';
+      return;
+    }
+    results.innerHTML = matches.map(p => `
+      <article class="search-result">
+        <span class="tag">${p.tag}</span>
+        <h2><a href="${p.url}">${p.title}</a></h2>
+        <p>${p.excerpt}</p>
+        <a href="${p.url}" class="read-more">Read more &rarr;</a>
+      </article>
+    `).join('');
+  });
+</script>'''
+
+    page = base_html(
+        title=f'Search | {SITE_NAME}',
+        body=body,
+        description='Search all 3D printing guides on Print3DBuddy.',
+        canonical='/search/'
+    )
+    search_dir = OUTPUT_DIR / 'search'
+    search_dir.mkdir(exist_ok=True)
+    (search_dir / 'index.html').write_text(page, encoding='utf-8')
+    print('  Built: /search/')
+
+
 def build_seo_files(posts):
     # robots.txt
     (OUTPUT_DIR / 'robots.txt').write_text(
@@ -586,7 +643,7 @@ def build_seo_files(posts):
     )
 
     # sitemap.xml
-    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/']
+    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/search/']
     for p in posts:
         urls.append(p['url'])
 
@@ -613,6 +670,7 @@ def main():
     build_about()
     build_contact()
     build_privacy()
+    build_search(posts)
     build_seo_files(posts)
 
     print(f'\nDone. {len(posts)} posts built -> {OUTPUT_DIR}/')

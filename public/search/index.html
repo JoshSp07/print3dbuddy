@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | Print3DBuddy</title>
+  <meta name="description" content="Search all 3D printing guides on Print3DBuddy.">
+  <link rel="canonical" href="https://print3dbuddy.com/search/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="https://tools.print3dbuddy.com" class="nav-tools-btn" target="_blank" rel="noopener">Tools</a></li><li><a href="/about/">About</a></li><li><a href="/search/">Search</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap search-page">
+  <h1>Search Guides</h1>
+  <p>Search all 3D printing articles on Print3DBuddy.</p>
+  <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  <div id="search-results"></div>
+</div>
+<script>
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  let index = [];
+
+  fetch('/search-index.json')
+    .then(r => r.json())
+    .then(data => { index = data; });
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (q.length < 2) { results.innerHTML = ''; return; }
+    const matches = index.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q) ||
+      p.tag.toLowerCase().includes(q)
+    );
+    if (matches.length === 0) {
+      results.innerHTML = '<p class="no-results">No articles found. Try a different search term.</p>';
+      return;
+    }
+    results.innerHTML = matches.map(p => `
+      <article class="search-result">
+        <span class="tag">${p.tag}</span>
+        <h2><a href="${p.url}">${p.title}</a></h2>
+        <p>${p.excerpt}</p>
+        <a href="${p.url}" class="read-more">Read more &rarr;</a>
+      </article>
+    `).join('');
+  });
+</script>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>
