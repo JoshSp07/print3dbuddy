@@ -287,6 +287,7 @@ POST_TAGS = {
     'learn-3d-printing-faster-with-tools': ('Beginner Guide', 'The fastest way to learn 3D printing — how to test variables and build real knowledge without wasting filament on failed prints.'),
     'how-to-fix-under-extrusion': ('Troubleshooting', 'Under-extrusion causes gaps, weak layers, and failed prints. Here\'s every cause and fix — extruder gear, clogs, temperature, E-steps, and filament quality.'),
     '3d-printing-supports-guide': ('Settings Guide', 'When to use 3D printing supports, how to set them up, and how to remove them cleanly — tree vs normal supports, Z distance, interface layers explained.'),
+    'best-websites-for-cheap-3d-printing-services': ('Resources', 'The best websites for cheap 3D printing services — Craftcloud, JLCPCB, Treatstock, Shapeways compared for hobbyists on a budget.'),
 }
 
 
