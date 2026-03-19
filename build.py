@@ -290,6 +290,9 @@ POST_TAGS = {
     'best-websites-for-cheap-3d-printing-services': ('Resources', 'The best websites for cheap 3D printing services — Craftcloud, JLCPCB, Treatstock, Shapeways compared for hobbyists on a budget.'),
     'best-filament-brands-for-3d-printing': ('Filament Guide', 'The best 3D printer filament brands in 2025 — eSUN, Polymaker, Bambu Lab, Sunlu compared honestly for PLA, PETG, ABS and more.'),
     'best-filament-dryers-for-3d-printing': ('Buyer\'s Guide', 'The best filament dryers for 3D printing in 2025 — Sunlu S4, S1 Plus, EIBOS, PolyDryer compared. Fix wet filament problems for good.'),
+    'best-3d-printer-enclosures': ('Buyer\'s Guide', 'The best 3D printer enclosures in 2025 — budget fabric tents to rigid builds compared. Essential for ABS, ASA, and large PETG prints.'),
+    'best-pei-sheets-for-3d-printers': ('Buyer\'s Guide', 'The best PEI sheets for 3D printers in 2025 — Energetic, Fysetc, Bambu Lab compared. The cheapest upgrade for perfect bed adhesion.'),
+    'best-tools-for-3d-printing': ('Buyer\'s Guide', 'The best tools for 3D printing — calipers, spatulas, flush cutters, and everything else worth having. Build the right kit from the start.'),
 }
 
 
