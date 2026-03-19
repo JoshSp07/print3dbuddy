@@ -264,38 +264,38 @@ def base_html(title, body, description='', canonical=''):
 # ── Post metadata extraction ─────────────────────────────────────────────────
 
 POST_TAGS = {
-    'how-to-calibrate-your-first-3d-printer': ('Beginner Guide', 'Learn how to properly calibrate your first 3D printer — bed levelling, E-steps, flow rate, and more.'),
-    'how-to-fix-3d-printer-stringing': ('Troubleshooting', 'Stringing ruining your prints? Here\'s how to fix it fast — retraction settings, temperature, and travel speed explained.'),
+    'how-to-calibrate-your-first-3d-printer': ('Beginner Guide', 'Learn how to properly calibrate your first 3D printer  -  bed levelling, E-steps, flow rate, and more.'),
+    'how-to-fix-3d-printer-stringing': ('Troubleshooting', 'Stringing ruining your prints? Here\'s how to fix it fast  -  retraction settings, temperature, and travel speed explained.'),
     'pla-vs-petg-vs-abs-which-filament-for-beginners': ('Filament Guide', 'PLA, PETG or ABS? A plain-English comparison to help beginners pick the right filament for their project.'),
     'best-filament-for-outdoor-use': ('Filament Guide', 'Which filaments survive UV, heat, and moisture? A practical guide to outdoor 3D printing materials.'),
-    '10-useful-things-to-3d-print-for-your-home': ('Ideas & Inspiration', '10 genuinely useful things you can 3D print for around the house — practical, functional, beginner-friendly.'),
-    'best-budget-3d-printers-under-200': ('Printer Reviews', 'The best 3D printers under $200 in 2025 — Bambu A1 Mini, Ender 3 V3 SE, Neptune 4 Pro compared for beginners.'),
+    '10-useful-things-to-3d-print-for-your-home': ('Ideas & Inspiration', '10 genuinely useful things you can 3D print for around the house  -  practical, functional, beginner-friendly.'),
+    'best-budget-3d-printers-under-200': ('Printer Reviews', 'The best 3D printers under $200 in 2025  -  Bambu A1 Mini, Ender 3 V3 SE, Neptune 4 Pro compared for beginners.'),
     'best-slicer-software-for-beginners': ('Software Guide', 'Bambu Studio, PrusaSlicer, or Cura? A plain-English comparison of the best free slicer software for beginners.'),
-    'how-to-fix-3d-print-warping': ('Troubleshooting', 'Warping ruining your prints? Here\'s how to fix it — bed adhesion, enclosures, brims, and material-specific tips.'),
-    'where-to-download-free-3d-print-files': ('Resources', 'The best sites to download free 3D print files in 2025 — Printables, Thingiverse, Makerworld and more compared.'),
-    '3d-printing-speed-vs-quality-guide': ('Settings Guide', 'How to balance 3D printing speed and quality — what limits speed, key settings, and profiles for different goals.'),
-    'how-to-store-filament-properly': ('Filament Guide', 'How to store 3D printer filament properly — airtight containers, desiccant, drying wet filament, and which materials need the most care.'),
-    'best-3d-printer-upgrades-under-50': ('Upgrades', 'The best 3D printer upgrades under $50 — PEI sheets, Capricorn tubes, BLTouch, calipers, and more ranked by impact.'),
-    'how-to-post-process-3d-prints': ('Finishing Guide', 'How to sand, prime, paint, and finish 3D prints — from removing supports to a professional painted result.'),
-    'tpu-flexible-filament-beginners-guide': ('Filament Guide', 'TPU flexible filament guide for beginners — settings, direct drive vs Bowden, avoiding jams, and what to print.'),
-    'how-to-design-3d-models-for-beginners': ('Software Guide', 'How to design your own 3D models — Tinkercad, Fusion 360, FreeCAD compared for beginners.'),
-    '3d-printing-layer-adhesion-problems-fixes': ('Troubleshooting', 'Layer adhesion problems in 3D printing — causes, fixes, and a checklist to get strong, bonded prints every time.'),
-    'complete-nozzle-guide-3d-printing': ('Hardware Guide', 'Complete 3D printer nozzle guide — sizes, materials (brass, hardened steel, ruby), when to replace, and how to clean.'),
-    '3d-printing-first-layer-problems-fixes': ('Troubleshooting', 'Every first layer problem in 3D printing and how to fix it — not sticking, warping, gaps, blobs and more.'),
-    'best-3d-printers-for-beginners-2025': ('Printer Reviews', 'Best 3D printers for beginners in 2025 — Bambu Lab A1 Mini, Ender 3 V3 SE, Prusa MK4 compared honestly.'),
-    '3d-printing-infill-patterns-guide': ('Settings Guide', 'Complete guide to 3D printing infill — patterns, percentages, and which to use for strength, speed, or flexibility.'),
-    'how-to-reduce-3d-print-time': ('Settings Guide', 'How to reduce 3D print time without ruining quality — layer height, infill, speed, and nozzle changes that actually work.'),
-    'learn-3d-printing-faster-with-tools': ('Beginner Guide', 'The fastest way to learn 3D printing — how to test variables and build real knowledge without wasting filament on failed prints.'),
-    'how-to-fix-under-extrusion': ('Troubleshooting', 'Under-extrusion causes gaps, weak layers, and failed prints. Here\'s every cause and fix — extruder gear, clogs, temperature, E-steps, and filament quality.'),
-    '3d-printing-supports-guide': ('Settings Guide', 'When to use 3D printing supports, how to set them up, and how to remove them cleanly — tree vs normal supports, Z distance, interface layers explained.'),
-    'best-websites-for-cheap-3d-printing-services': ('Resources', 'The best websites for cheap 3D printing services — Craftcloud, JLCPCB, Treatstock, Shapeways compared for hobbyists on a budget.'),
-    'best-filament-brands-for-3d-printing': ('Filament Guide', 'The best 3D printer filament brands in 2025 — eSUN, Polymaker, Bambu Lab, Sunlu compared honestly for PLA, PETG, ABS and more.'),
-    'best-filament-dryers-for-3d-printing': ('Buyer\'s Guide', 'The best filament dryers for 3D printing in 2025 — Sunlu S4, S1 Plus, EIBOS, PolyDryer compared. Fix wet filament problems for good.'),
-    'best-3d-printer-enclosures': ('Buyer\'s Guide', 'The best 3D printer enclosures in 2025 — budget fabric tents to rigid builds compared. Essential for ABS, ASA, and large PETG prints.'),
-    'best-pei-sheets-for-3d-printers': ('Buyer\'s Guide', 'The best PEI sheets for 3D printers in 2025 — Energetic, Fysetc, Bambu Lab compared. The cheapest upgrade for perfect bed adhesion.'),
-    'best-tools-for-3d-printing': ('Buyer\'s Guide', 'The best tools for 3D printing — calipers, spatulas, flush cutters, and everything else worth having. Build the right kit from the start.'),
-    'best-resin-3d-printers-for-beginners': ('Printer Reviews', 'Best resin 3D printers for beginners in 2025 — Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K compared for detail, value, and ease of use.'),
-    'best-3d-printing-accessories-under-30': ('Buyer\'s Guide', 'The best 3D printing accessories under £30 — bed adhesion, filament handling, maintenance, and finishing tools that actually make a difference.'),
+    'how-to-fix-3d-print-warping': ('Troubleshooting', 'Warping ruining your prints? Here\'s how to fix it  -  bed adhesion, enclosures, brims, and material-specific tips.'),
+    'where-to-download-free-3d-print-files': ('Resources', 'The best sites to download free 3D print files in 2025  -  Printables, Thingiverse, Makerworld and more compared.'),
+    '3d-printing-speed-vs-quality-guide': ('Settings Guide', 'How to balance 3D printing speed and quality  -  what limits speed, key settings, and profiles for different goals.'),
+    'how-to-store-filament-properly': ('Filament Guide', 'How to store 3D printer filament properly  -  airtight containers, desiccant, drying wet filament, and which materials need the most care.'),
+    'best-3d-printer-upgrades-under-50': ('Upgrades', 'The best 3D printer upgrades under $50  -  PEI sheets, Capricorn tubes, BLTouch, calipers, and more ranked by impact.'),
+    'how-to-post-process-3d-prints': ('Finishing Guide', 'How to sand, prime, paint, and finish 3D prints  -  from removing supports to a professional painted result.'),
+    'tpu-flexible-filament-beginners-guide': ('Filament Guide', 'TPU flexible filament guide for beginners  -  settings, direct drive vs Bowden, avoiding jams, and what to print.'),
+    'how-to-design-3d-models-for-beginners': ('Software Guide', 'How to design your own 3D models  -  Tinkercad, Fusion 360, FreeCAD compared for beginners.'),
+    '3d-printing-layer-adhesion-problems-fixes': ('Troubleshooting', 'Layer adhesion problems in 3D printing  -  causes, fixes, and a checklist to get strong, bonded prints every time.'),
+    'complete-nozzle-guide-3d-printing': ('Hardware Guide', 'Complete 3D printer nozzle guide  -  sizes, materials (brass, hardened steel, ruby), when to replace, and how to clean.'),
+    '3d-printing-first-layer-problems-fixes': ('Troubleshooting', 'Every first layer problem in 3D printing and how to fix it  -  not sticking, warping, gaps, blobs and more.'),
+    'best-3d-printers-for-beginners-2025': ('Printer Reviews', 'Best 3D printers for beginners in 2025  -  Bambu Lab A1 Mini, Ender 3 V3 SE, Prusa MK4 compared honestly.'),
+    '3d-printing-infill-patterns-guide': ('Settings Guide', 'Complete guide to 3D printing infill  -  patterns, percentages, and which to use for strength, speed, or flexibility.'),
+    'how-to-reduce-3d-print-time': ('Settings Guide', 'How to reduce 3D print time without ruining quality  -  layer height, infill, speed, and nozzle changes that actually work.'),
+    'learn-3d-printing-faster-with-tools': ('Beginner Guide', 'The fastest way to learn 3D printing  -  how to test variables and build real knowledge without wasting filament on failed prints.'),
+    'how-to-fix-under-extrusion': ('Troubleshooting', 'Under-extrusion causes gaps, weak layers, and failed prints. Here\'s every cause and fix  -  extruder gear, clogs, temperature, E-steps, and filament quality.'),
+    '3d-printing-supports-guide': ('Settings Guide', 'When to use 3D printing supports, how to set them up, and how to remove them cleanly  -  tree vs normal supports, Z distance, interface layers explained.'),
+    'best-websites-for-cheap-3d-printing-services': ('Resources', 'The best websites for cheap 3D printing services  -  Craftcloud, JLCPCB, Treatstock, Shapeways compared for hobbyists on a budget.'),
+    'best-filament-brands-for-3d-printing': ('Filament Guide', 'The best 3D printer filament brands in 2025  -  eSUN, Polymaker, Bambu Lab, Sunlu compared honestly for PLA, PETG, ABS and more.'),
+    'best-filament-dryers-for-3d-printing': ('Buyer\'s Guide', 'The best filament dryers for 3D printing in 2025  -  Sunlu S4, S1 Plus, EIBOS, PolyDryer compared. Fix wet filament problems for good.'),
+    'best-3d-printer-enclosures': ('Buyer\'s Guide', 'The best 3D printer enclosures in 2025  -  budget fabric tents to rigid builds compared. Essential for ABS, ASA, and large PETG prints.'),
+    'best-pei-sheets-for-3d-printers': ('Buyer\'s Guide', 'The best PEI sheets for 3D printers in 2025  -  Energetic, Fysetc, Bambu Lab compared. The cheapest upgrade for perfect bed adhesion.'),
+    'best-tools-for-3d-printing': ('Buyer\'s Guide', 'The best tools for 3D printing  -  calipers, spatulas, flush cutters, and everything else worth having. Build the right kit from the start.'),
+    'best-resin-3d-printers-for-beginners': ('Printer Reviews', 'Best resin 3D printers for beginners in 2025  -  Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K compared for detail, value, and ease of use.'),
+    'best-3d-printing-accessories-under-30': ('Buyer\'s Guide', 'The best 3D printing accessories under £30  -  bed adhesion, filament handling, maintenance, and finishing tools that actually make a difference.'),
 }
 
 
@@ -391,7 +391,7 @@ def build_homepage(posts):
 
     body = f'''<div class="hero">
   <h1>Your <span>3D Printing</span><br>Buddy on a Budget</h1>
-  <p>Honest guides, filament comparisons, and beginner tips — without the jargon or the upsells.</p>
+  <p>Honest guides, filament comparisons, and beginner tips  -  without the jargon or the upsells.</p>
   <a href="/posts/" class="btn">Browse All Guides</a>
 </div>
 <main>
@@ -402,7 +402,7 @@ def build_homepage(posts):
 </main>'''
 
     page = base_html(
-        title=f'{SITE_NAME} — {SITE_TAGLINE}',
+        title=f'{SITE_NAME}  -  {SITE_TAGLINE}',
         body=body,
         description='Honest guides, filament reviews, and beginner tips for budget 3D printing. No jargon, no upsells.',
         canonical='/'
@@ -440,7 +440,7 @@ def build_posts_index(posts):
 
     body = f'''<main>
   <h1 class="section-title">All Guides</h1>
-  <p class="section-sub">Every article on Print3DBuddy — practical help for 3D printing on a budget.</p>
+  <p class="section-sub">Every article on Print3DBuddy  -  practical help for 3D printing on a budget.</p>
 
   {sections}
 
@@ -450,7 +450,7 @@ def build_posts_index(posts):
     <div class="resources-grid">
       <a href="https://www.printables.com" target="_blank" rel="noopener" class="resource-card">
         <strong>Printables</strong>
-        <span>The best place to find free 3D models — run by Prusa Research</span>
+        <span>The best place to find free 3D models  -  run by Prusa Research</span>
       </a>
       <a href="https://www.reddit.com/r/3Dprinting/" target="_blank" rel="noopener" class="resource-card">
         <strong>r/3Dprinting</strong>
@@ -458,7 +458,7 @@ def build_posts_index(posts):
       </a>
       <a href="https://www.thingiverse.com" target="_blank" rel="noopener" class="resource-card">
         <strong>Thingiverse</strong>
-        <span>Largest library of free 3D print files — 3 million+ models</span>
+        <span>Largest library of free 3D print files  -  3 million+ models</span>
       </a>
       <a href="https://github.com/prusa3d/PrusaSlicer/releases" target="_blank" rel="noopener" class="resource-card">
         <strong>PrusaSlicer</strong>
@@ -466,7 +466,7 @@ def build_posts_index(posts):
       </a>
       <a href="https://www.bambulab.com/en/software" target="_blank" rel="noopener" class="resource-card">
         <strong>Bambu Studio</strong>
-        <span>Fast, modern slicer — works with any printer, not just Bambu</span>
+        <span>Fast, modern slicer  -  works with any printer, not just Bambu</span>
       </a>
       <a href="https://reprap.org/wiki/RepRap" target="_blank" rel="noopener" class="resource-card">
         <strong>RepRap Wiki</strong>
@@ -493,14 +493,14 @@ def build_posts_index(posts):
 def build_about():
     body = '''<div class="article-wrap">
   <h1>About Print3DBuddy</h1>
-  <p>Print3DBuddy is an independent site covering everything a beginner needs to get started with 3D printing — without spending a fortune.</p>
+  <p>Print3DBuddy is an independent site covering everything a beginner needs to get started with 3D printing  -  without spending a fortune.</p>
   <p>We cover printer calibration, filament selection, troubleshooting, and practical ideas for what to actually print. Our goal is plain-English guides that get you from "unboxing" to "printing confidently" as fast as possible.</p>
   <p>We don't take money from manufacturers and we don't pad reviews. If something is bad value, we say so.</p>
   <h2>What We Cover</h2>
   <ul>
     <li>Beginner setup and calibration guides</li>
     <li>Filament comparisons (PLA, PETG, ABS, ASA, TPU)</li>
-    <li>Troubleshooting — stringing, warping, layer adhesion, and more</li>
+    <li>Troubleshooting  -  stringing, warping, layer adhesion, and more</li>
     <li>Printer reviews focused on value for money</li>
     <li>Practical print ideas for home use</li>
   </ul>
@@ -510,7 +510,7 @@ def build_about():
     page = base_html(
         title=f'About | {SITE_NAME}',
         body=body,
-        description='About Budget3DPrint — independent 3D printing guides for beginners on a budget.',
+        description='About Budget3DPrint  -  independent 3D printing guides for beginners on a budget.',
         canonical='/about/'
     )
     about_dir = OUTPUT_DIR / 'about'
@@ -532,7 +532,7 @@ def build_contact():
     page = base_html(
         title=f'Contact | {SITE_NAME}',
         body=body,
-        description='Get in touch with Print3DBuddy — questions, suggestions, and corrections welcome.',
+        description='Get in touch with Print3DBuddy  -  questions, suggestions, and corrections welcome.',
         canonical='/contact/'
     )
     contact_dir = OUTPUT_DIR / 'contact'
