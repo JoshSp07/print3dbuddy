@@ -1,6 +1,6 @@
 # Best Filament Brands for 3D Printing in 2025 (Honest Recommendations)
 
-Filament quality varies more than most beginners expect. Two spools of "1.75mm PLA" from different brands can print completely differently — different temperatures, different consistency, different surface finish. Picking a reliable brand saves you a lot of frustrating failed prints.
+Filament quality varies more than most beginners expect. Two spools of "1.75mm PLA" from different brands can print completely differently  -  different temperatures, different consistency, different surface finish. Picking a reliable brand saves you a lot of frustrating failed prints.
 
 I've been through a lot of filament over the years. Some of it was great. Some of it taught me that saving £3 on a spool costs more than that in wasted prints and time. These are the brands I actually trust and keep coming back to.
 
@@ -10,7 +10,7 @@ I've been through a lot of filament over the years. Some of it was great. Some o
 
 Before the list: here's what actually matters.
 
-**Diameter consistency.** The filament should be as close to 1.75mm as possible throughout the entire spool. Inconsistent diameter means inconsistent flow — lumpy surfaces, under-extrusion in narrow sections. Good brands hold ±0.02mm. Cheap brands can vary by ±0.1mm or more.
+**Diameter consistency.** The filament should be as close to 1.75mm as possible throughout the entire spool. Inconsistent diameter means inconsistent flow  -  lumpy surfaces, under-extrusion in narrow sections. Good brands hold ±0.02mm. Cheap brands can vary by ±0.1mm or more.
 
 **Moisture control.** Filament is packaged dry. How it stays dry in shipping and on the shelf matters. Vacuum-sealed bags with desiccant are standard on good brands. Loose bags or no desiccant are a red flag.
 
@@ -26,7 +26,7 @@ Before the list: here's what actually matters.
 
 Bambu Lab's own-brand filament has become one of the most consistently recommended options in the community over the past two years. The diameter consistency is excellent, it comes vacuum-sealed with desiccant, and it prints cleanly across a wide temperature range.
 
-It's not the cheapest — expect to pay £18-22 for a 1kg spool of PLA Basic — but the print quality and consistency justify it. If you have a Bambu printer, their filament also works with the AMS colour system and includes an RFID chip for automatic settings. On any other printer it works just as well without those features.
+It's not the cheapest  -  expect to pay £18-22 for a 1kg spool of PLA Basic  -  but the print quality and consistency justify it. If you have a Bambu printer, their filament also works with the AMS colour system and includes an RFID chip for automatic settings. On any other printer it works just as well without those features.
 
 **Best for:** Anyone who wants reliable results without experimenting. Particularly good for PETG and PLA+.
 
@@ -36,7 +36,7 @@ It's not the cheapest — expect to pay £18-22 for a 1kg spool of PLA Basic —
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=esun+pla+plus+filament&tag=print3dbuddy2-21)**
 
-eSUN is one of the most popular budget filament brands, and their PLA+ specifically has a loyal following for good reason. It's tougher than standard PLA, prints at similar temperatures (210-230°C nozzle, 60-70°C bed), and is available at around £14-16 per kg — significantly cheaper than premium brands.
+eSUN is one of the most popular budget filament brands, and their PLA+ specifically has a loyal following for good reason. It's tougher than standard PLA, prints at similar temperatures (210-230°C nozzle, 60-70°C bed), and is available at around £14-16 per kg  -  significantly cheaper than premium brands.
 
 The consistency isn't quite at Bambu or Polymaker level, but it's reliable enough for most hobbyist printing. I've printed hundreds of hours on eSUN PLA+ without issues. It comes vacuum-sealed and the colour range is excellent.
 
@@ -48,9 +48,9 @@ The consistency isn't quite at Bambu or Polymaker level, but it's reliable enoug
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=polymaker+filament&tag=print3dbuddy2-21)**
 
-Polymaker is the brand I reach for when a print really matters — functional parts, things people will see, anything where I don't want to think about the filament. Their diameter consistency is among the best in the industry, their colour accuracy is excellent, and their specialty filaments (PolyWood, PolyFlex, PolyMax PC) are genuinely good.
+Polymaker is the brand I reach for when a print really matters  -  functional parts, things people will see, anything where I don't want to think about the filament. Their diameter consistency is among the best in the industry, their colour accuracy is excellent, and their specialty filaments (PolyWood, PolyFlex, PolyMax PC) are genuinely good.
 
-PolyLite PLA is their standard PLA and it's hard to fault. PolyMax PLA is an engineering-grade PLA with dramatically improved impact resistance — if you're printing anything structural in PLA, PolyMax is worth the slight premium.
+PolyLite PLA is their standard PLA and it's hard to fault. PolyMax PLA is an engineering-grade PLA with dramatically improved impact resistance  -  if you're printing anything structural in PLA, PolyMax is worth the slight premium.
 
 Expect to pay £20-26 per kg depending on the product. Worth it for anything important.
 
@@ -64,7 +64,7 @@ Expect to pay £20-26 per kg depending on the product. Worth it for anything imp
 
 Sunlu makes solid mid-range filament across the board, but their PETG is where they really stand out. It's consistently one of the best-reviewed PETG options under £18/kg, with good clarity (for natural/transparent variants), decent bed adhesion, and reliable layer bonding.
 
-PETG is more temperature-sensitive than PLA — the window between stringing and under-bonded layers is narrower — so consistency matters more. Sunlu's PETG is consistent enough that once you dial in your settings, it repeats reliably.
+PETG is more temperature-sensitive than PLA  -  the window between stringing and under-bonded layers is narrower  -  so consistency matters more. Sunlu's PETG is consistent enough that once you dial in your settings, it repeats reliably.
 
 **Best for:** PETG printing on a budget. Their PLA is also decent but eSUN has the edge for PLA at similar prices.
 
@@ -74,9 +74,9 @@ PETG is more temperature-sensitive than PLA — the window between stringing and
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=eryone+silk+pla+filament&tag=print3dbuddy2-21)**
 
-Silk PLA is purely aesthetic — it produces a shiny, metallic-looking surface finish that makes prints look far more impressive than standard PLA. ERYONE's silk PLA is one of the most popular options for good reason: the shine is excellent, the price is low (around £12-15/kg), and it comes in a great range of colours.
+Silk PLA is purely aesthetic  -  it produces a shiny, metallic-looking surface finish that makes prints look far more impressive than standard PLA. ERYONE's silk PLA is one of the most popular options for good reason: the shine is excellent, the price is low (around £12-15/kg), and it comes in a great range of colours.
 
-It's not suitable for structural parts — silk additives reduce layer bonding slightly compared to standard PLA. But for display pieces, decorative items, and anything you want to look good, it's brilliant.
+It's not suitable for structural parts  -  silk additives reduce layer bonding slightly compared to standard PLA. But for display pieces, decorative items, and anything you want to look good, it's brilliant.
 
 **Best for:** Decorative prints, display models, anyone who wants the look without paying for higher-end filament.
 
@@ -86,7 +86,7 @@ It's not suitable for structural parts — silk additives reduce layer bonding s
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=polymaker+asa+filament&tag=print3dbuddy2-21)**
 
-For outdoor or high-temperature parts, ASA is generally better than ABS — similar properties but better UV resistance and slightly easier to print. Polymaker's ASA is one of the most consistent options available and is usually what I recommend over cheaper alternatives for anything that needs to last outdoors.
+For outdoor or high-temperature parts, ASA is generally better than ABS  -  similar properties but better UV resistance and slightly easier to print. Polymaker's ASA is one of the most consistent options available and is usually what I recommend over cheaper alternatives for anything that needs to last outdoors.
 
 Printing ABS or ASA requires an enclosure or you'll get warping. If you don't have an enclosure, ASA in a draught-free room can work for smaller parts, but don't count on it for large prints.
 

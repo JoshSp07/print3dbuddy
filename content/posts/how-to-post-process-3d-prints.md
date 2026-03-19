@@ -15,9 +15,9 @@ Before any finishing, clean the print thoroughly.
 Use [flush cutters](https://www.amazon.co.uk/s?k=flush+cutters+electronics&tag=print3dbuddy2-21) or [needle-nose pliers](https://www.amazon.co.uk/s?k=needle+nose+pliers&tag=print3dbuddy2-21) to remove support structures. Work slowly near the model surface to avoid gouging.
 
 Tips:
-- Remove supports when the part is still slightly warm — they snap off more cleanly
+- Remove supports when the part is still slightly warm  -  they snap off more cleanly
 - A [dental pick or scalpel](https://www.amazon.co.uk/s?k=craft+knife+scalpel+set&tag=print3dbuddy2-21) helps with support material in tight spaces
-- Support marks are inevitable — plan for sanding them
+- Support marks are inevitable  -  plan for sanding them
 
 ### Removing Stringing and Blobs
 
@@ -33,7 +33,7 @@ Sanding removes layer lines and creates a smooth surface for painting or display
 
 ### What You Need
 
-- [Wet/dry sandpaper assortment](https://www.amazon.co.uk/s?k=wet+dry+sandpaper+assortment+3d+printing&tag=print3dbuddy2-21) — 120, 220, 400, 800, 1000, 2000 grit
+- [Wet/dry sandpaper assortment](https://www.amazon.co.uk/s?k=wet+dry+sandpaper+assortment+3d+printing&tag=print3dbuddy2-21)  -  120, 220, 400, 800, 1000, 2000 grit
 - A bowl of water (for wet sanding)
 - Patience
 
@@ -41,17 +41,17 @@ Sanding removes layer lines and creates a smooth surface for painting or display
 
 **Start coarse, finish fine.** For heavily layered prints:
 
-1. **120-220 grit** — removes large layer lines and high spots. Sand in circular motions.
-2. **400 grit** — smooths out the scratches from coarse sanding
-3. **800 grit (wet)** — wet sand for a finer finish. Dip the paper in water regularly.
-4. **1000-2000 grit (wet)** — near-smooth finish, ready for primer
+1. **120-220 grit**  -  removes large layer lines and high spots. Sand in circular motions.
+2. **400 grit**  -  smooths out the scratches from coarse sanding
+3. **800 grit (wet)**  -  wet sand for a finer finish. Dip the paper in water regularly.
+4. **1000-2000 grit (wet)**  -  near-smooth finish, ready for primer
 
-**Wet sanding** (800 grit and above) produces a much better result than dry sanding alone — the water flushes away plastic dust and reduces heat buildup.
+**Wet sanding** (800 grit and above) produces a much better result than dry sanding alone  -  the water flushes away plastic dust and reduces heat buildup.
 
 ### Material Notes
 
-- **PLA** sands well but generates heat quickly — don't press too hard or the surface can melt
-- **PETG** is harder and more elastic — sanding takes longer
+- **PLA** sands well but generates heat quickly  -  don't press too hard or the surface can melt
+- **PETG** is harder and more elastic  -  sanding takes longer
 - **ABS** sands very well and can also be acetone-smoothed (see below)
 
 ---
@@ -80,12 +80,12 @@ If you printed in ABS, acetone vapour smoothing produces a near-injection-moulde
 
 ### Cold Acetone Smoothing Method
 
-1. Pour a small amount of [acetone](https://www.amazon.co.uk/s?k=acetone+nail+polish+remover+pure&tag=print3dbuddy2-21) into a container (a tin or glass jar — acetone dissolves some plastics)
+1. Pour a small amount of [acetone](https://www.amazon.co.uk/s?k=acetone+nail+polish+remover+pure&tag=print3dbuddy2-21) into a container (a tin or glass jar  -  acetone dissolves some plastics)
 2. Place the print on a small platform above the acetone (not touching it)
 3. Seal the container and leave for 5-15 minutes
 4. The acetone vapour dissolves and reflows the surface
 
-**Safety:** Do this outdoors or in a very well-ventilated area. Acetone is flammable — no open flames, no sparks.
+**Safety:** Do this outdoors or in a very well-ventilated area. Acetone is flammable  -  no open flames, no sparks.
 
 **Result:** Layer lines disappear, surface becomes glossy and smooth.
 
@@ -113,7 +113,7 @@ Grey primer is easiest to paint over. White primer is better under light colours
 [Spray paint](https://www.amazon.co.uk/s?k=Rustoleum+spray+paint+plastic&tag=print3dbuddy2-21) gives the most even finish on 3D prints. Rustoleum and Montana are popular choices.
 
 Technique:
-- Thin, even coats — heavy coats drip and look terrible
+- Thin, even coats  -  heavy coats drip and look terrible
 - Keep the can moving
 - 3-4 thin coats beats 1-2 thick ones
 - Let each coat dry to the touch before adding the next
@@ -134,9 +134,9 @@ An [airbrush kit](https://www.amazon.co.uk/s?k=airbrush+kit+beginner+compressor&
 
 Always seal your finished paint job with a clear coat to protect it:
 
-- **Matte clear coat** — flat, non-reflective finish
-- **Satin clear coat** — slight sheen, natural-looking
-- **Gloss clear coat** — shiny, durable
+- **Matte clear coat**  -  flat, non-reflective finish
+- **Satin clear coat**  -  slight sheen, natural-looking
+- **Gloss clear coat**  -  shiny, durable
 
 [Rustoleum clear coat spray](https://www.amazon.co.uk/s?k=Rustoleum+clear+coat+spray+matte+satin&tag=print3dbuddy2-21) works well for most applications. Two light coats is enough.
 

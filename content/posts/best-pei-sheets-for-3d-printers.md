@@ -16,9 +16,9 @@ Most modern printers now come with some form of textured PEI surface. If yours d
 
 ## Types of PEI Surface
 
-**Smooth PEI:** Produces a very smooth, sometimes shiny bottom surface on prints. Good for PLA. Can bond too aggressively with PETG — prints sometimes stick too well and are difficult to remove without damaging them.
+**Smooth PEI:** Produces a very smooth, sometimes shiny bottom surface on prints. Good for PLA. Can bond too aggressively with PETG  -  prints sometimes stick too well and are difficult to remove without damaging them.
 
-**Textured PEI (powder-coated):** Has a fine texture that produces a textured bottom surface on prints. More forgiving with PETG — the reduced contact area means it grips well but doesn't fuse. The textured surface also hides any imperfections in the first layer. Most people prefer textured over smooth for general use.
+**Textured PEI (powder-coated):** Has a fine texture that produces a textured bottom surface on prints. More forgiving with PETG  -  the reduced contact area means it grips well but doesn't fuse. The textured surface also hides any imperfections in the first layer. Most people prefer textured over smooth for general use.
 
 **Double-sided PEI:** Smooth on one side, textured on the other. Practical because you can flip it for different materials. Particularly useful if you switch between PLA (textured) and something that needs the smooth surface.
 
@@ -52,7 +52,7 @@ Good option if you want to try PEI without spending much, or if you need a spare
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=bambu+lab+pei+textured+plate&tag=print3dbuddy2-21)**
 
-Bambu's own PEI plates are purpose-designed for their printers and the texture and adhesion are excellent. If you have a Bambu printer the official plate is worth paying for — it fits perfectly, works with their AMS system, and the quality is consistently good.
+Bambu's own PEI plates are purpose-designed for their printers and the texture and adhesion are excellent. If you have a Bambu printer the official plate is worth paying for  -  it fits perfectly, works with their AMS system, and the quality is consistently good.
 
 Also available in a high-temperature variant (for ABS/ASA) and a cool plate (for PLA that tends to stick too well to textured PEI). Having two plates for different materials is a practical setup if you print a wide range.
 
@@ -64,7 +64,7 @@ Also available in a high-temperature variant (for ABS/ASA) and a cool plate (for
 
 **[View on Amazon UK](https://www.amazon.co.uk/s?k=fep+film+resin+printer+replacement&tag=print3dbuddy2-21)**
 
-Resin printers use a different bed system — an FEP (fluorinated ethylene propylene) film in the resin vat rather than a PEI build surface. FEP films wear out over time and need replacing. If you're having adhesion issues with your resin printer, a worn FEP film is often the cause.
+Resin printers use a different bed system  -  an FEP (fluorinated ethylene propylene) film in the resin vat rather than a PEI build surface. FEP films wear out over time and need replacing. If you're having adhesion issues with your resin printer, a worn FEP film is often the cause.
 
 FEP films are cheap (£8-15 for a pack) and replacement is part of regular resin printer maintenance.
 
@@ -72,7 +72,7 @@ FEP films are cheap (£8-15 for a pack) and replacement is part of regular resin
 
 ## My Experience With PEI
 
-The first time PETG bonded too hard to my smooth PEI sheet and took a chunk of the surface with it when I removed the print, I assumed I'd ruined it. Turns out that's a common PETG problem on smooth PEI — the fix is either a thin layer of glue stick as a release agent on the smooth side, or just using the textured side for PETG.
+The first time PETG bonded too hard to my smooth PEI sheet and took a chunk of the surface with it when I removed the print, I assumed I'd ruined it. Turns out that's a common PETG problem on smooth PEI  -  the fix is either a thin layer of glue stick as a release agent on the smooth side, or just using the textured side for PETG.
 
 Since switching to the textured side for everything except prints where I want a perfectly smooth bottom face, I've had zero adhesion issues with PLA, PETG, or TPU. The prints stick, they release cleanly, no scraper needed, no glue stick. The textured surface marks are barely visible on most prints.
 
@@ -80,7 +80,7 @@ Since switching to the textured side for everything except prints where I want a
 
 ## Tips for Getting the Best from PEI
 
-**Keep it clean.** Oils from your fingers reduce adhesion. Don't touch the print surface. Clean with IPA (isopropyl alcohol) regularly — before every print session if you want consistent results.
+**Keep it clean.** Oils from your fingers reduce adhesion. Don't touch the print surface. Clean with IPA (isopropyl alcohol) regularly  -  before every print session if you want consistent results.
 
 **Let it cool.** PEI releases prints much more easily at 30-35°C than at 60°C. Wait for the bed to cool before trying to remove a print.
 

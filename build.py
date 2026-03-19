@@ -293,6 +293,8 @@ POST_TAGS = {
     'best-3d-printer-enclosures': ('Buyer\'s Guide', 'The best 3D printer enclosures in 2025 — budget fabric tents to rigid builds compared. Essential for ABS, ASA, and large PETG prints.'),
     'best-pei-sheets-for-3d-printers': ('Buyer\'s Guide', 'The best PEI sheets for 3D printers in 2025 — Energetic, Fysetc, Bambu Lab compared. The cheapest upgrade for perfect bed adhesion.'),
     'best-tools-for-3d-printing': ('Buyer\'s Guide', 'The best tools for 3D printing — calipers, spatulas, flush cutters, and everything else worth having. Build the right kit from the start.'),
+    'best-resin-3d-printers-for-beginners': ('Printer Reviews', 'Best resin 3D printers for beginners in 2025 — Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K compared for detail, value, and ease of use.'),
+    'best-3d-printing-accessories-under-30': ('Buyer\'s Guide', 'The best 3D printing accessories under £30 — bed adhesion, filament handling, maintenance, and finishing tools that actually make a difference.'),
 }
 
 
