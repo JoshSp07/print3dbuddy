@@ -288,6 +288,8 @@ POST_TAGS = {
     'how-to-fix-under-extrusion': ('Troubleshooting', 'Under-extrusion causes gaps, weak layers, and failed prints. Here\'s every cause and fix — extruder gear, clogs, temperature, E-steps, and filament quality.'),
     '3d-printing-supports-guide': ('Settings Guide', 'When to use 3D printing supports, how to set them up, and how to remove them cleanly — tree vs normal supports, Z distance, interface layers explained.'),
     'best-websites-for-cheap-3d-printing-services': ('Resources', 'The best websites for cheap 3D printing services — Craftcloud, JLCPCB, Treatstock, Shapeways compared for hobbyists on a budget.'),
+    'best-filament-brands-for-3d-printing': ('Filament Guide', 'The best 3D printer filament brands in 2025 — eSUN, Polymaker, Bambu Lab, Sunlu compared honestly for PLA, PETG, ABS and more.'),
+    'best-filament-dryers-for-3d-printing': ('Buyer\'s Guide', 'The best filament dryers for 3D printing in 2025 — Sunlu S4, S1 Plus, EIBOS, PolyDryer compared. Fix wet filament problems for good.'),
 }
 
 
