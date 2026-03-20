@@ -723,19 +723,9 @@ TEST_PRINTS = [
     {
         'id': 'overhang-test',
         'title': 'Overhang Test',
-        'tagline': 'Find your printer\'s maximum overhang angle.',
-        'teaser': '11 fins from 20° to 70°. Print once and know exactly where your printer needs supports - and where it doesn\'t.',
-        'guide': '''<h3>What it tests</h3>
-<p>11 fins side by side, each angled further from vertical - 20° (nearly upright) to 70° (nearly horizontal). Most printers handle up to 45-50° cleanly.</p>
-<h3>How to run it</h3>
-<ol>
-  <li>Print at your normal settings with no supports enabled.</li>
-  <li>Look at the right face of each fin straight on.</li>
-  <li>Find the first fin where the surface looks rough, droopy, or stringy underneath.</li>
-  <li>The previous fin's angle is your safe overhang limit.</li>
-</ol>
-<h3>What to do with the result</h3>
-<p>Set your slicer's support threshold 5° below your limit. If your limit is 45°, set supports to kick in at 40°. If even 20° looks bad, check your part cooling fan.</p>''',
+        'tagline': 'Find your printer\'s maximum overhang angle',
+        'tag': 'Overhang',
+        'summary': 'Prints 11 fins angled from 20° to 70° so you can see exactly where your printer starts to struggle with overhangs. Print it once without supports, check which fins look clean, and you\'ll know the precise angle at which to set your slicer\'s support threshold — no more guessing.',
         'stl': 'overhang_test.stl',
         'related': '/posts/how-to-calibrate-your-first-3d-printer/',
         'related_label': 'Calibration guide',
@@ -743,46 +733,19 @@ TEST_PRINTS = [
     {
         'id': 'retraction-test',
         'title': 'Retraction / Stringing Test',
-        'tagline': 'Dial in retraction and eliminate stringing for good.',
-        'teaser': '7 thin towers 20mm apart. Strings between them mean your retraction or temperature needs adjusting.',
-        'guide': '''<h3>What it tests</h3>
-<p>7 thin pillars the printhead must travel between without printing. Any oozing shows up as strings or blobs between the towers.</p>
-<h3>How to run it</h3>
-<ol>
-  <li>Print at your normal settings.</li>
-  <li>Check for threads or blobs between the towers.</li>
-  <li>Strings present: increase retraction by 0.5mm, reprint, repeat until clean.</li>
-  <li>Towers look blobby: too much retraction - reduce by 0.5mm steps.</li>
-</ol>
-<h3>Quick reference</h3>
-<ul>
-  <li><strong>Direct drive:</strong> start at 1-2mm retraction</li>
-  <li><strong>Bowden:</strong> start at 4-6mm retraction</li>
-  <li><strong>Still stringing?</strong> Drop nozzle temp by 5°C</li>
-</ul>''',
+        'tagline': 'Dial in retraction and eliminate stringing for good',
+        'tag': 'Retraction',
+        'summary': 'Seven thin towers spaced 20mm apart force the printhead to travel across open air on every pass. Any excess filament oozing from the nozzle shows up as strings or blobs between the towers. Adjust retraction distance and temperature until the towers print clean — that\'s your dialled-in setting.',
         'stl': 'retraction_test.stl',
         'related': '/posts/how-to-fix-3d-printer-stringing/',
-        'related_label': 'Full stringing fix guide',
+        'related_label': 'Stringing fix guide',
     },
     {
         'id': 'bridging-test',
         'title': 'Bridging Test',
-        'tagline': 'Find the longest span your printer can cross without supports.',
-        'teaser': '5 bridges from 10mm to 50mm. A good bridge is flat underneath - a bad one sags.',
-        'guide': '''<h3>What it tests</h3>
-<p>5 pairs of pillars with bridges spanning 10, 20, 30, 40, and 50mm. Bridging is printed in mid-air with nothing underneath.</p>
-<h3>How to run it</h3>
-<ol>
-  <li>Print with no supports at your normal settings.</li>
-  <li>Flip the print and look at the underside of each bridge.</li>
-  <li>Find the longest span that is flat and clean - that is your bridging limit.</li>
-</ol>
-<h3>If bridges are sagging</h3>
-<ul>
-  <li>Reduce bridge speed to 50% of normal</li>
-  <li>Set part cooling fan to 100%</li>
-  <li>Drop nozzle temp by 5°C</li>
-</ul>''',
+        'tagline': 'Find the longest span your printer can cross without supports',
+        'tag': 'Bridging',
+        'summary': 'Five bridge sections spanning 10mm to 50mm, printed with nothing underneath. Flip the finished print and inspect each underside — a successful bridge is flat and smooth, a failing one sags. Knowing your bridge limit means you can model and slice with or without supports intelligently.',
         'stl': 'bridging_test.stl',
         'related': '/posts/3d-printing-supports-guide/',
         'related_label': 'Supports guide',
@@ -790,22 +753,9 @@ TEST_PRINTS = [
     {
         'id': 'first-layer-test',
         'title': 'First Layer Calibration',
-        'tagline': 'Get your Z offset right and nail first layer adhesion.',
-        'teaser': 'A thin 60x60mm grid square. Grid lines too merged = nozzle too close. Lines not sticking = nozzle too far.',
-        'guide': '''<h3>What it tests</h3>
-<p>A thin square (3 layers) with a raised grid of lines and corner circles. Shows exactly how your first layer is landing across the whole surface.</p>
-<h3>How to run it</h3>
-<ol>
-  <li>Print at 0.2mm layer height (3 layers total = 0.6mm).</li>
-  <li>Watch the first layer live, then inspect the finished print.</li>
-</ol>
-<h3>Reading the result</h3>
-<ul>
-  <li><strong>Grid lines merge:</strong> nozzle too close - raise Z offset by 0.05mm</li>
-  <li><strong>Lines gappy or not sticking:</strong> nozzle too far - lower Z by 0.05mm</li>
-  <li><strong>Circles squashed with raised ring:</strong> elephant foot - nozzle too close</li>
-  <li><strong>Correct:</strong> lines slightly squished, clearly separate, circles round</li>
-</ul>''',
+        'tagline': 'Get your Z offset right and nail first layer adhesion',
+        'tag': 'First Layer',
+        'summary': 'A thin 60×60mm grid square that makes your first layer immediately readable. Lines that merge together mean the nozzle is too close; lines that won\'t stick mean it\'s too far. Takes under 5 minutes to print and gives you a concrete target to tune your Z offset against.',
         'stl': 'first_layer_test.stl',
         'related': '/posts/3d-printing-first-layer-problems-fixes/',
         'related_label': 'First layer problems guide',
@@ -813,19 +763,9 @@ TEST_PRINTS = [
     {
         'id': 'temp-tower',
         'title': 'Temperature Tower',
-        'tagline': 'Find the ideal printing temperature for any filament.',
-        'teaser': '6 segments from 220°C to 195°C. Compare surface finish, stringing, and overhang tabs to find your sweet spot.',
-        'guide': '''<h3>What it tests</h3>
-<p>6 stacked segments (220°C down to 195°C). Each has a small overhang tab. Comparing segments shows how temperature affects surface finish, stringing, and overhang quality.</p>
-<h3>Slicer setup</h3>
-<p>Add a temperature change at each height in your slicer:</p>
-<ul>
-  <li>Z 3-13mm: 220°C &nbsp; Z 13-23mm: 215°C &nbsp; Z 23-33mm: 210°C</li>
-  <li>Z 33-43mm: 205°C &nbsp; Z 43-53mm: 200°C &nbsp; Z 53-63mm: 195°C</li>
-</ul>
-<p>In OrcaSlicer/PrusaSlicer use "Change filament temperature at layer". In Cura use the ChangeAtZ plugin.</p>
-<h3>Reading the result</h3>
-<p>Find the segment with flat overhang tab, no stringing, and smooth walls. Too hot = stringing. Too cold = rough surface and weak layer adhesion.</p>''',
+        'tagline': 'Find the ideal printing temperature for any filament',
+        'tag': 'Temperature',
+        'summary': 'Six stacked segments printed at descending temperatures from 220°C to 195°C — each with a small overhang tab. Compare surface finish, stringing, and overhang quality across the segments to find the sweet spot for a specific filament brand. Useful every time you switch to an unfamiliar spool.',
         'stl': 'temp_tower.stl',
         'related': '/posts/pla-vs-petg-vs-abs-which-filament-for-beginners/',
         'related_label': 'Filament comparison guide',
@@ -835,37 +775,43 @@ TEST_PRINTS = [
 
 def build_test_prints():
     cards = ''
-    for t in TEST_PRINTS:
+    for i, t in enumerate(TEST_PRINTS, 1):
         download_url = f'https://tools.print3dbuddy.com/download/stl/{t["id"]}'
         cards += f'''
 <div class="test-card" id="{t["id"]}">
-  <div class="test-card-left">
-    <div class="test-card-info">
+  <div class="test-card-header">
+    <span class="test-card-num">{i:02d}</span>
+    <div class="test-card-titles">
       <h2>{t["title"]}</h2>
       <p class="test-tagline">{t["tagline"]}</p>
-      <p class="test-teaser">{t["teaser"]}</p>
-      <a href="{t["related"]}" class="test-related-link">{t["related_label"]} &rarr;</a>
     </div>
-    <div class="test-card-download">
-      <a href="{download_url}" class="btn btn-download">Download STL &darr;</a>
-      <p class="test-access-note">Available to paid members &middot; <a href="https://tools.print3dbuddy.com/upgrade">Upgrade from &pound;2/mo</a></p>
-    </div>
+    <span class="test-card-tag">{t["tag"]}</span>
   </div>
-  <div class="test-card-guide">
-    <div class="test-guide-inner">
-      {t["guide"]}
+  <div class="test-card-body">
+    <p class="test-summary">{t["summary"]}</p>
+    <div class="test-card-actions">
+      <div class="test-action-box">
+        <strong>Full How-To Guide</strong>
+        <p>Step-by-step instructions for running this test, reading the results, and adjusting your settings accordingly.</p>
+        <div class="test-action-gate">
+          <span class="lock-badge">&#128274; Paid members</span>
+          <a href="https://tools.print3dbuddy.com/upgrade" class="test-upgrade-link">Upgrade &rarr;</a>
+        </div>
+      </div>
+      <div class="test-action-box test-action-download">
+        <strong>Download STL File</strong>
+        <p>Print-ready calibration model. Works with any FDM printer and slicer.</p>
+        <a href="{download_url}" class="btn-stl">Download STL &darr;</a>
+        <p class="test-access-note">No account? <a href="https://tools.print3dbuddy.com/register">Register free</a><br>Have an account? <a href="https://tools.print3dbuddy.com/upgrade">Upgrade from &pound;2/mo</a></p>
+      </div>
     </div>
-    <div class="test-guide-lock">
-      <p>Full guide available to paid members</p>
-      <a href="https://tools.print3dbuddy.com/upgrade" class="btn">Unlock &mdash; from &pound;2/month</a>
-      <span class="test-lock-note">or &pound;5 one-time &middot; includes all 5 test prints + tools access</span>
-    </div>
+    <p class="test-footer-link">Related reading: <a href="{t["related"]}">{t["related_label"]} &rarr;</a></p>
   </div>
 </div>'''
 
     body = f'''<div class="article-wrap">
   <h1>Test Prints</h1>
-  <p class="section-sub">Five calibration prints to dial in your 3D printer. Each targets a specific setting - print it, read the result, fix the issue. Full guides and STL downloads available to paid members.</p>
+  <p class="section-sub">Five calibration prints to dial in your FDM printer. Each one targets a specific setting &mdash; print it, read the result, fix the problem. Full how-to guides and STL downloads are available to paid members.</p>
   <div class="test-prints-list">
     {cards}
   </div>
