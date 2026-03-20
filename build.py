@@ -665,7 +665,7 @@ PDF_GUIDES = [
         'title': 'The Complete FDM Troubleshooting Guide',
         'description': 'A concise quick-reference guide covering every common FDM printing problem. Includes troubleshooting tables, material settings reference, calibration checklist and more. Instant PDF download.',
         'price': '£4.99',
-        'preview': '/static/img/fdm-guide-preview.jpg',
+        'preview': '/static/img/fdm-guide-preview-v2.jpg',
         'url': 'https://ko-fi.com/s/c36b362b04',
         'pages': '8 pages',
     },
