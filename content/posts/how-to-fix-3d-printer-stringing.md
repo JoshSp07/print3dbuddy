@@ -22,7 +22,7 @@ Retraction is the single most important setting for stringing. When the print he
 - For direct drive extruders (like those on the Bambu Lab P1S or Prusa MK4): start at 0.5 - 1mm
 - For Bowden setups (like many Creality Enders): start at 4 - 6mm and work up to 7 - 8mm if needed
 
-Increase retraction in 0.5mm increments and test with a stringing test model (there are plenty of free ones on Printables and Thingiverse).
+Increase retraction in 0.5mm increments and test with our [retraction/stringing test print](https://tools.print3dbuddy.com/test-prints#retraction-test)  -  7 towers that make stringing immediately visible.
 
 **Too much retraction** causes under-extrusion and clogs  -  so don't go overboard.
 
@@ -98,7 +98,7 @@ If you've adjusted all the settings above and still have issues:
 
 ## Best Printers for Low-Stringing Out of the Box
 
-Some printers are b[etter tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) [and **Bambu Lab P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
+Some printers are [better tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) [and **Bambu Lab P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
 
 [The **Creality Ender 3 V3**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3&tag=print3dbuddy2-21) is a great budget option but uses a Bowden setup, so you'll likely spend a bit more time tuning retraction.
 
@@ -122,4 +122,4 @@ Stringing is frustrating, but it's one of those problems that clicks once you un
 
 If you want to speed up your testing, print a dedicated stringing test model (free on Printables)  -  it only takes 10 - 15 minutes and gives you clear results.
 
-Ready to u[pgrade your setup? Check the current price on Amazon for a quality filament dryer](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)  -  it's one of the best investments you can make for consistent prints.
+Ready to upgrade your setup? [Check the current price on Amazon for a quality filament dryer](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)  -  it's one of the best investments you can make for consistent prints.

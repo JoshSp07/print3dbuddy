@@ -30,7 +30,7 @@ Typical temperature ranges:
 | ABS | 220°C | 235-250°C | 260°C |
 | TPU | 210°C | 220-235°C | 250°C |
 
-Different filament brands behave differently even within the same material type. A temperature tower test (printing at multiple temperatures in one go) finds your specific filament's sweet spot quickly. Download a free temperature tower from [Printables](https://www.printables.com/search/models?q=temperature+tower).
+Different filament brands behave differently even within the same material type. A temperature tower test (printing at multiple temperatures in one go) finds your specific filament's sweet spot quickly. We have a [free temperature tower on our Test Prints page](https://tools.print3dbuddy.com/test-prints#temp-tower) with a full guide for reading the results.
 
 ---
 

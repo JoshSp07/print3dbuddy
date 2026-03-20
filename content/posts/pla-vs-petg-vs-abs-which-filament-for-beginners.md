@@ -162,9 +162,9 @@ You'll see a lot of branded variants on the market:
 
 ## Ready to Start Printing?
 
-[If you're still shopping for a printer, the **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) is one of the best beginner machines available  -  it handles PLA and PE[TG brilliantly out of the box. For budget options, the **Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is a solid first printer for those who want to learn the ropes.
+If you're still shopping for a printer, the [**Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) is one of the best beginner machines available  -  it handles PLA and PETG brilliantly out of the box. For budget options, the [**Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is a solid first printer for those who want to learn the ropes.
 
-Whatever printer you go with, grab a couple [of spools of PLA to start  -  check the current price on Amazon for Hatchbox PLA](https://www.amazon.co.uk/s?k=Hatchbox+PLA+1.75mm&tag=print3dbuddy2-21) [or eSUN PLA+](https://www.amazon.co.uk/s?k=eSUN+PLA+Plus+1.75mm&tag=print3dbuddy2-21) and get printing.
+Whatever printer you go with, grab a couple of spools of PLA to start  -  [Hatchbox PLA](https://www.amazon.co.uk/s?k=Hatchbox+PLA+1.75mm&tag=print3dbuddy2-21) or [eSUN PLA+](https://www.amazon.co.uk/s?k=eSUN+PLA+Plus+1.75mm&tag=print3dbuddy2-21) are reliable choices to get printing.
 
 ---
 

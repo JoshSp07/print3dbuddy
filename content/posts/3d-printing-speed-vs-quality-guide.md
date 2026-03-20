@@ -133,6 +133,8 @@ Only relevant if you have a Bambu Lab printer, a Voron, or a heavily modified Kl
 - **Single-wall cube**  -  for calibrating extrusion multiplier
 - **Ringing tower**  -  specifically tests for ghosting at different speeds
 
+For dialling in the fundamentals before pushing speed, our [calibration test prints](https://tools.print3dbuddy.com/test-prints) cover overhang limits, retraction/stringing, bridging, first layer, and temperature  -  each with a full guide explaining how to read the results.
+
 ---
 
 ## Summary

@@ -81,7 +81,7 @@ If your printer came with a basic spool holder, upgrading to a bearing-mounted v
 
 **Search term:** "spool holder bearing" on Printables  -  there are versions for almost every popular printer model
 
-**Bearings needed:** most designs use 608 bearings ([the same ones in fidget spinners)  -  you can grab a pack cheaply on Amazon](https://www.amazon.co.uk/s?k=608+bearings+pack&tag=print3dbuddy2-21)
+**Bearings needed:** most designs use 608 bearings (the same ones in fidget spinners)  -  [you can grab a pack cheaply on Amazon](https://www.amazon.co.uk/s?k=608+bearings+pack&tag=print3dbuddy2-21)
 
 ---
 
@@ -157,10 +157,10 @@ Print in a colour that matches your hallway, mount it at the door, and stop losi
 
 ## Get Started Today
 
-[If you don't have a printer yet, the **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurat[e, and requires almost no setup. Check the current price on the Bambu Lab website](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21).
+If you don't have a printer yet, the [**Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) is an outstanding beginner machine that produces excellent results for all the prints listed here. It's fast, accurate, and requires almost no setup.
 
-[On a tighter budget? The **Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is one [of the best entry-level printers available  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21).
+On a tighter budget? The [**Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is one of the best entry-level printers available  -  check the current price on Amazon.
 
-[And pick up a couple of spools of PLA to start  -  Hatchbox](https://www.amazon.co.uk/s?k=Hatchbox+PLA+1.75mm&tag=print3dbuddy2-21) [and eSUN PLA+](https://www.amazon.co.uk/s?k=eSUN+PLA+Plus+1.75mm&tag=print3dbuddy2-21) are reliable, affordable choices that print beautifully for home organisation projects.
+Pick up a couple of spools of PLA to start  -  [Hatchbox PLA](https://www.amazon.co.uk/s?k=Hatchbox+PLA+1.75mm&tag=print3dbuddy2-21) and [eSUN PLA+](https://www.amazon.co.uk/s?k=eSUN+PLA+Plus+1.75mm&tag=print3dbuddy2-21) are reliable, affordable choices that print beautifully for home organisation projects.
 
 Happy printing  -  your home is about to get a lot more organised.

@@ -84,7 +84,7 @@ E-steps (extruder steps per millimetre) tell your printer how many motor steps a
 
 Different filament brands and even different colours of the same brand can behave differently at various temperatures. A temperature tower is a single print that tests multiple temperatures in one go.
 
-1. Download a temperature tower model from Printables (free)  -  [search "temp tower"]
+1. Download our free [temperature tower from the Test Prints page](https://tools.print3dbuddy.com/test-prints#temp-tower)  -  includes a full guide for reading the results
 2. Use your slicer's "change filament at height" or custom G-code feature to step the temperature down every 5mm or so
 3. Test from 230°C down to 190°C for PLA (adjust range for other materials)
 4. Look at each section: where does stringing stop? Where does surface quality peak? Where do overhangs start drooping?
@@ -121,7 +121,7 @@ Retraction controls how much filament is pulled back when the nozzle travels bet
 
 ## Step 7: Print a Calibration Cube
 
-Once you've worked through the steps above, print a 20mm calibration cube. This is the classic final test.
+Once you've worked through the steps above, print a 20mm calibration cube. This is the classic final test. For a more targeted approach, our [first layer calibration test print](https://tools.print3dbuddy.com/test-prints#first-layer-test) is specifically designed to make Z offset tuning fast and readable.
 
 **What to check:**
 - Dimensions: measure with calipers  -  should be within 0.2mm of 20mm on all sides
@@ -137,7 +137,7 @@ If something's off, you now know what each setting controls, so you can go back 
 
 - [**Digital calipers**  -  essential for measuring prints accurately](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21)
 - [**Filament dryer**  -  wet filament causes all kinds of calibration headaches](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)
-- **Bed adhesi[on spray or PEI sheet**  -  consistent bed adhesion makes calibration much easier](https://www.amazon.co.uk/s?k=PEI+sheet+3d+printer&tag=print3dbuddy2-21)
+- [**Bed adhesion spray or PEI sheet**](https://www.amazon.co.uk/s?k=PEI+sheet+3d+printer&tag=print3dbuddy2-21)  -  consistent bed adhesion makes calibration much easier
 - **Good lighting**  -  being able to see your first layer clearly makes a huge difference
 
 ---
@@ -156,7 +156,7 @@ If something's off, you now know what each setting controls, so you can go back 
 
 Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.
 
-If you're still choosing a printe[r and want something that minimises calibration effort, the **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) automates most of these steps. For a h[ands-on learning experience with a budget machine, the **Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) [is a classic choice  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21).
+If you're still choosing a printer and want something that minimises calibration effort, the [**Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) automates most of these steps. For a hands-on learning experience with a budget machine, the [**Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is a classic choice  -  check the current price on Amazon.
 
 ---
 

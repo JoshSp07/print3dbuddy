@@ -20,7 +20,7 @@ Most printers can handle overhangs up to about 45-50 degrees without supports. B
 
 The exact threshold depends on your printer, material, and cooling. PLA with good part cooling can often manage 50-55 degrees. PETG is less tolerant and may need support at 40 degrees. ABS benefits from an enclosure but still struggles with steep overhangs.
 
-A quick test: print an overhang test model (free on Printables) at various angles and see where your specific setup starts to struggle. This is more useful than any general number I can give you.
+A quick test: print an [overhang test model](https://tools.print3dbuddy.com/test-prints#overhang-test) at various angles and see where your specific setup starts to struggle. This is more useful than any general number I can give you.
 
 ---
 

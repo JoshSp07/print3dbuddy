@@ -133,7 +133,7 @@ A correct first layer:
 - Corners are flat and bonded
 - Surface looks smooth and uniform from above
 
-The best way to calibrate this is to print a single-layer square (just a flat rectangle, 1 layer thick) and examine it closely. Adjust Z offset until it looks right, then note the value and use it consistently.
+The best way to calibrate this is to use our [first layer calibration test print](https://tools.print3dbuddy.com/test-prints#first-layer-test)  -  a 60×60mm grid square that makes Z offset reading straightforward. Adjust Z offset until it looks right, then note the value and use it consistently.
 
 ---
 
