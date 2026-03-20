@@ -771,6 +771,26 @@ TEST_PRINTS = [
         'related': '/posts/pla-vs-petg-vs-abs-which-filament-for-beginners/',
         'related_label': 'Filament comparison guide',
     },
+    {
+        'id': 'flow-rate-test',
+        'title': 'Flow Rate Test',
+        'tagline': 'Dial in your extrusion multiplier for clean, accurate prints',
+        'tag': 'Flow Rate',
+        'summary': 'Five flat tiles labelled 90% to 110% — each sliced with its corresponding flow rate in the slicer. Print all five, compare the top surfaces, and the smoothest tile with no gaps or ridges tells you your correct extrusion multiplier. Takes about 20 minutes and removes the guesswork from flow calibration.',
+        'stl': 'flow_rate_test.stl',
+        'related': '/posts/how-to-calibrate-flow-rate-extrusion-multiplier/',
+        'related_label': 'Flow rate calibration guide',
+    },
+    {
+        'id': 'ironing-test',
+        'title': 'Ironing Test',
+        'tagline': 'Find the right ironing settings for glass-smooth top surfaces',
+        'tag': 'Ironing',
+        'summary': 'Four flat tiles — one with no ironing as a baseline, then three with ironing enabled at 10%, 15%, and 20% flow. Split them in your slicer, assign the settings, and print all four. The tile with the smoothest, most glossy top surface is your ideal ironing flow rate.',
+        'stl': 'ironing_test.stl',
+        'related': '/posts/3d-printing-ironing-guide/',
+        'related_label': 'Ironing settings guide',
+    },
 ]
 
 

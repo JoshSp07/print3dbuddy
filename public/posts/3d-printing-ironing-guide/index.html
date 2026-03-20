@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printing Ironing: How to Get Glass-Smooth Top Surfaces | Print3DBuddy</title>
+  <meta name="description" content="3D Printing Ironing: How to Get Glass-Smooth Top Surfaces">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/3d-printing-ironing-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="https://tools.print3dbuddy.com" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="/pdf-guides/">PDF Guides</a></li><li><a href="/about/">About</a></li><li><a href="/search/">Search</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>3D Printing Ironing: How to Get Glass-Smooth Top Surfaces</h1>
+  <p>If you've ever looked at a finished print and thought the top surface looks rough and lined compared to the sides — ironing fixes that. It's a post-processing pass the slicer adds after the final top layer, and when it's set up correctly, it turns a textured surface into something that looks almost injection-moulded.</p>
+<p>It's one of those features that sounds fiddly but takes about two minutes to set up, and the results speak for themselves.</p>
+<hr>
+<h2 id="what-is-ironing">What Is Ironing?</h2>
+<p>Ironing is an extra pass the printhead makes over the top surface after it finishes the final layer. The nozzle moves slowly back and forth across the surface, either extruding a very small amount of filament or nothing at all, remelting and smoothing the top layer as it goes.</p>
+<p>The effect: instead of parallel ridged lines from the last top layer, you get a flat, smooth, slightly glossy surface.</p>
+<hr>
+<h2 id="when-ironing-is-worth-using">When Ironing Is Worth Using</h2>
+<p>Ironing works best on:</p>
+<ul>
+<li>Flat horizontal top surfaces</li>
+<li>Decorative prints where appearance matters</li>
+<li>Prints with large exposed top areas (coasters, plaques, cases, tiles)</li>
+<li>Models where a clean surface finish is part of the design</li>
+</ul>
+<p>It's less useful on:</p>
+<ul>
+<li>Curved top surfaces (the nozzle can't follow complex curves cleanly)</li>
+<li>Functional prints where you don't care about aesthetics</li>
+<li>Very small flat areas (the ironing pass is short and makes little difference)</li>
+</ul>
+<hr>
+<h2 id="how-to-enable-ironing-in-your-slicer">How to Enable Ironing in Your Slicer</h2>
+<h3 id="orcaslicer-bambustudio">OrcaSlicer / BambuStudio</h3>
+<p>Quality settings > Ironing > Enable ironing. Set to "Top surfaces only" to start.</p>
+<h3 id="prusaslicer">PrusaSlicer</h3>
+<p>Print settings > Infill > Ironing > Enable ironing.</p>
+<h3 id="cura">Cura</h3>
+<p>Search "ironing" in settings (make sure All settings are shown). Enable "Iron top surface".</p>
+<hr>
+<h2 id="ironing-settings-explained">Ironing Settings Explained</h2>
+<h3 id="ironing-flow-rate">Ironing Flow Rate</h3>
+<p>The percentage of normal extrusion used during the ironing pass. Lower flow means the nozzle is mostly just remelting existing plastic rather than adding new material.</p>
+<ul>
+<li>Too low: the surface still looks textured, not enough heat transfer</li>
+<li>Too high: you're depositing extra plastic, causing raised lines or blobbing</li>
+<li><strong>Typical starting point: 10-15% for PLA, 15-20% for PETG</strong></li>
+</ul>
+<h3 id="ironing-speed">Ironing Speed</h3>
+<p>How fast the nozzle moves during the ironing pass. Slower means more time for heat to transfer and flatten the surface.</p>
+<ul>
+<li><strong>Typical starting point: 50% of your normal print speed</strong></li>
+<li>If results are inconsistent, slow it down further</li>
+</ul>
+<h3 id="ironing-line-spacing">Ironing Line Spacing</h3>
+<p>How far apart the ironing passes are. Wider spacing is faster but leaves more texture. Tighter spacing is slower but smoother.</p>
+<ul>
+<li><strong>Typical starting point: 0.1-0.15mm</strong> (most slicers default to around 0.1mm)</li>
+</ul>
+<h3 id="ironing-pattern">Ironing Pattern</h3>
+<p>Most slicers offer concentric or linear options. Linear (back and forth) is the most common and works well for most shapes. Concentric follows the outer edge of the surface inward, which can look good on circular parts.</p>
+<hr>
+<h2 id="finding-your-ideal-settings">Finding Your Ideal Settings</h2>
+<p>The best way is to print all four settings side by side using the <a href="https://tools.print3dbuddy.com/test-prints" target="_blank" rel="noopener">Ironing Test at tools.print3dbuddy.com</a>. It prints four flat tiles — one with no ironing as a baseline, then 10%, 15%, and 20% flow — so you can see the difference directly.</p>
+<p>Otherwise, start at 15% flow and 50% speed, run a quick test tile, and adjust from there.</p>
+<hr>
+<h2 id="common-ironing-problems-and-fixes">Common Ironing Problems and Fixes</h2>
+<p><strong>Still looks rough after ironing</strong></p>
+<ul>
+<li>Flow too low — increase by 5%</li>
+<li>Speed too fast — reduce to 40% of print speed</li>
+<li>Nozzle temp too low — try adding 5-10°C for the ironing layer</li>
+</ul>
+<p><strong>Visible ridges or raised lines on the surface</strong></p>
+<ul>
+<li>Flow too high — reduce by 5%</li>
+<li>Line spacing too wide — tighten to 0.08-0.10mm</li>
+</ul>
+<p><strong>Blobs or zits on the ironed surface</strong></p>
+<ul>
+<li>Retraction not triggering during ironing passes — check slicer settings</li>
+<li>Filament moisture — dry your filament before printing</li>
+</ul>
+<p><strong>Ironing takes forever</strong></p>
+<ul>
+<li>Normal — ironing adds 20-40% to print time on large flat surfaces</li>
+<li>Reduce to "top surfaces only" if you have it set to all layers</li>
+<li>Increase line spacing slightly (0.15mm instead of 0.10mm)</li>
+</ul>
+<hr>
+<h2 id="does-ironing-work-with-all-filaments">Does Ironing Work With All Filaments?</h2>
+<ul>
+<li><strong>PLA:</strong> Works extremely well. Most consistent results.</li>
+<li><strong>PETG:</strong> Works well but needs slightly higher flow and is more prone to stringing during the pass. Make sure your retraction is dialled in.</li>
+<li><strong>ABS/ASA:</strong> Works, but the surface tends to have more variation. Enclosure helps.</li>
+<li><strong>TPU:</strong> Not useful — soft surfaces don't respond to ironing in a meaningful way.</li>
+</ul>
+<hr>
+<h2 id="is-ironing-worth-it">Is Ironing Worth It?</h2>
+<p>For decorative prints, yes. The difference between an ironed and unironed flat top is immediately visible and gives prints a much more finished look.</p>
+<p>For functional prints, it's usually not worth the time. A bracket or a tool holder doesn't need a polished top face.</p>
+<p>The one thing to be aware of: ironing adds print time, sometimes significantly on large flat areas. Run it on the prints where it counts.</p>
+<hr>
+<h2 id="try-it-yourself">Try It Yourself</h2>
+<p>The <a href="https://tools.print3dbuddy.com/test-prints" target="_blank" rel="noopener">Ironing Test at tools.print3dbuddy.com</a> gives you all 4 tiles in one STL — no ironing, 10%, 15%, and 20% flow. Print them all at once, compare the tops, and you'll have your ideal setting in under 30 minutes.</p>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

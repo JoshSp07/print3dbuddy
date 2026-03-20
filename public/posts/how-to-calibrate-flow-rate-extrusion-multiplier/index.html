@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calibrate Flow Rate (Extrusion Multiplier) on Any 3D Printer | Print3DBuddy</title>
+  <meta name="description" content="How to Calibrate Flow Rate (Extrusion Multiplier) on Any 3D Printer">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/how-to-calibrate-flow-rate-extrusion-multiplier/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/posts/">All Guides</a></li><li><a href="https://tools.print3dbuddy.com" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="/pdf-guides/">PDF Guides</a></li><li><a href="/about/">About</a></li><li><a href="/search/">Search</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>How to Calibrate Flow Rate (Extrusion Multiplier) on Any 3D Printer</h1>
+  <p>Flow rate — also called extrusion multiplier — is one of those settings most beginners never touch, and it quietly ruins their prints the whole time. If your top surfaces look rough or gappy, if your prints feel slightly weak, or if dimensions are consistently off, flow rate is almost certainly the culprit.</p>
+<p>The good news: it is one of the easiest calibrations to run, and you only need to do it once per filament brand.</p>
+<hr>
+<h2 id="what-is-flow-rate">What Is Flow Rate?</h2>
+<p>Flow rate (or extrusion multiplier) is a percentage that scales how much filament your printer pushes out. At 100%, the printer extrudes exactly what the slicer calculated. At 95%, it extrudes 5% less. At 105%, 5% more.</p>
+<p>The default is always 100% — but filament varies. Different brands, different colours, and even different spools of the same brand can have slight diameter inconsistencies or melt at slightly different rates. A flow rate that is even 5% off shows up as noticeable print quality problems.</p>
+<hr>
+<h2 id="signs-your-flow-rate-needs-adjusting">Signs Your Flow Rate Needs Adjusting</h2>
+<p><strong>Too low (under-extrusion):</strong></p>
+<ul>
+<li>Gaps between top surface lines</li>
+<li>Rough or porous top layers</li>
+<li>Perimeters that don't quite touch</li>
+<li>Parts feel lighter than expected</li>
+</ul>
+<p><strong>Too high (over-extrusion):</strong></p>
+<ul>
+<li>Raised ridges on top surfaces</li>
+<li>Blobbing or bulging at corners</li>
+<li>Seam looks pronounced and raised</li>
+<li>Dimensions are slightly larger than designed</li>
+</ul>
+<hr>
+<h2 id="how-to-calibrate-it">How to Calibrate It</h2>
+<p>There are two methods. Use whichever you have tools for.</p>
+<h3 id="method-1-visual-tile-test-easiest">Method 1: Visual Tile Test (Easiest)</h3>
+<p>This is what the <a href="https://tools.print3dbuddy.com/test-prints" target="_blank" rel="noopener">Flow Rate Test print at tools.print3dbuddy.com</a> is for.</p>
+<ol>
+<li>Download the STL and import it into your slicer.</li>
+<li>Split it into 5 individual objects (most slicers have a "split to parts" button).</li>
+<li>Set each tile's flow rate to its label: 90%, 95%, 100%, 105%, 110%.</li>
+<li>Print all 5 at once at your normal temperature and speed.</li>
+<li>Compare the top surfaces. The smoothest one — no gaps, no ridges — is your correct setting.</li>
+</ol>
+<p>Dial in to the nearest 1% if you want precision from there. Most filaments land between 95% and 100%.</p>
+<h3 id="method-2-measure-single-wall-thickness-more-precise">Method 2: Measure Single Wall Thickness (More Precise)</h3>
+<p>This method uses calipers and gives you an exact number.</p>
+<ol>
+<li>Create or download a simple hollow single-wall cube (20x20x20mm, wall thickness equal to your nozzle diameter — usually 0.4mm).</li>
+<li>Slice it with a single perimeter/wall only, no infill, no top or bottom layers.</li>
+<li>Print it.</li>
+<li>Measure the wall thickness with calipers at multiple points.</li>
+<li>Calculate: <strong>new flow rate = (expected wall / actual wall) x current flow rate</strong></li>
+</ol>
+<p>Example: if your nozzle is 0.4mm and your walls measure 0.43mm, your flow is running high.</p>
+<p>New flow = (0.4 / 0.43) x 1.00 = 0.93 — set flow to 93%.</p>
+<hr>
+<h2 id="where-to-set-flow-rate-in-your-slicer">Where to Set Flow Rate in Your Slicer</h2>
+<ul>
+<li><strong>OrcaSlicer / BambuStudio:</strong> Filament settings > Flow ratio</li>
+<li><strong>PrusaSlicer:</strong> Filament settings > Extrusion multiplier</li>
+<li><strong>Cura:</strong> Material > Flow (under the material settings, not print settings)</li>
+</ul>
+<p>Save it as part of your filament profile so it carries over to every print.</p>
+<hr>
+<h2 id="how-often-do-you-need-to-do-this">How Often Do You Need to Do This?</h2>
+<p>Once per filament brand and colour. Different colours from the same brand can have slightly different pigment loadings that affect flow, so it is worth a quick check when switching to a new colour.</p>
+<p>You don't need to redo it every print — once it's dialled in and saved in your slicer profile, it just works.</p>
+<hr>
+<h2 id="flow-rate-vs-e-steps-whats-the-difference">Flow Rate vs E-Steps: What's the Difference?</h2>
+<p>E-steps (or rotation distance in Klipper) is a hardware calibration that tells the printer how many motor steps equal 1mm of filament movement. Flow rate is a software scaling factor on top of that.</p>
+<p>The right order: calibrate e-steps first, then set flow rate per filament. If you skip e-steps and only use flow rate to compensate, you're masking a mechanical problem.</p>
+<p><strong>E-steps:</strong> calibrate once per printer (or after changing extruder hardware)</p>
+<p><strong>Flow rate:</strong> calibrate once per filament profile</p>
+<hr>
+<h2 id="quick-reference">Quick Reference</h2>
+<table><thead><tr>
+<th>Flow setting</th>
+<th>Typical result</th>
+</tr></thead><tbody>
+<tr>
+<td>90%</td>
+<td>Gappy tops, weak parts</td>
+</tr>
+<tr>
+<td>95%</td>
+<td>Slightly under — fine for some filaments</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>Default starting point</td>
+</tr>
+<tr>
+<td>105%</td>
+<td>Slightly over — watch for ridges</td>
+</tr>
+<tr>
+<td>110%</td>
+<td>Over-extruding — blobs and raised seams</td>
+</tr>
+</tbody></table>
+<p>Most PLA lands at 95-100%. PETG is often 97-100%. TPU may need tweaking depending on hardness.</p>
+<hr>
+<h2 id="try-it-yourself">Try It Yourself</h2>
+<p>The <a href="https://tools.print3dbuddy.com/test-prints" target="_blank" rel="noopener">Flow Rate Test at tools.print3dbuddy.com</a> gives you all 5 tiles in one STL, ready to slice. Takes about 20 minutes to print and tells you exactly where your extrusion multiplier should be. Our free <a href="https://tools.print3dbuddy.com" target="_blank" rel="noopener">Print Settings Calculator</a> also gives you recommended starting settings for 14 common filaments.</p>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy &mdash; Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>
