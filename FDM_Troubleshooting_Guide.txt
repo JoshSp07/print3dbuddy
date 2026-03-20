@@ -1,0 +1,661 @@
+THE COMPLETE FDM TROUBLESHOOTING GUIDE
+[Title: centered, large font - e.g., 28pt bold, all caps or title case]
+[Subtitle below: "Fast Fixes for Common 3D Printing Problems" - 14pt, centered, gray]
+
+[Footer on every page, small text, bottom-right corner: "Print3DBuddy"]
+[Page numbers: bottom-center]
+
+================================================================================
+
+HOW TO USE THIS GUIDE
+[Section intro - 11pt, italic, max 3 lines]
+
+Start with the Quick Reference Table on page 1 to identify your issue. Jump to the
+dedicated section for detailed diagnosis and fixes. Use the Calibration Checklist
+on the final page as a regular maintenance routine.
+
+================================================================================
+PAGE 1-2
+================================================================================
+
+SECTION 1: QUICK REFERENCE TABLE
+[Heading: 16pt bold, left-aligned, with a thin horizontal rule beneath]
+
+[Table: 3 columns, alternating row shading, header row dark with white text]
+
++----------------------------------+-----------------------------+-------------------------------------+
+| PROBLEM                          | MOST LIKELY CAUSE           | QUICK FIX                           |
++----------------------------------+-----------------------------+-------------------------------------+
+| Stringing between parts          | Retraction too low          | Increase retraction 0.5mm at a time |
+| Blobs/ooze on walls              | Too much retraction or heat | Lower temp 5C, tune retraction      |
+| Part lifts off bed               | Poor bed adhesion           | Clean bed, increase first layer temp|
+| Corners warping up               | Thermal contraction         | Enclosure, brim, higher bed temp    |
+| Under-extrusion (gaps in walls)  | Partial clog or low temp    | Cold pull, increase temp 5C         |
+| Layer lines separating           | Too fast or too cold        | Slow print 10mm/s, raise temp 5C    |
+| First layer not sticking         | Z offset too high           | Lower nozzle (decrease Z offset)    |
+| First layer too squished/scarred | Z offset too low            | Raise nozzle (increase Z offset)    |
+| Nozzle clog (no extrusion)       | Burned material or debris   | Cold pull x3, then manual clear     |
+| Spaghetti/print failure          | Layer shift or detachment   | Check belt tension, clean bed       |
+| Ringing/ghosting on walls        | Vibration / too fast        | Reduce speed, check belt tension    |
+| Elephant foot (flared base)      | First layer too squished    | Raise Z offset 0.05mm increments    |
+| Pillowing on top surface         | Too few top layers or cool  | Add 1-2 top layers, reduce fan      |
+| Gaps in top surface              | Under-extrusion             | Increase flow 2-3%, check clog      |
+| Overhangs drooping               | Insufficient cooling        | Increase fan, reduce speed          |
+| Supports won't remove cleanly    | Interface dist. too small   | Increase Z gap to 0.2mm             |
+| Cracks between layers (tall)     | Ambient cold / ABS          | Enclose printer, raise temp 5C      |
+| Grinding/clicking extruder       | Partial clog, too fast      | Reduce speed, cold pull             |
+| Layer shifts (horizontal)        | Loose belt or too fast      | Tighten belts, reduce acceleration  |
+| Wet/bubbling filament            | Moisture in filament        | Dry filament 4-6h at correct temp   |
+| Inconsistent extrusion           | Worn PTFE, partial clog     | Check tube, cold pull               |
+| Print too brittle                | Too cold / under-extruded   | Raise temp 5-10C, check flow        |
+| Rough/bumpy surface              | Speed too high or temp low  | Reduce speed, raise temp slightly   |
+| Seam visible on walls            | Seam position setting       | Change seam to "sharpest corner"    |
++----------------------------------+-----------------------------+-------------------------------------+
+
+[Note below table: italic, small - "All settings adjustments assume a baseline properly calibrated printer.
+Always change one variable at a time."]
+
+================================================================================
+PAGE 2-3
+================================================================================
+
+SECTION 2: STRINGING AND OOZING
+[Heading: 16pt bold]
+
+WHAT IT LOOKS LIKE
+- Thin hairs or strings stretching between separate parts of a print
+- Blobs or zits on outer walls
+- Ooze on the outer surface when the nozzle travels
+
+ROOT CAUSES
+- Retraction distance too low or too high
+- Print temperature too high (lowers viscosity, promotes ooze)
+- Travel speed too slow (nozzle lingers over gaps)
+- Combing/avoid crossing perimeters disabled
+- Wet filament
+
+DIAGNOSIS STEPS
+1. Print a retraction test tower (widely available free on Printables/Thingiverse)
+2. Note at which layer stringing stops - this is your optimal retraction zone
+3. If no amount of retraction fixes it - check for moisture (crackling sounds, bubbles)
+
+SETTINGS FIX TABLE
+[Table: 4 columns]
+
++-------------------------+------------------+------------------+---------------------------+
+| SETTING                 | START VALUE      | ADJUST IF...     | NOTES                     |
++-------------------------+------------------+------------------+---------------------------+
+| Retraction distance     | 1mm (direct)     | Still stringing: | Bowden: start at 4-6mm    |
+|                         | 4-6mm (Bowden)   | +0.5mm steps     | Over 7mm risks jamming    |
+| Retraction speed        | 25-45 mm/s       | Blobs after ret: | Too fast = grinding       |
+|                         |                  | -5 mm/s          |                           |
+| Print temperature       | Per material     | Lots of stringing| Lower 5C, test, repeat    |
+|                         |                  | still: -5C       |                           |
+| Travel speed            | 150-200 mm/s     | Strings on travel| Faster = less ooze time   |
+| Combing mode            | Within infill    | Stringing through| Enable "within infill"    |
+|                         |                  | infill areas     | or "not in skin"          |
+| Wipe on retract         | On               | Blobs at seam    | Enables nozzle wipe move  |
+| Coasting                | 0.1-0.2mm        | Blobs at end of  | Stops extrusion early     |
+|                         |                  | perimeters       |                           |
++-------------------------+------------------+------------------+---------------------------+
+
+MATERIAL-SPECIFIC NOTES
+- PLA: Usually solves with retraction 1-2mm (direct drive), temp 190-210C
+- PETG: Notorious stringer - retraction 0.8-1.5mm (direct), temp as low as 220C, slower travel helps
+- TPU: Disable retraction almost entirely (0-1mm), retraction causes jams
+- ABS/ASA: Higher temps mean more ooze - rely on combing + enclosure to manage
+
+================================================================================
+PAGE 3-4
+================================================================================
+
+SECTION 3: WARPING AND BED ADHESION
+[Heading: 16pt bold]
+
+WHAT IT LOOKS LIKE
+- Corners or edges of the print lift off the bed during printing
+- Part fully detaches and becomes spaghetti
+- First layer looks good but later layers peel up
+
+ROOT CAUSES
+- Bed surface not clean (oils, dust, hairspray residue)
+- Z offset not dialed in (first layer not squished enough)
+- Bed temperature too low for material
+- Drafts or cooling hitting the part
+- Large flat parts with no brim
+
+BED PREPARATION CHECKLIST
+[ ] Clean bed with isopropyl alcohol (90%+) before every print
+[ ] Let bed fully heat and soak for 5-10 minutes before printing
+[ ] Avoid touching the build surface with bare hands after cleaning
+[ ] Re-level/mesh the bed after any nozzle or hotend changes
+[ ] Replace worn PEI sheets - they lose grip over time
+
+ADHESION IMPROVEMENT METHODS (in order of preference)
+1. Fix Z offset - most warping is caused by insufficient first layer squish
+2. Clean the build surface with IPA
+3. Increase bed temperature 5-10C
+4. Add a brim (4-8mm width) in slicer settings
+5. Use a glue stick on glass or PEI for ABS/ASA
+6. Enclose the printer to maintain ambient temperature
+
+MATERIAL-SPECIFIC WARPING TABLE
+[Table: 5 columns]
+
++----------+------------------+------------------+--------------------+------------------------+
+| MATERIAL | BED TEMP         | BEST SURFACE     | BRIM NEEDED?       | EXTRA TIPS             |
++----------+------------------+------------------+--------------------+------------------------+
+| PLA      | 55-65C           | PEI, glass       | Rarely             | Drafts cause issues    |
+| PETG     | 70-85C           | PEI (textured)   | Sometimes          | Too hot = sticks too   |
+|          |                  |                  |                    | hard, damages surface  |
+| ABS      | 100-110C         | PEI + glue stick | Always             | Must enclose, no fan   |
+| ASA      | 100-110C         | PEI + glue stick | Always             | Even more sensitive    |
+|          |                  |                  |                    | to drafts than ABS     |
+| TPU      | 40-60C           | PEI, glass       | Rarely             | Slow first layer helps |
+| PETG     | 70-85C           | Avoid smooth PEI | Sometimes          | Textured PEI ideal     |
+| Nylon    | 70-90C           | PEI + glue stick | Always             | Dry thoroughly first   |
++----------+------------------+------------------+--------------------+------------------------+
+
+BRIM SETTINGS GUIDE
+- Width: 8mm for small parts, 12mm+ for ABS/ASA
+- Brim-object gap: 0mm (touching brim sticks better but is harder to remove)
+- Alternative: Raft for very small or tall parts with a small footprint
+
+================================================================================
+PAGE 4-5
+================================================================================
+
+SECTION 4: UNDER-EXTRUSION
+[Heading: 16pt bold]
+
+WHAT IT LOOKS LIKE
+- Gaps between lines in walls and top surfaces
+- Thin, weak walls that snap easily
+- Inconsistent surface texture (some lines thick, some thin)
+- Clicking or grinding from the extruder
+
+ROOT CAUSES (in order of likelihood)
+1. Partial nozzle clog
+2. Print temperature too low for the filament
+3. Print speed too high for the hotend's melt capacity
+4. Extruder tension too low (filament slipping)
+5. PTFE tube gap at the nozzle (creates clog zone)
+6. Worn or stripped extruder gear
+7. Bowden tube with too much slack
+8. Flow rate calibration off
+
+STEP-BY-STEP DIAGNOSIS
+[Numbered list with checkboxes]
+
+[ ] Step 1 - Do the hand-extrude test: Preheat, remove Bowden/cut filament path,
+    manually push filament through. Should extrude smoothly. If not - it's a clog.
+
+[ ] Step 2 - Check for extruder clicking: Clicking = filament slipping =
+    partial clog or too much back pressure. Try cold pull first.
+
+[ ] Step 3 - Increase temperature 5-10C: If quality improves, you were under-temp.
+    Push speed down 20% at the same time to confirm.
+
+[ ] Step 4 - Check flow rate calibration: Mark 100mm of filament, extrude 100mm,
+    measure what actually moved. Should be within 2-3%.
+
+[ ] Step 5 - Check extruder arm tension: Should grip filament firmly without
+    digging a groove. Adjust spring tension if adjustable.
+
+[ ] Step 6 - Inspect PTFE tube end: Tube should seat flush against nozzle with
+    no gap. A gap traps molten filament and carbonizes it.
+
+COMMON FIXES AND VALUES
+
++---------------------------+---------------------------------------+
+| CAUSE                     | FIX                                   |
++---------------------------+---------------------------------------+
+| Partial clog              | Cold pull x3-5 (see Section 7)        |
+| Temp too low              | Raise 5C at a time, max per material  |
+| Speed too high            | Reduce by 20%, check wall quality     |
+| Flow rate off             | Calibrate e-steps and flow %          |
+| PTFE gap                  | Tighten nozzle hot, reseat tube       |
+| Extruder slipping         | Adjust tension, inspect gear teeth    |
+| Wet filament              | Dry 4-8h, see material temp table     |
++---------------------------+---------------------------------------+
+
+E-STEPS CALIBRATION (quick method)
+1. Mark filament 100mm and 120mm from extruder entrance
+2. Extrude 100mm via printer menu
+3. Measure remaining distance to the first mark
+4. If it extruded 95mm instead of 100mm: multiply current e-steps by (100/95)
+5. Update e-steps in firmware or EEPROM
+
+================================================================================
+PAGE 5-6
+================================================================================
+
+SECTION 5: LAYER ADHESION PROBLEMS
+[Heading: 16pt bold]
+
+WHAT IT LOOKS LIKE
+- Layers split apart when flexing or dropping the part
+- Visible gaps between layers when viewed from the side
+- Print breaks cleanly along a layer line
+
+ROOT CAUSES
+- Print temperature too low (layers don't fuse)
+- Layer height too large relative to nozzle diameter
+- Print speed too high (not enough melt time)
+- Cooling too aggressive (layers cool before bonding)
+- Under-extrusion (not enough material to bond)
+- Wet/degraded filament
+
+CRITICAL LAYER HEIGHT RULE
+Maximum layer height = 75-80% of nozzle diameter
+- 0.4mm nozzle: max layer height 0.28-0.32mm
+- 0.6mm nozzle: max layer height 0.45-0.48mm
+- 0.8mm nozzle: max layer height 0.60-0.64mm
+
+Exceeding this creates layer adhesion problems no temperature adjustment will fix.
+
+TEMPERATURE VS LAYER ADHESION
+[Table]
+
++----------+-----------------+------------------+--------------------+
+| MATERIAL | MIN TEMP (GOOD) | MAX TEMP (GOOD)  | NOTES              |
++----------+-----------------+------------------+--------------------+
+| PLA      | 195C            | 220C             | Higher = stronger  |
+|          |                 |                  | but more stringing |
+| PETG     | 230C            | 250C             | 240C+ for strength |
+| ABS      | 230C            | 250C             | Enclose for best   |
+|          |                 |                  | layer bonding      |
+| ASA      | 240C            | 260C             | Same as ABS rules  |
+| TPU      | 220C            | 240C             | Slow + hot = best  |
+| Nylon    | 240C            | 270C             | Dry filament key   |
++----------+-----------------+------------------+--------------------+
+
+FIXES IN ORDER OF IMPACT
+1. Raise nozzle temperature 5-10C
+2. Reduce print speed by 20-30% (especially wall speed)
+3. Reduce layer height (try 0.2mm on 0.4mm nozzle for strength-critical parts)
+4. Reduce part cooling fan speed (especially for ABS/ASA - use 0-20%)
+5. Increase number of perimeters/walls (3-4 walls dramatically improves strength)
+6. Check for under-extrusion and fix first (see Section 4)
+7. Dry filament if other fixes don't work
+
+================================================================================
+PAGE 6
+================================================================================
+
+SECTION 6: FIRST LAYER ISSUES
+[Heading: 16pt bold]
+
+WHY FIRST LAYER MATTERS
+The first layer is the foundation of every print. Incorrect Z offset is the #1
+cause of failed prints. Get this right before adjusting anything else.
+
+Z OFFSET REFERENCE TABLE
+[Table: 3 columns]
+
++---------------------------+--------------------------------+--------------------------------+
+| WHAT YOU SEE              | WHAT IT MEANS                  | WHAT TO DO                     |
++---------------------------+--------------------------------+--------------------------------+
+| Lines not connected       | Nozzle too high                | Lower Z offset (more negative) |
+| Filament not sticking     | Nozzle too high                | Lower Z offset 0.05mm steps    |
+| Nozzle scraping bed       | Nozzle too low                 | Raise Z offset                 |
+| Squished flat, no texture | Nozzle too low                 | Raise Z offset 0.05mm steps    |
+| Transparent/thin lines    | Nozzle too high                | Lower Z offset                 |
+| Nice round lines, bonded  | Correct Z offset               | No change needed               |
+| Elephant foot on base     | Slightly too low               | Raise 0.02-0.05mm              |
+| Lines lifting mid-layer   | Z correct but bed not clean    | IPA clean, re-level            |
++---------------------------+--------------------------------+--------------------------------+
+
+FIRST LAYER RECOMMENDED SETTINGS
+- First layer height: 0.2-0.3mm (regardless of other layer heights)
+- First layer speed: 20-30 mm/s (slow = more time to bond)
+- First layer flow: 100-105% (slight over-extrusion aids adhesion)
+- First layer fan: OFF for PLA, OFF for everything else
+- First layer width: 120-150% of nozzle diameter
+
+MANUAL BED LEVELING PROCESS
+[ ] Preheat bed and nozzle to printing temperature (thermal expansion matters)
+[ ] Use paper/feeler gauge method: 0.1mm paper drag with slight resistance
+[ ] Level all 4 corners, then re-check after leveling (they affect each other)
+[ ] Check center of bed - often sags on larger printers
+[ ] Run first layer test print and adjust Z offset live if needed
+
+MESH BED LEVELING NOTES
+- Run mesh probe at printing temperature, not cold
+- 5x5 or 9x9 mesh catches warped beds that 4-corner leveling misses
+- Re-run after nozzle changes, crashes, or every 20-30 prints
+- FADE height: set to 5-8mm (compensation tapers off above this)
+
+================================================================================
+PAGE 7
+================================================================================
+
+SECTION 7: NOZZLE CLOGS
+[Heading: 16pt bold]
+
+TYPES OF CLOGS
+- Soft clog: Carbonized/degraded material - most common, fixes with cold pull
+- Hard clog: Solidified debris or foreign material - may need replacement
+- Partial clog: Nozzle still extruding but at reduced rate - early stage
+
+PREVENTION CHECKLIST
+[ ] Never leave filament loaded at temperature with no printing happening
+[ ] Purge 20-30mm when switching between materials (especially lower to higher temp)
+[ ] Always purge from higher-temp material before switching to lower-temp
+    Example: When switching from ABS to PLA, purge ABS first, then load PLA
+[ ] Use a filament filter/cleaner (foam or felt wipe) to catch dust
+[ ] Keep filament in sealed bags or dry boxes when not in use
+[ ] Do not exceed max temperature for your nozzle type (PTFE lined: 240C max)
+
+COLD PULL PROCEDURE (Step by Step)
+[Numbered list]
+
+1. Heat nozzle to printing temperature for the current material
+2. Manually push filament through until clean material comes out
+3. Lower temperature to:
+   - PLA: 90C
+   - PETG: 110C
+   - ABS/ASA: 120C
+4. When target temp is reached, firmly but slowly pull the filament straight out
+   The pulled filament tip should have the shape of the nozzle bore
+5. Inspect the tip - black residue = partial clog was present
+6. Reheat to printing temp and repeat until the pulled tip comes out clean and light colored
+7. Perform 3-5 cold pulls minimum for a stubborn clog
+
+NOZZLE REPLACEMENT GUIDE
+
+[Table: 2 columns]
+
++----------------------------------+------------------------------------------+
+| REPLACE NOZZLE WHEN...           | NOTES                                    |
++----------------------------------+------------------------------------------+
+| Cold pulls don't clear the clog  | Hard clogs are not worth fighting        |
+| Nozzle bore is visibly worn/oval | Common with abrasive filaments           |
+| Printing abrasive > 500 hours    | CF, GF, glow-in-dark, metallic fills     |
+| Quality degraded despite tune    | Worn bore causes inconsistent flow       |
+| Switching from abrasive to PLA   | Wear affects precision prints            |
++----------------------------------+------------------------------------------+
+
+NOZZLE MATERIAL GUIDE
+- Brass: Best for PLA, PETG, ABS - cheap, great thermal conductivity
+- Hardened Steel: Use for carbon fiber, glass fiber, glow, metallic filaments
+- Stainless Steel: Food-safe applications, slightly lower conductivity
+- Ruby/Nozzle X: Abrasive + long life - expensive but lasts years
+
+NOZZLE CHANGE PROCEDURE
+1. Heat to printing temperature (do not change cold - nozzle can crack)
+2. Brace the heater block with a wrench - do not let it rotate
+3. Unscrew nozzle with 7mm wrench (most Volcano/standard nozzles)
+4. Install new nozzle, snug but not fully tight while hot
+5. Heat again to 250C+, then torque final quarter turn
+6. Test extrusion and re-check Z offset after any nozzle swap
+
+================================================================================
+PAGE 8
+================================================================================
+
+SECTION 8: PRINT QUALITY ISSUES
+[Heading: 16pt bold]
+
+SPEED VS QUALITY REFERENCE TABLE
+[Table: 4 columns]
+
++---------------------+-------------------+-------------------+--------------------------+
+| PRINT TYPE          | RECOMMENDED SPEED | MAX SPEED         | NOTES                    |
++---------------------+-------------------+-------------------+--------------------------+
+| First layer         | 20-30 mm/s        | 40 mm/s           | Never rush this          |
+| Outer walls         | 30-50 mm/s        | 60 mm/s           | Biggest quality impact   |
+| Inner walls         | 50-70 mm/s        | 100 mm/s          | Less visible             |
+| Infill              | 60-100 mm/s       | 150 mm/s          | Speed here is fine       |
+| Top surface         | 30-50 mm/s        | 60 mm/s           | Visible, keep it slow    |
+| Bridges             | 40-60 mm/s        | 80 mm/s           | Cooling matters more     |
+| Support             | 50-80 mm/s        | 100 mm/s          | Quality less critical    |
+| Travel              | 150-250 mm/s      | 300+ mm/s         | Fast = less stringing    |
++---------------------+-------------------+-------------------+--------------------------+
+
+NOTE: These are conservative starting points. High-quality extruders with
+Volcano or high-flow hotends can exceed these considerably.
+
+COMMON PRINT ARTIFACTS
+[Table: 3 columns]
+
++---------------------------+----------------------------+--------------------------------+
+| ARTIFACT                  | CAUSE                      | FIX                            |
++---------------------------+----------------------------+--------------------------------+
+| Ghosting / ringing        | Vibration at high speed    | Reduce speed, tighten belts,   |
+|                           |                            | lower acceleration (500-1000)  |
+| Elephant foot             | Z offset too low           | Raise Z 0.02-0.05mm            |
+|                           | First layer over-squish    | Reduce first layer flow        |
+| Pillowing (top surface)   | Too few top layers         | Add 1-2 top layers (min 5)     |
+|                           | Not enough cooling         | Increase fan speed             |
+| Gaps in top surface       | Under-extrusion            | Check flow, cold pull          |
+| Seam visible              | Seam placement             | "Sharpest corner" setting      |
+| Overhangs drooping        | Too hot, not enough fan    | Max fan, reduce temp 5C        |
+|                           | Speed too slow on overhang | Increase overhang speed        |
+| Rough/grainy surface      | Speed too high, temp low   | Reduce speed, raise temp 5C    |
+| Layer lines very visible  | Layer height too large     | Reduce to 0.15-0.2mm           |
+| Cracks in thick walls     | Too cold or too fast       | Raise temp, reduce speed       |
+| Zits/blobs on walls       | Too much retraction        | Tune retraction, enable wipe   |
+| Diagonal scars on top     | Fan too weak for bridging  | Increase fan speed             |
++---------------------------+----------------------------+--------------------------------+
+
+OVERHANG ANGLE GUIDE
+- 0-45 degrees: Prints without support, most materials
+- 45-60 degrees: May need support, depends on cooling and speed
+- 60+ degrees: Support recommended, or use tree supports
+- True overhang (90 degrees): Always needs support or bridging strategy
+
+BRIDGE SETTINGS
+- Bridge speed: 40-70 mm/s (faster = sags less, but material dependent)
+- Bridge fan: 100% (maximum cooling)
+- Bridge flow: 80-95% (slight under-extrusion reduces sag)
+
+================================================================================
+PAGE 9
+================================================================================
+
+SECTION 9: MATERIAL SETTINGS REFERENCE
+[Heading: 16pt bold]
+
+[Note: intro line - italic]
+These are starting point ranges. Your specific printer, brand of filament, and
+hotend design will affect ideal settings. Always run a temp tower for new filament.
+
+MAIN MATERIAL SETTINGS TABLE
+[Table: wide, 9 columns - use landscape orientation or reduce font size to fit]
+[Recommended: split into two rows per material if needed in Word for readability]
+
++----------+-----------+----------+------------+-----------+-----------+-----------+-----------+---------+
+| MATERIAL | NOZZLE    | BED TEMP | ENCLOSURE  | PART FAN  | SPEED     | RETRACT   | RETRACT   | DRY AT  |
+|          | TEMP      |          |            |           |           | DIST*     | SPEED     |         |
++----------+-----------+----------+------------+-----------+-----------+-----------+-----------+---------+
+| PLA      | 190-220C  | 55-65C   | Not needed | 100%      | 40-80mm/s | 1-2mm DD  | 25-45mm/s | 45C/4h  |
+|          |           |          |            |           |           | 4-6mm BW  |           |         |
+| PLA+     | 200-230C  | 60-65C   | Optional   | 100%      | 40-70mm/s | 1-2mm DD  | 30-45mm/s | 45C/4h  |
+|          |           |          |            |           |           | 4-6mm BW  |           |         |
+| PETG     | 230-250C  | 70-90C   | Optional   | 30-60%    | 30-60mm/s | 0.8-1.5mm | 25-40mm/s | 65C/4h  |
+|          |           |          |            |           |           | DD        |           |         |
+| ABS      | 230-250C  | 100-110C | Required   | 0-20%     | 40-60mm/s | 1-2mm DD  | 30-45mm/s | 80C/4h  |
+|          |           |          |            |           |           | 4-6mm BW  |           |         |
+| ASA      | 240-260C  | 100-110C | Required   | 0-20%     | 40-60mm/s | 1-2mm DD  | 30-45mm/s | 80C/4h  |
+|          |           |          |            |           |           | 4-6mm BW  |           |         |
+| TPU 95A  | 220-240C  | 40-60C   | Not needed | 30-50%    | 15-35mm/s | 0-1mm DD  | 20-30mm/s | 65C/4h  |
+| TPU 85A  | 215-235C  | 40-60C   | Not needed | 20-40%    | 10-20mm/s | 0mm DD    | N/A       | 65C/4h  |
+| Nylon    | 240-270C  | 70-90C   | Recommended| 10-30%    | 30-50mm/s | 1-2mm DD  | 30-40mm/s | 80C/8h  |
+| PC       | 260-310C  | 100-120C | Required   | 0-20%     | 25-50mm/s | 1-2mm DD  | 30-40mm/s | 80C/6h  |
+| PVA      | 185-200C  | 50-60C   | Not needed | 50-100%   | 20-40mm/s | 2-3mm DD  | 25-35mm/s | 45C/4h  |
++----------+-----------+----------+------------+-----------+-----------+-----------+-----------+---------+
+
+*DD = Direct Drive  |  BW = Bowden
+
+CARBON FIBER FILLED NOTES
+- Use hardened steel nozzle only - brass will wear in under 1 hour
+- Temperature: 5-15C above base material (CF-PLA: 210-230C, CF-PETG: 245-265C)
+- Reduce retraction slightly vs base material
+- Reduce speed 20-30% vs base material
+- Fan: Same as base material rules
+
+FILAMENT DRYING GUIDE
+[Table: 3 columns]
+
++----------+------------------+--------------------+
+| MATERIAL | DRY TEMP         | DRY TIME           |
++----------+------------------+--------------------+
+| PLA      | 40-45C           | 4-6 hours          |
+| PETG     | 60-65C           | 4-6 hours          |
+| ABS/ASA  | 70-80C           | 4-6 hours          |
+| TPU      | 55-65C           | 4-8 hours          |
+| Nylon    | 75-80C           | 8-12 hours         |
+| PC       | 80-85C           | 6-8 hours          |
++----------+------------------+--------------------+
+
+SIGNS OF WET FILAMENT
+- Crackling or popping sounds during printing
+- Steam rising from nozzle
+- Bubbles or roughness in extruded material
+- Much worse stringing than usual
+- Weak layer adhesion even at correct temperatures
+
+================================================================================
+PAGE 10-11
+================================================================================
+
+SECTION 10: CALIBRATION CHECKLIST
+[Heading: 16pt bold]
+
+[Intro line - italic]
+Work through this checklist in order. Each step assumes the previous one is done.
+A printer that is not calibrated cannot be tuned - fix fundamentals first.
+
+MECHANICAL CHECKS (Do first - before any print settings)
+[ ] Frame is square and bolts are tight - check all frame extrusion joints
+[ ] Build plate is firmly attached - no wobble or movement when pushed
+[ ] All grub screws on pulleys and couplers are tight - especially Z axis couplers
+[ ] Belts are tensioned correctly - should sound like a low guitar string when plucked
+    (typically 35-50Hz for X/Y belts, check your printer's specification)
+[ ] Smooth rods / linear rails are clean and lightly lubricated
+[ ] Lead screws are clean and lubricated (PTFE-based grease, not WD-40)
+[ ] No grinding or binding when axes are moved by hand
+[ ] Extruder arm is properly tensioned - filament held firm but not crushed
+
+ELECTRICAL AND FIRMWARE CHECKS
+[ ] Endstops trigger reliably (test via printer menu if available)
+[ ] Hotend thermistor reads room temperature accurately (within 3-5C of ambient)
+[ ] Bed thermistor reads room temperature accurately
+[ ] Fans spin at correct speeds and in correct directions
+[ ] No loose wires in drag chain (wiggle test while checking temps for spikes)
+
+E-STEPS CALIBRATION
+[ ] Mark 100mm and 120mm on filament above extruder inlet
+[ ] Command extrusion of 100mm through printer terminal/menu
+[ ] Measure actual distance moved
+[ ] Calculate: New E-steps = Current E-steps x (100 / actual mm moved)
+[ ] Update E-steps in EEPROM (M92 E[value] then M500 on Marlin)
+[ ] Repeat until within 1mm accuracy (1% error)
+
+BED LEVELING
+[ ] Run full mesh bed leveling at print temperature
+[ ] Minimum 3x3 mesh, recommend 5x5 or 9x9
+[ ] Save mesh to EEPROM (G29 S1 on many firmware versions)
+[ ] Confirm mesh loading is called in start G-code
+
+Z OFFSET / FIRST LAYER CALIBRATION
+[ ] Set initial Z offset using paper method (0.1mm resistance)
+[ ] Print first layer test (large flat square, single layer)
+[ ] Lines should be slightly squished and touching - no gaps, not flat
+[ ] Adjust in 0.02-0.05mm increments until correct
+[ ] Save Z offset to EEPROM
+
+TEMPERATURE CALIBRATION
+[ ] Print a temperature tower for each new filament brand/color
+    (10C increments, 170-230C for PLA or range appropriate for material)
+[ ] Select best layer: best balance of finish, no stringing, no gaps
+[ ] Note the temperature and record per brand/color
+
+FLOW RATE / EXTRUSION MULTIPLIER
+[ ] Print single-wall cube (1 perimeter, no infill, 0% top/bottom layers)
+[ ] Measure actual wall thickness with calipers
+[ ] Ideal = nozzle diameter (e.g., 0.4mm)
+[ ] Adjust flow rate: New Flow% = Current Flow% x (nozzle diameter / measured thickness)
+[ ] Typical result: 95-105% is normal. Outside this range suggests a hardware issue.
+
+RETRACTION CALIBRATION
+[ ] Print retraction tower or retraction test for specific material
+[ ] Start: 1mm (direct drive) or 4mm (Bowden)
+[ ] Increase 0.5mm per step until stringing stops
+[ ] If still stringing at 3mm+ (direct) or 7mm+ (Bowden) - check for clog or temp issue
+[ ] Note: PETG works best with lower retraction + slower travel, not more retraction
+
+SPEED CALIBRATION
+[ ] Print standard calibration cube at baseline speed (50 mm/s)
+[ ] Check for ringing/ghosting on walls
+[ ] If ringing present: reduce acceleration (try 500-1500 mm/s2)
+[ ] Optionally run Input Shaper (Klipper) or Resonance Compensation (Marlin 2.x)
+
+PID TUNING (if temperature fluctuates more than +/- 2C during printing)
+[ ] Run PID autotune for hotend: M303 E0 S[target_temp] C8 (8 cycles)
+[ ] Run PID autotune for bed: M303 E-1 S[bed_temp] C8
+[ ] Save results to EEPROM (M500)
+[ ] Confirm temps are stable during a test print
+
+FINAL VALIDATION PRINT
+[ ] Print a calibration cube (20mm x 20mm x 20mm)
+[ ] Measure X, Y, Z dimensions - should be within 0.2mm of 20mm
+[ ] Inspect walls: smooth, no layer separation, no blobs
+[ ] Inspect top surface: closed, smooth, no pillowing
+[ ] Inspect bottom: no elephant foot, flat corners
+
+RECORD KEEPING
+[ ] Keep a log of settings per filament brand and color
+[ ] Note ambient temperature and humidity if relevant (especially for Nylon)
+[ ] Date when spool was opened (moisture exposure increases over time)
+
+================================================================================
+
+QUICK TROUBLESHOOTING FLOWCHART
+[This can be laid out as a simple text-based flow or formatted as a decision tree in Word]
+
+START: Is your printer printing at all?
+  NO --> Check endstops, home position, bed leveling, Z offset
+  YES --> Is the first layer sticking?
+    NO --> Clean bed, fix Z offset, check bed temp
+    YES --> Is there material coming out consistently?
+      NO --> Check for clog, run cold pull, check temperature
+      YES --> Are there quality issues?
+        NO --> You're good to go
+        YES --> Identify artifact in Section 8 table, fix accordingly
+
+================================================================================
+
+[Footer area - all pages]
+[Small text, bottom right: "Print3DBuddy"]
+[Center: Page number]
+[Optional: thin top/bottom border line on each page for professional look]
+
+================================================================================
+FORMATTING NOTES FOR MICROSOFT WORD
+================================================================================
+
+To use this guide in Microsoft Word:
+- Set page margins: 1 inch all sides (or 0.75 inch for more content per page)
+- Body font: Calibri or Aptos 11pt
+- Heading font: Same as body but bold, 14-16pt, with a bottom border line
+- Table style: Built-in "Grid Table 4 - Accent 1" or any clean bordered style
+- Header row shading: Dark accent color (match your brand), white text
+- Alternating row shading: Very light gray (10-15% opacity)
+- Checkbox items: Use Insert > Symbol > Wingdings: open square (or type [ ])
+- Page break before each major section
+- "Print3DBuddy" text: Insert as footer, right-aligned, 8pt, gray color
+- Page numbers: Footer, centered, 9pt
+- Optional header: Thin 1pt border at top of page with guide title in 8pt gray
+
+COVER PAGE SUGGESTION
+- Large title: "The Complete FDM Troubleshooting Guide" - centered, 28-32pt bold
+- Subtitle: "Fast Fixes for Every Common 3D Printing Problem" - 14pt, gray
+- Version or year: "2025 Edition" - small, centered
+- Light background image (optional): faded 3D printer or print texture at 10-15% opacity
+- Print3DBuddy text/logo: bottom right, subtle, 10-12pt or small logo
+
+================================================================================
+END OF GUIDE
+================================================================================

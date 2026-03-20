@@ -21,6 +21,7 @@ STATIC_DIR = Path("static")
 NAV_LINKS = [
     ("All Guides", "/posts/"),
     ("Tools", "https://tools.print3dbuddy.com"),
+    ("PDF Guides", "/pdf-guides/"),
     ("About", "/about/"),
     ("Search", "/search/"),
 ]
@@ -659,6 +660,59 @@ def build_seo_files(posts):
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
+PDF_GUIDES = [
+    {
+        'title': 'The Complete FDM Troubleshooting Guide',
+        'description': 'A concise quick-reference guide covering every common FDM printing problem. Includes troubleshooting tables, material settings reference, calibration checklist and more. Instant PDF download.',
+        'price': '£4.99',
+        'preview': '/static/img/fdm-guide-preview.jpg',
+        'url': 'https://ko-fi.com/s/c36b362b04',
+        'pages': '8 pages',
+    },
+]
+
+def build_pdf_guides():
+    cards = ''
+    for g in PDF_GUIDES:
+        cards += f'''
+<div class="guide-card">
+  <div class="guide-preview-wrap">
+    <img src="{g["preview"]}" alt="{g["title"]} preview" class="guide-preview">
+    <div class="guide-overlay">
+      <a href="{g["url"]}" target="_blank" rel="noopener" class="btn">Buy for {g["price"]}</a>
+    </div>
+  </div>
+  <div class="guide-info">
+    <h2>{g["title"]}</h2>
+    <p>{g["description"]}</p>
+    <div class="guide-meta">
+      <span>{g["pages"]}</span>
+      <span class="guide-price">{g["price"]}</span>
+    </div>
+    <a href="{g["url"]}" target="_blank" rel="noopener" class="btn">Get the Guide &rarr;</a>
+  </div>
+</div>'''
+
+    body = f'''<div class="article-wrap">
+  <h1>PDF Guides</h1>
+  <p class="section-sub">Downloadable quick-reference guides for 3D printing. Packed with tables, checklists and settings - no fluff.</p>
+  <div class="guides-list">
+    {cards}
+  </div>
+</div>'''
+
+    page = base_html(
+        title='PDF Guides - Print3DBuddy',
+        body=body,
+        description='Downloadable 3D printing PDF guides from Print3DBuddy. Quick-reference tables, troubleshooting, material settings and calibration checklists.',
+        canonical='/pdf-guides/'
+    )
+    guides_dir = OUTPUT_DIR / 'pdf-guides'
+    guides_dir.mkdir(exist_ok=True)
+    (guides_dir / 'index.html').write_text(page, encoding='utf-8')
+    print('  Built: /pdf-guides/')
+
+
 def main():
     print(f'\nBuilding {SITE_NAME}...')
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -671,6 +725,7 @@ def main():
     build_contact()
     build_privacy()
     build_search(posts)
+    build_pdf_guides()
     build_seo_files(posts)
 
     print(f'\nDone. {len(posts)} posts built -> {OUTPUT_DIR}/')
