@@ -20,8 +20,7 @@ STATIC_DIR = Path("static")
 
 NAV_LINKS = [
     ("All Guides", "/posts/"),
-    ("Tools", "https://tools.print3dbuddy.com"),
-    ("Test Prints", "/test-prints/"),
+    ("Services", "https://tools.print3dbuddy.com"),
     ("PDF Guides", "/pdf-guides/"),
     ("About", "/about/"),
     ("Search", "/search/"),
@@ -220,7 +219,7 @@ def nav_html(active=None):
     for label, href in NAV_LINKS:
         external = href.startswith('http')
         target = ' target="_blank" rel="noopener"' if external else ''
-        if label == 'Tools':
+        if label == 'Services':
             links += f'<li><a href="{href}" class="nav-tools-btn"{target}>{label}</a></li>'
         else:
             links += f'<li><a href="{href}"{target}>{label}</a></li>'
