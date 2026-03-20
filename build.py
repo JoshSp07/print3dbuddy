@@ -586,10 +586,14 @@ def build_search(posts):
     index = [{'title': p['title'], 'url': p['url'], 'tag': p['tag'], 'excerpt': p['excerpt']} for p in posts]
     (OUTPUT_DIR / 'search-index.json').write_text(_json.dumps(index), encoding='utf-8')
 
-    body = '''<div class="article-wrap search-page">
+    body = '''<div class="search-hero">
   <h1>Search Guides</h1>
-  <p>Search all 3D printing articles on Print3DBuddy.</p>
-  <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  <p>Find articles on printers, filament, troubleshooting and more.</p>
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  </div>
+</div>
+<div class="search-results-wrap">
   <div id="search-results"></div>
 </div>
 <script>
@@ -615,10 +619,11 @@ def build_search(posts):
     }
     results.innerHTML = matches.map(p => `
       <article class="search-result">
-        <span class="tag">${p.tag}</span>
-        <h2><a href="${p.url}">${p.title}</a></h2>
-        <p>${p.excerpt}</p>
-        <a href="${p.url}" class="read-more">Read more &rarr;</a>
+        <span class="search-result-tag">${p.tag}</span>
+        <div class="search-result-body">
+          <h2><a href="${p.url}">${p.title}</a></h2>
+          <p>${p.excerpt}</p>
+        </div>
       </article>
     `).join('');
   });

@@ -17,10 +17,14 @@
     <ul><li><a href="/posts/">All Guides</a></li><li><a href="https://tools.print3dbuddy.com" class="nav-tools-btn" target="_blank" rel="noopener">Tools</a></li><li><a href="/pdf-guides/">PDF Guides</a></li><li><a href="/about/">About</a></li><li><a href="/search/">Search</a></li></ul>
   </nav>
 </header>
-<div class="article-wrap search-page">
+<div class="search-hero">
   <h1>Search Guides</h1>
-  <p>Search all 3D printing articles on Print3DBuddy.</p>
-  <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  <p>Find articles on printers, filament, troubleshooting and more.</p>
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
+  </div>
+</div>
+<div class="search-results-wrap">
   <div id="search-results"></div>
 </div>
 <script>
@@ -46,10 +50,11 @@
     }
     results.innerHTML = matches.map(p => `
       <article class="search-result">
-        <span class="tag">${p.tag}</span>
-        <h2><a href="${p.url}">${p.title}</a></h2>
-        <p>${p.excerpt}</p>
-        <a href="${p.url}" class="read-more">Read more &rarr;</a>
+        <span class="search-result-tag">${p.tag}</span>
+        <div class="search-result-body">
+          <h2><a href="${p.url}">${p.title}</a></h2>
+          <p>${p.excerpt}</p>
+        </div>
       </article>
     `).join('');
   });
