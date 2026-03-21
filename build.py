@@ -21,7 +21,7 @@ STATIC_DIR = Path("static")
 NAV_LINKS = [
     ("All Guides", "/posts/"),
     ("Services", "https://tools.print3dbuddy.com"),
-    ("PDF Guides", "/pdf-guides/"),
+    ("Quick Guides", "https://tools.print3dbuddy.com/guides"),
     ("About", "/about/"),
     ("Search", "/search/"),
 ]
@@ -862,7 +862,6 @@ def main():
     build_contact()
     build_privacy()
     build_search(posts)
-    build_pdf_guides()
     build_test_prints()
     build_seo_files(posts)
 
