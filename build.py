@@ -815,7 +815,7 @@ def build_test_prints():
         <strong>Full How-To Guide</strong>
         <p>Step-by-step instructions for running this test, reading the results, and adjusting your settings accordingly.</p>
         <div class="test-action-gate">
-          <span class="lock-badge">&#128274; Paid members</span>
+          <span class="lock-badge">&#9679; Paid members</span>
           <a href="https://tools.print3dbuddy.com/upgrade" class="test-upgrade-link">Upgrade &rarr;</a>
         </div>
       </div>
