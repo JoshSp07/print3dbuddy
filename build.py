@@ -19,12 +19,12 @@ OUTPUT_DIR = Path("public")
 STATIC_DIR = Path("static")
 
 NAV_LINKS = [
+    ("Home", "/"),
     ("All Guides", "/posts/"),
     ("Find a Fix", "/find-a-fix/"),
     ("Services", "https://tools.print3dbuddy.com/dashboard"),
     ("Quick Guides", "https://tools.print3dbuddy.com/guides"),
     ("About", "/about/"),
-    ("Search", "/search/"),
 ]
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -386,32 +386,182 @@ def build_posts():
 # ── Build homepage ─────────────────────────────────────────────────────────
 
 def build_homepage(posts):
-    cards = ''
-    for p in posts:
-        cards += f'''<article class="card">
-  <span class="tag">{p["tag"]}</span>
-  <h2><a href="{p["url"]}">{p["title"]}</a></h2>
-  <p>{p["excerpt"]}</p>
-  <a href="{p["url"]}" class="read-more">Read more &rarr;</a>
-</article>
-'''
+    body = '''<div class="home-hero">
+  <div class="home-logo">Print3D<span>Buddy</span></div>
+  <p class="home-tagline">Your 3D Printing Buddy on a Budget</p>
+  <p class="home-sub">Honest guides, filament comparisons, and beginner tips &mdash; without the jargon or the upsells.</p>
 
-    body = f'''<div class="hero">
-  <h1>Your <span>3D Printing</span><br>Buddy on a Budget</h1>
-  <p>Honest guides, filament comparisons, and beginner tips  -  without the jargon or the upsells.</p>
-  <a href="/posts/" class="btn">Browse All Guides</a>
+  <div class="home-search-wrap">
+    <input type="text" id="home-search" placeholder="Search guides &mdash; e.g. stringing, PETG, first layer..." autocomplete="off">
+    <div id="home-results"></div>
+  </div>
 </div>
-<main>
-  <h2 class="section-title">Latest Guides</h2>
-  <p class="section-sub">Practical help for 3D printing on a budget</p>
-  <div class="articles">
-{cards}  </div>
-</main>'''
+
+<main class="home-main">
+
+  <section class="home-section">
+    <h2>What we do</h2>
+    <p>Print3DBuddy is a free resource for anyone getting into 3D printing. We write clear, practical guides that skip the filler and get straight to what you actually need to know &mdash; whether you are setting up your first printer, troubleshooting a failed print, or trying to understand which filament to buy.</p>
+    <p>Every guide is written to be genuinely useful. No sponsored opinions, no padding, no assuming you already know the jargon.</p>
+  </section>
+
+  <section class="home-section">
+    <h2>What we provide</h2>
+    <div class="home-features">
+      <div class="home-feature">
+        <div class="home-feature-icon">&#128196;</div>
+        <h3>In-depth guides</h3>
+        <p>Step-by-step articles covering troubleshooting, materials, settings, slicers, and more. Written for beginners but useful at any level.</p>
+      </div>
+      <div class="home-feature">
+        <div class="home-feature-icon">&#128269;</div>
+        <h3>Find a Fix</h3>
+        <p>Tell us your problem &mdash; printer type, material, what is going wrong &mdash; and we will point you straight to the right guide.</p>
+      </div>
+      <div class="home-feature">
+        <div class="home-feature-icon">&#129518;</div>
+        <h3>Tools &amp; calculators</h3>
+        <p>Filament cost calculators, print settings cheat sheets, slicer recommendations, and STL estimators to help you print smarter.</p>
+      </div>
+      <div class="home-feature">
+        <div class="home-feature-icon">&#128424;</div>
+        <h3>Calibration test prints</h3>
+        <p>Seven targeted test prints with full guides to dial in your FDM printer &mdash; overhang, stringing, bridging, first layer, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-mission">
+    <h2>Our goal</h2>
+    <p>3D printing is one of the most useful skills a person can pick up &mdash; but it has a reputation for being complicated, frustrating, and expensive to get into. We think that reputation puts a lot of people off unnecessarily.</p>
+    <p>Our goal is simple: make 3D printing accessible. Not just to hobbyists and engineers, but to anyone who wants to make something, fix something, or stop throwing things away because a small part broke.</p>
+    <p>We believe in the right to repair. A broken appliance, a worn-out component, a part that costs &pound;50 to replace &mdash; these are problems a 3D printer can solve for pennies. The more people who understand that, the better.</p>
+    <p>So whether you are unboxing your first printer or trying to figure out why your prints keep warping &mdash; you are in the right place.</p>
+    <a href="/posts/" class="btn" style="margin-top:8px;">Browse all guides &rarr;</a>
+  </section>
+
+</main>
+
+<style>
+  .home-hero {
+    background: var(--dark);
+    padding: 56px 20px 48px;
+    text-align: center;
+  }
+  .home-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+  }
+  .home-logo span { color: var(--accent); }
+  .home-tagline {
+    font-size: 1.15rem;
+    color: #ccc;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .home-sub {
+    font-size: 0.97rem;
+    color: #888;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+  .home-search-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .home-search-wrap input {
+    width: 100%;
+    padding: 16px 22px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    color: var(--text);
+  }
+  #home-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0; right: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    z-index: 50;
+    overflow: hidden;
+    text-align: left;
+  }
+  .home-result-item {
+    display: block;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: background 0.1s;
+  }
+  .home-result-item:last-child { border-bottom: none; }
+  .home-result-item:hover { background: #fff8f5; text-decoration: none; }
+  .home-result-tag { font-size: 0.72rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px; }
+  .home-result-title { font-size: 0.95rem; font-weight: 600; color: var(--dark); display: block; }
+  .home-result-more { display: block; padding: 11px 18px; font-size: 0.88rem; color: var(--accent); font-weight: 600; text-align: center; background: #fff8f5; text-decoration: none; }
+  .home-result-more:hover { text-decoration: underline; }
+
+  .home-main { max-width: 860px; margin: 0 auto; padding: 52px 20px 60px; }
+  .home-section { margin-bottom: 52px; }
+  .home-section h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 14px; color: var(--dark); }
+  .home-section p { color: var(--muted); line-height: 1.75; margin-bottom: 12px; font-size: 1rem; }
+
+  .home-features { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+  .home-feature { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; }
+  .home-feature-icon { font-size: 1.8rem; margin-bottom: 10px; }
+  .home-feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--dark); }
+  .home-feature p { font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.55; }
+
+  .home-mission { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 32px 36px; }
+  .home-mission p { color: var(--text); }
+</style>
+
+<script>
+  const homeInput = document.getElementById('home-search');
+  const homeResults = document.getElementById('home-results');
+  let searchIndex = [];
+
+  fetch('/search-index.json')
+    .then(r => r.json())
+    .then(data => { searchIndex = data; });
+
+  homeInput.addEventListener('input', () => {
+    const q = homeInput.value.trim().toLowerCase();
+    if (q.length < 2) { homeResults.innerHTML = ''; return; }
+    const matches = searchIndex.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q) ||
+      p.tag.toLowerCase().includes(q)
+    );
+    if (matches.length === 0) {
+      homeResults.innerHTML = '<a href="/posts/" class="home-result-more">No results &mdash; browse all guides &rarr;</a>';
+      return;
+    }
+    const top = matches.slice(0, 5);
+    homeResults.innerHTML = top.map(p => `
+      <a href="${p.url}" class="home-result-item">
+        <span class="home-result-tag">${p.tag}</span>
+        <span class="home-result-title">${p.title}</span>
+      </a>
+    `).join('') + (matches.length > 5 ? `<a href="/posts/" class="home-result-more">See all ${matches.length} results &rarr;</a>` : '');
+  });
+
+  document.addEventListener('click', e => {
+    if (!homeInput.contains(e.target)) homeResults.innerHTML = '';
+  });
+</script>'''
 
     page = base_html(
-        title=f'{SITE_NAME}  -  {SITE_TAGLINE}',
+        title=f'{SITE_NAME} &mdash; 3D Printing Guides for Beginners',
         body=body,
-        description='Honest guides, filament reviews, and beginner tips for budget 3D printing. No jargon, no upsells.',
+        description='Free 3D printing guides, troubleshooting help, and tools for beginners. No jargon, no upsells - just practical help.',
         canonical='/'
     )
     (OUTPUT_DIR / 'index.html').write_text(page, encoding='utf-8')
@@ -588,63 +738,9 @@ def copy_static():
 
 def build_search(posts):
     import json as _json
-    # Write search index JSON
     index = [{'title': p['title'], 'url': p['url'], 'tag': p['tag'], 'excerpt': p['excerpt']} for p in posts]
     (OUTPUT_DIR / 'search-index.json').write_text(_json.dumps(index), encoding='utf-8')
-
-    body = '''<div class="search-hero">
-  <h1>Search Guides</h1>
-  <p>Find articles on printers, filament, troubleshooting and more.</p>
-  <div class="search-input-wrap">
-    <input type="text" id="search-input" placeholder="e.g. stringing, filament, calibration..." autofocus>
-  </div>
-</div>
-<div class="search-results-wrap">
-  <div id="search-results"></div>
-</div>
-<script>
-  const input = document.getElementById('search-input');
-  const results = document.getElementById('search-results');
-  let index = [];
-
-  fetch('/search-index.json')
-    .then(r => r.json())
-    .then(data => { index = data; });
-
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    if (q.length < 2) { results.innerHTML = ''; return; }
-    const matches = index.filter(p =>
-      p.title.toLowerCase().includes(q) ||
-      p.excerpt.toLowerCase().includes(q) ||
-      p.tag.toLowerCase().includes(q)
-    );
-    if (matches.length === 0) {
-      results.innerHTML = '<p class="no-results">No articles found. Try a different search term.</p>';
-      return;
-    }
-    results.innerHTML = matches.map(p => `
-      <article class="search-result">
-        <span class="search-result-tag">${p.tag}</span>
-        <div class="search-result-body">
-          <h2><a href="${p.url}">${p.title}</a></h2>
-          <p>${p.excerpt}</p>
-        </div>
-      </article>
-    `).join('');
-  });
-</script>'''
-
-    page = base_html(
-        title=f'Search | {SITE_NAME}',
-        body=body,
-        description='Search all 3D printing guides on Print3DBuddy.',
-        canonical='/search/'
-    )
-    search_dir = OUTPUT_DIR / 'search'
-    search_dir.mkdir(exist_ok=True)
-    (search_dir / 'index.html').write_text(page, encoding='utf-8')
-    print('  Built: /search/')
+    print('  Built: /search-index.json')
 
 
 def build_seo_files(posts):
@@ -655,7 +751,7 @@ def build_seo_files(posts):
     )
 
     # sitemap.xml
-    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/search/', '/find-a-fix/']
+    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/find-a-fix/']
     for p in posts:
         urls.append(p['url'])
 
