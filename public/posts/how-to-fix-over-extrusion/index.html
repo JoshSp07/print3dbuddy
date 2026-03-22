@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Fix Over-Extrusion in 3D Printing | Print3DBuddy</title>
+  <meta name="description" content="Over-extrusion causing blobs, bulging walls, or dimensional inaccuracy? Every cause and fix - flow rate, E-steps, temperature, and elephant foot.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/how-to-fix-over-extrusion/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Troubleshooting</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>How to Fix Over-Extrusion in 3D Printing</h1>
+  <p>Over-extrusion is the opposite of under-extrusion, but it causes just as many problems. Too much plastic, bulging walls, blobs on the surface, and prints that come out slightly larger than they should be. It is less dramatic than a spaghetti failure, but it quietly ruins print quality and makes functional parts fit badly.</p>
+<p>Here is every cause and how to fix each one.</p>
+<hr>
+<h2 id="what-does-over-extrusion-look-like">What Does Over-Extrusion Look Like?</h2>
+<ul>
+<li>Walls that bow outwards slightly</li>
+<li>Blobs or zits on the outer surface</li>
+<li>Corners that are slightly rounded or filled in</li>
+<li>First layer that squishes out and spreads wider than expected (this specific issue is called elephant foot - more on that below)</li>
+<li>Dimensional inaccuracy - holes too small, parts that do not fit together correctly</li>
+<li>Excess filament building up on top surfaces</li>
+</ul>
+<hr>
+<h2 id="fix-1-calibrate-your-flow-rate-extrusion-multiplier">Fix 1: Calibrate Your Flow Rate (Extrusion Multiplier)</h2>
+<p>The most common cause of over-extrusion is a flow rate that is set too high. Your slicer has a setting called flow rate, extrusion multiplier, or extrusion factor - they all mean the same thing. The default is usually 100% (or 1.0), but every printer and filament combination is slightly different.</p>
+<p><strong>How to calibrate it:</strong> Print a single-wall cube (no top, no bottom, just walls) and measure the wall thickness with digital calipers. It should match your slicer's line width setting (usually 0.4-0.45mm for a 0.4mm nozzle). If the walls are thicker than expected, reduce the flow rate by 2-3% at a time and reprint until they match.</p>
+<p>Our <a href="https://tools.print3dbuddy.com/tools/filament-cost" target="_blank" rel="noopener">filament cost calculator</a> can help you understand how flow rate changes affect material use - but for calibration, the <a href="https://tools.print3dbuddy.com/test-prints" target="_blank" rel="noopener">flow rate test print</a> is the most direct tool.</p>
+<hr>
+<h2 id="fix-2-check-your-e-steps-extruder-steps-per-millimetre">Fix 2: Check Your E-Steps (Extruder Steps Per Millimetre)</h2>
+<p>E-steps tell your printer how many motor steps equal 1mm of filament movement. If this is set too high, your printer physically pushes more filament than it thinks it is.</p>
+<p><strong>How to check:</strong> Mark 100mm and 120mm on a piece of filament above the extruder. Tell the printer to extrude exactly 100mm through the terminal or printer menu. Measure how much filament actually moved. If it moved more than 100mm, your E-steps are too high.</p>
+<p>New E-steps = (current E-steps x 100) / actual mm extruded</p>
+<p>E-steps are saved in your printer's EEPROM and will persist across prints once updated. You only need to calibrate them once per machine - they should not drift unless you change your extruder hardware.</p>
+<hr>
+<h2 id="fix-3-lower-your-print-temperature">Fix 3: Lower Your Print Temperature</h2>
+<p>The hotter the filament, the more it flows and the harder it is to control. Printing even 5-10C hotter than needed can cause slight over-extrusion, blobs, and stringing.</p>
+<p><strong>Recommended starting temperatures:</strong></p>
+<ul>
+<li>PLA: 200-215C</li>
+<li>PETG: 220-235C</li>
+<li>ABS/ASA: 235-250C</li>
+</ul>
+<p>Try dropping your temperature in 5C steps. Use the <a href="https://tools.print3dbuddy.com/tools/print-settings" target="_blank" rel="noopener">print settings cheat sheet</a> for recommended starting points for your specific filament.</p>
+<p>If reducing temperature causes under-extrusion or layer adhesion issues, your temperature was correct and the problem lies elsewhere.</p>
+<hr>
+<h2 id="fix-4-elephant-foot-first-layer-only">Fix 4: Elephant Foot (First Layer Only)</h2>
+<p>Elephant foot is a specific type of over-extrusion that only affects the first layer. The bottom of the print is wider than the rest, creating a flared edge that makes the part look like it has feet.</p>
+<p>It is caused by the first layer being printed too close to the bed and being squashed flat, or by the first layer flow rate being set too high.</p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Increase your Z offset slightly (raise the nozzle a fraction away from the bed)</li>
+<li>Reduce your first layer flow rate to 90-95% in your slicer</li>
+<li>Some slicers have a specific elephant foot compensation setting - use it if available</li>
+</ul>
+<hr>
+<h2 id="fix-5-check-for-a-partial-nozzle-blockage">Fix 5: Check for a Partial Nozzle Blockage</h2>
+<p>This sounds like the opposite of over-extrusion, but a partial blockage can cause irregular flow that sometimes looks like over-extrusion in patches. Burned filament creates a narrowing inside the nozzle, and pressure builds up until it forces a surge of plastic out.</p>
+<p><strong>Signs this is the cause:</strong> Over-extrusion that appears randomly rather than consistently, combined with some under-extruded patches in the same print.</p>
+<p><strong>Fix:</strong> Do a cold pull - heat the nozzle to printing temperature, push filament through manually, then cool to around 90C and pull the filament out sharply. Repeat until the pulled filament tip comes out clean with no brown or black residue. See the <a href="/posts/complete-nozzle-guide-3d-printing/" target="_blank" rel="noopener">complete nozzle guide</a> for full cold pull instructions.</p>
+<hr>
+<h2 id="quick-checklist">Quick Checklist</h2>
+<ol>
+<li>Print a single-wall test cube and measure wall thickness - adjust flow rate to match target</li>
+<li>Calibrate E-steps if you have never done so</li>
+<li>Check print temperature - try 5-10C lower</li>
+<li>If only the first layer is affected, adjust Z offset and first layer flow rate</li>
+<li>Do a cold pull if over-extrusion appears inconsistent or patchy</li>
+</ol>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-under-extrusion/" target="_blank" rel="noopener">How to Fix Under-Extrusion</a> - the opposite problem, equally common</li>
+<li><a href="/posts/complete-nozzle-guide-3d-printing/" target="_blank" rel="noopener">Complete Nozzle Guide</a> - cold pull instructions and nozzle maintenance</li>
+<li><a href="/posts/how-to-calibrate-your-first-3d-printer/" target="_blank" rel="noopener">How to Calibrate Your First 3D Printer</a> - full calibration walkthrough including E-steps and flow rate</li>
+<li><a href="https://tools.print3dbuddy.com/tools/nozzle-recommender" target="_blank" rel="noopener">Nozzle Size Recommender</a> - check if you are using the right nozzle for your material</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

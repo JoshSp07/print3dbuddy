@@ -119,6 +119,9 @@ const FDM_PROBLEMS = [
   { value: 'speed-quality',  label: 'Speed vs quality tradeoff' },
   { value: 'slow-prints',    label: 'Prints are taking too long' },
   { value: 'calibration',    label: 'Printer calibration / new printer setup' },
+  { value: 'layer-shifting', label: 'Layer shifting / print moving mid-print' },
+  { value: 'over-extrusion', label: 'Over-extrusion / blobs and bulging walls' },
+  { value: 'ghosting',       label: 'Ghosting / ringing / wavy artefacts near corners' },
   { value: 'material',       label: 'Choosing the right filament' },
   { value: 'slicer',         label: 'Slicer setup / getting started with software' },
 ];
@@ -155,6 +158,10 @@ const ARTICLES = [
   { slug: 'how-to-design-3d-models-for-beginners',   title: 'How to Design Your Own 3D Models',               tag: 'Software Guide',  desc: 'Tinkercad, Fusion 360, FreeCAD - which to start with and why.',                                    printer: 'fdm',   problems: ['slicer'],                             materials: ['any'], exp: ['beginner'] },
   { slug: 'resin-3d-printing-beginners-guide',       title: 'Resin 3D Printing: Beginner Guide',              tag: 'Beginner Guide',  desc: 'How resin printing works, safety, settings, wash and cure, and the most common problems fixed.',    printer: 'resin', problems: ['getting-started', 'general'],         materials: ['any'], exp: ['beginner', 'any'] },
   { slug: 'best-resin-3d-printers-for-beginners',    title: 'Best Resin Printers for Beginners',              tag: 'Printer Reviews', desc: 'Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K honestly compared for value and ease of use.',       printer: 'resin', problems: ['general', 'getting-started'],         materials: ['any'], exp: ['beginner', 'any'] },
+  { slug: 'how-to-fix-layer-shifting',               title: 'How to Fix Layer Shifting',                      tag: 'Troubleshooting', desc: 'Print shifting position mid-print? Loose belts, high acceleration, and stepper heat all explained.',  printer: 'fdm',   problems: ['layer-shifting'],                     materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-over-extrusion',               title: 'How to Fix Over-Extrusion',                      tag: 'Troubleshooting', desc: 'Blobs, bulging walls, or parts that do not fit? Flow rate, E-steps, temperature, and elephant foot.',  printer: 'fdm',   problems: ['over-extrusion', 'surface-quality'],  materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-ghosting-ringing',             title: 'How to Fix Ghosting and Ringing',                tag: 'Troubleshooting', desc: 'Wavy ripples near corners and text? Speed, acceleration, belt tension, and input shaper explained.',   printer: 'fdm',   problems: ['surface-quality', 'ghosting'],        materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-wet-filament',                 title: 'How to Fix Wet Filament',                        tag: 'Filament Guide',  desc: 'Crackling, rough surfaces, blobs? How to identify wet filament, dry it, and stop it happening again.', printer: 'fdm',   problems: ['stringing', 'surface-quality', 'layer-adhesion', 'under-extrusion'], materials: ['any'], exp: ['any'] },
 ];
 
 let currentPrinter = 'fdm';
