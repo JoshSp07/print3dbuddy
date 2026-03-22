@@ -235,7 +235,7 @@ def nav_html(active=None):
 def footer_html():
     year = datetime.now().year
     return f'''<footer>
-  <p>&copy; {year} {SITE_NAME} &mdash; Independent guides, no fluff.</p>
+  <p>&copy; {year} {SITE_NAME} - Independent guides, no fluff.</p>
   <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
 </footer>'''
 
@@ -389,10 +389,10 @@ def build_homepage(posts):
     body = '''<div class="home-hero">
   <div class="home-logo">Print3D<span>Buddy</span></div>
   <p class="home-tagline">Your 3D Printing Buddy on a Budget</p>
-  <p class="home-sub">Honest guides, filament comparisons, and beginner tips &mdash; without the jargon or the upsells.</p>
+  <p class="home-sub">Honest guides, filament comparisons, and beginner tips - without the jargon or the upsells.</p>
 
   <div class="home-search-wrap">
-    <input type="text" id="home-search" placeholder="Search guides &mdash; e.g. stringing, PETG, first layer..." autocomplete="off">
+    <input type="text" id="home-search" placeholder="Search guides - e.g. stringing, PETG, first layer..." autocomplete="off">
     <div id="home-results"></div>
   </div>
 </div>
@@ -401,7 +401,7 @@ def build_homepage(posts):
 
   <section class="home-section">
     <h2>What we do</h2>
-    <p>Print3DBuddy is a free resource for anyone getting into 3D printing. We write clear, practical guides that skip the filler and get straight to what you actually need to know &mdash; whether you are setting up your first printer, troubleshooting a failed print, or trying to understand which filament to buy.</p>
+    <p>Print3DBuddy is a free resource for anyone getting into 3D printing. We write clear, practical guides that skip the filler and get straight to what you actually need to know - whether you are setting up your first printer, troubleshooting a failed print, or trying to understand which filament to buy.</p>
     <p>Every guide is written to be genuinely useful. No sponsored opinions, no padding, no assuming you already know the jargon.</p>
   </section>
 
@@ -416,7 +416,7 @@ def build_homepage(posts):
       <div class="home-feature">
         <div class="home-feature-icon">&#128269;</div>
         <h3>Find a Fix</h3>
-        <p>Tell us your problem &mdash; printer type, material, what is going wrong &mdash; and we will point you straight to the right guide.</p>
+        <p>Tell us your problem - printer type, material, what is going wrong - and we will point you straight to the right guide.</p>
       </div>
       <div class="home-feature">
         <div class="home-feature-icon">&#129518;</div>
@@ -426,17 +426,17 @@ def build_homepage(posts):
       <div class="home-feature">
         <div class="home-feature-icon">&#128424;</div>
         <h3>Calibration test prints</h3>
-        <p>Seven targeted test prints with full guides to dial in your FDM printer &mdash; overhang, stringing, bridging, first layer, and more.</p>
+        <p>Seven targeted test prints with full guides to dial in your FDM printer - overhang, stringing, bridging, first layer, and more.</p>
       </div>
     </div>
   </section>
 
   <section class="home-section home-mission">
     <h2>Our goal</h2>
-    <p>3D printing is one of the most useful skills a person can pick up &mdash; but it has a reputation for being complicated, frustrating, and expensive to get into. We think that reputation puts a lot of people off unnecessarily.</p>
+    <p>3D printing is one of the most useful skills a person can pick up - but it has a reputation for being complicated, frustrating, and expensive to get into. We think that reputation puts a lot of people off unnecessarily.</p>
     <p>Our goal is simple: make 3D printing accessible. Not just to hobbyists and engineers, but to anyone who wants to make something, fix something, or stop throwing things away because a small part broke.</p>
-    <p>We believe in the right to repair. A broken appliance, a worn-out component, a part that costs &pound;50 to replace &mdash; these are problems a 3D printer can solve for pennies. The more people who understand that, the better.</p>
-    <p>So whether you are unboxing your first printer or trying to figure out why your prints keep warping &mdash; you are in the right place.</p>
+    <p>We believe in the right to repair. A broken appliance, a worn-out component, a part that costs &pound;50 to replace - these are problems a 3D printer can solve for pennies. The more people who understand that, the better.</p>
+    <p>So whether you are unboxing your first printer or trying to figure out why your prints keep warping - you are in the right place.</p>
     <a href="/posts/" class="btn" style="margin-top:8px;">Browse all guides &rarr;</a>
   </section>
 
@@ -541,7 +541,7 @@ def build_homepage(posts):
       p.tag.toLowerCase().includes(q)
     );
     if (matches.length === 0) {
-      homeResults.innerHTML = '<a href="/posts/" class="home-result-more">No results &mdash; browse all guides &rarr;</a>';
+      homeResults.innerHTML = '<a href="/posts/" class="home-result-more">No results - browse all guides &rarr;</a>';
       return;
     }
     const top = matches.slice(0, 5);
@@ -559,7 +559,7 @@ def build_homepage(posts):
 </script>'''
 
     page = base_html(
-        title=f'{SITE_NAME} &mdash; 3D Printing Guides for Beginners',
+        title=f'{SITE_NAME} - 3D Printing Guides for Beginners',
         body=body,
         description='Free 3D printing guides, troubleshooting help, and tools for beginners. No jargon, no upsells - just practical help.',
         canonical='/'
@@ -832,7 +832,7 @@ TEST_PRINTS = [
         'title': 'Overhang Test',
         'tagline': 'Find your printer\'s maximum overhang angle',
         'tag': 'Overhang',
-        'summary': 'Prints 11 fins angled from 20° to 70° so you can see exactly where your printer starts to struggle with overhangs. Print it once without supports, check which fins look clean, and you\'ll know the precise angle at which to set your slicer\'s support threshold — no more guessing.',
+        'summary': 'Prints 11 fins angled from 20° to 70° so you can see exactly where your printer starts to struggle with overhangs. Print it once without supports, check which fins look clean, and you\'ll know the precise angle at which to set your slicer\'s support threshold - no more guessing.',
         'stl': 'overhang_test.stl',
         'related': '/posts/how-to-calibrate-your-first-3d-printer/',
         'related_label': 'Calibration guide',
@@ -842,7 +842,7 @@ TEST_PRINTS = [
         'title': 'Retraction / Stringing Test',
         'tagline': 'Dial in retraction and eliminate stringing for good',
         'tag': 'Retraction',
-        'summary': 'Seven thin towers spaced 20mm apart force the printhead to travel across open air on every pass. Any excess filament oozing from the nozzle shows up as strings or blobs between the towers. Adjust retraction distance and temperature until the towers print clean — that\'s your dialled-in setting.',
+        'summary': 'Seven thin towers spaced 20mm apart force the printhead to travel across open air on every pass. Any excess filament oozing from the nozzle shows up as strings or blobs between the towers. Adjust retraction distance and temperature until the towers print clean - that\'s your dialled-in setting.',
         'stl': 'retraction_test.stl',
         'related': '/posts/how-to-fix-3d-printer-stringing/',
         'related_label': 'Stringing fix guide',
@@ -852,7 +852,7 @@ TEST_PRINTS = [
         'title': 'Bridging Test',
         'tagline': 'Find the longest span your printer can cross without supports',
         'tag': 'Bridging',
-        'summary': 'Five bridge sections spanning 10mm to 50mm, printed with nothing underneath. Flip the finished print and inspect each underside — a successful bridge is flat and smooth, a failing one sags. Knowing your bridge limit means you can model and slice with or without supports intelligently.',
+        'summary': 'Five bridge sections spanning 10mm to 50mm, printed with nothing underneath. Flip the finished print and inspect each underside - a successful bridge is flat and smooth, a failing one sags. Knowing your bridge limit means you can model and slice with or without supports intelligently.',
         'stl': 'bridging_test.stl',
         'related': '/posts/3d-printing-supports-guide/',
         'related_label': 'Supports guide',
@@ -872,7 +872,7 @@ TEST_PRINTS = [
         'title': 'Temperature Tower',
         'tagline': 'Find the ideal printing temperature for any filament',
         'tag': 'Temperature',
-        'summary': 'Six stacked segments printed at descending temperatures from 220°C to 195°C — each with a small overhang tab. Compare surface finish, stringing, and overhang quality across the segments to find the sweet spot for a specific filament brand. Useful every time you switch to an unfamiliar spool.',
+        'summary': 'Six stacked segments printed at descending temperatures from 220°C to 195°C - each with a small overhang tab. Compare surface finish, stringing, and overhang quality across the segments to find the sweet spot for a specific filament brand. Useful every time you switch to an unfamiliar spool.',
         'stl': 'temp_tower.stl',
         'related': '/posts/pla-vs-petg-vs-abs-which-filament-for-beginners/',
         'related_label': 'Filament comparison guide',
@@ -882,7 +882,7 @@ TEST_PRINTS = [
         'title': 'Flow Rate Test',
         'tagline': 'Dial in your extrusion multiplier for clean, accurate prints',
         'tag': 'Flow Rate',
-        'summary': 'Five flat tiles labelled 90% to 110% — each sliced with its corresponding flow rate in the slicer. Print all five, compare the top surfaces, and the smoothest tile with no gaps or ridges tells you your correct extrusion multiplier. Takes about 20 minutes and removes the guesswork from flow calibration.',
+        'summary': 'Five flat tiles labelled 90% to 110% - each sliced with its corresponding flow rate in the slicer. Print all five, compare the top surfaces, and the smoothest tile with no gaps or ridges tells you your correct extrusion multiplier. Takes about 20 minutes and removes the guesswork from flow calibration.',
         'stl': 'flow_rate_test.stl',
         'related': '/posts/how-to-calibrate-flow-rate-extrusion-multiplier/',
         'related_label': 'Flow rate calibration guide',
@@ -892,7 +892,7 @@ TEST_PRINTS = [
         'title': 'Ironing Test',
         'tagline': 'Find the right ironing settings for glass-smooth top surfaces',
         'tag': 'Ironing',
-        'summary': 'Four flat tiles — one with no ironing as a baseline, then three with ironing enabled at 10%, 15%, and 20% flow. Split them in your slicer, assign the settings, and print all four. The tile with the smoothest, most glossy top surface is your ideal ironing flow rate.',
+        'summary': 'Four flat tiles - one with no ironing as a baseline, then three with ironing enabled at 10%, 15%, and 20% flow. Split them in your slicer, assign the settings, and print all four. The tile with the smoothest, most glossy top surface is your ideal ironing flow rate.',
         'stl': 'ironing_test.stl',
         'related': '/posts/3d-printing-ironing-guide/',
         'related_label': 'Ironing settings guide',
@@ -938,7 +938,7 @@ def build_test_prints():
 
     body = f'''<div class="article-wrap">
   <h1>Test Prints</h1>
-  <p class="section-sub">Five calibration prints to dial in your FDM printer. Each one targets a specific setting &mdash; print it, read the result, fix the problem. Full how-to guides and STL downloads are available to paid members.</p>
+  <p class="section-sub">Five calibration prints to dial in your FDM printer. Each one targets a specific setting - print it, read the result, fix the problem. Full how-to guides and STL downloads are available to paid members.</p>
   <div class="test-prints-list">
     {cards}
   </div>
@@ -963,7 +963,7 @@ def build_feedback():
   <p style="color:var(--muted); margin-bottom:28px;">Got a problem to report, a guide suggestion, or something else? Fill in the form below and we will get back to you.</p>
 
   <div id="fb-limit-msg" style="display:none; background:#fffbeb; border:1px solid #fcd34d; border-radius:8px; padding:16px 20px; margin-bottom:24px; color:#92400e; font-size:0.93rem;">
-    <strong>One submission per day.</strong> You have already sent feedback today &mdash; please come back tomorrow. This limit is in place to prevent spam.
+    <strong>One submission per day.</strong> You have already sent feedback today - please come back tomorrow. This limit is in place to prevent spam.
   </div>
 
   <form id="fb-form" action="https://formspree.io/f/mnjgkqjg" method="POST">
@@ -999,7 +999,7 @@ def build_feedback():
   </form>
 
   <div id="fb-success" style="display:none; background:#f0fdf4; border:1px solid #86efac; border-radius:10px; padding:28px; text-align:center; margin-top:16px;">
-    <p style="font-size:1.1rem; font-weight:700; color:#166534; margin-bottom:8px;">&#10003; Feedback sent &mdash; thank you!</p>
+    <p style="font-size:1.1rem; font-weight:700; color:#166534; margin-bottom:8px;">&#10003; Feedback sent - thank you!</p>
     <p style="color:var(--muted); font-size:0.93rem;">We read every submission and will follow up if you left an email.</p>
   </div>
 </div>
