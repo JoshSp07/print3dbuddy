@@ -299,6 +299,9 @@ POST_TAGS = {
     'best-tools-for-3d-printing': ('Buyer\'s Guide', 'The best tools for 3D printing  -  calipers, spatulas, flush cutters, and everything else worth having. Build the right kit from the start.'),
     'best-resin-3d-printers-for-beginners': ('Printer Reviews', 'Best resin 3D printers for beginners in 2025  -  Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K compared for detail, value, and ease of use.'),
     'best-3d-printing-accessories-under-30': ('Buyer\'s Guide', 'The best 3D printing accessories under £30  -  bed adhesion, filament handling, maintenance, and finishing tools that actually make a difference.'),
+    'resin-3d-printing-beginners-guide': ('Beginner Guide', 'Complete resin 3D printing guide for beginners  -  how it works, safety, settings, wash and cure, and common problems fixed.'),
+    '3d-print-orientation-part-strength-guide': ('Settings Guide', 'How to orient 3D prints for maximum strength  -  why layer direction matters, practical examples, and which settings to pair with it.'),
+    '3d-prints-stuck-to-build-plate-fixes': ('Troubleshooting', 'Prints stuck to the build plate? Every cause and fix  -  z-offset, bed temp, PETG on PEI, and when to replace the surface.'),
 }
 
 
