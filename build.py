@@ -601,6 +601,12 @@ def build_posts_index(posts):
 
   {sections}
 
+  <section style="margin:48px 0 0; padding:32px 36px; background:#fff8f5; border:2px solid var(--accent); border-radius:12px; text-align:center;">
+    <h2 style="font-size:1.2rem; font-weight:700; margin-bottom:8px;">Missing a guide?</h2>
+    <p style="color:var(--muted); font-size:0.95rem; margin-bottom:18px;">If there is a topic you think we should cover, let us know and we will add it to the list.</p>
+    <a href="/feedback/?type=missing-guide" class="btn">Suggest a guide &rarr;</a>
+  </section>
+
   <section class="resources-box">
     <h2 class="section-title">Useful External Resources</h2>
     <p class="section-sub">Trusted sites we reference and recommend</p>
@@ -682,7 +688,7 @@ def build_contact():
     body = '''<div class="article-wrap">
   <h1>Contact</h1>
   <p>Got a question, a topic suggestion, or spotted an error in one of our guides? I'd love to hear from you.</p>
-  <p>Email: <a href="mailto:CobyCane01@outlook.com">CobyCane01@outlook.com</a></p>
+  <p>Email: <a href="mailto:print3dbuddywork@outlook.com">print3dbuddywork@outlook.com</a></p>
   <p>I aim to reply within 24 hours.</p>
 </div>'''
 
@@ -751,7 +757,7 @@ def build_seo_files(posts):
     )
 
     # sitemap.xml
-    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/find-a-fix/']
+    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/find-a-fix/', '/feedback/']
     for p in posts:
         urls.append(p['url'])
 
@@ -948,6 +954,108 @@ def build_test_prints():
     test_dir.mkdir(exist_ok=True)
     (test_dir / 'index.html').write_text(page, encoding='utf-8')
     print('  Built: /test-prints/')
+
+
+def build_feedback():
+    body = '''<div class="article-wrap" style="max-width:620px;">
+  <a href="javascript:history.back()" class="back-link">&larr; Go back</a>
+  <h1>Send Feedback</h1>
+  <p style="color:var(--muted); margin-bottom:28px;">Got a problem to report, a guide suggestion, or something else? Fill in the form below and we will get back to you.</p>
+
+  <div id="fb-limit-msg" style="display:none; background:#fffbeb; border:1px solid #fcd34d; border-radius:8px; padding:16px 20px; margin-bottom:24px; color:#92400e; font-size:0.93rem;">
+    <strong>One submission per day.</strong> You have already sent feedback today &mdash; please come back tomorrow. This limit is in place to prevent spam.
+  </div>
+
+  <form id="fb-form" action="https://formspree.io/f/mnjgkqjg" method="POST">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+      <div>
+        <label for="fb-name">Name <span style="color:var(--muted); font-weight:400;">(optional)</span></label>
+        <input type="text" id="fb-name" name="name" placeholder="Your name" style="margin-bottom:0;">
+      </div>
+      <div>
+        <label for="fb-email">Email <span style="color:var(--muted); font-weight:400;">(optional)</span></label>
+        <input type="email" id="fb-email" name="email" placeholder="So we can follow up" style="margin-bottom:0;">
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px;">
+      <label for="fb-type">Issue type</label>
+      <select id="fb-type" name="issue_type" style="margin-bottom:0;">
+        <option value="not-listed">Issue not on list</option>
+        <option value="missing-guide">Missing guide</option>
+        <option value="tool-problem">Tool or calculator problem</option>
+        <option value="other">Other / General feedback</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:24px;">
+      <label for="fb-message">Message</label>
+      <textarea id="fb-message" name="message" rows="5" placeholder="Describe your issue or suggestion..." style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:6px; font-size:1rem; font-family:inherit; resize:vertical;"></textarea>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--muted); margin-bottom:16px;">&#9432; Limited to one submission per day to prevent spam.</p>
+    <button type="submit" class="btn" style="width:100%; padding:14px; font-size:1.05rem;">Send feedback</button>
+  </form>
+
+  <div id="fb-success" style="display:none; background:#f0fdf4; border:1px solid #86efac; border-radius:10px; padding:28px; text-align:center; margin-top:16px;">
+    <p style="font-size:1.1rem; font-weight:700; color:#166534; margin-bottom:8px;">&#10003; Feedback sent &mdash; thank you!</p>
+    <p style="color:var(--muted); font-size:0.93rem;">We read every submission and will follow up if you left an email.</p>
+  </div>
+</div>
+
+<script>
+  // Pre-fill issue type from URL param
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  if (type) {
+    const sel = document.getElementById('fb-type');
+    for (let i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === type) { sel.selectedIndex = i; break; }
+    }
+  }
+
+  // Rate limit: one submission per day via localStorage
+  const LIMIT_KEY = 'p3b_fb_last';
+  const ONE_DAY = 86400000;
+  const last = parseInt(localStorage.getItem(LIMIT_KEY) || '0');
+  if (Date.now() - last < ONE_DAY) {
+    document.getElementById('fb-limit-msg').style.display = 'block';
+    document.getElementById('fb-form').style.display = 'none';
+  }
+
+  // Handle Formspree submission via fetch to show success message
+  document.getElementById('fb-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        localStorage.setItem(LIMIT_KEY, Date.now().toString());
+        form.style.display = 'none';
+        document.getElementById('fb-success').style.display = 'block';
+      }
+    } catch(err) {
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  });
+</script>'''
+
+    page = base_html(
+        title=f'Feedback | {SITE_NAME}',
+        body=body,
+        description='Send feedback to Print3DBuddy - report a missing guide, a site issue, or any suggestion.',
+        canonical='/feedback/'
+    )
+    fb_dir = OUTPUT_DIR / 'feedback'
+    fb_dir.mkdir(exist_ok=True)
+    (fb_dir / 'index.html').write_text(page, encoding='utf-8')
+    print('  Built: /feedback/')
 
 
 def build_find_a_fix():
@@ -1153,7 +1261,13 @@ function findFix() {
 
 // Initialise
 buildProblemOptions('fdm');
-</script>'''
+</script>
+
+<div style="margin-top:40px; padding:28px 32px; background:#fff8f5; border:2px solid var(--accent); border-radius:12px; text-align:center;">
+  <h2 style="font-size:1.1rem; font-weight:700; margin-bottom:8px;">Your issue not listed?</h2>
+  <p style="color:var(--muted); font-size:0.93rem; margin-bottom:18px;">Let us know what problem you are having and we will look into adding a guide for it.</p>
+  <a href="/feedback/?type=not-listed" class="btn">Report a missing issue &rarr;</a>
+</div>'''
 
     page = base_html(
         title='Find a Fix | Print3DBuddy',
@@ -1179,6 +1293,7 @@ def main():
     build_contact()
     build_privacy()
     build_search(posts)
+    build_feedback()
     build_find_a_fix()
     build_test_prints()
     build_seo_files(posts)
