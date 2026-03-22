@@ -312,6 +312,7 @@ POST_TAGS = {
     'how-to-maintain-3d-printer': ('Maintenance Guide', 'How to maintain your 3D printer - lubrication, belt tension, nozzle cleaning, bed care, and a simple schedule to prevent most common problems.'),
     'how-to-calibrate-pressure-advance': ('Settings Guide', 'How to calibrate pressure advance (Klipper) and linear advance (Marlin) - fix corner blobs, crisp edges, and print faster without losing quality.'),
     'how-to-calibrate-flow-rate-extrusion-multiplier': ('Settings Guide', 'How to calibrate flow rate (extrusion multiplier) - fix rough top surfaces, dimensional inaccuracy, and weak layers in one simple test.'),
+    'how-to-fix-3d-printer-grinding-noise': ('Troubleshooting', '3D printer grinding noise? Diagnose by location - extruder, hotend, Z axis, or rails - and fix the right cause first time.'),
 }
 
 
@@ -1217,6 +1218,7 @@ const ARTICLES = [
   { slug: 'how-to-maintain-3d-printer',              title: 'How to Maintain Your 3D Printer',                tag: 'Maintenance',     desc: 'Lubrication, belt checks, nozzle cleaning, and a simple schedule to prevent the most common problems.',  printer: 'fdm',   problems: ['calibration', 'under-extrusion', 'layer-shifting', 'maintenance'], materials: ['any'], exp: ['any'] },
   { slug: 'how-to-calibrate-pressure-advance',       title: 'How to Calibrate Pressure Advance',              tag: 'Settings Guide',  desc: 'Fix corner blobs and rounded edges on Klipper and Marlin printers with pressure advance calibration.',   printer: 'fdm',   problems: ['over-extrusion', 'surface-quality', 'calibration'], materials: ['any'], exp: ['intermediate'] },
   { slug: 'how-to-calibrate-flow-rate-extrusion-multiplier', title: 'How to Calibrate Flow Rate',             tag: 'Settings Guide',  desc: 'Fix rough top surfaces, weak prints, and dimensional inaccuracy with a simple flow rate calibration.',   printer: 'fdm',   problems: ['over-extrusion', 'surface-quality', 'calibration', 'under-extrusion'], materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-3d-printer-grinding-noise',    title: 'How to Fix 3D Printer Grinding Noises',          tag: 'Troubleshooting', desc: 'Grinding from the extruder, hotend, Z axis, or rails - diagnose by location and fix the right cause.',    printer: 'fdm',   problems: ['under-extrusion', 'maintenance', 'layer-shifting'],  materials: ['any'], exp: ['any'] },
 ];
 
 let currentPrinter = 'fdm';
