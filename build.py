@@ -307,6 +307,11 @@ POST_TAGS = {
     'how-to-fix-over-extrusion': ('Troubleshooting', 'Over-extrusion causing blobs, bulging walls, or dimensional inaccuracy? Every cause and fix - flow rate, E-steps, temperature, and elephant foot.'),
     'how-to-fix-ghosting-ringing': ('Troubleshooting', 'Ghosting and ringing artefacts on 3D prints - how to fix wavy ripples near corners. Speed, acceleration, belt tension, and input shaper explained.'),
     'how-to-fix-wet-filament': ('Filament Guide', 'Wet filament causing crackling, rough surfaces, or poor layer adhesion? How to identify, dry, and store filament to prevent moisture problems.'),
+    'abs-asa-printing-guide': ('Filament Guide', 'ABS and ASA printing guide - enclosure requirements, settings, warping fixes, bed adhesion, fumes, and acetone finishing for ABS.'),
+    'petg-printing-guide': ('Filament Guide', 'PETG printing guide - settings, stringing fixes, bed adhesion tips, moisture storage, and when to use PETG instead of PLA or ABS.'),
+    'how-to-maintain-3d-printer': ('Maintenance Guide', 'How to maintain your 3D printer - lubrication, belt tension, nozzle cleaning, bed care, and a simple schedule to prevent most common problems.'),
+    'how-to-calibrate-pressure-advance': ('Settings Guide', 'How to calibrate pressure advance (Klipper) and linear advance (Marlin) - fix corner blobs, crisp edges, and print faster without losing quality.'),
+    'how-to-calibrate-flow-rate-extrusion-multiplier': ('Settings Guide', 'How to calibrate flow rate (extrusion multiplier) - fix rough top surfaces, dimensional inaccuracy, and weak layers in one simple test.'),
 }
 
 
@@ -1168,6 +1173,7 @@ const FDM_PROBLEMS = [
   { value: 'ghosting',       label: 'Ghosting / ringing / wavy artefacts near corners' },
   { value: 'material',       label: 'Choosing the right filament' },
   { value: 'slicer',         label: 'Slicer setup / getting started with software' },
+  { value: 'maintenance',    label: 'Printer maintenance / keeping it running well' },
 ];
 
 const RESIN_PROBLEMS = [
@@ -1206,6 +1212,11 @@ const ARTICLES = [
   { slug: 'how-to-fix-over-extrusion',               title: 'How to Fix Over-Extrusion',                      tag: 'Troubleshooting', desc: 'Blobs, bulging walls, or parts that do not fit? Flow rate, E-steps, temperature, and elephant foot.',  printer: 'fdm',   problems: ['over-extrusion', 'surface-quality'],  materials: ['any'], exp: ['any'] },
   { slug: 'how-to-fix-ghosting-ringing',             title: 'How to Fix Ghosting and Ringing',                tag: 'Troubleshooting', desc: 'Wavy ripples near corners and text? Speed, acceleration, belt tension, and input shaper explained.',   printer: 'fdm',   problems: ['surface-quality', 'ghosting'],        materials: ['any'], exp: ['any'] },
   { slug: 'how-to-fix-wet-filament',                 title: 'How to Fix Wet Filament',                        tag: 'Filament Guide',  desc: 'Crackling, rough surfaces, blobs? How to identify wet filament, dry it, and stop it happening again.', printer: 'fdm',   problems: ['stringing', 'surface-quality', 'layer-adhesion', 'under-extrusion'], materials: ['any'], exp: ['any'] },
+  { slug: 'abs-asa-printing-guide',                  title: 'ABS and ASA Printing Guide',                     tag: 'Filament Guide',  desc: 'Enclosure requirements, settings, warping fixes, and bed adhesion tips for printing ABS and ASA.',      printer: 'fdm',   problems: ['warping', 'material', 'layer-adhesion'],  materials: ['abs'], exp: ['any'] },
+  { slug: 'petg-printing-guide',                     title: 'PETG Printing Guide',                            tag: 'Filament Guide',  desc: 'Settings, stringing, bed adhesion, and storage tips - everything you need to print PETG reliably.',     printer: 'fdm',   problems: ['stringing', 'stuck', 'material', 'layer-adhesion'], materials: ['petg'], exp: ['any'] },
+  { slug: 'how-to-maintain-3d-printer',              title: 'How to Maintain Your 3D Printer',                tag: 'Maintenance',     desc: 'Lubrication, belt checks, nozzle cleaning, and a simple schedule to prevent the most common problems.',  printer: 'fdm',   problems: ['calibration', 'under-extrusion', 'layer-shifting', 'maintenance'], materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-calibrate-pressure-advance',       title: 'How to Calibrate Pressure Advance',              tag: 'Settings Guide',  desc: 'Fix corner blobs and rounded edges on Klipper and Marlin printers with pressure advance calibration.',   printer: 'fdm',   problems: ['over-extrusion', 'surface-quality', 'calibration'], materials: ['any'], exp: ['intermediate'] },
+  { slug: 'how-to-calibrate-flow-rate-extrusion-multiplier', title: 'How to Calibrate Flow Rate',             tag: 'Settings Guide',  desc: 'Fix rough top surfaces, weak prints, and dimensional inaccuracy with a simple flow rate calibration.',   printer: 'fdm',   problems: ['over-extrusion', 'surface-quality', 'calibration', 'under-extrusion'], materials: ['any'], exp: ['any'] },
 ];
 
 let currentPrinter = 'fdm';

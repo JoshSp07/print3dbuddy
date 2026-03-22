@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calibrate Pressure Advance (and Linear Advance) | Print3DBuddy</title>
+  <meta name="description" content="How to calibrate pressure advance (Klipper) and linear advance (Marlin) - fix corner blobs, crisp edges, and print faster without losing quality.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/how-to-calibrate-pressure-advance/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Settings Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>How to Calibrate Pressure Advance (and Linear Advance)</h1>
+  <p>Pressure advance is one of the most effective calibrations you can run for print quality. It cleans up blobs at corners, fixes the slight over-extrusion at the start of lines, and allows you to print faster without losing quality. If you have noticed that corners on your prints look slightly blobby or rounded, or that line starts look fatter than they should, pressure advance is the fix.</p>
+<p>Pressure advance is the Klipper firmware term. Marlin calls the same feature Linear Advance (LA). They work identically - this guide covers both.</p>
+<hr>
+<h2 id="what-is-pressure-advance">What Is Pressure Advance?</h2>
+<p>When your printer pushes filament into a hot nozzle, the filament is slightly compressible. As the extruder motor pushes, pressure builds up in the hotend before plastic actually comes out. When the extruder slows or stops (at a corner, for example), that built-up pressure continues to push plastic out after the motor has stopped.</p>
+<p>The result: blobs and zits at corners, rounded sharp edges, and slightly inconsistent line widths.</p>
+<p>Pressure advance compensates for this by pushing filament slightly ahead of where it is needed (to pre-load pressure) and pulling back slightly when decelerating (to release pressure before it oozes out).</p>
+<hr>
+<h2 id="do-you-need-this-calibration">Do You Need This Calibration?</h2>
+<p>Pressure advance is most impactful if you are seeing:</p>
+<ul>
+<li>Blobs or bulges at corners</li>
+<li>Rounded sharp corners that should be crisp</li>
+<li>First millimetre of lines that are fatter than the rest</li>
+<li>Artefacts near direction changes that do not go away with speed or temperature changes</li>
+</ul>
+<p>If your prints already look clean, your firmware may have a reasonable default set, or the issue may lie elsewhere.</p>
+<hr>
+<h2 id="klipper-calibrating-pressure-advance">Klipper: Calibrating Pressure Advance</h2>
+<p>Klipper's built-in pressure advance tuning print is the fastest method.</p>
+<p><strong>Step 1:</strong> Add this to your printer.cfg if it is not already there:</p>
+<pre><code>[extruder]
+pressure_advance: 0.0</code></pre>
+<p><strong>Step 2:</strong> Run the tuning tower. In your Klipper console (Mainsail or Fluidd), run:</p>
+<pre><code>SET_VELOCITY_LIMIT SQUARE_CORNER_VELOCITY=1 ACCEL=500
+TUNING_TOWER COMMAND=SET_PRESSURE_ADVANCE PARAMETER=ADVANCE START=0 FACTOR=.005</code></pre>
+<p>Then start a print of a simple hollow square or box shape.</p>
+<p><strong>Step 3:</strong> Examine the result. The pressure advance value increases as you go up the print. Find the height where corners look cleanest and lines look most consistent, then calculate the value:</p>
+<p>Pressure advance = height of best layer x 0.005</p>
+<p><strong>Step 4:</strong> Set the value in printer.cfg:</p>
+<pre><code>[extruder]
+pressure_advance: 0.04  # replace with your measured value</code></pre>
+<p>Typical values: 0.02-0.08 for direct drive, 0.4-0.8 for Bowden setups.</p>
+<hr>
+<h2 id="marlin-calibrating-linear-advance">Marlin: Calibrating Linear Advance</h2>
+<p>Marlin's Linear Advance uses K-factor instead of PA value, but the concept is the same.</p>
+<p><strong>Step 1:</strong> Check that Linear Advance is enabled in your firmware. Many Marlin builds ship with it disabled. If <code>M900</code> commands in the terminal give an error, LA is not compiled in and you need a custom firmware build.</p>
+<p><strong>Step 2:</strong> Use the Marlin LA calibration pattern generator at <code>marlinfw.org/tools/lin_advance/</code>. Configure your printer dimensions, generate the G-code, and print it.</p>
+<p><strong>Step 3:</strong> The print produces a series of lines at different K values. Find the K value where lines are most consistent in width. Set it with:</p>
+<pre><code>M900 K0.15  # replace with your measured value
+M500        # save to EEPROM</code></pre>
+<p>Typical K values: 0.05-0.25 for direct drive, 1.0-2.0 for Bowden.</p>
+<hr>
+<h2 id="bambu-lab-and-other-closed-firmware-printers">Bambu Lab and Other Closed-Firmware Printers</h2>
+<p>Bambu Lab printers run their own closed firmware that includes pressure advance tuned by the manufacturer. You cannot manually set the PA value in the same way. If you are seeing corner blobs on a Bambu printer, the issue is more likely a flow rate calibration problem - run the built-in flow calibration from the printer menu.</p>
+<hr>
+<h2 id="after-calibrating">After Calibrating</h2>
+<p>Once pressure advance is set, you may find you can:</p>
+<ul>
+<li>Print slightly faster without the quality dropping</li>
+<li>Reduce retraction slightly (pressure advance handles some of what retraction was covering for)</li>
+<li>Get sharper corners without any other changes</li>
+</ul>
+<p>Re-run this calibration if you change your extruder hardware, switch between direct drive and Bowden, or install a new hotend - the physical characteristics of the filament path have changed.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-over-extrusion/" target="_blank" rel="noopener">How to Fix Over-Extrusion</a> - blobs and corner issues that pressure advance alone may not fix</li>
+<li><a href="/posts/how-to-fix-ghosting-ringing/" target="_blank" rel="noopener">How to Fix Ghosting and Ringing</a> - another corner-quality issue, different cause</li>
+<li><a href="/posts/how-to-calibrate-your-first-3d-printer/" target="_blank" rel="noopener">How to Calibrate Your First 3D Printer</a> - full calibration sequence including E-steps and flow rate</li>
+<li><a href="/posts/how-to-calibrate-flow-rate-extrusion-multiplier/" target="_blank" rel="noopener">How to Calibrate Flow Rate</a> - calibrate flow before pressure advance for best results</li>
+<li><a href="/posts/3d-printing-speed-vs-quality-guide/" target="_blank" rel="noopener">Speed vs Quality Guide</a> - how to make use of the speed gains from pressure advance</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

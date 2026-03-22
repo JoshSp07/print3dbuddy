@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETG Printing Guide: Settings, Stringing, and Bed Adhesion | Print3DBuddy</title>
+  <meta name="description" content="PETG printing guide - settings, stringing fixes, bed adhesion tips, moisture storage, and when to use PETG instead of PLA or ABS.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/petg-printing-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Filament Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>PETG Printing Guide: Settings, Stringing, and Bed Adhesion</h1>
+  <p>PETG sits in a sweet spot between PLA and ABS. It is stronger and more heat-resistant than PLA, easier to print than ABS, and has good chemical resistance. It is a natural choice for functional parts that need to handle some stress or warmth.</p>
+<p>The catch is that PETG has a few specific quirks. It strings more than PLA, it sticks to some build surfaces almost too well, and it likes slightly different settings than what works for PLA. Once you know what to expect, it is a very capable material.</p>
+<hr>
+<h2 id="why-petg-behaves-differently">Why PETG Behaves Differently</h2>
+<p>PETG is hygroscopic (it absorbs moisture from the air), it has a higher printing temperature than PLA, and it flows differently - it is stickier and more viscous when melted. These properties mean it grips build surfaces aggressively, tends to string between parts, and benefits from minimal cooling compared to PLA.</p>
+<hr>
+<h2 id="recommended-settings">Recommended Settings</h2>
+<p><strong>Nozzle temperature:</strong> 230-250C. Start at 235C and adjust. Higher temperatures improve layer adhesion but increase stringing.</p>
+<p><strong>Bed temperature:</strong> 70-85C. PETG adheres best to a warm bed. Start at 75C.</p>
+<p><strong>Part cooling fan:</strong> 30-50%. PETG needs less cooling than PLA - too much fan reduces layer adhesion and can cause delamination. Too little causes stringing and drooping on overhangs.</p>
+<p><strong>Print speed:</strong> 40-60mm/s. PETG generally prints better slightly slower than PLA. The stickier melt needs a little more time to bond correctly.</p>
+<p><strong>Retraction:</strong></p>
+<ul>
+<li>Direct drive: 1-2mm</li>
+<li>Bowden: 4-6mm</li>
+</ul>
+<p>PETG is prone to stringing, so retraction is important - but too much retraction causes grinding and clogs. Start conservative and increase in small steps.</p>
+<p>Use the <a href="https://tools.print3dbuddy.com/tools/print-settings" target="_blank" rel="noopener">print settings cheat sheet</a> for a full settings reference.</p>
+<hr>
+<h2 id="bed-adhesion-the-tricky-part">Bed Adhesion - The Tricky Part</h2>
+<p>PETG can stick so aggressively to some surfaces that it pulls the surface coating off when you try to remove the print. This is especially common with:</p>
+<ul>
+<li>Textured PEI at high temperatures</li>
+<li>Bare glass</li>
+<li>Bare metal build plates</li>
+</ul>
+<p><strong>Best approach:</strong></p>
+<ul>
+<li><strong>Smooth PEI + a thin layer of glue stick as a release agent</strong> - the glue prevents the PETG from bonding directly to the PEI</li>
+<li><strong>Textured PEI at 70-75C bed temperature</strong> (lower end) - less aggressive grip</li>
+<li><strong>Let the bed cool to 30-40C before removing</strong> - PETG releases much more easily when cold</li>
+</ul>
+<p>If a print is well and truly stuck, put the build plate in the freezer for 10 minutes. The differential thermal contraction usually pops it free.</p>
+<p>Do not use hairspray or other adhesives intended to increase grip - PETG does not need them and you will make the problem worse.</p>
+<hr>
+<h2 id="fixing-stringing">Fixing Stringing</h2>
+<p>PETG strings more than PLA by nature, but it is controllable. The main levers are:</p>
+<p><strong>Temperature:</strong> Try dropping nozzle temperature by 5-10C. A lower temperature means less oozing between moves.</p>
+<p><strong>Retraction:</strong> Increase retraction distance in 0.5mm steps until stringing improves, but stop before you get grinding or clogs.</p>
+<p><strong>Travel speed:</strong> Increase the travel (non-printing movement) speed. The faster the nozzle moves between parts, the less time plastic has to drip.</p>
+<p><strong>Combing / avoid crossing perimeters:</strong> Enable this in your slicer. It routes travel moves through the inside of the model rather than across open air, eliminating most stringing without touching retraction.</p>
+<p>See the full <a href="/posts/how-to-fix-3d-printer-stringing/" target="_blank" rel="noopener">stringing fix guide</a> for a complete walkthrough.</p>
+<hr>
+<h2 id="layer-adhesion-and-delamination">Layer Adhesion and Delamination</h2>
+<p>If your PETG prints are delaminating or layers are separating, the most common causes are:</p>
+<ul>
+<li><strong>Too much part cooling</strong> - reduce fan speed</li>
+<li><strong>Print speed too high</strong> - slow down to give layers time to bond</li>
+<li><strong>Temperature too low</strong> - try 5-10C higher</li>
+<li><strong>Wet filament</strong> - PETG absorbs moisture and wet PETG delaminates easily; dry before printing if stored unsealed. See the <a href="/posts/how-to-fix-wet-filament/" target="_blank" rel="noopener">wet filament guide</a> for drying instructions.</li>
+</ul>
+<hr>
+<h2 id="moisture-and-storage">Moisture and Storage</h2>
+<p>PETG absorbs moisture more readily than PLA. After a few weeks of open storage in a humid environment, you will notice:</p>
+<ul>
+<li>More stringing than usual</li>
+<li>Rough surface texture</li>
+<li>Slight crackling sounds at the nozzle</li>
+<li>Weaker layer adhesion</li>
+</ul>
+<p>If you notice these symptoms, dry the spool at 65C for 4-6 hours in a filament dryer or food dehydrator before printing. Store in a sealed bag with desiccant between uses.</p>
+<hr>
+<h2 id="when-to-use-petg-vs-pla">When to Use PETG vs PLA</h2>
+<p><strong>Choose PETG when:</strong></p>
+<ul>
+<li>The part will be exposed to heat (car interior, near electronics, direct sunlight)</li>
+<li>You need a more impact-resistant or flexible part than PLA provides</li>
+<li>Chemical resistance matters (PETG resists many common household chemicals)</li>
+<li>Printing parts that need to bend slightly without snapping</li>
+</ul>
+<p><strong>Stick with PLA when:</strong></p>
+<ul>
+<li>Print quality and surface detail are the priority</li>
+<li>Ease of printing matters more than material properties</li>
+<li>The part does not need to withstand heat or stress</li>
+</ul>
+<p>See the <a href="/posts/pla-vs-petg-vs-abs-which-filament-for-beginners/" target="_blank" rel="noopener">PLA vs PETG vs ABS comparison</a> for a full breakdown.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-3d-printer-stringing/" target="_blank" rel="noopener">How to Fix 3D Printer Stringing</a> - retraction, temperature, and travel settings</li>
+<li><a href="/posts/how-to-fix-wet-filament/" target="_blank" rel="noopener">How to Fix Wet Filament</a> - identifying and drying moisture-affected filament</li>
+<li><a href="/posts/3d-printing-layer-adhesion-problems-fixes/" target="_blank" rel="noopener">3D Printing Layer Adhesion Problems</a> - delamination and weak layers</li>
+<li><a href="/posts/best-filament-for-outdoor-use/" target="_blank" rel="noopener">Best Filament for Outdoor Use</a> - PETG vs ASA for outdoor applications</li>
+<li><a href="https://tools.print3dbuddy.com/tools/nozzle-recommender" target="_blank" rel="noopener">Nozzle Size Recommender</a> - check nozzle choice for PETG</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

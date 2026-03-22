@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABS and ASA Printing Guide: Settings, Warping, and Getting Reliable Results | Print3DBuddy</title>
+  <meta name="description" content="ABS and ASA printing guide - enclosure requirements, settings, warping fixes, bed adhesion, fumes, and acetone finishing for ABS.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/abs-asa-printing-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Filament Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>ABS and ASA Printing Guide: Settings, Warping, and Getting Reliable Results</h1>
+  <p>ABS and ASA are the two materials most beginners are warned away from. That reputation is mostly deserved - they are genuinely harder to print than PLA or PETG. But they have real advantages for functional parts: heat resistance, better impact strength, and (for ASA specifically) excellent UV and weather resistance.</p>
+<p>This guide covers everything you need to print ABS and ASA reliably.</p>
+<hr>
+<h2 id="abs-vs-asa-which-should-you-use">ABS vs ASA - Which Should You Use?</h2>
+<p><strong>ABS</strong> is the older of the two. It has been around since the beginning of desktop 3D printing and is widely available. It machines and sands well and bonds strongly with acetone, which lets you smooth prints or glue parts together cleanly.</p>
+<p><strong>ASA</strong> is essentially an improved ABS. It has similar strength and heat resistance but with much better UV resistance - ASA parts left outdoors will not fade or become brittle the way ABS does. It is also slightly easier to print than ABS, with less warping.</p>
+<p>For most people, ASA is the better choice unless you specifically need the acetone-smoothing properties of ABS or already have ABS filament to use up.</p>
+<hr>
+<h2 id="why-abs-and-asa-are-harder-to-print">Why ABS and ASA Are Harder to Print</h2>
+<p>Both materials shrink significantly as they cool. If one part of the print cools faster than another, the differential shrinkage pulls the print apart - causing warping, layer splitting, and cracks. The fixes all come down to controlling the cooling environment.</p>
+<hr>
+<h2 id="the-most-important-requirement-an-enclosure">The Most Important Requirement: An Enclosure</h2>
+<p>Printing ABS or ASA without an enclosure is possible, but it is fighting against the material. An enclosure traps heat around the print and keeps the ambient temperature stable, dramatically reducing warping and layer cracking.</p>
+<p>You do not need an expensive enclosure. A fabric tent enclosure or even a cardboard box placed over the printer during printing can make a noticeable difference. See the <a href="/posts/best-3d-printer-enclosures/" target="_blank" rel="noopener">best 3D printer enclosures guide</a> for options at different budgets.</p>
+<p>If you do not have an enclosure, you can still try printing ABS or ASA with these mitigations:</p>
+<ul>
+<li>Turn off or reduce part cooling fan entirely</li>
+<li>Use a brim (5-10 lines) to help adhesion and slow edge cooling</li>
+<li>Print in a warm, draught-free room</li>
+<li>Use a heated bed at the high end of the recommended range</li>
+</ul>
+<hr>
+<h2 id="recommended-settings">Recommended Settings</h2>
+<p><strong>Nozzle temperature:</strong></p>
+<ul>
+<li>ABS: 230-250C (start at 240C and adjust)</li>
+<li>ASA: 235-255C (start at 245C and adjust)</li>
+</ul>
+<p><strong>Bed temperature:</strong></p>
+<ul>
+<li>ABS: 100-110C</li>
+<li>ASA: 90-100C</li>
+</ul>
+<p><strong>Part cooling fan:</strong></p>
+<ul>
+<li>Set to 0% for the first 3-5 layers at minimum</li>
+<li>Many people print ABS and ASA with 0% cooling for the entire print</li>
+<li>If surface quality is a priority, try 10-20% fan for overhangs only</li>
+</ul>
+<p><strong>Enclosure temperature:</strong> Aim for 40-50C ambient inside the enclosure. Too hot and your filament will soften before it reaches the nozzle; too cold and warping returns.</p>
+<p>Use the <a href="https://tools.print3dbuddy.com/tools/print-settings" target="_blank" rel="noopener">print settings cheat sheet</a> to get starting points for your exact printer setup.</p>
+<hr>
+<h2 id="bed-adhesion">Bed Adhesion</h2>
+<p>ABS and ASA need good bed adhesion because the parts want to warp and peel.</p>
+<p><strong>Best surfaces for ABS/ASA:</strong></p>
+<ul>
+<li>Smooth PEI - works well at temperature, releases when cool</li>
+<li>Garolite / FR4 sheet - excellent for both materials, especially ABS</li>
+<li>Glass with ABS juice or hairspray</li>
+</ul>
+<p><strong>PEI note:</strong> Textured PEI can grip ASA very strongly at temperature. If parts are sticking too hard and pulling up the PEI surface, try smooth PEI or let the bed cool to 40-50C before removing.</p>
+<p><strong>Glue stick on any smooth surface</strong> works as a release agent for ABS specifically - it prevents over-adhesion rather than improving it.</p>
+<hr>
+<h2 id="dealing-with-warping">Dealing With Warping</h2>
+<p>If warping is a persistent problem, work through this checklist:</p>
+<ol>
+<li>Increase enclosure temperature or add one if you do not have it</li>
+<li>Increase bed temperature by 5-10C</li>
+<li>Add or increase brim width (8-15 lines)</li>
+<li>Reduce part cooling fan to 0%</li>
+<li>Check for draughts - open windows or nearby vents will cause cold air to hit the print</li>
+<li>For very large flat parts, consider splitting the model into smaller sections</li>
+</ol>
+<p>See the <a href="/posts/how-to-fix-3d-print-warping/" target="_blank" rel="noopener">how to fix warping guide</a> for more detail on each fix.</p>
+<hr>
+<h2 id="fumes-and-ventilation">Fumes and Ventilation</h2>
+<p>ABS produces styrene fumes when printing. ASA produces similar compounds. Both should be printed in a ventilated area or with an enclosure that has HEPA and activated carbon filtration. Do not print in a closed bedroom or office for long periods without ventilation.</p>
+<p>ASA is somewhat better than ABS in this regard but the same precautions apply.</p>
+<hr>
+<h2 id="acetone-finishing-abs-only">Acetone Finishing (ABS Only)</h2>
+<p>One of ABS's unique properties is that it dissolves in acetone. This lets you:</p>
+<ul>
+<li><strong>Smooth prints</strong> by brushing acetone onto the surface or using an acetone vapour chamber</li>
+<li><strong>Bond parts</strong> by applying a tiny amount of acetone to the joint and pressing together - it creates a molecular bond stronger than most adhesives</li>
+</ul>
+<p>ASA does not dissolve as readily in acetone, so this technique is mainly for ABS.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-3d-print-warping/" target="_blank" rel="noopener">How to Fix 3D Print Warping</a> - detailed warping fixes</li>
+<li><a href="/posts/best-3d-printer-enclosures/" target="_blank" rel="noopener">Best 3D Printer Enclosures</a> - enclosure options at every budget</li>
+<li><a href="/posts/pla-vs-petg-vs-abs-which-filament-for-beginners/" target="_blank" rel="noopener">PLA vs PETG vs ABS - Which Filament?</a> - material comparison</li>
+<li><a href="/posts/best-filament-for-outdoor-use/" target="_blank" rel="noopener">Best Filament for Outdoor Use</a> - ASA compared to other weather-resistant options</li>
+<li><a href="https://tools.print3dbuddy.com/tools/print-settings" target="_blank" rel="noopener">Print Settings Cheat Sheet</a> - temperature and speed settings for ABS and ASA</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>
