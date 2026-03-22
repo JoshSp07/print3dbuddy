@@ -20,7 +20,7 @@ STATIC_DIR = Path("static")
 
 NAV_LINKS = [
     ("All Guides", "/posts/"),
-    ("Services", "https://tools.print3dbuddy.com"),
+    ("Services", "https://tools.print3dbuddy.com/dashboard"),
     ("Quick Guides", "https://tools.print3dbuddy.com/guides"),
     ("About", "/about/"),
     ("Search", "/search/"),
