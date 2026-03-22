@@ -20,6 +20,7 @@ STATIC_DIR = Path("static")
 
 NAV_LINKS = [
     ("All Guides", "/posts/"),
+    ("Find a Fix", "/find-a-fix/"),
     ("Services", "https://tools.print3dbuddy.com/dashboard"),
     ("Quick Guides", "https://tools.print3dbuddy.com/guides"),
     ("About", "/about/"),
@@ -654,7 +655,7 @@ def build_seo_files(posts):
     )
 
     # sitemap.xml
-    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/search/']
+    urls = ['/', '/posts/', '/about/', '/contact/', '/privacy/', '/search/', '/find-a-fix/']
     for p in posts:
         urls.append(p['url'])
 
@@ -853,6 +854,223 @@ def build_test_prints():
     print('  Built: /test-prints/')
 
 
+def build_find_a_fix():
+    body = '''<div class="search-hero">
+  <h1>Find a Fix</h1>
+  <p>Tell us about your problem and we'll point you to the right guide.</p>
+</div>
+
+<div class="article-wrap" style="max-width:680px; margin-top:0; padding-top:40px;">
+
+  <div class="faf-form">
+
+    <div class="faf-group">
+      <label class="faf-label">1. What type of printer do you have?</label>
+      <div class="faf-toggle">
+        <button class="faf-btn active" data-value="fdm" onclick="setPrinter('fdm')">FDM (filament)</button>
+        <button class="faf-btn" data-value="resin" onclick="setPrinter('resin')">Resin (SLA/MSLA)</button>
+      </div>
+    </div>
+
+    <div class="faf-group">
+      <label class="faf-label">2. What's the problem?</label>
+      <select id="problem-select" class="faf-select">
+        <option value="">-- Select a problem --</option>
+      </select>
+    </div>
+
+    <div class="faf-group" id="material-group">
+      <label class="faf-label">3. What filament are you using?</label>
+      <select id="material-select" class="faf-select">
+        <option value="any">Any / Not sure</option>
+        <option value="pla">PLA / PLA+</option>
+        <option value="petg">PETG</option>
+        <option value="abs">ABS / ASA</option>
+        <option value="tpu">TPU / Flexible</option>
+        <option value="nylon">Nylon / PC</option>
+      </select>
+    </div>
+
+    <div class="faf-group">
+      <label class="faf-label" id="exp-label">4. What's your experience level?</label>
+      <select id="exp-select" class="faf-select">
+        <option value="any">Any</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate / Advanced</option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="findFix()" style="width:100%; padding:14px; font-size:1.05rem; margin-top:8px;">Find articles &rarr;</button>
+  </div>
+
+  <div id="faf-results" style="margin-top:40px;"></div>
+
+</div>
+
+<style>
+  .faf-form { display: flex; flex-direction: column; gap: 28px; }
+  .faf-group { display: flex; flex-direction: column; gap: 10px; }
+  .faf-label { font-weight: 700; font-size: 1rem; color: var(--text); }
+  .faf-toggle { display: flex; gap: 10px; }
+  .faf-btn {
+    flex: 1; padding: 12px 20px; border: 2px solid var(--border); border-radius: 8px;
+    background: #fff; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    color: var(--muted); transition: all 0.15s;
+  }
+  .faf-btn.active { border-color: var(--accent); background: #fff3ed; color: var(--accent); }
+  .faf-btn:hover:not(.active) { border-color: #ccc; color: var(--text); }
+  .faf-select {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.97rem; color: var(--text); background: #fff; cursor: pointer;
+    appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 38px;
+  }
+  .faf-select:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+  .faf-results-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .faf-card {
+    border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px;
+    margin-bottom: 16px; transition: box-shadow 0.2s; background: #fff;
+  }
+  .faf-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .faf-card .tag { display: inline-block; background: #fff3ed; color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 2px 9px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .faf-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .faf-card h3 a { color: var(--dark); text-decoration: none; }
+  .faf-card h3 a:hover { color: var(--accent); }
+  .faf-card p { color: var(--muted); font-size: 0.9rem; margin: 0 0 12px; line-height: 1.5; }
+  .faf-no-results { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 24px; text-align: center; color: var(--muted); }
+</style>
+
+<script>
+const FDM_PROBLEMS = [
+  { value: 'stringing',      label: 'Stringing / oozing between parts' },
+  { value: 'warping',        label: 'Warping / corners lifting off the bed' },
+  { value: 'first-layer',    label: 'First layer not sticking' },
+  { value: 'stuck',          label: 'Print stuck to the build plate' },
+  { value: 'layer-adhesion', label: 'Weak layers / layers splitting apart' },
+  { value: 'under-extrusion',label: 'Under-extrusion / gaps in the print' },
+  { value: 'supports',       label: 'Supports (when to use / how to remove)' },
+  { value: 'surface-quality',label: 'Poor surface quality or finish' },
+  { value: 'strength',       label: 'Part not strong enough / breaking' },
+  { value: 'speed-quality',  label: 'Speed vs quality tradeoff' },
+  { value: 'slow-prints',    label: 'Prints are taking too long' },
+  { value: 'calibration',    label: 'Printer calibration / new printer setup' },
+  { value: 'material',       label: 'Choosing the right filament' },
+  { value: 'slicer',         label: 'Slicer setup / getting started with software' },
+];
+
+const RESIN_PROBLEMS = [
+  { value: 'getting-started', label: 'Getting started with resin printing' },
+  { value: 'general',         label: 'Choosing a resin printer' },
+];
+
+const ARTICLES = [
+  { slug: 'how-to-fix-3d-printer-stringing',         title: 'How to Fix 3D Printer Stringing',                tag: 'Troubleshooting', desc: 'Retraction settings, temperature, and travel speed explained clearly.',                            printer: 'fdm',   problems: ['stringing'],                          materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-3d-print-warping',             title: 'How to Fix 3D Print Warping',                    tag: 'Troubleshooting', desc: 'Bed adhesion, enclosures, brims, and material-specific tips.',                                   printer: 'fdm',   problems: ['warping'],                            materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-first-layer-problems-fixes',  title: 'First Layer Problems & Fixes',                   tag: 'Troubleshooting', desc: 'Every first layer problem - not sticking, warping, gaps, blobs - and how to fix each.',           printer: 'fdm',   problems: ['first-layer', 'calibration'],          materials: ['any'], exp: ['any'] },
+  { slug: '3d-prints-stuck-to-build-plate-fixes',    title: 'Prints Stuck to the Build Plate: Fixes',         tag: 'Troubleshooting', desc: 'Z-offset, bed temp, PETG on PEI, and when to replace your build surface.',                        printer: 'fdm',   problems: ['stuck', 'first-layer'],               materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-layer-adhesion-problems-fixes', title: 'Layer Adhesion Problems & Fixes',              tag: 'Troubleshooting', desc: 'Causes, fixes, and a checklist to get strong, well-bonded prints every time.',                    printer: 'fdm',   problems: ['layer-adhesion', 'strength'],          materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-under-extrusion',              title: 'How to Fix Under-Extrusion',                     tag: 'Troubleshooting', desc: 'Every cause covered - extruder gear, clogs, temperature, E-steps, and filament quality.',        printer: 'fdm',   problems: ['under-extrusion', 'layer-adhesion'],  materials: ['any'], exp: ['any'] },
+  { slug: 'complete-nozzle-guide-3d-printing',       title: 'Complete Nozzle Guide',                          tag: 'Hardware Guide',  desc: 'Sizes, materials, when to replace, and how to clear a clogged nozzle.',                         printer: 'fdm',   problems: ['under-extrusion', 'surface-quality'], materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-supports-guide',              title: '3D Printing Supports Guide',                     tag: 'Settings Guide',  desc: 'When to use supports, how to set them up, and how to remove them without damaging the print.',    printer: 'fdm',   problems: ['supports'],                           materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-speed-vs-quality-guide',      title: 'Speed vs Quality Guide',                         tag: 'Settings Guide',  desc: 'What actually limits speed, which settings to change, and profiles for different goals.',          printer: 'fdm',   problems: ['speed-quality', 'slow-prints', 'surface-quality'], materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-reduce-3d-print-time',             title: 'How to Reduce 3D Print Time',                    tag: 'Settings Guide',  desc: 'Layer height, infill, speed, and nozzle changes that make the biggest difference.',               printer: 'fdm',   problems: ['slow-prints', 'speed-quality'],        materials: ['any'], exp: ['any'] },
+  { slug: '3d-print-orientation-part-strength-guide', title: 'Print Orientation & Part Strength',             tag: 'Settings Guide',  desc: 'Why orientation matters more than infill, with practical examples for common parts.',             printer: 'fdm',   problems: ['strength', 'layer-adhesion'],          materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-infill-patterns-guide',       title: 'Infill Patterns Guide',                          tag: 'Settings Guide',  desc: 'Which infill patterns to use for strength, speed, or flexibility - and what percentages to set.',  printer: 'fdm',   problems: ['strength', 'speed-quality'],           materials: ['any'], exp: ['any'] },
+  { slug: '3d-printing-ironing-guide',               title: 'Ironing Settings Guide',                         tag: 'Settings Guide',  desc: 'How to get glass-smooth top surfaces using ironing - settings, flow rates, when to skip it.',       printer: 'fdm',   problems: ['surface-quality'],                    materials: ['any'], exp: ['intermediate'] },
+  { slug: 'how-to-post-process-3d-prints',           title: 'How to Post-Process 3D Prints',                  tag: 'Finishing Guide', desc: 'Sanding, priming, painting, and finishing 3D prints to a professional standard.',                  printer: 'fdm',   problems: ['surface-quality'],                    materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-calibrate-your-first-3d-printer',  title: 'How to Calibrate Your First 3D Printer',         tag: 'Beginner Guide',  desc: 'Bed levelling, E-steps, flow rate, and first layer - the complete calibration walkthrough.',       printer: 'fdm',   problems: ['calibration', 'first-layer'],          materials: ['any'], exp: ['beginner'] },
+  { slug: 'best-pei-sheets-for-3d-printers',         title: 'Best PEI Sheets for 3D Printers',                tag: "Buyer\'s Guide",  desc: 'The cheapest single upgrade for better bed adhesion - top options compared.',                      printer: 'fdm',   problems: ['first-layer', 'warping', 'stuck'],     materials: ['any'], exp: ['any'] },
+  { slug: 'best-3d-printer-upgrades-under-50',       title: 'Best Printer Upgrades Under £50',                tag: "Buyer\'s Guide",  desc: 'PEI sheets, Capricorn tubes, BLTouch, calipers - ranked by actual impact on print quality.',       printer: 'fdm',   problems: ['calibration', 'under-extrusion'],      materials: ['any'], exp: ['any'] },
+  { slug: 'pla-vs-petg-vs-abs-which-filament-for-beginners', title: 'PLA vs PETG vs ABS - Which to Choose?', tag: 'Filament Guide',  desc: 'A plain-English comparison to help you pick the right material for your project.',                   printer: 'fdm',   problems: ['material'],                           materials: ['pla', 'petg', 'abs'], exp: ['beginner'] },
+  { slug: 'tpu-flexible-filament-beginners-guide',   title: 'TPU Flexible Filament Guide',                    tag: 'Filament Guide',  desc: 'Settings, direct drive vs Bowden, avoiding jams, and what TPU is actually good for.',              printer: 'fdm',   problems: ['material', 'stringing', 'under-extrusion'], materials: ['tpu'], exp: ['any'] },
+  { slug: 'best-filament-for-outdoor-use',           title: 'Best Filament for Outdoor Use',                  tag: 'Filament Guide',  desc: 'Which filaments survive UV, heat, and moisture - PETG, ASA, PC compared.',                        printer: 'fdm',   problems: ['material'],                           materials: ['petg', 'abs', 'nylon'], exp: ['any'] },
+  { slug: 'how-to-store-filament-properly',          title: 'How to Store Filament Properly',                 tag: 'Filament Guide',  desc: 'Damp filament causes stringing and weak layers. Here is how to store and dry it properly.',         printer: 'fdm',   problems: ['material', 'stringing', 'layer-adhesion', 'under-extrusion'], materials: ['any'], exp: ['any'] },
+  { slug: 'best-filament-brands-for-3d-printing',   title: 'Best Filament Brands',                           tag: 'Filament Guide',  desc: 'eSUN, Polymaker, Bambu Lab, Sunlu honestly compared for PLA, PETG, ABS and more.',                 printer: 'fdm',   problems: ['material'],                           materials: ['any'], exp: ['any'] },
+  { slug: 'best-slicer-software-for-beginners',      title: 'Best Slicer Software for Beginners',             tag: 'Software Guide',  desc: 'Bambu Studio, PrusaSlicer, or Cura? A plain-English comparison with a clear recommendation.',      printer: 'fdm',   problems: ['slicer'],                             materials: ['any'], exp: ['beginner'] },
+  { slug: 'how-to-design-3d-models-for-beginners',   title: 'How to Design Your Own 3D Models',               tag: 'Software Guide',  desc: 'Tinkercad, Fusion 360, FreeCAD - which to start with and why.',                                    printer: 'fdm',   problems: ['slicer'],                             materials: ['any'], exp: ['beginner'] },
+  { slug: 'resin-3d-printing-beginners-guide',       title: 'Resin 3D Printing: Beginner Guide',              tag: 'Beginner Guide',  desc: 'How resin printing works, safety, settings, wash and cure, and the most common problems fixed.',    printer: 'resin', problems: ['getting-started', 'general'],         materials: ['any'], exp: ['beginner', 'any'] },
+  { slug: 'best-resin-3d-printers-for-beginners',    title: 'Best Resin Printers for Beginners',              tag: 'Printer Reviews', desc: 'Elegoo Saturn 4, Mars 4, Phrozen Sonic Mini 8K honestly compared for value and ease of use.',       printer: 'resin', problems: ['general', 'getting-started'],         materials: ['any'], exp: ['beginner', 'any'] },
+];
+
+let currentPrinter = 'fdm';
+
+function setPrinter(type) {
+  currentPrinter = type;
+  document.querySelectorAll('.faf-btn').forEach(b => b.classList.toggle('active', b.dataset.value === type));
+  document.getElementById('material-group').style.display = type === 'fdm' ? 'flex' : 'none';
+  const label = document.getElementById('exp-label');
+  label.textContent = (type === 'fdm' ? '4.' : '3.') + ' What is your experience level?';
+  buildProblemOptions(type);
+  document.getElementById('faf-results').innerHTML = '';
+}
+
+function buildProblemOptions(type) {
+  const sel = document.getElementById('problem-select');
+  const problems = type === 'fdm' ? FDM_PROBLEMS : RESIN_PROBLEMS;
+  sel.innerHTML = '<option value="">-- Select a problem --</option>' +
+    problems.map(p => `<option value="${p.value}">${p.label}</option>`).join('');
+}
+
+function findFix() {
+  const problem  = document.getElementById('problem-select').value;
+  const material = document.getElementById('material-select').value;
+  const exp      = document.getElementById('exp-select').value;
+  const resultsEl = document.getElementById('faf-results');
+
+  if (!problem) {
+    resultsEl.innerHTML = '<div class="faf-no-results"><strong>Please select a problem first.</strong></div>';
+    return;
+  }
+
+  const scored = ARTICLES
+    .filter(a => a.printer === currentPrinter)
+    .map(a => {
+      let score = 0;
+      if (a.problems.includes(problem)) score += 10;
+      if (a.materials.includes(material) && material !== 'any') score += 3;
+      else if (a.materials.includes('any')) score += 1;
+      if (a.exp.includes(exp) && exp !== 'any') score += 2;
+      return { ...a, score };
+    })
+    .filter(a => a.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+
+  if (scored.length === 0) {
+    resultsEl.innerHTML = '<div class="faf-no-results"><strong>No specific guides found for that combination.</strong><br><br><a href="/posts/">Browse all guides &rarr;</a></div>';
+    return;
+  }
+
+  resultsEl.innerHTML = `<p class="faf-results-title">Recommended guides</p>` +
+    scored.map(a => `
+      <div class="faf-card">
+        <span class="tag">${a.tag}</span>
+        <h3><a href="/posts/${a.slug}/">${a.title}</a></h3>
+        <p>${a.desc}</p>
+        <a href="/posts/${a.slug}/" class="btn" style="padding:9px 20px; font-size:0.9rem;">Read guide &rarr;</a>
+      </div>
+    `).join('');
+
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Initialise
+buildProblemOptions('fdm');
+</script>'''
+
+    page = base_html(
+        title='Find a Fix | Print3DBuddy',
+        body=body,
+        description='Tell us your 3D printing problem and we will find the right guide for you - stringing, warping, first layer, under-extrusion, and more.',
+        canonical='/find-a-fix/'
+    )
+    faf_dir = OUTPUT_DIR / 'find-a-fix'
+    faf_dir.mkdir(exist_ok=True)
+    (faf_dir / 'index.html').write_text(page, encoding='utf-8')
+    print('  Built: /find-a-fix/')
+
+
 def main():
     print(f'\nBuilding {SITE_NAME}...')
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -865,6 +1083,7 @@ def main():
     build_contact()
     build_privacy()
     build_search(posts)
+    build_find_a_fix()
     build_test_prints()
     build_seo_files(posts)
 
