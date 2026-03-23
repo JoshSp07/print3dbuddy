@@ -405,6 +405,7 @@ def build_homepage(posts):
 
   <div class="home-search-wrap">
     <input type="text" id="home-search" placeholder="Search guides - e.g. stringing, PETG, first layer..." autocomplete="off">
+    <p style="font-size:0.8rem; color:#aaa; margin-top:8px;">Searches guide titles - for specific problems try <a href="/find-a-fix/" style="color:#aaa; text-decoration:underline;">Find a Fix</a>.</p>
     <div id="home-results"></div>
   </div>
 </div>
