@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What to Do When a 3D Print Fails Mid-Print | Print3DBuddy</title>
+  <meta name="description" content="What to do when a 3D print fails mid-print - diagnosing spaghetti, layer shifts, adhesion failures, and how to prevent each from happening again.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/what-to-do-when-3d-print-fails-mid-print/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Troubleshooting</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>What to Do When a 3D Print Fails Mid-Print</h1>
+  <p>You come back to the printer expecting a finished part and find a tangled mess of spaghetti, a shifted print, or just a naked build plate with a pile of plastic next to it. Mid-print failures are frustrating, but they are almost always diagnosable and preventable once you understand what caused them.</p>
+<p>This guide covers the five most common mid-print failure types, what to do immediately when you spot a failure, how to read the evidence, whether resuming is worth trying, and how to prevent each type from happening again.</p>
+<hr>
+<h2 id="what-to-do-immediately-when-you-notice-a-failure">What to Do Immediately When You Notice a Failure</h2>
+<p>Before diagnosing anything, take these steps as soon as you spot a failed print.</p>
+<p><strong>Stop the print.</strong> Press pause or cancel on the printer's screen or in your slicer's monitoring software. Do not leave a failed print running. A print that has already failed will not self-correct, and continuing just wastes filament and can cause further problems (a clog worsened by continued extrusion, or a spaghetti mass wrapping around the hotend).</p>
+<p><strong>Do not move the printhead manually yet.</strong> If the print has shifted or partially separated, moving the head before you have assessed the situation can knock the remaining print off the bed or make the diagnosis harder.</p>
+<p><strong>Note the layer number and print time if you can.</strong> Your slicer or printer screen may show the current layer. This is useful for understanding how far into the print the failure occurred and whether a partial recovery is possible.</p>
+<p><strong>Photograph the failure before clearing it.</strong> A photo of the failed state takes two seconds and gives you a reference when you are trying to diagnose the cause later. The evidence on the bed and around the printer is often clearer in the immediate aftermath than after you have cleaned up.</p>
+<p><strong>Save your slicer settings and gcode if you made any changes since the last print.</strong> If you are diagnosing a settings-related failure, you want to be able to compare the failing settings to working ones.</p>
+<hr>
+<h2 id="layer-shift">Layer Shift</h2>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<p>The print is intact up to a certain height, then everything above that point is offset to one side by a fixed amount. The layers above the shift are still printing correctly relative to each other, but they are displaced horizontally from the layers below.</p>
+<h3 id="diagnosing-it">Diagnosing It</h3>
+<p>Look at the print from the side. If the shift is in one direction only, note which axis it is on (left-right is X, front-back is Y on most printers).</p>
+<p><strong>Common causes:</strong></p>
+<p><strong>Print speed too high</strong> - the stepper motors are skipping steps because they cannot keep up with the commanded movement, especially on fast direction changes. This is the most common cause.</p>
+<p><strong>Loose or slipping belt</strong> - a belt that has stretched, slipped on a pulley, or is too loose will skip when the axis changes direction. Check whether the belt gives more than a few mm of slack when you press it.</p>
+<p><strong>Something physical obstructing the axis</strong> - a cable caught on the frame, a clip that moved, or dried filament on a rod. Check the full travel of the affected axis by hand with the printer powered down.</p>
+<p><strong>Stepper motor driver running too hot</strong> - in enclosed printers with poor cooling, the stepper drivers can thermally throttle and drop steps. This is less common but worth checking if shifts happen after the printer has been running for a long time.</p>
+<h3 id="resume-or-restart">Resume or Restart?</h3>
+<p>A layer-shifted print is almost never worth resuming. The shifted section cannot be aligned back with the original base, and any attempt to resume will just continue printing from the shifted position. Restart the print after fixing the cause.</p>
+<h3 id="prevention">Prevention</h3>
+<p>Reduce print speed, particularly travel speed and acceleration, by 20 to 30%. Check and tighten belts (they should twang like a guitar string with moderate tension, not be floppy or so tight they will not deflect at all). Check for cable or filament obstructions on each axis before long prints.</p>
+<hr>
+<h2 id="print-detached-from-bed">Print Detached from Bed</h2>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<p>The print has peeled off the bed partially or fully. You may find the print sitting loose on the bed, curled up at corners, or knocked off entirely. The printer may continue printing into thin air, depositing plastic that goes nowhere useful.</p>
+<h3 id="diagnosing-it">Diagnosing It</h3>
+<p>Look at the underside of the print and at the bed surface.</p>
+<p><strong>Common causes:</strong></p>
+<p><strong>Dirty bed</strong> - skin oils from handling the bed dramatically reduce adhesion. This is the most frequent cause of prints that stuck fine before but suddenly will not adhere.</p>
+<p><strong>Z-offset too high</strong> - the nozzle was not close enough to press the first layer into the bed surface properly. Look at the underside of the print. If the first layer lines have gaps between them or look rounded rather than squashed, z-offset is too high.</p>
+<p><strong>Incorrect bed temperature</strong> - too low for the material, or the bed cooled mid-print due to a sensor issue or slicer error.</p>
+<p><strong>Draught or temperature change in the room</strong> - especially with ABS and ASA, a cold draught can cause the print to contract rapidly and peel up. This is why enclosures are recommended for those materials.</p>
+<p><strong>Warping-prone material without brim</strong> - large flat prints in PLA or PETG can warp up at corners without a brim or adhesion aid.</p>
+<h3 id="resume-or-restart">Resume or Restart?</h3>
+<p>If the print detached early, restart after fixing the bed. If it detached at 80% completion and the detached portion is largely intact, it may be worth attempting to reattach it with a dot of glue stick or hairspray and resuming, but the result is rarely clean. For functional parts, restart.</p>
+<h3 id="prevention">Prevention</h3>
+<p>Clean the bed with IPA before every print. Check z-offset calibration after any bed removal or maintenance. Use a brim for prints with small footprints or in warping-prone materials. Use an enclosure for ABS and ASA.</p>
+<hr>
+<h2 id="spaghetti">Spaghetti</h2>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<p>A tangled mass of loose filament strands covers the build plate and print, often wrapped around the hotend or deposited in chaotic loops. The print itself may have collapsed or detached at some point, and the printer continued extruding with nothing to deposit onto.</p>
+<h3 id="diagnosing-it">Diagnosing It</h3>
+<p>Spaghetti is almost always a <strong>consequence of another failure</strong> rather than a direct cause. The usual root cause is the print detaching from the bed or collapsing mid-print, after which the printer continues extruding with the nozzle printing into thin air or into an unstable mass.</p>
+<p>Occasionally, spaghetti can result from a specific failure of tall, narrow prints (called <strong>spaghettification due to part toppling</strong>). A tall, narrow print rocks from the nozzle impacts at height until it knocks loose or snaps at the base.</p>
+<h3 id="resume-or-restart">Resume or Restart?</h3>
+<p>Do not attempt to resume from spaghetti. Restart entirely after diagnosing and fixing the root cause (which is usually bed adhesion or a stability problem).</p>
+<h3 id="prevention">Prevention</h3>
+<p>Fix bed adhesion issues (see above). For tall or narrow prints, add a brim to widen the footprint. Slow the print speed for tall prints at height (some slicers allow a speed-by-height curve). Monitor long prints more actively during the first few layers.</p>
+<hr>
+<h2 id="clog">Clog</h2>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<p>Extrusion stops or becomes very thin and inconsistent mid-print. The printer may click repeatedly (the extruder motor skipping as it tries to push filament against the blockage). The print continues to move but plastic either stops coming out or becomes a thin trickle. The result is layers that are missing or severely under-extruded above a certain point.</p>
+<p>You may also hear a regular ticking or clicking sound, which is the extruder gear slipping against the filament.</p>
+<h3 id="diagnosing-it">Diagnosing It</h3>
+<p><strong>Common causes:</strong></p>
+<p><strong>Heat creep</strong> - heat travels up the hotend into the cold zone, causing filament to soften too early and jam in the heatbreak. More common in all-metal hotends and in printers without adequate cooling on the heatsink.</p>
+<p><strong>Filament quality issue</strong> - inconsistent filament diameter can jam in the nozzle. Filament that has absorbed moisture creates steam bubbles in the melt zone, which can cause inconsistent flow and jams.</p>
+<p><strong>Partial blockage from a previous print</strong> - a small amount of carbonised filament, debris, or a fragment of a previous jam still in the nozzle.</p>
+<p><strong>Running at too low a temperature</strong> - if nozzle temperature drops slightly (draft, sensor variation, or an incorrectly low temperature setting for a different material) the filament may not melt fast enough and backs up.</p>
+<h3 id="resume-or-restart">Resume or Restart?</h3>
+<p>Clear the clog first. Most clogs can be cleared with a <strong>cold pull</strong>: heat the nozzle to print temperature, push a length of filament in by hand until it flows, then allow the nozzle to cool to around 90°C (for PLA) or 140°C (for PETG) while keeping gentle forward pressure on the filament, then pull it sharply out. Repeat until the pulled filament comes out clean.</p>
+<p>Once the clog is clear, resuming at the correct layer is sometimes possible if the print is still on the bed and structurally sound. Check whether the print height matches the layer you are resuming from and test extrusion before resuming. For important functional prints, restarting is safer.</p>
+<h3 id="prevention">Prevention</h3>
+<p>Ensure heatsink cooling fans are working and unobstructed. Check filament diameter consistency and store filament dry. Do not leave the printer at printing temperature with no movement for extended periods. Run a temperature tower calibration for each new filament brand to confirm the correct print temperature.</p>
+<hr>
+<h2 id="power-cut">Power Cut</h2>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<p>The printer is off, mid-print, with a partial part on the bed. The print may be cold but intact, or the filament may have solidified and bonded to the nozzle during the power loss.</p>
+<h3 id="diagnosing-it">Diagnosing It</h3>
+<p>Check the print for quality up to the point the power cut. If the print quality was good and the part is still adhered to the bed, a resume attempt may be worthwhile. If the nozzle has cooled with filament bonded to the print, carefully heat the nozzle to print temperature to release it before moving the head.</p>
+<h3 id="resume-or-restart">Resume or Restart?</h3>
+<p><strong>Power loss resume</strong> is a feature on many modern printers (Creality, Bambu, Prusa, and others). If your printer supports it, it will prompt you to resume from the last saved position when power is restored.</p>
+<p>However, the quality of power loss recovery varies. There will almost always be a slight visual seam at the layer where the print stopped and resumed. For functional parts, this is acceptable. For cosmetic parts, it may not be.</p>
+<p>If your printer does not support power loss recovery, or if significant time has passed and the print has cooled fully (which can cause adhesion issues), restarting is the safer option.</p>
+<h3 id="prevention">Prevention</h3>
+<p>A <strong>UPS (uninterruptible power supply)</strong> is the most reliable prevention. Even a small UPS rated for a few minutes of runtime will keep the printer running through short power interruptions and give you time to properly cancel a print during an extended outage.</p>
+<hr>
+<h2 id="when-to-do-a-maintenance-check-before-reprinting">When to Do a Maintenance Check Before Reprinting</h2>
+<p>Not every failed print requires a maintenance check, but certain failure patterns are a signal that you should check the printer before starting the next job rather than just pressing print again.</p>
+<p><strong>Check before reprinting if:</strong></p>
+<ul>
+<li>You had a layer shift (check belts, lubrication, and axis travel).</li>
+<li>You had a clog (clear the clog fully and check hotend and PTFE tube condition).</li>
+<li>The print detached and the printer continued running into nothing for a long time (check the nozzle for carbonised plastic buildup, and check whether any plastic got into the cooling fan or under the print carriage).</li>
+<li>The extruder made grinding or clicking noises (inspect the extruder gear for wear and confirm it is gripping filament correctly).</li>
+<li>The printer has been running for more than 200 hours since the last general check (lubricate rods, check all bolts and screws for looseness, inspect PTFE tube ends for wear).</li>
+</ul>
+<p>Taking five minutes to check the printer before a three-hour job is much better than finding out something is wrong three hours in.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-layer-shifting/" target="_blank" rel="noopener">How to Fix Layer Shifting</a></li>
+<li><a href="/posts/how-to-fix-3d-printer-grinding-noise/" target="_blank" rel="noopener">How to Fix 3D Printer Grinding Noise</a></li>
+<li><a href="/posts/how-to-maintain-3d-printer/" target="_blank" rel="noopener">How to Maintain Your 3D Printer</a></li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

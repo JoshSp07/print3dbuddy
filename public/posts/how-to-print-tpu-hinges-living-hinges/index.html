@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Print TPU Hinges and Living Hinges | Print3DBuddy</title>
+  <meta name="description" content="How to print TPU hinges and living hinges - design principles, slicer settings, and fixes for the most common problems.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/how-to-print-tpu-hinges-living-hinges/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Filament Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>How to Print TPU Hinges and Living Hinges</h1>
+  <p>A hinge that flexes thousands of times without breaking, prints in a single piece, and needs no hardware. That is what a living hinge offers, and TPU is the material that makes it genuinely practical on a home 3D printer.</p>
+<p>This guide covers everything from design principles to slicer settings and common problems.</p>
+<hr>
+<h2 id="what-is-a-living-hinge">What Is a Living Hinge?</h2>
+<p>A <strong>living hinge</strong> is a thin, flexible section of material that connects two rigid parts and acts as the pivot point between them. Rather than using a pin, barrel, or mechanical joint, the material itself bends repeatedly without fracturing.</p>
+<p>You see living hinges constantly in everyday life. The lid on a shampoo bottle is a classic example. The thin plastic strip connecting the cap to the body flexes every time you open it, often surviving hundreds of thousands of cycles before failing.</p>
+<p>In 3D printing, a living hinge is usually a thin wall printed between two thicker bodies. When the print is flexed, that thin section absorbs the movement. With the right material and design, it will outlast the rest of the part.</p>
+<hr>
+<h2 id="why-tpu-is-the-ideal-material">Why TPU Is the Ideal Material</h2>
+<p><strong>TPU (thermoplastic polyurethane)</strong> is a flexible filament with a combination of properties that suits living hinges extremely well.</p>
+<p><strong>Elasticity</strong> - TPU stretches and returns to its original shape rather than cracking under repeated flexing. Rigid materials like PLA will fracture at a living hinge after very few cycles because they cannot absorb the strain.</p>
+<p><strong>Layer adhesion</strong> - TPU bonds well between layers, which is critical for a hinge that bends across its layer lines. Poor layer adhesion is one of the main failure points in printed hinges, and TPU holds up significantly better than brittle materials.</p>
+<p><strong>Durability</strong> - TPU resists abrasion, impact, and UV exposure better than most common filaments. A hinge that is going to be opened and closed regularly needs a material that does not degrade quickly.</p>
+<p><strong>Shore hardness options</strong> - TPU is available in different shore hardness ratings, typically between 85A and 98A. Softer grades (85A to 95A) are easier to flex and suit thin hinge designs. Stiffer grades (95A to 98A) are better for larger hinges or parts that need to hold a position.</p>
+<p>For most living hinge applications, a <strong>95A TPU</strong> is a good starting point. It is soft enough to flex easily but firm enough to give the rest of the part some structural rigidity.</p>
+<hr>
+<h2 id="design-considerations">Design Considerations</h2>
+<p>Getting the design right is more than half the battle. A hinge that is the wrong thickness, the wrong orientation, or the wrong shape will fail regardless of your print settings.</p>
+<h3 id="minimum-hinge-thickness">Minimum Hinge Thickness</h3>
+<p>The hinge section itself needs to be thin enough to flex without effort, but not so thin that it tears. For TPU printed at 0.2mm layer height, a hinge thickness of <strong>0.4mm to 0.8mm</strong> works well. That is two to four layer heights.</p>
+<p>Thinner than 0.4mm and the hinge may not print reliably. Thicker than 1mm and it will be stiff to open, which places more strain on the hinge when force is applied.</p>
+<p>A <strong>length of 3mm to 6mm</strong> along the flex axis gives the hinge enough surface area to distribute strain. Very short hinges concentrate all the bending stress in one spot and fail faster.</p>
+<h3 id="hinge-orientation-on-the-bed">Hinge Orientation on the Bed</h3>
+<p>This is critical. <strong>The hinge must flex perpendicular to the layer lines, not parallel to them.</strong></p>
+<p>If the hinge bends in the same direction as your layers stack, you are relying on layer adhesion to hold everything together when the hinge opens. Layer adhesion is always the weakest bond in a printed part. The hinge will delaminate quickly.</p>
+<p>The correct orientation is to print the part flat on the bed so that the hinge section runs vertically through the layers. When the hinge flexes, it is bending across the layer lines rather than trying to pull them apart. This takes full advantage of the material's strength within the layer rather than relying on the bond between layers.</p>
+<p>If your part shape makes this impossible, consider rotating the print 90 degrees and using supports to hold it, or splitting the part into sub-assemblies that can each be oriented correctly.</p>
+<h3 id="print-in-place-vs-separate-parts">Print-in-Place vs Separate Parts</h3>
+<p><strong>Print-in-place</strong> designs include the hinge in a single print job. The hinge connects both rigid panels in the same model. This is convenient and removes any need for assembly, but requires that the whole part is oriented correctly for the hinge to work.</p>
+<p><strong>Separate parts with a post-print hinge</strong> involves designing the hinge section as its own component that is then glued or clipped to two separate rigid panels. This approach gives you more freedom with orientation and lets you use different materials for the rigid sections (such as PETG or PLA) while only the hinge itself is TPU.</p>
+<p>For most small to medium parts, print-in-place is the tidier option. For large assemblies or parts where the rigid sections need to be very stiff, the hybrid approach is worth the extra assembly time.</p>
+<hr>
+<h2 id="slicer-settings-for-tpu-hinges">Slicer Settings for TPU Hinges</h2>
+<p>TPU is more sensitive to slicer settings than PLA or PETG. Small adjustments make a significant difference to the quality of the hinge.</p>
+<h3 id="layer-height">Layer Height</h3>
+<p>Use <strong>0.15mm to 0.2mm</strong> layer height for hinge sections. Thinner layers produce better bonding between layers, which helps the hinge survive repeated flexing. At 0.3mm layers the hinge section may not bond reliably enough.</p>
+<h3 id="print-speed">Print Speed</h3>
+<p><strong>Slow down significantly.</strong> TPU does not behave well at high speeds. Print the entire part at <strong>20 to 30mm/s</strong> maximum. The hinge section specifically benefits from a slow, steady extrusion that gives the filament time to bond properly.</p>
+<p>If your slicer allows you to set a per-feature speed, reduce the speed for outer walls and top/bottom layers even further, to around 15mm/s.</p>
+<h3 id="wall-count">Wall Count</h3>
+<p>Use a <strong>wall count of 3 or more</strong> for the rigid sections of the part. The hinge section itself will likely be too thin for multiple walls at its narrowest point, but the surrounding structure benefits from extra perimeters.</p>
+<h3 id="infill">Infill</h3>
+<p>For the rigid panels of a print-in-place hinge, <strong>40 to 60% infill</strong> gives a good balance of rigidity and weight. Rectilinear or gyroid infill patterns both work well with TPU.</p>
+<h3 id="no-supports">No Supports</h3>
+<p>Avoid supports inside or near the hinge wherever possible. Support material that contacts the hinge surface leaves marks and can cause the thin hinge to tear when you remove it. Design your model so the hinge overhangs do not require support, or angle the print slightly to avoid overhangs at the hinge section entirely.</p>
+<h3 id="retraction">Retraction</h3>
+<p>TPU is prone to stringing and does not respond well to aggressive retraction. Reduce retraction distance to <strong>1 to 2mm</strong> for Bowden setups or <strong>0.5 to 1mm</strong> for direct drive. Reduce retraction speed to around <strong>20 to 25mm/s</strong>. Excessive retraction can strip or deform TPU and cause inconsistent extrusion at the critical hinge section.</p>
+<hr>
+<h2 id="common-problems-and-fixes">Common Problems and Fixes</h2>
+<h3 id="delamination-at-the-hinge">Delamination at the Hinge</h3>
+<p><strong>Symptom:</strong> The hinge tears apart along layer lines after a small number of flex cycles.</p>
+<p><strong>Cause:</strong> The hinge is oriented so that flexing pulls the layers apart. This is almost always an orientation problem.</p>
+<p><strong>Fix:</strong> Re-orient the model so the hinge flexes across the layers rather than along them. If that is not possible with the current design, redesign the hinge geometry so it runs vertically in the print.</p>
+<p>A secondary cause can be print speed. If you are printing too fast, layers do not bond as well. Slow down to 20mm/s and check whether adhesion improves.</p>
+<h3 id="hinge-too-stiff-to-open-easily">Hinge Too Stiff to Open Easily</h3>
+<p><strong>Symptom:</strong> The hinge requires significant force to flex and does not return smoothly to a flat position.</p>
+<p><strong>Cause:</strong> The hinge section is too thick, the TPU shore hardness is too high, or the hinge geometry is too short.</p>
+<p><strong>Fix:</strong> Reduce hinge thickness in your model by 0.1mm to 0.2mm at a time and reprint to test. If you are using a 98A TPU, try a 95A or 87A grade. Lengthening the hinge section (the dimension along the flex axis) also distributes the bend over more material, making it feel softer to open.</p>
+<h3 id="stringing-through-the-hinge">Stringing Through the Hinge</h3>
+<p><strong>Symptom:</strong> Fine threads of TPU cross the open area of the hinge, or blob onto the surface.</p>
+<p><strong>Cause:</strong> TPU strings easily at high temperatures or with incorrect retraction settings.</p>
+<p><strong>Fix:</strong> Reduce print temperature by 5 degrees and check retraction settings are appropriate for TPU (see slicer settings section above). Ensure travel moves across the hinge are minimised in your slicer's travel path settings.</p>
+<hr>
+<h2 id="practical-use-cases">Practical Use Cases</h2>
+<p>Living hinges in TPU are useful across a wide range of practical prints.</p>
+<p><strong>Snap-fit cases and lids</strong> - tool cases, pill organisers, and storage boxes with integral lids are much more useful when the lid stays attached.</p>
+<p><strong>Cable management clips</strong> - a hinged clip that snaps around cables does not require threading cables through a hole.</p>
+<p><strong>Flexible phone stands and mounts</strong> - adjustable stands that stay at any angle benefit from a TPU hinge that holds position under slight friction.</p>
+<p><strong>Wearable parts</strong> - bracelets, watch straps, and flexible costume accessories can use living hinges to add articulation without visible mechanical joins.</p>
+<p><strong>Locking enclosures</strong> - electronics cases with a latch on one side and a living hinge on the other are fully printable in a single piece.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/tpu-flexible-filament-beginners-guide/" target="_blank" rel="noopener">TPU Flexible Filament: A Beginner's Guide</a></li>
+<li><a href="/posts/how-to-fix-3d-printer-stringing/" target="_blank" rel="noopener">How to Fix 3D Printer Stringing</a></li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

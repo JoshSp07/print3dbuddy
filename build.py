@@ -315,6 +315,11 @@ POST_TAGS = {
     'how-to-fix-3d-printer-grinding-noise': ('Troubleshooting', '3D printer grinding noise? Diagnose by location - extruder, hotend, Z axis, or rails - and fix the right cause first time.'),
     '3d-printing-emissions-indoor-safety': ('Safety Guide', 'Is 3D printing safe indoors? What research shows about UFPs and VOCs from FDM printers, material comparisons, and practical steps to reduce exposure.'),
     'resin-3d-printing-safety': ('Safety Guide', 'Resin 3D printing safety - PPE requirements, VOC emissions, handling uncured resin, safe disposal, and ventilation. What you actually need to know.'),
+    'how-to-print-tpu-hinges-living-hinges': ('Filament Guide', 'How to print TPU hinges and living hinges - design principles, slicer settings, and fixes for the most common problems.'),
+    '3d-printing-for-cosplay': ('Ideas & Inspiration', '3D printing for cosplay - materials, design workflow, post-processing, and practical tips for props, armour, and wearable pieces.'),
+    'how-to-finish-resin-prints': ('Finishing Guide', 'How to finish and paint resin 3D prints - cleaning, support removal, sanding, priming, painting, and a final topcoat step by step.'),
+    'how-to-fix-elephant-foot': ('Troubleshooting', 'How to fix elephant foot in 3D printing - every cause and fix for a flared base, from Z offset to live adjust and first layer settings.'),
+    'what-to-do-when-3d-print-fails-mid-print': ('Troubleshooting', 'What to do when a 3D print fails mid-print - diagnosing spaghetti, layer shifts, adhesion failures, and how to prevent each from happening again.'),
 }
 
 
@@ -910,6 +915,26 @@ TEST_PRINTS = [
         'related': '/posts/3d-printing-ironing-guide/',
         'related_label': 'Ironing settings guide',
     },
+    {
+        'id': 'tolerance-test',
+        'title': 'Tolerance / Fit Test',
+        'tagline': 'Find the right clearance for press fits, snap fits, and sliding joints',
+        'tag': 'Dimensional',
+        'summary': 'A set of labelled peg-and-hole pairs with clearances from 0.1mm to 0.5mm in 0.1mm steps. Print once and test each pair - press fit, light friction, and sliding clearance all reveal themselves immediately. Use the result to add the right offset to any functional part that needs to mate with another.',
+        'stl': 'tolerance_test.stl',
+        'related': '/posts/how-to-calibrate-flow-rate-extrusion-multiplier/',
+        'related_label': 'Flow rate calibration guide',
+    },
+    {
+        'id': 'elephant-foot-test',
+        'title': 'Elephant Foot Calibration',
+        'tagline': 'Dial in your first layer to eliminate base flare',
+        'tag': 'First Layer',
+        'summary': 'A flat disc with a precision cylinder rising from the centre. Measure the disc diameter and the cylinder diameter with calipers - if the disc is wider than designed, you have elephant foot. The amount of difference tells you exactly how much to adjust your Z offset or first layer flow. Takes under 10 minutes to print.',
+        'stl': 'elephant_foot_test.stl',
+        'related': '/posts/how-to-fix-elephant-foot/',
+        'related_label': 'Elephant foot fix guide',
+    },
 ]
 
 
@@ -1226,6 +1251,11 @@ const ARTICLES = [
   { slug: 'how-to-fix-3d-printer-grinding-noise',    title: 'How to Fix 3D Printer Grinding Noises',          tag: 'Troubleshooting', desc: 'Grinding from the extruder, hotend, Z axis, or rails - diagnose by location and fix the right cause.',    printer: 'fdm',   problems: ['under-extrusion', 'maintenance', 'layer-shifting'],  materials: ['any'], exp: ['any'] },
   { slug: '3d-printing-emissions-indoor-safety',     title: 'Is 3D Printing Safe Indoors?',                   tag: 'Safety Guide',    desc: 'What research shows about FDM printer emissions - UFPs, VOCs, material comparisons, and how to reduce exposure.', printer: 'fdm',  problems: ['safety'],                             materials: ['any'], exp: ['any'] },
   { slug: 'resin-3d-printing-safety',                title: 'Resin 3D Printing Safety Guide',                 tag: 'Safety Guide',    desc: 'PPE, VOC emissions, handling uncured resin, safe disposal, and ventilation - the full safety guide.',         printer: 'resin', problems: ['safety', 'getting-started'],          materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-print-tpu-hinges-living-hinges',   title: 'How to Print TPU Hinges and Living Hinges',      tag: 'Filament Guide',  desc: 'Design principles, slicer settings, and fixes for the most common TPU living hinge problems.',                 printer: 'fdm',   problems: ['material', 'under-extrusion'],        materials: ['tpu'], exp: ['any'] },
+  { slug: '3d-printing-for-cosplay',                 title: '3D Printing for Cosplay',                        tag: 'Ideas',           desc: 'Materials, workflow, post-processing, and practical tips for props, armour, and wearable cosplay pieces.',     printer: 'fdm',   problems: ['surface-quality', 'general'],         materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-finish-resin-prints',              title: 'How to Finish and Paint Resin 3D Prints',        tag: 'Finishing Guide', desc: 'Cleaning, support removal, sanding, priming, painting, and a final topcoat - the complete finishing workflow.',  printer: 'resin', problems: ['surface-quality', 'getting-started'], materials: ['any'], exp: ['any'] },
+  { slug: 'how-to-fix-elephant-foot',                title: 'How to Fix Elephant Foot',                       tag: 'Troubleshooting', desc: 'Flared base ruining dimensional accuracy? Every cause and fix for elephant foot in FDM printing.',               printer: 'fdm',   problems: ['first-layer', 'calibration', 'over-extrusion'], materials: ['any'], exp: ['any'] },
+  { slug: 'what-to-do-when-3d-print-fails-mid-print', title: 'What to Do When a Print Fails Mid-Print',      tag: 'Troubleshooting', desc: 'Spaghetti, layer shifts, adhesion failures - how to diagnose what went wrong and stop it happening again.',      printer: 'fdm',   problems: ['warping', 'layer-shifting', 'under-extrusion', 'general'], materials: ['any'], exp: ['any'] },
 ];
 
 let currentPrinter = 'fdm';
