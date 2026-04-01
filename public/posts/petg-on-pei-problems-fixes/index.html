@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETG on PEI: Common Problems and How to Fix Them | Print3DBuddy</title>
+  <meta name="description" content="PETG on PEI bed - every common problem fixed. Prints sticking too well, not sticking, stringing, rough surfaces, and weak layers all covered.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/petg-on-pei-problems-fixes/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Troubleshooting</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>PETG on PEI: Common Problems and How to Fix Them</h1>
+  <p>PETG and PEI sheets are a popular combination - but they come with a catch. Print too cold or too dry and nothing sticks. Print too hot or with the wrong settings and your print fuses to the bed permanently. This guide covers every common PETG-on-PEI problem and exactly how to fix it.</p>
+<hr>
+<h2 id="why-petg-and-pei-is-a-tricky-combination">Why PETG and PEI Is a Tricky Combination</h2>
+<p>PEI (polyetherimide) is one of the best general-purpose build surfaces for 3D printing. It grips PLA well, releases cleanly when cool, and lasts for hundreds of prints. With PETG, it works brilliantly - but the margin for error is narrower.</p>
+<p>PETG is slightly adhesive by nature. At the right temperature and with the right first layer settings, it sticks well and releases when the plate cools. Too much heat, too much squish, or a surface that is too clean and you can end up with prints that are genuinely difficult to remove - or that tear chunks out of your PEI sheet.</p>
+<hr>
+<h2 id="problem-1-petg-sticking-too-well-impossible-to-remove">Problem 1: PETG Sticking Too Well (Impossible to Remove)</h2>
+<p>This is the most common complaint, and it is almost always caused by one or more of these:</p>
+<p><strong>Bed temperature too high.</strong> PETG on PEI works well at 70 - 80°C. If you are running 85°C or above, PETG bonds very aggressively to the surface. Drop the bed temp by 5°C at a time until prints release cleanly when cool.</p>
+<p><strong>First layer squish too much.</strong> PETG does not need to be flattened into the bed the way PLA does. A slightly raised first layer (0.1 - 0.2mm gap rather than the maximum squish some people aim for) sticks reliably without welding itself to the surface.</p>
+<p><strong>Print temperature too high.</strong> Higher nozzle temps make PETG more fluid and more adhesive. Try dropping nozzle temp by 5 - 10°C.</p>
+<p><strong>A light release agent helps.</strong> A very thin coat of glue stick (Pritt Stick or similar) applied to the PEI sheet creates a slight barrier between the PETG and the surface. It still grips well enough for printing but releases much more cleanly. Wipe off with water between prints.</p>
+<p><strong>Wait for the bed to cool fully.</strong> PETG releases significantly better at room temperature than at 40 - 50°C. If you are trying to remove prints while the bed is still warm, wait another 5 - 10 minutes.</p>
+<hr>
+<h2 id="problem-2-petg-not-sticking-at-all">Problem 2: PETG Not Sticking at All</h2>
+<p>If PETG is lifting off the PEI mid-print or not bonding on the first layer:</p>
+<p><strong>Clean the PEI surface.</strong> Oils from your hands prevent PETG from bonding. Wipe the surface with isopropyl alcohol (90%+ IPA) before every print. Do not touch the print area after cleaning.</p>
+<p><strong>Increase bed temperature.</strong> If you are running below 70°C, try 75 - 80°C. PETG needs a warmer bed than PLA to bond reliably.</p>
+<p><strong>Increase nozzle temperature.</strong> PETG typically needs 230 - 250°C. If you are printing below 230°C, the first layer may not bond properly.</p>
+<p><strong>Improve first layer adhesion settings.</strong> Try:</p>
+<ul>
+<li>Slow the first layer speed to 20 - 30mm/s</li>
+<li>Increase first layer line width to 110 - 120%</li>
+<li>Add a brim (3 - 5mm) for parts with small footprints</li>
+</ul>
+<p><strong>Check your Z offset.</strong> If the nozzle is too far from the bed, the filament will not press into the surface properly. Lower the Z offset until you see a slight squish on the first layer - not flattened, but making contact.</p>
+<p>Run a <a href="https://tools.print3dbuddy.com/test-prints#first-layer-test" target="_blank" rel="noopener">first layer calibration test</a> to dial this in visually before printing your actual part.</p>
+<hr>
+<h2 id="problem-3-petg-stringing-more-than-usual">Problem 3: PETG Stringing More Than Usual</h2>
+<p>PETG strings more than PLA by nature - it is a stickier material. But excessive stringing is still avoidable.</p>
+<p><strong>Lower print temperature.</strong> Try dropping nozzle temp to 230°C if you are currently running hotter. Every 5°C makes a noticeable difference to stringing.</p>
+<p><strong>Increase retraction.</strong> PETG needs more retraction than PLA in most setups:</p>
+<ul>
+<li>Direct drive: 1 - 2mm at 35 - 45mm/s</li>
+<li>Bowden: 5 - 7mm at 40 - 60mm/s</li>
+</ul>
+<p>Use the <a href="https://tools.print3dbuddy.com/retraction-calculator" target="_blank" rel="noopener">retraction calculator</a> to get a starting point, then test with a retraction tower.</p>
+<p><strong>Enable combing.</strong> In Cura, set combing mode to "Not in Skin" or "All." In PrusaSlicer and Bambu Studio, enable "Avoid crossing perimeters." This keeps the nozzle over printed areas during travel moves and dramatically reduces stringing.</p>
+<p><strong>Do not over-retract.</strong> Too much retraction with PETG causes heat creep and clogs because the soft filament gets pulled into the heat zone and jams. If you start seeing under-extrusion after fixing stringing, you have gone too far.</p>
+<p>See the full <a href="/posts/how-to-fix-3d-printer-stringing/" target="_blank" rel="noopener">stringing fix guide</a> for more detail.</p>
+<hr>
+<h2 id="problem-4-petg-looks-rough-or-bubbly-on-the-surface">Problem 4: PETG Looks Rough or Bubbly on the Surface</h2>
+<p>A rough, bubbly, or foamy-looking surface almost always means <strong>wet filament.</strong></p>
+<p>PETG absorbs moisture from the air faster than PLA. Even a roll that has been open for a few days in a humid environment can start printing badly. Symptoms include:</p>
+<ul>
+<li>Popping or crackling sounds while printing</li>
+<li>Rough, foamy surface texture</li>
+<li>Inconsistent extrusion</li>
+<li>More stringing than usual</li>
+</ul>
+<p><strong>Fix:</strong> Dry your filament before printing. 65°C for 4 - 6 hours in a <a href="https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21" target="_blank" rel="noopener">filament dryer</a> or food dehydrator resolves moisture issues. See the <a href="/posts/how-to-fix-wet-filament/" target="_blank" rel="noopener">wet filament guide</a> for full drying instructions and how to test if moisture is the cause.</p>
+<hr>
+<h2 id="problem-5-petg-layers-splitting-or-poor-layer-adhesion">Problem 5: PETG Layers Splitting or Poor Layer Adhesion</h2>
+<p>If your PETG prints are weak, snapping easily, or showing gaps between layers:</p>
+<p><strong>Increase nozzle temperature.</strong> Layer bonding in PETG improves significantly at higher temperatures. Try 240 - 250°C. The material bonds to itself much better when it is fluid enough to flow into the previous layer.</p>
+<p><strong>Slow down.</strong> Higher speeds reduce the time each layer has to bond. Drop your print speed by 20 - 30% and check whether layer adhesion improves.</p>
+<p><strong>Check cooling.</strong> PETG does not want aggressive cooling. Too much fan can cause layers to solidify before bonding properly. Reduce your fan to 30 - 50% (or even off for the first few layers) and see if strength improves.</p>
+<p>See the <a href="/posts/3d-printing-layer-adhesion-problems-fixes/" target="_blank" rel="noopener">layer adhesion guide</a> for a deeper dive.</p>
+<hr>
+<h2 id="petg-on-pei-settings-reference">PETG on PEI Settings Reference</h2>
+<table><thead><tr>
+<th>Setting</th>
+<th>Recommended Range</th>
+</tr></thead><tbody>
+<tr>
+<td>Bed temperature</td>
+<td>70 - 80°C</td>
+</tr>
+<tr>
+<td>Nozzle temperature</td>
+<td>230 - 250°C</td>
+</tr>
+<tr>
+<td>First layer speed</td>
+<td>20 - 30mm/s</td>
+</tr>
+<tr>
+<td>Retraction (direct drive)</td>
+<td>1 - 2mm</td>
+</tr>
+<tr>
+<td>Retraction (Bowden)</td>
+<td>5 - 7mm</td>
+</tr>
+<tr>
+<td>Part cooling fan</td>
+<td>30 - 50%</td>
+</tr>
+<tr>
+<td>Release aid</td>
+<td>Thin glue stick coat</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/petg-printing-guide/" target="_blank" rel="noopener">PETG Printing Guide</a> - full PETG settings from scratch</li>
+<li><a href="/posts/how-to-fix-3d-printer-stringing/" target="_blank" rel="noopener">How to Fix Stringing</a> - retraction, temperature, and travel settings</li>
+<li><a href="/posts/how-to-fix-wet-filament/" target="_blank" rel="noopener">How to Fix Wet Filament</a> - drying and storage</li>
+<li><a href="/posts/3d-printing-first-layer-problems-fixes/" target="_blank" rel="noopener">First Layer Problems and Fixes</a> - bed levelling and Z offset</li>
+<li><a href="/posts/3d-printing-layer-adhesion-problems-fixes/" target="_blank" rel="noopener">Layer Adhesion Problems</a> - temperature, speed, and cooling</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # How to Calibrate Flow Rate (Extrusion Multiplier) on Any 3D Printer
 
-Flow rate — also called extrusion multiplier — is one of those settings most beginners never touch, and it quietly ruins their prints the whole time. If your top surfaces look rough or gappy, if your prints feel slightly weak, or if dimensions are consistently off, flow rate is almost certainly the culprit.
+Flow rate - also called extrusion multiplier - is one of those settings most beginners never touch, and it quietly ruins their prints the whole time. If your top surfaces look rough or gappy, if your prints feel slightly weak, or if dimensions are consistently off, flow rate is almost certainly the culprit.
 
 The good news: it is one of the easiest calibrations to run, and you only need to do it once per filament brand.
 
@@ -10,7 +10,7 @@ The good news: it is one of the easiest calibrations to run, and you only need t
 
 Flow rate (or extrusion multiplier) is a percentage that scales how much filament your printer pushes out. At 100%, the printer extrudes exactly what the slicer calculated. At 95%, it extrudes 5% less. At 105%, 5% more.
 
-The default is always 100% — but filament varies. Different brands, different colours, and even different spools of the same brand can have slight diameter inconsistencies or melt at slightly different rates. A flow rate that is even 5% off shows up as noticeable print quality problems.
+The default is always 100% - but filament varies. Different brands, different colours, and even different spools of the same brand can have slight diameter inconsistencies or melt at slightly different rates. A flow rate that is even 5% off shows up as noticeable print quality problems.
 
 ---
 
@@ -42,7 +42,7 @@ This is what the [Flow Rate Test print at tools.print3dbuddy.com](https://tools.
 2. Split it into 5 individual objects (most slicers have a "split to parts" button).
 3. Set each tile's flow rate to its label: 90%, 95%, 100%, 105%, 110%.
 4. Print all 5 at once at your normal temperature and speed.
-5. Compare the top surfaces. The smoothest one — no gaps, no ridges — is your correct setting.
+5. Compare the top surfaces. The smoothest one - no gaps, no ridges - is your correct setting.
 
 Dial in to the nearest 1% if you want precision from there. Most filaments land between 95% and 100%.
 
@@ -50,7 +50,7 @@ Dial in to the nearest 1% if you want precision from there. Most filaments land 
 
 This method uses calipers and gives you an exact number.
 
-1. Create or download a simple hollow single-wall cube (20x20x20mm, wall thickness equal to your nozzle diameter — usually 0.4mm).
+1. Create or download a simple hollow single-wall cube (20x20x20mm, wall thickness equal to your nozzle diameter - usually 0.4mm).
 2. Slice it with a single perimeter/wall only, no infill, no top or bottom layers.
 3. Print it.
 4. Measure the wall thickness with calipers at multiple points.
@@ -58,7 +58,7 @@ This method uses calipers and gives you an exact number.
 
 Example: if your nozzle is 0.4mm and your walls measure 0.43mm, your flow is running high.
 
-New flow = (0.4 / 0.43) x 1.00 = 0.93 — set flow to 93%.
+New flow = (0.4 / 0.43) x 1.00 = 0.93 - set flow to 93%.
 
 ---
 
@@ -76,7 +76,7 @@ Save it as part of your filament profile so it carries over to every print.
 
 Once per filament brand and colour. Different colours from the same brand can have slightly different pigment loadings that affect flow, so it is worth a quick check when switching to a new colour.
 
-You don't need to redo it every print — once it's dialled in and saved in your slicer profile, it just works.
+You don't need to redo it every print - once it's dialled in and saved in your slicer profile, it just works.
 
 ---
 
@@ -96,10 +96,10 @@ The right order: calibrate e-steps first, then set flow rate per filament. If yo
 | Flow setting | Typical result |
 |---|---|
 | 90% | Gappy tops, weak parts |
-| 95% | Slightly under — fine for some filaments |
+| 95% | Slightly under - fine for some filaments |
 | 100% | Default starting point |
-| 105% | Slightly over — watch for ridges |
-| 110% | Over-extruding — blobs and raised seams |
+| 105% | Slightly over - watch for ridges |
+| 110% | Over-extruding - blobs and raised seams |
 
 Most PLA lands at 95-100%. PETG is often 97-100%. TPU may need tweaking depending on hardness.
 

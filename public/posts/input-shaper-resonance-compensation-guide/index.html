@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Shaper and Resonance Compensation: A Practical Guide | Print3DBuddy</title>
+  <meta name="description" content="Input shaper and resonance compensation guide - how to set up on Klipper, Bambu, and Prusa to eliminate ghosting and print faster.">
+  <link rel="canonical" href="https://print3dbuddy.com/posts/input-shaper-resonance-compensation-guide/">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKWD1FJNP3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKWD1FJNP3');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5408659965693947" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="/" class="logo">Print3D<span>Buddy</span></a>
+    <ul><li><a href="/">Home</a></li><li><a href="/posts/">All Guides</a></li><li><a href="/find-a-fix/">Find a Fix</a></li><li><a href="https://tools.print3dbuddy.com/dashboard" class="nav-tools-btn" target="_blank" rel="noopener">Services</a></li><li><a href="https://tools.print3dbuddy.com/guides" target="_blank" rel="noopener">Quick Guides</a></li><li><a href="/about/">About</a></li></ul>
+  </nav>
+</header>
+<div class="article-wrap">
+  <a href="/posts/" class="back-link">&larr; All Guides</a>
+  <div class="article-meta">
+    <span class="tag">Settings Guide</span>
+    &nbsp;&middot;&nbsp; Print3DBuddy
+  </div>
+  <h1>Input Shaper and Resonance Compensation: A Practical Guide</h1>
+  <p>Ghosting and ringing - the faint echoes and ripples that appear on vertical surfaces after a sharp corner - are caused by vibration in the printer frame. Input shaper (also called resonance compensation) measures those vibrations and filters them out in the motion system. This guide explains what it is, how to set it up, and what to expect.</p>
+<hr>
+<h2 id="what-is-input-shaper">What Is Input Shaper?</h2>
+<p>When a print head changes direction quickly, the frame vibrates slightly from the sudden force. Those vibrations travel through the print head and leave visible artefacts on the print surface - wavy lines parallel to corners, faint echoes of features, or a general soft look on what should be sharp edges.</p>
+<p>Input shaper works by measuring the natural resonant frequency of your printer's X and Y axes, then actively counteracting vibrations at those frequencies in the motion planning. The result is sharper corners, cleaner surfaces, and the ability to print faster without artefacts appearing.</p>
+<p>Input shaper is a firmware feature, available on:</p>
+<ul>
+<li><strong>Klipper firmware</strong> (any printer running Klipper)</li>
+<li><strong>Bambu Lab printers</strong> (all current models, called "vibration compensation")</li>
+<li><strong>Prusa printers</strong> (MK4, XL, Mini via built-in calibration)</li>
+<li><strong>Some Marlin-based printers</strong> (limited implementation, not as effective)</li>
+</ul>
+<p>If your printer runs stock Creality firmware, input shaper is not available without a firmware change or upgrade to Klipper.</p>
+<hr>
+<h2 id="before-you-start-check-the-basics">Before You Start: Check the Basics</h2>
+<p>Input shaper fixes vibration-caused artefacts. It will not fix:</p>
+<ul>
+<li>Loose belts (fix belt tension first - see the <a href="/posts/how-to-tension-3d-printer-belts/" target="_blank" rel="noopener">belt tensioning guide</a>)</li>
+<li>Loose frame screws or pulley grub screws</li>
+<li>Z-axis wobble</li>
+<li>Layer shifting</li>
+</ul>
+<p>If you have ghosting or ringing, check and tighten belts before anything else. Input shaper on top of loose belts will not fully resolve the problem.</p>
+<hr>
+<h2 id="setting-up-input-shaper-on-klipper">Setting Up Input Shaper on Klipper</h2>
+<p>Klipper's input shaper is the most powerful and widely used implementation. There are two ways to measure resonant frequencies: with an accelerometer, or manually.</p>
+<h3 id="method-1-with-an-adxl345-accelerometer-recommended">Method 1: With an ADXL345 Accelerometer (Recommended)</h3>
+<p>This is the accurate method. An <a href="https://www.amazon.co.uk/s?k=ADXL345+accelerometer+module&tag=print3dbuddy2-21" target="_blank" rel="noopener">ADXL345 accelerometer module</a> mounts to the print head and measures actual vibration frequencies while the printer runs a test pattern.</p>
+<p><strong>Setup steps:</strong></p>
+<ol>
+<li>Wire the ADXL345 to your Klipper host (Raspberry Pi or similar) via SPI</li>
+<li>Add the ADXL345 config section to your printer.cfg (Klipper documentation has the exact wiring and config)</li>
+<li>Home the printer and run <code>TEST<em>RESONANCES AXIS=X</code> then <code>TEST</em>RESONANCES AXIS=Y</code></li>
+<li>Klipper generates resonance graphs showing the peak frequencies</li>
+<li>Run <code>SHAPER_CALIBRATE</code> to automatically pick the best shaper type and frequency</li>
+<li>Save the config with <code>SAVE_CONFIG</code></li>
+</ol>
+<p>The whole process takes about 20 minutes once the accelerometer is wired. The result is precise, automatic calibration rather than a manual guess.</p>
+<h3 id="method-2-manual-tuning-no-accelerometer">Method 2: Manual Tuning (No Accelerometer)</h3>
+<p>If you do not have an accelerometer, you can tune input shaper manually by printing ringing test models and adjusting settings by eye.</p>
+<ol>
+<li>In printer.cfg, add or uncomment the <code>[input_shaper]</code> section</li>
+<li>Set <code>shaper_type: mzv</code> as a starting point (MZV is a good general-purpose shaper)</li>
+<li>Set <code>shaper<em>freq</em>x</code> and <code>shaper<em>freq</em>y</code> to an initial estimate (typically 30 - 60Hz for most printers)</li>
+<li>Print a ringing calibration tower (available free on Printables)</li>
+<li>Identify the layer height where ringing disappears and read off the corresponding frequency</li>
+<li>Update your config with that frequency and save</li>
+</ol>
+<p>Manual tuning takes longer and is less precise than accelerometer calibration, but it works and costs nothing extra.</p>
+<hr>
+<h2 id="setting-up-resonance-compensation-on-bambu-lab-printers">Setting Up Resonance Compensation on Bambu Lab Printers</h2>
+<p>Bambu handles this automatically. The process is:</p>
+<ol>
+<li>Open Bambu Studio or the printer touchscreen</li>
+<li>Go to Calibration</li>
+<li>Run "Vibration Compensation" (the printer moves through a test routine and calibrates itself)</li>
+<li>The printer stores the result - no user intervention needed beyond starting the calibration</li>
+</ol>
+<p>Re-run this calibration if you:</p>
+<ul>
+<li>Move the printer to a different location or surface</li>
+<li>Replace any motion components (belts, rails, carriages)</li>
+<li>Add significant weight to the printer (toolhead swaps, camera mounts, etc.)</li>
+</ul>
+<hr>
+<h2 id="setting-up-on-prusa-mk4-and-mini">Setting Up on Prusa MK4 and Mini</h2>
+<p>Prusa's built-in input shaper calibration is accessible from the printer's menu:</p>
+<ol>
+<li>Go to Settings > Calibration > Input Shaper</li>
+<li>The printer runs its own test routine and sets resonance compensation automatically</li>
+<li>The calibration is stored in the printer - no slicer changes needed</li>
+</ol>
+<p>Re-run after belt replacements or significant printer moves.</p>
+<hr>
+<h2 id="what-to-expect-after-calibration">What to Expect After Calibration</h2>
+<p>After input shaper is calibrated and enabled:</p>
+<p><strong>Print quality:</strong> Ghosting and ringing on vertical surfaces should be significantly reduced or eliminated. Corners should be sharper and cleaner.</p>
+<p><strong>Print speed:</strong> Input shaper allows higher acceleration settings without introducing artefacts. You can often increase acceleration by 2 - 4x compared to pre-input-shaper settings while maintaining the same print quality. This means faster prints without quality loss.</p>
+<p><strong>The trade-off:</strong> Some input shaper algorithms (particularly EI and 2HUMP_EI) can slightly reduce maximum extrusion speed at high accelerations. MZV is the safest starting point - good vibration suppression with minimal speed impact.</p>
+<hr>
+<h2 id="recommended-shaper-types">Recommended Shaper Types</h2>
+<table><thead><tr>
+<th>Shaper</th>
+<th>Best For</th>
+<th>Trade-off</th>
+</tr></thead><tbody>
+<tr>
+<td>MZV</td>
+<td>Most printers, good all-rounder</td>
+<td>Moderate vibration reduction</td>
+</tr>
+<tr>
+<td>EI</td>
+<td>Printers with higher resonance frequencies</td>
+<td>Can limit max speed slightly</td>
+</tr>
+<tr>
+<td>2HUMP_EI</td>
+<td>Printers with very broad resonance peaks</td>
+<td>Reduces max speed more</td>
+</tr>
+<tr>
+<td>ZV</td>
+<td>Very simple, least reduction</td>
+<td>Only for very rigid frames</td>
+</tr>
+</tbody></table>
+<p>Start with MZV unless the automatic calibration recommends otherwise.</p>
+<hr>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<p><strong>Do I need to recalibrate if I change filament?</strong> No. Input shaper is about the printer's mechanical properties, not the filament.</p>
+<p><strong>Will input shaper fix layer shifting?</strong> No. Layer shifting is caused by belts, grub screws, or overheating drivers - not vibration. Input shaper only addresses print surface artefacts.</p>
+<p><strong>Can I run input shaper on an Ender 3 without Klipper?</strong> Not effectively on stock firmware. You would need to install Klipper or a third-party firmware that supports it.</p>
+<p><strong>Does input shaper wear out?</strong> No, but calibration can drift if mechanical components change. Re-run calibration after any maintenance that affects the motion system.</p>
+<hr>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/posts/how-to-fix-ghosting-ringing/" target="_blank" rel="noopener">How to Fix Ghosting and Ringing</a> - other causes of surface artefacts</li>
+<li><a href="/posts/how-to-tension-3d-printer-belts/" target="_blank" rel="noopener">How to Tension 3D Printer Belts</a> - fix belt issues before calibrating input shaper</li>
+<li><a href="/posts/3d-printing-speed-vs-quality-guide/" target="_blank" rel="noopener">3D Printing Speed vs Quality Guide</a> - using higher speeds after input shaper calibration</li>
+<li><a href="/posts/how-to-calibrate-pressure-advance/" target="_blank" rel="noopener">How to Calibrate Pressure Advance</a> - the other major Klipper calibration for print quality</li>
+</ul>
+</div>
+<footer>
+  <p>&copy; 2026 Print3DBuddy - Independent guides, no fluff.</p>
+  <p><a href="/about/">About</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/contact/">Contact</a> &middot; <a href="mailto:CobyCane01@outlook.com">Email us</a></p>
+</footer>
+</body>
+</html>
