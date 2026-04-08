@@ -26,115 +26,104 @@
     &nbsp;&middot;&nbsp; Print3DBuddy
   </div>
   <h1>3D Printing First Layer Problems: Every Issue and How to Fix It</h1>
-  <p>The first layer is the foundation of every print. Get it right and everything else has a chance of working. Get it wrong and no amount of other tuning will save the print.</p>
-<p>Here are every common first layer problem, what causes it, and exactly how to fix it.</p>
+  <p>The first layer is the foundation of every print. Get it right and everything else has a chance of working. Get it wrong and nothing you do later will fix it.</p>
+<p>Most first layer problems come down to three things: a dirty bed, a wrong Z offset, or an unlevel bed. In that order of how often they are the actual cause. Start with the simplest thing first.</p>
+<hr>
+<h2 id="before-anything-else-clean-the-bed">Before Anything Else: Clean the Bed</h2>
+<p>Skin oils from handling the print surface reduce adhesion dramatically. A bed that looks clean is not necessarily clean. I clean my bed with isopropyl alcohol (70% or higher) before every single print without exception - it takes ten seconds and it solves more "filament not sticking" problems than any other single thing.</p>
+<p>If you are troubleshooting a first layer problem and you have not cleaned the bed with IPA first, do that now before reading any further.</p>
 <hr>
 <h2 id="problem-1-filament-not-sticking-to-the-bed">Problem 1: Filament Not Sticking to the Bed</h2>
-<p>The most common beginner problem. The filament comes out fine but just won't stay on the bed.</p>
-<p><strong>Causes and fixes:</strong></p>
-<p><strong>Dirty bed</strong> - skin oils from handling the bed dramatically reduce adhesion. Clean with isopropyl alcohol (IPA 70%+) before every print. This fixes more "not sticking" problems than any other single thing.</p>
-<p><strong>Z offset too high</strong> - the nozzle is too far from the bed, so the filament just gets pushed around rather than squishing down and bonding. Reduce your Z offset (move the nozzle closer) in 0.05mm increments.</p>
-<p><strong>Bed temperature too low</strong> - check recommended bed temps: PLA 55-65°C, PETG 70-85°C, ABS 100-110°C. Make sure the bed has reached temperature and soaked for a few minutes before printing.</p>
-<p><strong>Wrong bed surface for the material</strong> - glass beds can be poor for PETG (sticks too well and rips chunks) and poor for ABS (doesn't stick well enough). A <a href="https://www.amazon.co.uk/s?k=textured+PEI+spring+steel+sheet&tag=print3dbuddy2-21" target="_blank" rel="noopener">textured PEI sheet</a> works for almost everything.</p>
-<p><strong>First layer speed too fast</strong> - slow your first layer to 20-25mm/s in your slicer settings.</p>
+<p><strong>Check bed cleanliness first.</strong> If that is fine, work through these:</p>
+<p><strong>Z offset too high</strong> - the nozzle is too far from the bed. Filament gets pushed around instead of squishing down and bonding. Lower your Z offset in 0.05mm increments. You want the first layer lines to look slightly flattened, not round.</p>
+<p><strong>Bed temperature too low</strong> - check these temperatures and make sure your bed has soaked for a couple of minutes after reaching temp before you start printing:</p>
+<table><thead><tr>
+<th>Material</th>
+<th>Bed Temperature</th>
+</tr></thead><tbody>
+<tr>
+<td>PLA</td>
+<td>55 - 65°C</td>
+</tr>
+<tr>
+<td>PETG</td>
+<td>70 - 85°C</td>
+</tr>
+<tr>
+<td>ABS / ASA</td>
+<td>100 - 110°C</td>
+</tr>
+<tr>
+<td>TPU</td>
+<td>30 - 60°C</td>
+</tr>
+</tbody></table>
+<p><strong>Wrong bed surface</strong> - glass beds work well for PLA but are poor for PETG (it bonds too aggressively and rips chunks out) and inconsistent for ABS. A textured PEI spring steel sheet works reliably for almost every material and is one of the best low-cost upgrades you can make.</p>
+<p><strong>First layer speed too fast</strong> - anything above 30mm/s for the first layer is pushing it. Set your slicer to 20-25mm/s for the first layer specifically.</p>
 <hr>
 <h2 id="problem-2-filament-dragging-instead-of-laying-flat">Problem 2: Filament Dragging Instead of Laying Flat</h2>
-<p>The nozzle is too close to the bed. The filament has nowhere to go and gets pushed ahead of the nozzle.</p>
-<p><strong>Fix:</strong> Increase your Z offset in 0.05mm increments. You want the filament slightly squished, not scraped.</p>
-<p>Signs the Z offset is correct: lines are flat and slightly wider than round, adjacent lines fuse together slightly, no gaps between lines.</p>
+<p>The nozzle is too close. The filament has nowhere to go and gets pushed ahead of the nozzle, dragging through the print.</p>
+<p>Increase Z offset in 0.05mm increments. You want slight squish - lines slightly flattened and slightly wider than round, adjacent lines fusing together at the edges. Not scraped flat, not sitting round and separate.</p>
 <hr>
-<h2 id="problem-3-first-layer-looks-uneven-across-the-bed">Problem 3: First Layer Looks Uneven Across the Bed</h2>
-<p>One corner sticks well, another has gaps, another is scraped. Classic unlevelled bed.</p>
-<p><strong>Fix:</strong></p>
-<p>If you have <strong>auto bed levelling</strong> - re-run the bed mesh levelling routine from your printer menu. Make sure your Z offset is also set correctly after re-levelling.</p>
-<p>If you have <strong>manual levelling</strong> - relevel the bed at printing temperature (the bed expands slightly when hot). Adjust each corner with a sheet of paper until you get consistent light drag across all four corners and the centre.</p>
-<p>Run through manual levelling at least twice in a row - adjusting one corner affects the others slightly.</p>
+<h2 id="problem-3-uneven-first-layer-across-the-bed">Problem 3: Uneven First Layer Across the Bed</h2>
+<p>One corner sticking well, another with gaps, another being scraped. This is almost always the bed level.</p>
+<p><strong>If you have auto bed levelling</strong> - re-run the mesh levelling routine. Make sure your Z offset is set correctly after re-levelling. Auto levelling corrects for surface variation but does not set Z offset - you still need to dial that in separately.</p>
+<p><strong>If you have manual levelling</strong> - level at printing temperature. The bed expands when hot and the readings will be different to cold. Use a sheet of paper and adjust each corner until you get consistent light drag across all four corners and the centre. Run through the process twice - adjusting one corner affects the others slightly.</p>
 <hr>
-<h2 id="problem-4-first-layer-lines-have-gaps-between-them">Problem 4: First Layer Lines Have Gaps Between Them</h2>
-<p>The lines are being placed but they're not fusing together - you can see gaps between each pass.</p>
-<p><strong>Causes:</strong></p>
-<ul>
-<li><strong>Z offset too high</strong> - nozzle not close enough for lines to squish together</li>
-<li><strong>Under-extrusion</strong> - not enough filament coming out</li>
-<li><strong>Line width set too narrow</strong> in slicer - check your first layer line width (should be 100-150% of nozzle diameter)</li>
-</ul>
-<p><strong>Fix:</strong> Adjust Z offset slightly lower first. If that doesn't help, check your extrusion multiplier.</p>
+<h2 id="problem-4-lines-not-fusing-together-gaps-between-lines">Problem 4: Lines Not Fusing Together (Gaps Between Lines)</h2>
+<p>The lines are placed but not bonding side to side.</p>
+<p><strong>Z offset too high</strong> is the most common cause - the nozzle is not close enough for lines to squish together. Lower it slightly.</p>
+<p><strong>Under-extrusion</strong> - not enough material coming out. Check your extrusion multiplier and nozzle temperature.</p>
+<p><strong>Line width set too narrow in slicer</strong> - first layer line width should be 100-150% of your nozzle diameter. On a 0.4mm nozzle, 0.4-0.6mm is the range. Check this in your slicer.</p>
 <hr>
-<h2 id="problem-5-first-layer-lines-are-squished-together-and-rough">Problem 5: First Layer Lines Are Squished Together and Rough</h2>
-<p>The opposite problem - lines are merging into a rough, uneven mass.</p>
-<p><strong>Fix:</strong> Z offset too low. Increase in 0.05mm increments until lines are separate but still slightly flattened and bonded.</p>
+<h2 id="problem-5-lines-squished-together-rough-surface">Problem 5: Lines Squished Together, Rough Surface</h2>
+<p>The opposite - everything is merging into a rough uneven mass.</p>
+<p>Z offset is too low. Increase in 0.05mm increments until lines are separate but still slightly flattened and touching at the edges.</p>
 <hr>
-<h2 id="problem-6-first-layer-looks-fine-but-lifts-at-corners-warping">Problem 6: First Layer Looks Fine But Lifts at Corners (Warping)</h2>
-<p>The print starts well but corners begin lifting during or after the first layer.</p>
-<p><strong>Causes:</strong></p>
-<ul>
-<li>Bed temperature too low</li>
-<li>Ambient temperature too cold</li>
-<li>No brim</li>
-<li>Material prone to warping (ABS, ASA)</li>
-</ul>
-<p><strong>Fixes:</strong></p>
+<h2 id="problem-6-corners-lifting-during-the-first-layer">Problem 6: Corners Lifting During the First Layer</h2>
+<p>The first layer starts fine but corners peel up during or shortly after printing.</p>
 <ul>
 <li>Increase bed temperature</li>
-<li>Add a brim (5-10mm wide) in your slicer</li>
-<li>Clean the bed with IPA</li>
-<li>For ABS/ASA: use an enclosure and turn off part cooling</li>
+<li>Add a brim (5-10mm) in your slicer - this dramatically increases the surface area bonded to the bed</li>
+<li>Make sure the bed is fully up to temperature before printing, not just hitting temperature at the start</li>
+<li>For ABS and ASA specifically: you need an enclosure. There is no reliable fix for ABS warping without one.</li>
 </ul>
 <hr>
-<h2 id="problem-7-blobbing-at-the-start-of-the-first-layer">Problem 7: Blobbing at the Start of the First Layer</h2>
-<p>A large blob or blob trail at the start of the print, usually where the nozzle starts moving.</p>
-<p><strong>Causes:</strong></p>
-<ul>
-<li>Ooze before print starts - nozzle has been sitting hot and leaking</li>
-<li>Start G-code not purging properly</li>
-</ul>
-<p><strong>Fixes:</strong></p>
-<ul>
-<li>Add a purge line to your start G-code (most slicers include this by default)</li>
-<li>Use a skirt (a printed outline around the print that purges the nozzle before the actual print starts)</li>
-<li>Reduce ooze with slight retraction improvements or a lower standby temperature</li>
-</ul>
+<h2 id="problem-7-blob-at-the-start-of-the-print">Problem 7: Blob at the Start of the Print</h2>
+<p>A large blob or blob trail where the nozzle starts moving. The nozzle has been sitting hot and oozing before the print starts.</p>
+<p>Most slicers include a purge line in the start G-code by default - check that it is not disabled. Adding a skirt (a printed outline before the actual model starts) also purges the nozzle cleanly.</p>
+<p>If this is a persistent problem, check your standby temperature. Keeping the nozzle at full printing temperature while waiting is harder on the filament than a slightly lower standby.</p>
 <hr>
-<h2 id="problem-8-first-layer-has-a-scar-or-scrape-mark">Problem 8: First Layer Has a "Scar" or Scrape Mark</h2>
-<p>A groove or scar running across the first layer.</p>
-<p><strong>Cause:</strong> The nozzle is dragging through already-deposited material on a travel move. Usually caused by Z offset being slightly too low, causing the nozzle to hit previous lines.</p>
-<p><strong>Fix:</strong> Slightly increase Z offset. Also check if Z-hop is enabled in your slicer (lifts the nozzle during travel moves).</p>
+<h2 id="problem-8-scar-or-groove-across-the-first-layer">Problem 8: Scar or Groove Across the First Layer</h2>
+<p>A line or groove running through the first layer.</p>
+<p>The nozzle is dragging through already-deposited material on a travel move. Z offset is slightly too low. Raise it by 0.05mm. Also check if Z-hop is enabled in your slicer - this lifts the nozzle during travel moves and prevents this entirely.</p>
 <hr>
-<h2 id="problem-9-first-layer-looks-perfect-but-print-still-fails-later">Problem 9: First Layer Looks Perfect But Print Still Fails Later</h2>
-<p>If the first layer looks great but the print still fails (detaches, warps, or falls over), the problem is elsewhere:</p>
+<h2 id="problem-9-perfect-first-layer-but-print-still-fails-later">Problem 9: Perfect First Layer But Print Still Fails Later</h2>
+<p>If the first layer is fine and the print is failing higher up:</p>
 <ul>
-<li><strong>Warping:</strong> bed temperature dropping, drafts, material sensitivity - see our <a href="/posts/how-to-fix-3d-print-warping/" target="_blank" rel="noopener">warping guide</a></li>
-<li><strong>Tall prints falling over:</strong> centre of gravity, print speed too fast for the geometry</li>
-<li><strong>Layer adhesion failure:</strong> temperature or cooling issues - see our <a href="/posts/3d-printing-layer-adhesion-problems-fixes/" target="_blank" rel="noopener">layer adhesion guide</a></li>
+<li><strong>Warping and lifting</strong> - see the <a href="/posts/how-to-fix-3d-print-warping/" target="_blank" rel="noopener">warping guide</a></li>
+<li><strong>Layer adhesion failure</strong> - temperature or cooling issue, see the <a href="/posts/3d-printing-layer-adhesion-problems-fixes/" target="_blank" rel="noopener">layer adhesion guide</a></li>
+<li><strong>Tall print falling over</strong> - print speed too fast for the geometry, or centre of gravity problem</li>
 </ul>
 <hr>
-<h2 id="the-perfect-first-layer-what-to-look-for">The Perfect First Layer: What to Look For</h2>
-<p>A correct first layer:</p>
+<h2 id="what-a-correct-first-layer-looks-like">What a Correct First Layer Looks Like</h2>
 <ul>
-<li>Lines are slightly flattened (not round, not completely squished)</li>
-<li>Adjacent lines are touching and slightly fusing at edges</li>
+<li>Lines slightly flattened (not round, not scraped flat)</li>
+<li>Adjacent lines touching and slightly fusing at the edges</li>
 <li>No gaps between lines</li>
-<li>No scraping or rough patches</li>
-<li>Corners are flat and bonded</li>
-<li>Surface looks smooth and uniform from above</li>
+<li>No scraping, rough patches, or drag marks</li>
+<li>Corners flat and bonded</li>
 </ul>
-<p>The best way to calibrate this is to use our <a href="https://tools.print3dbuddy.com/test-prints#first-layer-test" target="_blank" rel="noopener">first layer calibration test print</a>  -  a 60×60mm grid square that makes Z offset reading straightforward. Adjust Z offset until it looks right, then note the value and use it consistently.</p>
+<p>The <a href="https://tools.print3dbuddy.com/test-prints#first-layer-test" target="_blank" rel="noopener">first layer calibration test print</a> at tools.print3dbuddy.com is a 60x60mm grid square that makes Z offset easy to read. Print it, adjust Z offset until it looks right, and note the value.</p>
 <hr>
-<h2 id="tools-that-help">Tools That Help</h2>
-<ul>
-<li><a href="https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21" target="_blank" rel="noopener">Digital calipers</a> - measuring first layer thickness</li>
-<li><a href="https://www.amazon.co.uk/s?k=textured+PEI+spring+steel+sheet&tag=print3dbuddy2-21" target="_blank" rel="noopener">Textured PEI sheet</a> - the best all-round bed surface for first layer adhesion</li>
-<li><a href="https://www.amazon.co.uk/s?k=isopropyl+alcohol+70+percent+cleaning&tag=print3dbuddy2-21" target="_blank" rel="noopener">Isopropyl alcohol (IPA)</a> - clean the bed before every print</li>
-</ul>
-<hr>
-<h2 id="summary">Summary</h2>
-<p>First layer problems almost always come down to three things:</p>
+<h2 id="the-fix-order">The Fix Order</h2>
 <ol>
-<li>Z offset (nozzle height)</li>
-<li>Bed levelness</li>
-<li>Bed cleanliness</li>
+<li>Clean the bed with IPA</li>
+<li>Check Z offset - lower it if filament is not bonding</li>
+<li>Check bed temperature for your material</li>
+<li>Re-run bed levelling if the problem varies across the bed</li>
 </ol>
-<p>Start with cleaning the bed with IPA. Then check your Z offset. Then check bed level. In that order. This sequence resolves the vast majority of first layer issues without changing anything else.</p>
+<p>This sequence resolves the vast majority of first layer problems without changing anything else.</p>
   <div class="author-bio">
     <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
     <div>

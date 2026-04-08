@@ -26,27 +26,15 @@
     &nbsp;&middot;&nbsp; Print3DBuddy
   </div>
   <h1>How to Fix 3D Print Warping: The Complete Guide</h1>
-  <p>Warping is one of the most frustrating problems in 3D printing  -  your print starts fine, then the corners lift off the bed, the base curves up, and the whole thing peels away mid-print.</p>
-<p>The good news is that warping is almost always fixable. Here's why it happens and exactly how to stop it.</p>
+  <p>Warping is a thermal problem. Plastic contracts as it cools. If different parts of your print cool at different rates, the uneven contraction pulls the base off the bed - corners lift first, then the whole print peels away.</p>
+<p>The fix depends entirely on the material. PLA warps rarely and is usually fixed with basic bed prep. ABS without an enclosure is fighting physics - no amount of glue stick will reliably fix what is fundamentally a heat management problem.</p>
 <hr>
-<h2 id="why-warping-happens">Why Warping Happens</h2>
-<p>Warping is a thermal problem. When plastic cools, it contracts. If different parts of your print cool at different rates, the uneven contraction pulls the base off the bed.</p>
-<p>This is especially bad with:</p>
-<ul>
-<li><strong>ABS and ASA</strong>  -  high coefficient of thermal expansion, warp badly without an enclosure</li>
-<li><strong>Large flat prints</strong>  -  more surface area = more contraction force</li>
-<li><strong>Thin bases</strong>  -  less mass to anchor the print to the bed</li>
-<li><strong>Cold environments</strong>  -  ambient temperature affects cooling rates significantly</li>
-</ul>
-<p>PLA warps less, but it still warps under the wrong conditions.</p>
+<h2 id="fix-1-clean-the-bed-and-check-z-offset">Fix 1: Clean the Bed and Check Z Offset</h2>
+<p>Before anything else, clean the bed with isopropyl alcohol. Skin oils from handling the surface cut adhesion significantly. This alone fixes more warping problems than people expect, because what looks like a warping issue is often just poor first layer adhesion.</p>
+<p>Then check your Z offset. A first layer that is not properly squished onto the bed will lift the moment thermal forces start pulling. You want the first layer lines slightly flattened and fused to the surface, not sitting round on top of it.</p>
 <hr>
-<h2 id="fix-1-sort-your-bed-adhesion-first">Fix 1: Sort Your Bed Adhesion First</h2>
-<p>Before anything else, make sure your first layer is actually sticking properly.</p>
-<h3 id="clean-the-bed">Clean the bed</h3>
-<p>Oils from your fingers reduce adhesion significantly. Clean the print surface with isopropyl alcohol (IPA, 70%+) before every print. This alone fixes many warping problems.</p>
-<h3 id="check-your-z-offset">Check your Z offset</h3>
-<p>If your nozzle is too far from the bed, the first layer won't squish down properly and won't bond. You want slight "squish"  -  the filament should be slightly flattened, not round and separate.</p>
-<h3 id="check-bed-temperature">Check bed temperature</h3>
+<h2 id="fix-2-bed-temperature">Fix 2: Bed Temperature</h2>
+<p>A cold bed is one of the most common causes of warping. More importantly, make sure the bed is at temperature before the print starts - not reaching temperature at the start. Let it soak for a couple of minutes after hitting the target.</p>
 <table><thead><tr>
 <th>Material</th>
 <th>Bed Temperature</th>
@@ -72,120 +60,104 @@
 <td>30 - 60°C</td>
 </tr>
 </tbody></table>
-<p>A cold bed is a major cause of warping. Make sure your bed is up to temperature <em>before</em> the print starts  -  let it soak for a few minutes after reaching temperature.</p>
 <hr>
-<h2 id="fix-2-use-the-right-bed-surface">Fix 2: Use the Right Bed Surface</h2>
-<p>Not all bed surfaces hold all materials equally.</p>
+<h2 id="fix-3-use-the-right-bed-surface">Fix 3: Use the Right Bed Surface</h2>
+<p>The stock bed surface on most printers is not optimised for all materials.</p>
 <table><thead><tr>
 <th>Surface</th>
 <th>Best For</th>
 <th>Notes</th>
 </tr></thead><tbody>
 <tr>
-<td>PEI sheet (textured)</td>
+<td>Textured PEI sheet</td>
 <td>PLA, PETG, ABS</td>
-<td>Best all-rounder. Parts release when cool.</td>
+<td>Best all-rounder. Parts release cleanly when cool.</td>
 </tr>
 <tr>
-<td>PEI sheet (smooth)</td>
+<td>Smooth PEI</td>
 <td>PLA, PETG</td>
-<td>Better surface finish on bottom</td>
+<td>Better bottom surface finish</td>
 </tr>
 <tr>
-<td>Glass (bare)</td>
+<td>Glass</td>
 <td>PLA</td>
-<td>Cheap, consistent, parts release cleanly</td>
-</tr>
-<tr>
-<td>BuildTak</td>
-<td>PLA, PETG</td>
-<td>Good adhesion, harder to remove parts</td>
+<td>Consistent and cheap. Parts release when cold.</td>
 </tr>
 <tr>
 <td>Garolite / FR4</td>
 <td>Nylon</td>
-<td>Nylon bonds exceptionally well</td>
+<td>Nylon bonds exceptionally well to this</td>
 </tr>
 </tbody></table>
-<p>If you're still on the stock glass or magnetic bed your printer shipped with, a textured PEI sheet (~£15-25) is one of the best upgrades you can make.</p>
+<p>A textured PEI spring steel sheet is the first hardware upgrade worth making on almost any printer. Parts bond well when hot and pop off when cool with no tools required.</p>
+<p>PETG bonds aggressively to bare glass and smooth PEI - it can rip chunks out of the surface when you remove the print. If you are printing PETG on glass, use a thin layer of glue stick as a release agent, not as an adhesion aid.</p>
 <hr>
-<h2 id="fix-3-add-a-brim">Fix 3: Add a Brim</h2>
-<p>A brim is a flat ring of extra perimeters added around the base of your print. It massively increases the surface area bonded to the bed, resisting the pulling force from thermal contraction.</p>
-<p>Enable in your slicer: <strong>Brim width: 5-10mm</strong> for most prints, 10-15mm for ABS/ASA or large prints.</p>
-<p>The brim prints attached to your model  -  you snap or cut it off after printing. Takes about 30 seconds.</p>
-<p><strong>When to use a brim:</strong></p>
+<h2 id="fix-4-add-a-brim">Fix 4: Add a Brim</h2>
+<p>A brim adds flat perimeters around the base of your model, increasing the bonded surface area and resisting the pulling force from contraction.</p>
+<p>Enable in your slicer - 5-10mm width for most prints, 10-15mm for ABS/ASA or anything with a small contact area at the base. You snap or cut it off after printing.</p>
+<p>Use a brim on:</p>
 <ul>
 <li>Any ABS or ASA print</li>
-<li>Any print with small contact area at the base</li>
-<li>Large prints with thin walls</li>
-<li>Anything you really can't afford to fail</li>
+<li>Anything with a small footprint or thin base</li>
+<li>Tall prints with narrow bases</li>
+<li>Anything you cannot afford to fail halfway through</li>
 </ul>
 <hr>
-<h2 id="fix-4-use-an-enclosure-for-abs-and-asa">Fix 4: Use an Enclosure for ABS and ASA</h2>
-<p>If you're printing ABS or ASA and still getting warping after fixing bed adhesion, you almost certainly need an enclosure.</p>
-<p>An enclosure traps heat, keeping the ambient temperature around the print elevated. This slows and evens out the cooling rate, preventing the differential contraction that causes warping.</p>
-<p><strong>Budget enclosure options:</strong></p>
+<h2 id="fix-5-enclosure-for-abs-and-asa">Fix 5: Enclosure for ABS and ASA</h2>
+<p>If you are printing ABS or ASA without an enclosure and getting warping, the enclosure is not optional. There is no other fix that works reliably.</p>
+<p>The problem is the temperature differential between the hot bed and the cooler air around the print. An enclosure traps heat and keeps the ambient temperature elevated, which slows and evens out cooling across the whole print. Without it, the top layers are cooling in open air while the bottom layers are sitting on a 105 degree bed - the differential causes warping regardless of what else you do.</p>
+<p>Target internal temperature of 40-50 degrees for ABS and ASA. A cheap thermometer inside lets you monitor it.</p>
+<p>Budget options that work:</p>
 <ul>
-<li>DIY cardboard box (free, surprisingly effective)</li>
-<li>Creality enclosure tent (~£30)  -  fits most printers</li>
-<li>Proper printed enclosures  -  many free designs on Printables/Thingiverse</li>
+<li>A cardboard box placed over the printer (free and surprisingly effective for testing)</li>
+<li>A purpose-built enclosure like the Creality tent (~£30)</li>
+<li>Printed enclosure panels - many free designs on Printables</li>
 </ul>
-<p>Target internal temperature: 40-50°C for ABS/ASA. A cheap thermometer inside lets you monitor this.</p>
-<p><strong>Important:</strong> PLA should NOT be printed in an enclosure above ~30°C ambient  -  it can cause heat creep and clogs. Turn off or open the enclosure for PLA.</p>
+<p><strong>Important:</strong> do not print PLA in an enclosure above about 30 degrees ambient. PLA softens at relatively low temperatures and heat creep becomes a problem. If you share an enclosure between materials, turn it off or open it for PLA.</p>
 <hr>
-<h2 id="fix-5-adjust-fan-cooling">Fix 5: Adjust Fan Cooling</h2>
-<p>Part cooling fans accelerate warping in materials that are sensitive to it.</p>
-<p><strong>For ABS and ASA:</strong> Turn part cooling off entirely, or use a maximum of 20%. The whole point is to cool slowly and evenly.</p>
-<p><strong>For PETG:</strong> Minimal cooling  -  20-30% maximum. Too much cooling causes layer delamination.</p>
-<p><strong>For PLA:</strong> Generous cooling is fine  -  50-100%. PLA doesn't warp much and benefits from good cooling for detail.</p>
-<p>In your slicer, this is usually in <strong>Cooling</strong> settings. You can also set per-layer fan speeds (useful for ramping up after the first few layers).</p>
+<h2 id="fix-6-part-cooling-fan-settings">Fix 6: Part Cooling Fan Settings</h2>
+<p>Cooling fans accelerate warping in temperature-sensitive materials.</p>
+<p><strong>ABS and ASA:</strong> turn part cooling off entirely, or no more than 15-20%. The whole point is to cool slowly and evenly.</p>
+<p><strong>PETG:</strong> 20-30% maximum. Too much cooling causes layer delamination, which shows up as weak prints even if adhesion looks fine.</p>
+<p><strong>PLA:</strong> 50-100% is fine. PLA does not warp significantly and benefits from good cooling for detail quality.</p>
 <hr>
-<h2 id="fix-6-adjust-model-orientation-and-first-layers">Fix 6: Adjust Model Orientation and First Layers</h2>
-<h3 id="increase-first-layer-thickness">Increase first layer thickness</h3>
-<p>A thicker first layer (0.3mm instead of 0.2mm) bonds better. Many slicers default to this.</p>
-<h3 id="slow-down-first-layer">Slow down first layer</h3>
-<p>Printing too fast on the first layer reduces adhesion. 20-30mm/s for the first layer is common  -  your slicer may already handle this.</p>
-<h3 id="orient-the-model-to-minimise-thermal-stress">Orient the model to minimise thermal stress</h3>
-<p>Large flat surfaces parallel to the bed = more surface area = better adhesion + less contraction stress. If your model has a large flat face, orient it down.</p>
-<h3 id="chamfer-the-base-edges-in-your-model">Chamfer the base edges in your model</h3>
-<p>Sharp 90-degree corners are warp hotspots. A small chamfer (45°, 1mm) on the base edges significantly reduces the stress concentration that starts warping.</p>
+<h2 id="fix-7-model-orientation-and-geometry">Fix 7: Model Orientation and Geometry</h2>
+<p>Large flat surfaces printed parallel to the bed give more adhesion area and distribute thermal stress better. Orient your model to put the largest flat face on the bed where possible.</p>
+<p>A thicker first layer (0.3mm instead of 0.2mm) bonds better. Slowing the first layer to 20-25mm/s also improves adhesion.</p>
+<p>If you are designing the model yourself, chamfering the base edges at 45 degrees makes a real difference. Sharp 90-degree corners concentrate thermal stress and are where warping almost always starts.</p>
 <hr>
-<h2 id="fix-7-bed-adhesion-aids">Fix 7: Bed Adhesion Aids</h2>
-<p>When all else fails, adhesion aids help:</p>
-<ul>
-<li><strong>Glue stick (Pritt Stick / UHU):</strong> Apply thin layer, let dry before printing. Works well for PLA on glass. Easy to clean with water.</li>
-<li><strong>Hairspray:</strong> Similar effect. AquaNet is the classic hobbyist choice.</li>
-<li><strong>Magigoo / 3DLac:</strong> Purpose-made adhesion sprays. More consistent than hairspray.</li>
-<li><strong>Kapton tape:</strong> Used for ABS on glass  -  creates a slightly rough surface.</li>
-</ul>
-<p>These are last resorts. If you need them for every print, fix the underlying problem (Z offset, bed temp, bed surface).</p>
+<h2 id="fix-8-adhesion-aids-use-as-a-last-resort">Fix 8: Adhesion Aids (Use as a Last Resort)</h2>
+<p>Glue stick, hairspray, and purpose-made adhesion sprays like Magigoo can help in stubborn cases. But they are treating the symptom, not the problem. If you need adhesion aids for every print of a particular material, something else is wrong - the bed temperature, the surface, the enclosure.</p>
+<p>The exception is PETG on glass, where a thin layer of glue stick is used as a release agent to prevent over-bonding rather than to increase adhesion.</p>
 <hr>
 <h2 id="material-specific-checklist">Material-Specific Checklist</h2>
-<h3 id="pla-warping">PLA Warping</h3>
+<h3 id="pla">PLA</h3>
 <ul>
-<li>[ ] Bed cleaned with IPA?</li>
-<li>[ ] Bed at 60°C?</li>
-<li>[ ] Z offset correct (slight squish)?</li>
-<li>[ ] First layer speed slow?</li>
+<li>Bed cleaned with IPA?</li>
+<li>Bed at 60°C, soaked before printing?</li>
+<li>Z offset giving slight squish on first layer?</li>
+<li>First layer speed at 20-25mm/s?</li>
 </ul>
-<h3 id="petg-warping">PETG Warping</h3>
+<h3 id="petg">PETG</h3>
 <ul>
-<li>[ ] Bed at 80°C?</li>
-<li>[ ] Fan at 20-30% max?</li>
-<li>[ ] Not printing too fast (stringing causes false positives)?</li>
+<li>Bed at 75-85°C?</li>
+<li>Fan at 20-30% maximum?</li>
+<li>Not printing on bare glass without a release agent?</li>
 </ul>
-<h3 id="abs-asa-warping">ABS / ASA Warping</h3>
+<h3 id="abs-asa">ABS / ASA</h3>
 <ul>
-<li>[ ] Enclosure in use?</li>
-<li>[ ] Bed at 105-110°C?</li>
-<li>[ ] Part cooling off or <20%?</li>
-<li>[ ] Brim enabled (8-15mm)?</li>
-<li>[ ] Draft shield in slicer?</li>
+<li>Enclosure in use?</li>
+<li>Bed at 105-110°C?</li>
+<li>Part cooling off or below 20%?</li>
+<li>Brim of 10-15mm enabled?</li>
+<li>Drafts eliminated - doors and windows closed?</li>
 </ul>
 <hr>
 <h2 id="summary">Summary</h2>
-<p>Most warping comes down to three things: dirty bed, wrong bed temperature, or insufficient enclosure for heat-sensitive materials. Start with cleaning the bed and checking your Z offset  -  this solves 80% of cases.</p>
-<p>If you're printing ABS and still warping: get an enclosure. There's no substitute.</p>
+<p>PLA warping: clean the bed, check Z offset and bed temperature. Fixed in most cases.</p>
+<p>PETG warping: right bed temperature, minimal fan, right bed surface.</p>
+<p>ABS and ASA warping: get an enclosure. Everything else is secondary.</p>
+<p>Start with the simplest thing. Adhesion sprays and special coatings are not the answer - correct fundamentals are.</p>
   <div class="author-bio">
     <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
     <div>

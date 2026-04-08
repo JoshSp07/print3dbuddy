@@ -1,125 +1,91 @@
-# How to Fix 3D Printer Stringing: 7 Settings to Adjust
+# How to Fix 3D Printer Stringing: What Actually Works
 
-If your 3D prints look like they've been attacked by a spider, you're dealing with stringing  -  one of the most common problems beginners run into. The good news? It's almost always fixable with a few slicer tweaks. This guide walks you through the 7 most effective settings to adjust to get clean, string-free prints.
-
----
-
-## What Is 3D Printer Stringing?
-
-Stringing (sometimes called "oozing" or "hairy prints") happens when your printer nozzle drags molten filament across open gaps in your print, leaving thin threads of plastic behind. It looks messy, it's a pain to clean up, and it's a sign that your printer settings aren't quite dialled in.
-
-The root cause is almost always excess molten plastic leaking from the nozzle while the print head moves between two points. The fix involves either pulling that plastic back (retraction), reducing how much oozes out in the first place (temperature), or moving faster so there's less time for plastic to drip.
+Stringing is one of those problems people overcomplicate. They spend an hour tweaking retraction when the real fix was dropping the temperature by 10 degrees. This guide cuts straight to what actually matters.
 
 ---
 
-## 7 Settings to Fix Stringing
+## What Stringing Actually Is
 
-### 1. Increase Retraction Distance
+Stringing happens when molten filament leaks from the nozzle during travel moves - the non-printing movements between parts of your model. The nozzle crosses open air, leaves a thin thread behind, and you end up with what looks like a spider web across your print.
 
-Retraction is the single most important setting for stringing. When the print head moves between two parts of your model, the printer pulls the filament backwards slightly to reduce pressure in the nozzle, so it doesn't ooze.
-
-**What to try:**
-- For direct drive extruders (like those on the Bambu Lab P1S or Prusa MK4): start at 0.5 - 1mm
-- For Bowden setups (like many Creality Enders): start at 4 - 6mm and work up to 7 - 8mm if needed
-
-Increase retraction in 0.5mm increments and test with our [retraction/stringing test print](https://tools.print3dbuddy.com/test-prints#retraction-test)  -  7 towers that make stringing immediately visible.
-
-**Too much retraction** causes under-extrusion and clogs  -  so don't go overboard.
+The root cause is almost always one of three things: too much heat, not enough retraction, or slow travel speed. In that order of likelihood.
 
 ---
 
-### 2. Increase Retraction Speed
+## Start Here: Temperature
 
-It's not just how far you retract  -  it's how fast. A slow retraction gives molten plastic more time to ooze before it's pulled back.
+Before touching retraction, drop your nozzle temperature by 5-10 degrees and run a test print.
 
-**What to try:** Most printers do well between 25 - 45mm/s. Push direct drive setups toward the faster end. If you're getting grinding or skipping sounds, dial it back.
+Most people print PLA at 210-215 degrees out of habit. That is often higher than necessary. At 200-205 degrees the filament is less liquid, oozes less between moves, and strings significantly less. It is the lowest-effort fix and works more often than people expect.
 
----
+PETG is the exception. It needs higher temperatures to print well, which means it strings more. With PETG, temperature is still the first variable to tune - but you are looking for the lowest temperature that still gives you good layer adhesion, not just the lowest temperature full stop. Start at 230 degrees and only go higher if you see poor bonding.
 
-### 3. Lower Your Print Temperature
-
-Hotter filament is more liquid, which means it drips and strings more easily. Dropping your nozzle temperature by 5 - 10°C can make a surprising difference.
-
-**What to try:**
-- PLA typically prints well between 190 - 220°C. If you're at 215°C and getting stringing, try 205°C.
-- PETG is trickier  -  it needs higher temps but also strings more. Try 230°C before going higher.
-
-Always do a temperature tower test when dialling in a new filament brand  -  it'll show you exactly where stringing starts.
+**PLA:** try 200-210 before going higher  
+**PETG:** 230-240, tune down from there  
+**ABS:** 235-245, stringing is less common with ABS
 
 ---
 
-### 4. Enable or Increase "Avoid Crossing Perimeters" / "Combing"
+## Retraction: The Settings That Matter
 
-Most slicers (Bambu Studio, Cura, PrusaSlicer) have a setting that forces the print head to travel over already-printed areas rather than crossing open gaps. Less open-air travel means less stringing.
+Retraction pulls filament back into the nozzle before a travel move to release the pressure. Get it wrong in either direction and you have problems - too little and it strings, too much and you get clogs or under-extrusion.
 
-- In **Cura**: look for "Combing Mode"  -  set it to "All" or "Not in Skin"
-- In **PrusaSlicer/BambuStudio**: look for "Avoid crossing perimeters"
+**Starting points by extruder type:**
 
-This setting alone can dramatically reduce stringing without changing any temperatures.
+| Extruder Type | Retraction Distance | Retraction Speed |
+|---|---|---|
+| Direct drive | 0.5 - 1.5mm | 25 - 45mm/s |
+| Bowden | 4 - 6mm | 40 - 60mm/s |
 
----
+Direct drive setups need far less retraction than Bowden because there is no tube between the gear and the nozzle. If you are on a direct drive printer and stringing persists past 2mm retraction, retraction is not the issue - go back to temperature.
 
-### 5. Increase Travel Speed
+On Bowden printers, 6-7mm is a common sweet spot. Going above 8mm rarely helps and increases the chance of the filament pulling out of the hotend entirely.
 
-The faster the nozzle moves between points, the less time molten plastic has to drip. This is a simple win.
-
-**What to try:** Most printers can handle 150 - 200mm/s for travel moves. Increase your travel speed in your slicer's speed settings. This won't affect print quality since no plastic is being extruded during travel.
-
----
-
-### 6. Enable "Wipe Before Retract" or "Coast at End"
-
-These are small but useful features:
-
-- **Wipe before retract** (Cura): The nozzle wipes along the outer edge of the print before retracting, cleaning off excess filament.
-- **Coast at end** (Simplify3D / some slicers): The printer stops extruding slightly before the end of a line, using residual pressure to finish  -  reducing ooze at travel start points.
-
-Not every slicer has both options, but enable whichever ones you have access to.
+Increase in 0.5mm increments and test each time. The [retraction test print](https://tools.print3dbuddy.com/test-prints#retraction-test) at tools.print3dbuddy.com makes this quick - seven towers, results visible in 15 minutes.
 
 ---
 
-### 7. Lower Your Minimum Travel Distance for Retraction
+## The Setting Most People Miss: Combing
 
-If your slicer is set to only retract when moving more than 5mm, short hops between nearby features won't trigger retraction at all  -  and those are often the ones causing strings.
+Every major slicer has a setting that routes travel moves over already-printed areas rather than crossing open gaps. In Cura it is called Combing Mode. In PrusaSlicer and Bambu Studio it is called Avoid Crossing Perimeters.
 
-**What to try:** Lower your "minimum travel for retraction" to 1 - 2mm. This means retraction kicks in more often, which helps with detailed models that have lots of small features.
+Enable it. It does not affect print quality at all and it dramatically reduces stringing on detailed models by eliminating open-air travel moves entirely.
 
----
+- **Cura:** Combing Mode - set to "All" or "Not in Skin"  
+- **PrusaSlicer / Bambu Studio:** Avoid crossing perimeters - enable
 
-## Still Stringing? Check These Too
-
-If you've adjusted all the settings above and still have issues:
-
-- **Wet filament** strings badly. PLA and PETG [both absorb moisture from the air. Try drying your filament in a food dehydrator](https://www.amazon.co.uk/s?k=food+dehydrator+filament+drying&tag=print3dbuddy2-21) [or a filament dryer box](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21) for 4 - 6 hours.
-- **Worn nozzle**: A partially blocked or worn brass nozzle can cau[se inconsistent flow and stringing. Replacement nozzles are cheap  -  grab a pack](https://www.amazon.co.uk/s?k=replacement+brass+nozzle+0.4mm+3d+printer&tag=print3dbuddy2-21).
-- **Calibrate your extruder**: If your e-steps are off, you may be over-extruding consistently, which makes stringing much worse.
+This is the most underused anti-stringing setting. Most people go straight to retraction without enabling this first.
 
 ---
 
-## Best Printers for Low-Stringing Out of the Box
+## Travel Speed
 
-Some printers are [better tuned for stringing from the factory than others. The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) [and **Bambu Lab P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) are well-regarded for minimal stringing thanks to their direct drive systems and well-tuned default profiles. If you're still shopping for a printer, that's worth considering.
+Faster travel means less time for filament to drip. Most printers handle 150-200mm/s for travel moves without any issues since no plastic is being deposited.
 
-[The **Creality Ender 3 V3**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3&tag=print3dbuddy2-21) is a great budget option but uses a Bowden setup, so you'll likely spend a bit more time tuning retraction.
+If your travel speed is set to 80-100mm/s, raise it to 150mm/s minimum. This is a quick win.
 
 ---
 
-## Quick Reference: Anti-Stringing Settings Cheatsheet
+## If You Have Still Not Fixed It
+
+At this point the issue is usually one of these:
+
+**Wet filament** - moisture-affected filament strings badly regardless of settings. If you hear crackling or popping while printing, dry the spool before doing anything else. See the [wet filament guide](/posts/how-to-fix-wet-filament/).
+
+**Worn or partial-clog nozzle** - inconsistent flow causes inconsistent pressure, which causes inconsistent stringing. If this printer has had a lot of use, try a fresh nozzle. They are cheap.
+
+**Extruder calibration** - if your e-steps are off and you are over-extruding, you are starting every travel move with more pressure than you need. Calibrate your extruder first, then revisit stringing.
+
+---
+
+## Quick Reference
 
 | Setting | Bowden | Direct Drive |
 |---|---|---|
-| Retraction Distance | 4 - 7mm | 0.5 - 1.5mm |
-| Retraction Speed | 40 - 60mm/s | 25 - 45mm/s |
-| Print Temperature | Reduce by 5 - 10°C | Reduce by 5 - 10°C |
-| Travel Speed | 150 - 200mm/s | 150 - 200mm/s |
-| Combing/Avoid Crossing | Enable | Enable |
+| Retraction distance | 4 - 6mm | 0.5 - 1.5mm |
+| Retraction speed | 40 - 60mm/s | 25 - 45mm/s |
+| Print temperature | Lower by 5-10 degrees | Lower by 5-10 degrees |
+| Travel speed | 150mm/s minimum | 150mm/s minimum |
+| Combing / avoid crossing | Enable | Enable |
 
----
-
-## Final Thoughts
-
-Stringing is frustrating, but it's one of those problems that clicks once you understand what's causing it. Work through these 7 settings one at a time  -  change one thing, run a test print, and compare. Changing multiple things at once makes it impossible to know what actually worked.
-
-If you want to speed up your testing, print a dedicated stringing test model (free on Printables)  -  it only takes 10 - 15 minutes and gives you clear results.
-
-Ready to upgrade your setup? [Check the current price on Amazon for a quality filament dryer](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)  -  it's one of the best investments you can make for consistent prints.
+Work through temperature first, then combing, then retraction. That order solves the problem faster than going straight for retraction settings.
