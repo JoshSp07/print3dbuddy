@@ -1,165 +1,130 @@
 # How to Calibrate Your First 3D Printer: Step-by-Step Guide
 
-Getting your first 3D printer set up properly is the single most important thing you can do for print quality. A poorly calibrated printer produces warped bases, bad layer adhesion, blobs, gaps, and endless frustration. A well-calibrated printer produces clean, consistent prints every time.
+Most new printer problems are calibration problems. Warped bases, bad adhesion, gaps in layers, blobbing on corners - these all trace back to settings that are slightly off from the start. Spending an hour on calibration when you first set up saves dozens of hours troubleshooting later.
 
-**This guide covers everything you need to calibrate a new 3D printer**, in the order you should actually do it. Follow these steps and you'll avoid the most common beginner pitfalls.
-
----
-
-## Why Calibration Matters
-
-Calibration isn't just a one-time setup step  -  it's an ongoing process, especially in the early days with a new machine. Think of it like tuning a musical instrument: even a great guitar sounds off if it hasn't been set up properly.
-
-The good news is that most calibration steps only need to be done once (or after major maintenance). And modern printers like the Bambu Lab series handle much of this automatically. But understanding what each step does will help you troubleshoot problems down the line, whatever printer you're using.
+This is the order to do it in, and what to actually look for at each step.
 
 ---
 
 ## Step 1: Level the Bed (or Check Auto-Levelling)
 
-Bed levelling is the foundation of everything. If your bed isn't level, your first layer won't adhere correctly, and a bad first layer means a failed print.
+Everything depends on bed levelling. A first layer that is not evenly adhered across the whole bed will fail regardless of what else you do.
 
 ### Manual Bed Levelling
 
-If your printer has manual bed levelling (common on budget Creality machines):
-
-1. Heat your bed to printing temperature first (surfaces expand slightly when hot)
+1. Heat the bed to printing temperature first - the surface expands slightly when hot and the readings will be different cold
 2. Home all axes
 3. Disable steppers so you can move the print head by hand
 4. Move the nozzle to each corner of the bed
-5. Slide a piece of paper under the nozzle  -  you want slight friction, not tight resistance
-6. Adjust the bed knobs until the paper drags consistently at all four corners
+5. Slide a piece of paper under the nozzle - you want slight friction, not tight resistance and not free movement
+6. Adjust the bed knobs until you get consistent drag at all four corners
 7. Check the centre last
 
-**Repeat this process 2 - 3 times**, because adjusting one corner affects the others slightly.
+Go around twice. Adjusting one corner affects the others slightly, so a single pass is rarely enough.
 
 ### Auto Bed Levelling (ABL)
 
-Many modern printers include automatic bed levelling using a probe (BLTouch, CRTouch, or built-in inductive sensors). With ABL:
+Run the bed mesh levelling routine from your printer's menu. The printer maps the height variations and compensates during printing. This is accurate and saves a lot of manual fiddling.
 
-- Run the bed mesh levelling routine from your printer's menu
-- The printer maps the height variations across the bed and compensates during printing
-- You still need to set your Z offset correctly (see Step 2)
-
-[The **Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) [and **P1S**](https://www.amazon.co.uk/s?k=Bambu+Lab+P1S&tag=print3dbuddy2-21) use multi-point automatic levelling that's exceptionally accurate out of the box  -  one of the reasons they're so popular with beginners.
+Important: auto bed levelling does not set your Z offset. It compensates for surface variation, but the baseline nozzle-to-bed gap is still set by you. Many people run ABL, assume everything is sorted, and then wonder why the first layer is still wrong. See Step 2.
 
 ---
 
-## Step 2: Set Your Z Offset (First Layer Height)
+## Step 2: Set Your Z Offset
 
-Your Z offset is the gap between the nozzle and the bed when printing starts. Get this wrong and your first layer either won't stick (too high) or will be smashed flat and cause a clog (too low).
+Z offset is the gap between the nozzle and the bed at the start of a print. This is the single most important calibration step and the one most worth taking your time on.
 
-**What a good first layer looks like:** slightly squished, with lines that bond together but don't overlap excessively. You should be able to see individual lines, but they should fuse at the edges.
+**What a correct first layer looks like:** lines slightly flattened, adjacent lines touching and fusing at the edges, no gaps, no rough scraped surface.
 
-### How to Set Z Offset
+**Too high:** filament comes out round, does not squish down, corners lift. Lower the Z offset (move the nozzle closer) in 0.05mm increments.
 
-1. Start a first-layer calibration print (most slicers include one, or print a single-layer square)
-2. Watch the first layer carefully
-3. If the filament isn't sticking or is coming out as a rounded blob, the nozzle is too high  -  reduce your Z offset (move nozzle closer to bed)
-4. If the nozzle is dragging through what it just laid down, or the filament looks squashed flat with rough edges, you're too low  -  increase your Z offset
+**Too low:** nozzle drags through what it just laid down, surface looks rough and squashed. Raise the Z offset in 0.05mm increments.
 
-Adjust in 0.05mm increments and reprint until it looks right. This step is worth taking your time on.
+Print a single-layer square each time you adjust. A 60x60mm square is ideal - large enough to see variations across the bed, fast enough to iterate. The [first layer calibration test print](https://tools.print3dbuddy.com/test-prints#first-layer-test) at tools.print3dbuddy.com is designed for exactly this.
 
 ---
 
-## Step 3: Calibrate Your Extruder (E-Steps)
+## Step 3: Calibrate E-Steps
 
-E-steps (extruder steps per millimetre) tell your printer how many motor steps are needed to push 1mm of filament through the extruder. If this is wrong, you'll either over-extrude (blobs, rough surfaces, stringing) or under-extrude (gaps, weak layers, poor adhesion).
+E-steps tell the printer how many motor steps push 1mm of filament. If this is wrong, every print is either slightly over-extruded or slightly under-extruded.
 
-### How to Calibrate E-Steps
+Many printers come factory-calibrated and you will never need to touch this. But if you are on a budget machine or have replaced your extruder, it is worth checking.
 
-1. Mark your filament 100mm and 120mm from the entry point of your extruder
-2. Command your printer to extrude exactly 100mm of filament (via the control menu or a terminal)
-3. Measure how much filament actually moved
-4. If it extruded 95mm instead of 100mm, your e-steps are too low  -  calculate the correction:
+**How to check:**
 
-**New E-steps = (Current E-steps × 100) ÷ Actual mm extruded**
+1. Mark your filament 100mm and 120mm from the extruder entry point
+2. Command the printer to extrude 100mm (via the control menu or terminal - with the hotend at printing temperature)
+3. Measure how much actually moved
+4. If it moved 95mm instead of 100mm, calculate the correction:
 
-5. Update the value in your printer's firmware settings and save
+**New E-steps = (Current E-steps x 100) / Actual mm extruded**
 
-**Note:** Many modern printers come factory-calibrated for e-steps. Check if yours needs this step before diving in  -  Bambu Lab printers, for example, handle this automatically.
-
----
-
-## Step 4: Run a Temperature Tower Test
-
-Different filament brands and even different colours of the same brand can behave differently at various temperatures. A temperature tower is a single print that tests multiple temperatures in one go.
-
-1. Download our free [temperature tower from the Test Prints page](https://tools.print3dbuddy.com/test-prints#temp-tower)  -  includes a full guide for reading the results
-2. Use your slicer's "change filament at height" or custom G-code feature to step the temperature down every 5mm or so
-3. Test from 230°C down to 190°C for PLA (adjust range for other materials)
-4. Look at each section: where does stringing stop? Where does surface quality peak? Where do overhangs start drooping?
-
-The temperature range that gives you the cleanest results is your sweet spot. Note it down for each filament brand you use.
+Update the value in firmware and save. This is a one-time step that improves everything downstream.
 
 ---
 
-## Step 5: Calibrate Flow Rate / Extrusion Multiplier
+## Step 4: Run a Temperature Tower
 
-Even with correct e-steps, flow rate can be slightly off due to filament diameter variations between brands. Calibrating flow rate ensures you're extruding exactly the right amount of plastic.
+Different filament brands behave differently at different temperatures. A temperature tower tests several temperatures in one print.
 
-### Simple Flow Rate Test
+1. Download a [temperature tower from the Test Prints page](https://tools.print3dbuddy.com/test-prints#temp-tower) at tools.print3dbuddy.com
+2. Use your slicer's "change filament at height" feature to step the temperature down every 5mm
+3. For PLA, test from 230 down to 190. For PETG, 250 down to 220
+4. Look at each section: where does stringing reduce? Where does surface quality peak? Where do overhangs start drooping?
 
-1. Print a single-wall cube (20mm × 20mm × 20mm, 0 infill, 0 top layers, 1 perimeter)
-2. [Measure the wall thickness with digital calipers](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21)
-3. Your slicer's set line width is what you're aiming for (usually 0.4 - 0.45mm for a 0.4mm nozzle)
-4. If your wall is 0.48mm thick, you're over-extruding  -  reduce flow rate proportionally
-5. If it's 0.37mm, you're under-extruding  -  increase flow rate
-
-Adjust in 2 - 3% increments. A good set of [digital calipers is essential for this step  -  check the current price on Amazon](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21).
+The range that gives you clean overhangs, minimal stringing, and good surface finish is your sweet spot. Note it per brand - it varies more than people expect.
 
 ---
 
-## Step 6: Test Retraction Settings
+## Step 5: Calibrate Flow Rate
 
-Retraction controls how much filament is pulled back when the nozzle travels between two parts of a print. Incorrect retraction causes stringing or gaps.
+Even with correct E-steps, flow rate can be slightly off due to filament diameter variation between brands. This step catches that.
 
-1. Print a retraction test model (available free on Printables)
-2. Start with recommended values for your printer type (see our stringing guide for specifics)
-3. Adjust retraction distance and speed based on what you see
+1. Print a single-wall box: 20x20x20mm, zero infill, zero top layers, one perimeter
+2. Measure the wall thickness with digital calipers
+3. Your target is the line width set in your slicer - usually 0.4-0.45mm for a 0.4mm nozzle
+4. If the wall is 0.48mm, reduce flow rate proportionally. If it is 0.37mm, increase it
+
+Adjust in 2-3% increments. This is per-filament - do it once for each brand you use regularly.
+
+---
+
+## Step 6: Check Retraction
+
+Retraction pulls filament back before travel moves to stop oozing. Wrong settings cause stringing (too little) or gaps and clogs (too much).
+
+If you are new to the printer and everything else is dialled in, print a retraction test first to see if you actually have a stringing problem before tuning. Many printers print cleanly at defaults. If you do have stringing, the [stringing guide](/posts/how-to-fix-3d-printer-stringing/) covers this in full.
+
+Starting points:
+- Direct drive: 0.5-1.5mm distance, 25-45mm/s speed
+- Bowden: 4-6mm distance, 40-60mm/s speed
 
 ---
 
 ## Step 7: Print a Calibration Cube
 
-Once you've worked through the steps above, print a 20mm calibration cube. This is the classic final test. For a more targeted approach, our [first layer calibration test print](https://tools.print3dbuddy.com/test-prints#first-layer-test) is specifically designed to make Z offset tuning fast and readable.
+Once you have worked through the steps above, print a 20mm calibration cube as a final check.
 
-**What to check:**
-- Dimensions: measure with calipers  -  should be within 0.2mm of 20mm on all sides
-- Top surface: should be smooth with no gaps or blobs
-- Corners: should be sharp, not rounded or blobby
-- Walls: should be smooth, no visible layer lines wobbling or shifting
+What to look for:
+- Dimensions: within 0.2mm of 20mm on all sides when measured with calipers
+- Top surface: smooth, no gaps or blobs
+- Corners: sharp, not rounded or blobby
+- Walls: smooth, no wobble or horizontal banding
 
-If something's off, you now know what each setting controls, so you can go back and adjust.
-
----
-
-## Calibration Tools Worth Having
-
-- [**Digital calipers**  -  essential for measuring prints accurately](https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21)
-- [**Filament dryer**  -  wet filament causes all kinds of calibration headaches](https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21)
-- [**Bed adhesion spray or PEI sheet**](https://www.amazon.co.uk/s?k=PEI+sheet+3d+printer&tag=print3dbuddy2-21)  -  consistent bed adhesion makes calibration much easier
-- **Good lighting**  -  being able to see your first layer clearly makes a huge difference
+If something is off, you now know which step controls it.
 
 ---
 
 ## How Often Do You Need to Calibrate?
 
-- **Bed level**: Check whenever prints start failing at the first layer, or after moving the printer
-- **Z offset**: Only when you change nozzles or the bed surface
-- **E-steps**: Once, and again after any extruder hardware changes
-- **Flow rate**: Once per filament brand/type
-- **Temperature**: Once per filament brand/type
+- **Bed level:** check whenever first layer adhesion changes, or after moving the printer
+- **Z offset:** only when you change nozzles or the bed surface
+- **E-steps:** once, and after any extruder hardware changes
+- **Flow rate:** once per filament brand
+- **Temperature:** once per filament brand
+
+Most of these are set once and then not touched for months. The exception is Z offset - it drifts slightly on printers without ABL and is worth verifying if prints start failing at the first layer.
 
 ---
 
-## Final Thoughts
-
-Calibration sounds daunting, but work through it step by step and you'll build a solid understanding of how your printer behaves. Most of these steps take 30 - 60 minutes total, and once done, you'll be getting clean prints consistently.
-
-If you're still choosing a printer and want something that minimises calibration effort, the [**Bambu Lab A1 Mini**](https://www.amazon.co.uk/s?k=Bambu+Lab+A1+Mini&tag=print3dbuddy2-21) automates most of these steps. For a hands-on learning experience with a budget machine, the [**Creality Ender 3 V3 SE**](https://www.amazon.co.uk/s?k=Creality+Ender+3+V3+SE&tag=print3dbuddy2-21) is a classic choice  -  check the current price on Amazon.
-
----
-
-## Recommended Settings for Every Material
-
-Once you're calibrated, the next question is always "what temperature and speed should I use for this filament?" Our free [Print Settings Cheat Sheet](https://tools.print3dbuddy.com) covers 15 materials including PLA, PETG, ABS, ASA, TPU, Nylon, and PC - with nozzle temperature, bed temperature, retraction, cooling, and first layer speed, adjusted for your extruder type. [Look up your filament at tools.print3dbuddy.com](https://tools.print3dbuddy.com).
+The calibration process sounds like a lot. In practice it takes an hour or two, most of it waiting for prints. After that, you print and fix problems as they come rather than fighting the same ones repeatedly. It is worth doing properly at the start.
