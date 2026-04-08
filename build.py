@@ -794,7 +794,13 @@ def build_seo_files(posts):
         xml += f'  <url><loc>https://{SITE_DOMAIN}{url}</loc><lastmod>{today}</lastmod></url>\n'
     xml += '</urlset>\n'
     (OUTPUT_DIR / 'sitemap.xml').write_text(xml, encoding='utf-8')
-    print('  Built: robots.txt + sitemap.xml')
+
+    # ads.txt
+    (OUTPUT_DIR / 'ads.txt').write_text(
+        'google.com, pub-5408659965693947, DIRECT, f08c47fec0942fa0\n',
+        encoding='utf-8'
+    )
+    print('  Built: robots.txt + sitemap.xml + ads.txt')
 
 
 # ── Main ───────────────────────────────────────────────────────────────────
