@@ -1,127 +1,78 @@
 # How to Fix Elephant Foot in 3D Printing
 
-Elephant foot is one of the most common first-layer problems in FDM printing. The base of the print flares out wider than the rest, giving it a splayed, chunky-looking bottom that ruins dimensional accuracy and makes flat-bottomed prints impossible to use as intended.
+Elephant foot is when the base of a print flares out wider than the rest, giving it a splayed bottom edge. For decorative prints it is mainly cosmetic. For anything functional - a bracket, a housing, a part that needs to slot into something else - it means the print does not fit as designed.
 
-The good news is that every cause of elephant foot has a straightforward fix, and in most cases you will solve it with a single small adjustment.
-
----
-
-## What Elephant Foot Is
-
-**Elephant foot** is when the first one to three layers of a print are squashed wider than the designed dimensions. Viewed from the side, the base of the print looks like it is spreading outward, resembling the wide, flat foot of an elephant.
-
-The width of the spreading varies. Mild elephant foot might be 0.1 to 0.3mm wider than intended on each side. Severe elephant foot can splay 1mm or more, leaving a visible skirt around the entire base of the part.
-
-For decorative prints, elephant foot is mainly an aesthetic issue. For functional parts, anything that needs to fit inside a housing, slide into a slot, or mate with another component will not fit correctly if the base is wider than designed.
+Every cause of elephant foot has a direct fix, and in most cases one small adjustment sorts it.
 
 ---
 
-## Why Elephant Foot Happens
+## What It Is
 
-There are four main causes, and they can occur individually or in combination.
+The first one to three layers print wider than the designed dimensions. Viewed from the side, the base of the print spreads outward like the foot of an elephant - hence the name.
 
-### Z-Offset Too Low
+Mild elephant foot is 0.1-0.3mm wider than intended on each side. Severe cases can splay 1mm or more, leaving a visible flared skirt around the entire base.
 
-**Z-offset** is the distance between the nozzle and the bed at the start of a print. When the z-offset is too low, the nozzle is closer to the bed than it should be, which squashes the first layer plastic outward in all directions. The plastic has no room to go upward, so it spreads sideways.
-
-This is the most common cause of elephant foot and the first thing to check.
-
-### Bed Temperature Too High
-
-The build plate temperature affects how quickly the first layer of plastic solidifies after being deposited. If the bed is too hot, the first layer stays soft and partially molten for long enough that the weight of the subsequent layers pressing down squashes it wider. It is effectively being compressed by the layers above before it has had time to solidify into its correct shape.
-
-### First Layer Flow Rate Too High
-
-**Flow rate** (also called extrusion multiplier) controls how much plastic is extruded relative to what the slicer calculates. If your first layer flow rate or general flow rate is set higher than 100%, more plastic is coming out than the layer volume requires. The excess plastic has nowhere to go except outward, causing the base to splay.
-
-Some slicers also have a separate **first layer line width** setting. If this is set above 100%, it causes the same problem.
-
-### No Elephant Foot Compensation
-
-Most modern slicers include an **elephant foot compensation** setting specifically to counteract this effect. This setting instructs the slicer to slightly reduce the width of the first layer or first few layers in the model to pre-compensate for the expected spread.
-
-If this setting is at zero and your printer has any tendency to produce elephant foot, the base will splay regardless of how well everything else is dialled in.
+The test is measurement, not appearance. A correctly set Z-offset will produce a first layer that looks visually squashed - that is expected and correct. Elephant foot is confirmed when the width measured at the base is larger than the width measured 5-10mm up.
 
 ---
 
-## How to Fix Elephant Foot: Step by Step
+## Cause 1: Z-Offset Too Low (Most Common)
 
-Work through these fixes in order, checking the result after each adjustment before moving on.
+When the nozzle is closer to the bed than it should be, the first layer gets squashed outward in all directions. The plastic has no room to go up, so it spreads sideways.
 
-### Fix 1: Adjust Z-Offset
+Fix: raise Z-offset in 0.05mm increments. In most slicer and firmware interfaces, a less negative value moves the nozzle further from the bed. Go one increment at a time - it is easy to overcorrect and end up with poor adhesion, which is a worse problem.
 
-Start here. Adjust your z-offset **upward** (moving the nozzle slightly further from the bed) in **0.05mm increments**.
-
-In most slicer and printer firmware interfaces, a more positive (or less negative) z-offset value moves the nozzle further from the bed. If your current z-offset is -1.20mm, try -1.15mm, then print a small test object (a 20mm cube or a short cylinder works well) and check the base.
-
-**One 0.05mm increment at a time.** It is easy to overcorrect and end up with poor bed adhesion, which is a worse problem. Raise the z-offset until elephant foot disappears, but stop before the first layer becomes under-extruded or starts peeling up.
-
-A correctly set z-offset will produce a first layer where lines are squashed together slightly but not spread wide. The surface of the first layer should look smooth and flat with no visible gaps between lines, and the base of the print should be the same width as the rest.
-
-### Fix 2: Reduce Bed Temperature
-
-If adjusting the z-offset by 0.1 to 0.15mm has not resolved the problem, try reducing bed temperature.
-
-Reduce bed temp in **5°C increments** and reprint the test object after each change.
-
-Common ranges to aim for if you have been running too hot:
-
-- **PLA**: 55 to 65°C is typical. If you are running at 70°C or above, bring it down.
-- **PETG**: 70 to 80°C. Running at 85°C or higher can cause elephant foot.
-- **ABS/ASA**: 100 to 110°C. These materials genuinely need high bed temps, so reduce cautiously and prioritise the z-offset fix first.
-
-Do not reduce bed temperature so far that the print stops adhering. There is a balance between adhesion and avoiding elephant foot, and the z-offset fix usually resolves most of the problem without needing a large temperature change.
-
-### Fix 3: Reduce First Layer Flow Rate
-
-In your slicer settings, look for **first layer flow rate** or **initial layer line width**. If either of these is set above 100%, reduce it to 100% and reprint.
-
-If you have made general flow rate adjustments for over-extrusion that are above 100%, this will also contribute to elephant foot. Check your general flow rate or extrusion multiplier and confirm it is at or below 100%.
-
-Some slicers (PrusaSlicer, Bambu Studio, Orca Slicer) have explicit flow calibration tools. If you suspect overall over-extrusion, run a flow calibration before continuing with elephant foot troubleshooting, as an incorrect global flow rate will affect everything else.
-
-### Fix 4: Use Elephant Foot Compensation
-
-In your slicer, search for **elephant foot compensation** (PrusaSlicer, Orca Slicer) or **initial layer horizontal expansion** (Cura). These settings apply a negative horizontal offset to the first layer or first few layers.
-
-A value of **0.1 to 0.2mm** is a typical starting point. This instructs the slicer to print the base of each wall 0.1 to 0.2mm narrower than the model, which compensates for the expected spread.
-
-This fix is best used in combination with the other adjustments rather than as a substitute for them. If your z-offset is wildly wrong, no amount of slicer compensation will fully correct it. Get the hardware setting roughly right first, then use slicer compensation to fine-tune.
+Stop when the base width measured with calipers matches the width higher up the print. The first layer will still look slightly compressed - that is correct. The footprint is what matters, not the visual layer height.
 
 ---
 
-## How to Check If Elephant Foot Is Fixed
+## Cause 2: Bed Temperature Too High
 
-Print a **20mm calibration cube** and measure the base with digital calipers.
+If the bed is too hot, the first layer stays soft long enough for the weight of subsequent layers pressing down to squash it wider. It is being compressed before it has had time to solidify into shape.
 
-Measure the X and Y dimensions at the very bottom of the first layer, then measure the same dimensions 5mm up from the base. If elephant foot is present, the bottom measurement will be noticeably larger (0.2mm or more) than the measurement taken higher up.
+Fix: reduce bed temperature in 5°C increments and reprint.
 
-When fixed, both measurements should be within 0.1mm of each other and within 0.2mm of the designed dimension (20mm in this case).
+Common targets if you have been running too hot:
+- PLA: 55-65°C. If you are running at 70°C or above, bring it down.
+- PETG: 70-80°C. Running above 85°C can cause elephant foot.
+- ABS/ASA: 100-110°C. These genuinely need high bed temps - prioritise the Z-offset fix first before reducing temperature on these materials.
 
-Visually, the fixed print will have a base that looks flush with the sides of the object rather than flared outward. Looking directly at the bottom corner from the side, you should see a 90-degree angle rather than a curved or splayed edge.
-
----
-
-## When Is It Actually the Correct Z-Offset?
-
-This is worth understanding because it trips up many people.
-
-A well-set z-offset should produce a first layer that looks squashed. The lines of the first layer should be visibly flattened compared to the layers above, with no gaps between them. This is correct and desirable. It is the squash that creates adhesion.
-
-**Elephant foot is different from a squashed-looking first layer.** The distinction is:
-
-- **Correctly squashed first layer**: the first layer is slightly flatter than subsequent layers, but the footprint of the print matches the model dimensions.
-- **Elephant foot**: the footprint of the print is wider than the model dimensions.
-
-If your first layer looks flat and well-adhered but the base width is correct when you measure it, your z-offset is fine. The visual appearance of a compressed first layer is expected, not a problem.
-
-If you raise your z-offset to the point where the first layer looks normal height (matching subsequent layers exactly), you have probably gone too far. The first layer should always look slightly more compressed than the rest.
-
-The test is the measurement, not the visual appearance of layer height.
+Do not reduce so far that the print stops adhering. The Z-offset fix usually handles most of the problem without needing a large temperature change.
 
 ---
 
-## Related Guides
+## Cause 3: First Layer Flow Rate Too High
 
-- [3D Printing First Layer Problems and Fixes](/posts/3d-printing-first-layer-problems-fixes/)
-- [How to Fix Over Extrusion](/posts/how-to-fix-over-extrusion/)
+If your first layer flow rate or general extrusion multiplier is set above 100%, more plastic is coming out than the layer volume requires. The excess spreads outward.
+
+Fix: in your slicer, check first layer flow rate and initial layer line width. If either is above 100%, bring it back to 100% and reprint. If your general flow rate is miscalibrated high, that will also contribute - run a single-wall box calibration (measure wall thickness with calipers, adjust until it matches your set line width) before continuing.
+
+---
+
+## Cause 4: No Elephant Foot Compensation
+
+Most modern slicers have an elephant foot compensation setting. In PrusaSlicer and Orca Slicer it is called elephant foot compensation. In Cura it is called initial layer horizontal expansion.
+
+A value of 0.1-0.2mm applies a negative horizontal offset to the first few layers, pre-compensating for the expected spread.
+
+Use this in combination with the other fixes rather than instead of them. If the Z-offset is significantly wrong, slicer compensation alone will not fully correct it. Get the hardware setting roughly right first, then use this to fine-tune.
+
+---
+
+## How to Verify It Is Fixed
+
+Print a 20mm calibration cube. Measure with digital calipers at the very bottom of the first layer, then again 5-10mm up from the base.
+
+When fixed:
+- Both measurements should be within 0.1mm of each other
+- Both should be within 0.2mm of the designed 20mm dimension
+- The base corner viewed from the side should look like a 90-degree angle, not a curve or flare
+
+---
+
+## Fix Order
+
+1. Raise Z-offset 0.05mm - check base width
+2. Reduce bed temperature 5°C if Z-offset adjustment alone was not enough
+3. Check first layer flow rate and line width - set both to 100%
+4. Add 0.1-0.2mm elephant foot compensation in slicer as a fine-tune

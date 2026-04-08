@@ -1,138 +1,111 @@
 # Prints Stuck to the Build Plate: Causes and Fixes
 
-A print fusing itself to the bed is one of the most frustrating problems in 3D printing. What should take five seconds - lift the print, done - turns into ten minutes of prying, scraping, and hoping you don't gouge the surface. Here's why it happens and how to fix it without damaging your printer or your print.
+A print fusing itself to the bed is one of the more frustrating problems in 3D printing. What should take five seconds - lift the print off, done - turns into ten minutes of prying, scraping, and hoping you do not gouge the surface.
+
+The irony is that good bed adhesion is exactly what you spent time calibrating. The fix is not less adhesion, it is more controlled adhesion - firm during the print, clean release once cooled.
 
 ---
 
 ## Why Prints Stick Too Hard
 
-Good bed adhesion is a balancing act. You want prints to grip firmly while hot, and release cleanly once cooled. When that balance tips too far toward gripping, you end up with a print that won't come off without force.
-
 The main causes:
 
-- **Bed too hot** - more heat means more expansion into the bed texture, and a stronger grip
-- **First layer squished too hard** - a z-offset that's too low presses filament into every pore of the surface
-- **PEI surface + PETG** - PETG bonds chemically with PEI at high temperatures, sometimes permanently
-- **Print not cooled down enough** - most surfaces release much more easily once fully cooled
-- **Adhesive build-up** - glue stick or hairspray creating a layer that bonds instead of releasing
-- **Smooth PEI with ABS/ASA** - aggressive materials that bond very firmly to smooth surfaces
+- Bed still hot - most surfaces release much more easily once fully cooled
+- Z-offset too low - first layer pressed too hard into the bed texture
+- PETG on smooth PEI - PETG bonds chemically with PEI at high temperatures
+- Bed temperature too high for the material
+- Adhesive build-up - old glue stick layers stacking up and creating a bond rather than a release
 
 ---
 
 ## Fix 1: Let It Cool Completely
 
-This sounds obvious but it's the most commonly skipped step. PLA on a PEI sheet typically goes from "stuck solid" to "lifts with a gentle push" somewhere between 30-40°C bed temperature.
+The most commonly skipped step. PLA on a textured PEI sheet goes from "stuck solid" to "lifts with a light push" somewhere around 30-35°C bed temperature.
 
-Wait until the bed is fully at room temperature before trying to remove the print. On a heated bed, that might mean 10-15 minutes after the print finishes. If you have a glass bed or thick aluminium, it retains heat longer - give it time.
+Wait until the bed is fully at room temperature before trying to remove the print. On a heated bed that means 10-15 minutes after the print ends - longer if you have a thick glass or aluminium plate, which holds heat longer. Trying to remove the print at 50°C and then wondering why it won't come off is one of those things everyone does once.
 
-If you're impatient, a quick blast from a can of compressed air across the print can help cool the surface faster and encourage separation.
+If you need it faster, a brief blast of compressed air across the base of the print helps the surface cool and contract away from the bed texture.
 
 ---
 
 ## Fix 2: Use a Thin Flexible Spatula
 
-Don't try to pry the print off with a thick metal scraper - you'll gouge the bed and stress the print. A thin flexible spatula allows you to work along the edge of the print and get under it without brute force.
+Do not pry with a thick metal scraper - you will gouge the bed and stress the print. A thin flexible spatula lets you work under the edge of the print without force.
 
-The technique: hold the spatula nearly flat against the bed surface, edge-on, and wiggle it under the brim or first layer. Work around the perimeter gradually rather than attacking from one point.
+The technique: hold the spatula nearly flat against the bed, edge-on, and slide it under the brim or first layer perimeter. Work around the outside gradually rather than levering from one spot. Once the edge is free the print usually lifts easily.
 
-**[Thin print removal spatula on Amazon UK](https://www.amazon.co.uk/s?k=3d+print+removal+spatula+flexible&tag=print3dbuddy2-21)**
-
-For a magnetic spring steel PEI sheet, flex the sheet itself - a slight bow pops most prints off cleanly without any tools at all.
+If you have a magnetic spring steel PEI sheet, flex the sheet itself. A slight bow pops most prints off with no tools at all - this is one of the main reasons spring steel sheets are worth having.
 
 ---
 
-## Fix 3: Adjust Your Z-Offset
+## Fix 3: Raise Z-Offset
 
-If prints are consistently hard to remove even after cooling, your first layer is probably being squished too hard into the bed. A z-offset that's too low pushes filament deep into the texture, giving it a mechanical lock that's hard to break.
+If prints are consistently stuck even after full cooling, the first layer is being squashed too hard into the bed texture. Too low a Z-offset presses filament into every groove and pore of the surface, creating a mechanical lock.
 
-**What to check:**
+What the first layer should look like: flat ribbons, slightly wider than the filament diameter, but with visible ridges between passes and some height to them. Not a completely transparent, solid sheet with no texture at all.
 
-- The first layer should look like a flat ribbon, slightly wider than the filament diameter
-- It should not look completely translucent or squash flat into the bed with no visible height
-- There should be very slight ridges visible between passes - not a perfectly smooth solid sheet
-
-Raise your z-offset by 0.05mm increments until first layers look correct. You can verify with a [first layer calibration print](https://tools.print3dbuddy.com/test-prints#first-layer-test) - a quick flat grid that makes the difference obvious.
+Raise Z-offset in 0.05mm increments and test. Stop when prints release cleanly but still adhere solidly during printing - the margin is usually 0.1-0.15mm.
 
 ---
 
-## Fix 4: Lower the Bed Temperature
+## Fix 4: Lower Bed Temperature
 
-Reducing bed temperature by 5-10°C while keeping the rest of the settings the same is often enough to make prints release more easily without affecting adhesion during the print.
-
-**Suggested bed temps for easy release:**
+Reducing bed temperature by 5-10°C while keeping everything else the same is often enough to shift from stuck to releasing cleanly.
 
 | Material | Common bed temp | Try reducing to |
-|----------|----------------|-----------------|
+|---|---|---|
 | PLA | 60°C | 50-55°C |
 | PETG | 70-80°C | 65°C |
 | ABS | 100-110°C | 95-100°C |
 | ASA | 100-110°C | 95°C |
 
-Lower temps mean slightly less adhesion, so keep an eye on your first layer. If prints start lifting at the corners, you've gone too far.
+Lower temperature means slightly less adhesion, so watch the first layer carefully. If corners start lifting you have gone too far.
 
 ---
 
-## Fix 5: The PETG + PEI Problem
+## Fix 5: PETG on PEI
 
-PETG is notorious for bonding too aggressively with PEI, especially smooth PEI. At high temperatures, PETG can chemically fuse to the surface and tear chunks out of the PEI when you remove the print.
+PETG is the worst offender for over-bonding. On smooth PEI at high temperatures, it can chemically fuse to the surface and rip chunks out when you remove the print.
 
-**Solutions for PETG on PEI:**
+A company I worked with had this happen repeatedly on a batch of smooth PEI sheets they had bought. Three sheets damaged in a week before we identified the cause. The fix was straightforward once we understood what was happening.
 
-- **Use textured PEI instead of smooth** - the reduced contact area means PETG grips well enough during printing but releases cleanly after cooling
-- **Apply a thin layer of PVA (glue stick)** as a release agent between the PETG and the bed - it creates a sacrificial layer
-- **Lower bed temperature** - 65-70°C is often enough for PETG and reduces aggressive bonding
-- **Don't let PETG prints cool below 30°C** on PEI - they get harder to remove, not easier
+For PETG on PEI:
 
-**[Energetic textured PEI sheet on Amazon UK](https://www.amazon.co.uk/s?k=energetic+pei+sheet+textured&tag=print3dbuddy2-21)**
+- Switch to textured PEI - the reduced contact area means PETG grips well during printing but releases cleanly once cool
+- Apply a thin layer of glue stick between the PETG and the bed as a release layer - it prevents direct contact between the two materials
+- Drop bed temperature to 65-70°C - high enough to print, low enough to reduce the chemical bonding
 
----
-
-## Fix 6: Clean Your Build Surface
-
-A dirty build surface can cause unpredictable adhesion. Fingerprints (oils), dust, and residue from adhesives all affect how prints grip and release.
-
-For PEI: wipe with 90%+ IPA before every few prints. This removes finger oils and restores consistent adhesion. Don't use acetone on PEI - it degrades the surface over time.
-
-For glass: warm soapy water cleans it well. Dry thoroughly before heating.
-
-If adhesive build-up is the problem, wash with warm water and soap - glue stick washes off easily. Remove the sheet or plate first.
+Do not let PETG prints cool fully on smooth PEI - they can actually get harder to remove the cooler they get once they have bonded at temperature.
 
 ---
 
-## Fix 7: Use an Adhesion Release Spray or Sheet
+## Fix 6: Clean the Build Surface
 
-If you're consistently fighting with prints, a dedicated release agent solves the problem at the source.
+A dirty bed behaves unpredictably - sometimes gripping too hard, sometimes not adhering at all.
 
-**For surfaces that grip too hard:**
-- A thin layer of PVA glue stick on PEI acts as a release film for PETG and ABS
-- Magigoo or Layerneer bed adhesion products provide consistent grip AND easier release
+For PEI: wipe with 90%+ IPA on a lint-free cloth before every few prints. This removes skin oils that contaminate the surface. Do not use acetone on PEI - it degrades the surface over time.
 
-**For glass beds with aggressive materials:**
-- Hairspray or a very thin layer of glue stick provides a controlled adhesion layer that releases cleanly with warm water
+For glass: warm soapy water removes adhesive residue. Dry thoroughly before heating.
 
-The goal is consistent, predictable behaviour - you'd rather have a surface that always behaves the same than one that sometimes grips and sometimes doesn't.
+Old glue stick layers build up over time and change how the surface behaves. If you have been using glue stick regularly, wash it off completely with warm water, dry the sheet, and retest.
 
 ---
 
-## When to Replace the Build Surface
+## When to Replace the Surface
 
-If your PEI sheet has deep gouges, peeling edges, or patches where filament consistently bonds or fails to stick, it's time to replace it. PEI sheets are consumable - they wear out after hundreds of prints, and a worn sheet causes adhesion problems that no amount of settings adjustment will fix.
-
-Replacement sheets cost £10-20 and most fit any magnetic bed system.
-
-**[Replacement PEI spring steel sheet on Amazon UK](https://www.amazon.co.uk/s?k=pei+spring+steel+magnetic+sheet+235x235&tag=print3dbuddy2-21)**
+If your PEI sheet has deep gouges, peeling edges, or patches where behaviour is unpredictable regardless of cleaning, replace it. PEI sheets wear out after hundreds of prints and a worn sheet causes adhesion problems that no amount of settings adjustment will fix. Replacement sheets are inexpensive and most fit any magnetic bed system.
 
 ---
 
 ## Summary
 
 | Cause | Fix |
-|-------|-----|
-| Print not cooled down | Wait until bed is at room temperature |
-| Z-offset too low (over-squished) | Raise z-offset 0.05mm at a time |
+|---|---|
+| Print still warm | Wait until bed is at room temperature |
+| Z-offset too low | Raise 0.05mm at a time |
 | Bed temp too high | Drop 5-10°C |
-| PETG fusing to smooth PEI | Switch to textured PEI or use glue stick as release |
-| Dirty surface | Clean with IPA (PEI) or soapy water (glass) |
-| Worn or damaged surface | Replace the sheet |
+| PETG on smooth PEI | Switch to textured PEI or use glue stick as release |
+| Dirty surface | IPA for PEI, soapy water for glass |
+| Worn surface | Replace the sheet |
 
-For most setups, the fix is either cooling time or z-offset. Sort those two first before changing anything else.
+For most setups, the fix is cooling time or Z-offset. Sort those first before changing anything else.

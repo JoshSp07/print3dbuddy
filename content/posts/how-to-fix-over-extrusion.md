@@ -1,95 +1,71 @@
 # How to Fix Over-Extrusion in 3D Printing
 
-Over-extrusion is the opposite of under-extrusion, but it causes just as many problems. Too much plastic, bulging walls, blobs on the surface, and prints that come out slightly larger than they should be. It is less dramatic than a spaghetti failure, but it quietly ruins print quality and makes functional parts fit badly.
+Over-extrusion is less dramatic than a spaghetti failure but it quietly ruins print quality and makes functional parts useless. Walls that bow outward, blobs on the surface, holes that come out too small to fit a bolt through - all of these can trace back to too much plastic being pushed out.
 
-Here is every cause and how to fix each one.
-
----
-
-## What Does Over-Extrusion Look Like?
-
-- Walls that bow outwards slightly
-- Blobs or zits on the outer surface
-- Corners that are slightly rounded or filled in
-- First layer that squishes out and spreads wider than expected (this specific issue is called elephant foot - more on that below)
-- Dimensional inaccuracy - holes too small, parts that do not fit together correctly
-- Excess filament building up on top surfaces
+It is also one of the easier problems to fix once you know what to look for.
 
 ---
 
-## Fix 1: Calibrate Your Flow Rate (Extrusion Multiplier)
+## What Over-Extrusion Looks Like
 
-The most common cause of over-extrusion is a flow rate that is set too high. Your slicer has a setting called flow rate, extrusion multiplier, or extrusion factor - they all mean the same thing. The default is usually 100% (or 1.0), but every printer and filament combination is slightly different.
-
-**How to calibrate it:** Print a single-wall cube (no top, no bottom, just walls) and measure the wall thickness with digital calipers. It should match your slicer's line width setting (usually 0.4-0.45mm for a 0.4mm nozzle). If the walls are thicker than expected, reduce the flow rate by 2-3% at a time and reprint until they match.
-
-Our [filament cost calculator](https://tools.print3dbuddy.com/tools/filament-cost) can help you understand how flow rate changes affect material use - but for calibration, the [flow rate test print](https://tools.print3dbuddy.com/test-prints) is the most direct tool.
-
----
-
-## Fix 2: Check Your E-Steps (Extruder Steps Per Millimetre)
-
-E-steps tell your printer how many motor steps equal 1mm of filament movement. If this is set too high, your printer physically pushes more filament than it thinks it is.
-
-**How to check:** Mark 100mm and 120mm on a piece of filament above the extruder. Tell the printer to extrude exactly 100mm through the terminal or printer menu. Measure how much filament actually moved. If it moved more than 100mm, your E-steps are too high.
-
-New E-steps = (current E-steps x 100) / actual mm extruded
-
-E-steps are saved in your printer's EEPROM and will persist across prints once updated. You only need to calibrate them once per machine - they should not drift unless you change your extruder hardware.
+- Walls that bow outward slightly
+- Blobs or zits dotted across the outer surface
+- Corners that look rounded or filled in rather than sharp
+- First layer spreading wider than the model (this specific issue is elephant foot - covered in the [elephant foot guide](/posts/how-to-fix-elephant-foot/))
+- Dimensional inaccuracy - holes too small, parts that do not fit together
+- Excess filament building up on top surfaces, leaving a rough finish
 
 ---
 
-## Fix 3: Lower Your Print Temperature
+## Fix 1: Calibrate Flow Rate (Extrusion Multiplier)
 
-The hotter the filament, the more it flows and the harder it is to control. Printing even 5-10C hotter than needed can cause slight over-extrusion, blobs, and stringing.
+The most common cause. Flow rate - also called extrusion multiplier or extrusion factor depending on the slicer - defaults to 100% but every printer and filament combination is slightly different. Running at 105% when you need 100% is enough to cause visible over-extrusion on detailed parts.
 
-**Recommended starting temperatures:**
-- PLA: 200-215C
-- PETG: 220-235C
-- ABS/ASA: 235-250C
+Print a single-wall box: no top layers, no bottom layers, no infill, one perimeter. Measure the wall thickness with digital calipers. It should match the line width set in your slicer - typically 0.4-0.45mm for a 0.4mm nozzle. If the walls are thicker than that, reduce flow rate in 2-3% increments and reprint until they match.
 
-Try dropping your temperature in 5C steps. Use the [print settings cheat sheet](https://tools.print3dbuddy.com/tools/print-settings) for recommended starting points for your specific filament.
-
-If reducing temperature causes under-extrusion or layer adhesion issues, your temperature was correct and the problem lies elsewhere.
+This is the calibration I do on every new filament spool before running anything that needs to fit precisely. Budget filament in particular often needs adjusting - the diameter can run slightly wide and push the effective flow rate up.
 
 ---
 
-## Fix 4: Elephant Foot (First Layer Only)
+## Fix 2: Check E-Steps
 
-Elephant foot is a specific type of over-extrusion that only affects the first layer. The bottom of the print is wider than the rest, creating a flared edge that makes the part look like it has feet.
+E-steps tell the printer how many motor steps equal 1mm of filament movement. If these are set too high, more filament is physically pushed than the printer accounts for.
 
-It is caused by the first layer being printed too close to the bed and being squashed flat, or by the first layer flow rate being set too high.
+Mark 100mm and 120mm on filament above the extruder. Command the printer to extrude exactly 100mm (with the hotend at temperature). Measure how much actually moved. If it moved more than 100mm, e-steps are too high.
 
-**Fix:**
-- Increase your Z offset slightly (raise the nozzle a fraction away from the bed)
-- Reduce your first layer flow rate to 90-95% in your slicer
-- Some slicers have a specific elephant foot compensation setting - use it if available
+New e-steps = (current e-steps x 100) / actual mm extruded
 
----
-
-## Fix 5: Check for a Partial Nozzle Blockage
-
-This sounds like the opposite of over-extrusion, but a partial blockage can cause irregular flow that sometimes looks like over-extrusion in patches. Burned filament creates a narrowing inside the nozzle, and pressure builds up until it forces a surge of plastic out.
-
-**Signs this is the cause:** Over-extrusion that appears randomly rather than consistently, combined with some under-extruded patches in the same print.
-
-**Fix:** Do a cold pull - heat the nozzle to printing temperature, push filament through manually, then cool to around 90C and pull the filament out sharply. Repeat until the pulled filament tip comes out clean with no brown or black residue. See the [complete nozzle guide](/posts/complete-nozzle-guide-3d-printing/) for full cold pull instructions.
+This is a one-time calibration per machine. Once set, it does not drift unless you change the extruder hardware.
 
 ---
 
-## Quick Checklist
+## Fix 3: Lower Print Temperature
 
-1. Print a single-wall test cube and measure wall thickness - adjust flow rate to match target
-2. Calibrate E-steps if you have never done so
-3. Check print temperature - try 5-10C lower
-4. If only the first layer is affected, adjust Z offset and first layer flow rate
-5. Do a cold pull if over-extrusion appears inconsistent or patchy
+The hotter the filament, the more it flows and the harder it is to control precisely. Printing 10-15°C hotter than needed produces blobs, stringing, and slight over-extrusion. I have seen machines printing PLA at 225°C that cleaned up completely at 205°C - same spool, same settings otherwise.
+
+Try dropping temperature in 5°C steps:
+- PLA: 200-215°C
+- PETG: 230-245°C
+- ABS/ASA: 235-250°C
+
+If reducing temperature causes under-extrusion or layer adhesion problems, the temperature was correct and the problem lies elsewhere.
 
 ---
 
-## Related Guides
+## Fix 4: Check for a Partial Nozzle Blockage
 
-- [How to Fix Under-Extrusion](/posts/how-to-fix-under-extrusion/) - the opposite problem, equally common
-- [Complete Nozzle Guide](/posts/complete-nozzle-guide-3d-printing/) - cold pull instructions and nozzle maintenance
-- [How to Calibrate Your First 3D Printer](/posts/how-to-calibrate-your-first-3d-printer/) - full calibration walkthrough including E-steps and flow rate
-- [Nozzle Size Recommender](https://tools.print3dbuddy.com/tools/nozzle-recommender) - check if you are using the right nozzle for your material
+A partial blockage causes irregular pressure inside the hotend. Molten filament accumulates behind the blockage until pressure builds enough to force a surge through - the surge looks like over-extrusion in patches, but with under-extruded areas around it.
+
+Signs this is the cause: over-extrusion that appears randomly rather than consistently, combined with some under-extruded patches in the same print. Consistent over-extrusion everywhere is a flow rate or temperature problem, not a blockage.
+
+Fix: cold pull. Heat to printing temperature, push filament through manually, cool to around 90°C and pull sharply. Repeat until the pulled tip comes out clean with no brown or black discolouration. The [nozzle guide](/posts/complete-nozzle-guide-3d-printing/) has full cold pull instructions.
+
+---
+
+## Checklist
+
+1. Print a single-wall box and measure - adjust flow rate to match target line width
+2. Calibrate e-steps if never done on this machine
+3. Drop temperature 5-10°C and test
+4. If only the first layer is affected, see the [elephant foot guide](/posts/how-to-fix-elephant-foot/)
+5. If over-extrusion is inconsistent, do a cold pull to clear a partial clog
