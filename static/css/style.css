@@ -238,6 +238,13 @@ footer p + p { margin-top: 6px; }
 .test-footer-link a { color: var(--accent); }
 .test-footer-link a:hover { text-decoration: underline; }
 
+/* AUTHOR CARD */
+.author-card { display: flex; align-items: center; gap: 20px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 24px 0 32px; }
+.author-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--border); }
+.author-name { margin: 0 0 4px; font-size: 1.2rem; }
+.author-title { margin: 0; color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 500px) { .author-card { flex-direction: column; text-align: center; } }
+
 /* RESPONSIVE */
 @media (max-width: 700px) {
   .hero h1 { font-size: 1.6rem; }
