@@ -1,6 +1,6 @@
 # 3D Printing Ironing: How to Get Glass-Smooth Top Surfaces
 
-If you've ever looked at a finished print and thought the top surface looks rough and lined compared to the sides — ironing fixes that. It's a post-processing pass the slicer adds after the final top layer, and when it's set up correctly, it turns a textured surface into something that looks almost injection-moulded.
+If you've ever looked at a finished print and thought the top surface looks rough and lined compared to the sides  -  ironing fixes that. It's a post-processing pass the slicer adds after the final top layer, and when it's set up correctly, it turns a textured surface into something that looks almost injection-moulded.
 
 It's one of those features that sounds fiddly but takes about two minutes to set up, and the results speak for themselves.
 
@@ -69,7 +69,7 @@ Most slicers offer concentric or linear options. Linear (back and forth) is the 
 
 ## Finding Your Ideal Settings
 
-The best way is to print all four settings side by side using the [Ironing Test at tools.print3dbuddy.com](https://tools.print3dbuddy.com/test-prints). It prints four flat tiles — one with no ironing as a baseline, then 10%, 15%, and 20% flow — so you can see the difference directly.
+The best way is to print all four settings side by side using the [Ironing Test at tools.print3dbuddy.com](https://tools.print3dbuddy.com/test-prints). It prints four flat tiles  -  one with no ironing as a baseline, then 10%, 15%, and 20% flow  -  so you can see the difference directly.
 
 Otherwise, start at 15% flow and 50% speed, run a quick test tile, and adjust from there.
 
@@ -78,20 +78,20 @@ Otherwise, start at 15% flow and 50% speed, run a quick test tile, and adjust fr
 ## Common Ironing Problems and Fixes
 
 **Still looks rough after ironing**
-- Flow too low — increase by 5%
-- Speed too fast — reduce to 40% of print speed
-- Nozzle temp too low — try adding 5-10°C for the ironing layer
+- Flow too low  -  increase by 5%
+- Speed too fast  -  reduce to 40% of print speed
+- Nozzle temp too low  -  try adding 5-10°C for the ironing layer
 
 **Visible ridges or raised lines on the surface**
-- Flow too high — reduce by 5%
-- Line spacing too wide — tighten to 0.08-0.10mm
+- Flow too high  -  reduce by 5%
+- Line spacing too wide  -  tighten to 0.08-0.10mm
 
 **Blobs or zits on the ironed surface**
-- Retraction not triggering during ironing passes — check slicer settings
-- Filament moisture — dry your filament before printing
+- Retraction not triggering during ironing passes  -  check slicer settings
+- Filament moisture  -  dry your filament before printing
 
 **Ironing takes forever**
-- Normal — ironing adds 20-40% to print time on large flat surfaces
+- Normal  -  ironing adds 20-40% to print time on large flat surfaces
 - Reduce to "top surfaces only" if you have it set to all layers
 - Increase line spacing slightly (0.15mm instead of 0.10mm)
 
@@ -102,7 +102,7 @@ Otherwise, start at 15% flow and 50% speed, run a quick test tile, and adjust fr
 - **PLA:** Works extremely well. Most consistent results.
 - **PETG:** Works well but needs slightly higher flow and is more prone to stringing during the pass. Make sure your retraction is dialled in.
 - **ABS/ASA:** Works, but the surface tends to have more variation. Enclosure helps.
-- **TPU:** Not useful — soft surfaces don't respond to ironing in a meaningful way.
+- **TPU:** Not useful  -  soft surfaces don't respond to ironing in a meaningful way.
 
 ---
 
@@ -118,4 +118,4 @@ The one thing to be aware of: ironing adds print time, sometimes significantly o
 
 ## Try It Yourself
 
-The [Ironing Test at tools.print3dbuddy.com](https://tools.print3dbuddy.com/test-prints) gives you all 4 tiles in one STL — no ironing, 10%, 15%, and 20% flow. Print them all at once, compare the tops, and you'll have your ideal setting in under 30 minutes.
+The [Ironing Test at tools.print3dbuddy.com](https://tools.print3dbuddy.com/test-prints) gives you all 4 tiles in one STL  -  no ironing, 10%, 15%, and 20% flow. Print them all at once, compare the tops, and you'll have your ideal setting in under 30 minutes.

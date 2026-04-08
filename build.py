@@ -383,6 +383,13 @@ def build_posts():
   </div>
   <h1>{title}</h1>
   {content_html}
+  <div class="author-bio">
+    <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
+    <div>
+      <p class="author-bio-name">Written by Joshua Spencer</p>
+      <p class="author-bio-text">Joshua has spent years working as a 3D printer technician  -  calibrating and repairing FDM machines professionally across multiple industries. He runs Print3DBuddy to share practical, no-nonsense guidance based on real hands-on experience.</p>
+    </div>
+  </div>
 </div>'''
 
         page = base_html(
