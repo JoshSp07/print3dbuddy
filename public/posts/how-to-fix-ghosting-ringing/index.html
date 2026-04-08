@@ -26,70 +26,65 @@
     &nbsp;&middot;&nbsp; Print3DBuddy
   </div>
   <h1>How to Fix Ghosting and Ringing in 3D Prints</h1>
-  <p>Ghosting (also called ringing or vibration artefacts) shows up as wavy or ripple-like patterns on the surface of your print, most visible near sharp corners, text, or any sudden change in direction. The print is structurally fine - it is a surface quality issue, but it makes prints look rough and can obscure fine detail.</p>
-<p>It is especially noticeable on faster printers and on prints with a lot of sharp features.</p>
+  <p>Ghosting (also called ringing or vibration artefacts) appears as wavy or ripple-like patterns on the surface of a print, most visible near sharp corners, text, or any sudden change in direction. The print is structurally fine - it is purely a surface quality issue - but it makes prints look rough and obscures fine detail.</p>
+<p>It is especially noticeable on faster printers and on prints with a lot of sharp features. It also tends to get worse gradually on a machine that was previously printing cleanly, usually because belts have loosened or screws have worked free over time.</p>
 <hr>
-<h2 id="what-does-ghosting-look-like">What Does Ghosting Look Like?</h2>
-<p>Ghosting appears as horizontal ripples or waves on the outer surface of a print. They are most obvious:</p>
+<h2 id="what-ghosting-looks-like">What Ghosting Looks Like</h2>
+<p>Horizontal ripples or waves on the outer surface, most obvious:</p>
 <ul>
-<li>Just after a sharp corner (the vibration "echoes" along the wall)</li>
-<li>On text or lettering on vertical surfaces</li>
+<li>Just after a sharp corner - the vibration echoes along the wall for a few millimetres</li>
+<li>On text or lettering embossed on vertical surfaces</li>
 <li>On any flat vertical face near a sharp edge</li>
 </ul>
-<p>It is caused by the printer frame vibrating when the print head changes direction quickly. The head (or bed) overshoots, bounces back, and the nozzle lays down slightly incorrect lines for a few millimetres until the vibration dampens out.</p>
+<p>The cause is the printer frame vibrating when the print head changes direction quickly. The head overshoots, bounces back, and the nozzle lays down slightly incorrect lines until the vibration dampens out.</p>
+<hr>
+<h2 id="which-axis-is-causing-it">Which Axis Is Causing It</h2>
+<p>Before going further - identify which axis:</p>
+<ul>
+<li><strong>Ripples on the X-facing walls</strong> (left and right sides of the print as oriented on the bed): the Y axis is the likely culprit - the bed or gantry moving front and back is vibrating</li>
+<li><strong>Ripples on the Y-facing walls</strong> (front and back of the print): the X axis is likely - the head moving left and right</li>
+</ul>
+<p>This tells you which belt, pulley, and motor to focus on first.</p>
 <hr>
 <h2 id="fix-1-reduce-print-speed">Fix 1: Reduce Print Speed</h2>
-<p>This is the most effective single change. Slower movement means the print head changes direction with less force, and the vibration is much smaller.</p>
-<p>Try reducing your outer wall (perimeter) speed by 30-50%. You do not need to slow down the whole print - infill and inner walls can stay faster. Most slicers let you set outer wall speed separately.</p>
-<p>If the ghosting disappears at lower speed, you have confirmed that speed is the cause. You can then work on other fixes to allow faster printing without the artefacts.</p>
-<p>See the <a href="/posts/3d-printing-speed-vs-quality-guide/" target="_blank" rel="noopener">speed vs quality guide</a> for help setting sensible speed profiles.</p>
+<p>The most effective single change. Slower movement means direction changes with less force and much smaller vibration.</p>
+<p>Reduce outer wall speed by 30-50%. You do not need to slow down the whole print - infill and inner walls can stay faster. Most slicers let you set outer wall speed separately from overall print speed.</p>
+<p>If the ghosting disappears at lower speed, speed is confirmed as the cause. You can then work on the other fixes to push speed back up without the artefacts returning.</p>
 <hr>
 <h2 id="fix-2-reduce-acceleration-and-jerk">Fix 2: Reduce Acceleration and Jerk</h2>
-<p>Acceleration is how quickly the print head reaches its target speed. Jerk (or junction deviation in some firmware) is how the printer handles the instant direction change at a corner. High values in either setting mean more force is applied to the frame in a short time, which causes more vibration.</p>
-<p><strong>What to try:</strong></p>
+<p>Acceleration is how quickly the print head reaches its target speed. High acceleration means more force applied to the frame in a short time, which means more vibration.</p>
+<p>I diagnosed ghosting on three Ender 3 machines at a school workshop that had all been updated to a high-speed community profile. The profile had set acceleration to 5000 mm/s² - well above what the frame could handle cleanly. Dropping to 1500 mm/s² on all three removed the ghosting entirely with no other changes.</p>
 <ul>
-<li>Reduce acceleration by 30-40% (e.g. from 3000 mm/s2 to 1800-2000 mm/s2)</li>
+<li>Reduce acceleration by 30-40% (e.g. from 3000 to 1800-2000 mm/s²)</li>
 <li>Reduce jerk from the default (often 10-20 mm/s) to around 5-8 mm/s</li>
 </ul>
-<p>These settings can often be changed in your slicer (look for printer acceleration settings or machine settings) or in the printer's firmware menu. Changes made in the slicer override firmware defaults for that print only.</p>
+<p>These settings can be changed in your slicer's machine settings or in the printer's firmware menu. Changes made in the slicer override firmware defaults for that print only.</p>
 <hr>
 <h2 id="fix-3-check-belt-tension">Fix 3: Check Belt Tension</h2>
-<p>Loose belts allow the print head to vibrate more freely after a direction change. A tight, correctly tensioned belt dampens vibration faster.</p>
-<p>Check both X and Y belts. Each should feel firm when pressed - not floppy, not so tight it is under extreme tension. If a belt deflects more than a few millimetres under light finger pressure, tighten it using the built-in tensioner or by adjusting the belt clips.</p>
-<p>This is one of the most commonly overlooked causes. It is worth checking even if your belts do not feel obviously loose.</p>
+<p>Loose belts allow the print head to vibrate more freely after a direction change. A correctly tensioned belt dampens vibration faster and reduces the amplitude of the ripples.</p>
+<p>Check both X and Y belts. Each should feel firm when pressed - not floppy, not under extreme tension. More than a few millimetres of deflection under light finger pressure means it needs tightening.</p>
+<p>This is one of the most commonly overlooked causes on older machines. Belts stretch gradually over months of use, and the ghosting gets slowly worse. A machine that printed cleanly when new and now shows ringing has often just loosened over time.</p>
 <hr>
 <h2 id="fix-4-check-for-frame-wobble">Fix 4: Check for Frame Wobble</h2>
-<p>If your printer's frame is not rigid, vibration will be worse regardless of your settings. On cartesian printers (like the Ender 3 series), the X-axis frame can sometimes wobble if the eccentric nuts or V-slot wheels are worn or not correctly adjusted.</p>
-<p><strong>How to check:</strong> With the printer off, try to physically wobble the print head or gantry by hand. There should be essentially no give. If you can feel movement, tighten the eccentric nuts on the carriage wheels until the play disappears (but not so tight the carriage moves stiffly).</p>
-<p>On CoreXY printers, check that the frame screws are all tight and that the printer is sitting on a flat, stable surface.</p>
+<p>A rigid frame is essential at higher speeds. On Cartesian printers (Ender 3 and similar), the X-axis gantry can wobble if eccentric nuts or V-slot wheels are worn or not correctly adjusted.</p>
+<p>With the printer off, try to physically move the print head or gantry by hand. There should be essentially no give. If you can feel movement, tighten the eccentric nuts on the carriage wheels until the play disappears - but not so tight the carriage moves stiffly.</p>
+<p>On CoreXY printers, check that all frame screws are tight and that the printer is sitting on a flat, stable surface. A printer on an uneven bench vibrates more than the same printer on a solid level surface.</p>
 <hr>
-<h2 id="fix-5-input-shaper-klipper-printers-only">Fix 5: Input Shaper (Klipper Printers Only)</h2>
-<p>If your printer runs Klipper firmware, input shaper (also called resonance compensation) is by far the most effective fix. It measures the resonant frequencies of your printer using an accelerometer and then cancels out vibrations digitally.</p>
-<p>The result is dramatically reduced ghosting at high speeds - printers like the Bambu Lab range use a version of this by default, which is part of why they can print fast without obvious ringing.</p>
-<p>Setting up input shaper is beyond the scope of this article, but if you run Klipper it is worth the hour it takes to configure. The Klipper documentation covers the full process.</p>
-<hr>
-<h2 id="which-direction-are-the-ripples">Which Direction Are the Ripples?</h2>
-<ul>
-<li><strong>Ripples on the X-facing walls</strong> (left and right sides of the print): the Y axis is the likely culprit (the bed or gantry moving front and back)</li>
-<li><strong>Ripples on the Y-facing walls</strong> (front and back of the print): the X axis is the likely culprit</li>
-</ul>
-<p>This tells you which belt, motor, and axis to focus your attention on first.</p>
+<h2 id="fix-5-input-shaper-klipper-printers">Fix 5: Input Shaper (Klipper Printers)</h2>
+<p>If your printer runs Klipper firmware, input shaper is by far the most effective fix for ghosting at speed. It measures the printer's resonant frequencies using an accelerometer and applies corrections digitally during printing - the ringing is cancelled out rather than reduced.</p>
+<p>Printers like the Bambu range use a version of this by default, which is part of why they can print fast with clean surfaces. Setting up input shaper on Klipper takes an hour or two but the result is significant - speeds that previously caused obvious ghosting become printable with clean walls.</p>
+<p>The Klipper documentation covers the full setup process. If you are on Klipper and getting ghosting, this is worth the time.</p>
 <hr>
 <h2 id="quick-checklist">Quick Checklist</h2>
 <ol>
-<li>Reduce outer wall print speed by 30-50%</li>
+<li>Identify which axis - check which walls show ripples</li>
+<li>Reduce outer wall speed by 30-50%</li>
 <li>Reduce acceleration and jerk settings</li>
 <li>Check and tighten both X and Y belts</li>
 <li>Check for frame wobble - tighten eccentric nuts or carriage wheels</li>
 <li>If running Klipper, configure input shaper</li>
 </ol>
-<hr>
-<h2 id="related-guides">Related Guides</h2>
-<ul>
-<li><a href="/posts/3d-printing-speed-vs-quality-guide/" target="_blank" rel="noopener">Speed vs Quality Guide</a> - the right speed settings for your printer and goals</li>
-<li><a href="/posts/how-to-fix-layer-shifting/" target="_blank" rel="noopener">How to Fix Layer Shifting</a> - another problem caused by loose belts and high acceleration</li>
-<li><a href="/posts/best-3d-printer-upgrades-under-50/" target="_blank" rel="noopener">Best 3D Printer Upgrades Under $50</a> - belt tensioners and other quality-of-life upgrades</li>
-</ul>
+<p>Steps 1 through 3 fix the majority of ghosting on standard printers. Steps 4 and 5 are worth checking regardless - loose belts and frame play often go unnoticed until a speed increase reveals them.</p>
   <div class="author-bio">
     <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
     <div>

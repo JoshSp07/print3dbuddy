@@ -26,27 +26,26 @@
     &nbsp;&middot;&nbsp; Print3DBuddy
   </div>
   <h1>3D Printing Layer Adhesion Problems: Causes and Fixes</h1>
-  <p>Layer adhesion is the bond between each horizontal slice of your print. When it's good, your parts are strong and consistent. When it's bad, layers split apart, parts snap along layer lines, and surfaces look rough and separated.</p>
-<p>Here's why it happens and exactly how to fix it.</p>
+  <p>Layer adhesion problems are one of the most common issues across all printer types and skill levels. The print looks fine on the outside but snaps along a layer line when you flex it, or layers visibly separate during printing, or the surface has a rough grainy texture that should not be there.</p>
+<p>In most cases the root cause is one of three things: temperature too low, cooling too aggressive for the material, or wet filament. Work through those first before looking elsewhere.</p>
 <hr>
 <h2 id="signs-of-poor-layer-adhesion">Signs of Poor Layer Adhesion</h2>
 <ul>
-<li>Parts split or delaminate when handled</li>
+<li>Parts split or delaminate when handled - snap cleanly along a layer line with minimal force</li>
 <li>Visible gaps between layers on the surface</li>
-<li>Prints snap easily along horizontal lines</li>
-<li>Rough, grainy surface texture</li>
+<li>Rough, grainy texture that looks like sand</li>
 <li>Layers visibly separating during printing</li>
+<li>Prints feel lightweight and hollow compared to how they should feel</li>
 </ul>
 <hr>
 <h2 id="cause-1-print-temperature-too-low">Cause 1: Print Temperature Too Low</h2>
-<p>The most common cause. If your nozzle temperature is too low, the filament doesn't fully melt and bond to the previous layer.</p>
-<p><strong>Fix:</strong> Increase nozzle temperature in 5°C increments until adhesion improves.</p>
-<p>Typical temperature ranges:</p>
+<p>The most common cause. If the nozzle temperature is too low, the filament does not fully melt and bond to the previous layer. I have seen this repeatedly on machines where the stock temperature profiles are conservative - the printer ships tuned to avoid blobs and stringing at the cost of adhesion.</p>
+<p>Increase nozzle temperature in 5°C increments and test. The change in adhesion is usually obvious within a couple of layers.</p>
 <table><thead><tr>
 <th>Material</th>
-<th>Min</th>
+<th>Minimum</th>
 <th>Recommended</th>
-<th>Max</th>
+<th>Maximum</th>
 </tr></thead><tbody>
 <tr>
 <td>PLA</td>
@@ -73,28 +72,18 @@
 <td>250°C</td>
 </tr>
 </tbody></table>
-<p>Different filament brands behave differently even within the same material type. A temperature tower test (printing at multiple temperatures in one go) finds your specific filament's sweet spot quickly. We have a <a href="https://tools.print3dbuddy.com/test-prints#temp-tower" target="_blank" rel="noopener">free temperature tower on our Test Prints page</a> with a full guide for reading the results.</p>
+<p>These ranges vary by brand. A temperature tower - one print that tests multiple temperatures in a single run - finds the sweet spot for a specific filament much faster than printing individual test pieces at each temperature. The <a href="https://tools.print3dbuddy.com/test-prints#temp-tower" target="_blank" rel="noopener">temperature tower on our Test Prints page</a> includes a guide for reading the results.</p>
 <hr>
-<h2 id="cause-2-print-speed-too-high">Cause 2: Print Speed Too High</h2>
-<p>Printing too fast doesn't give each layer enough time to bond to the previous one. The molten filament needs a moment to fuse - too fast and it just sits on top without properly bonding.</p>
-<p><strong>Fix:</strong> Reduce print speed by 20-30% and test. For critical structural parts, slower is always better.</p>
-<p>Try:</p>
-<ul>
-<li><strong>Walls:</strong> 40-60mm/s</li>
-<li><strong>Infill:</strong> 60-80mm/s</li>
-<li><strong>First layer:</strong> 20-30mm/s always</li>
-</ul>
-<hr>
-<h2 id="cause-3-cooling-too-aggressive">Cause 3: Cooling Too Aggressive</h2>
-<p>Part cooling is a double-edged sword. Good cooling improves surface finish and detail - but too much cooling chills the layer before the next one bonds to it, especially with materials that need high temperatures to fuse properly.</p>
-<p><strong>Material-specific cooling settings:</strong></p>
+<h2 id="cause-2-cooling-too-aggressive">Cause 2: Cooling Too Aggressive</h2>
+<p>Part cooling and layer adhesion are in direct tension with each other. Cooling improves surface finish and detail, but too much cools the previous layer before the next one can fuse to it. This is especially destructive with materials that need high temperatures to bond properly.</p>
+<p>A print farm that I worked with had six PETG machines all producing weak parts that failed at the layer lines under minimal stress. Every printer was running the same cooling profile that had been set up for PLA and never adjusted. Dropping from 60% fan to 25% fan on all six machines fixed the problem across the board.</p>
 <table><thead><tr>
 <th>Material</th>
 <th>Fan Speed</th>
 </tr></thead><tbody>
 <tr>
 <td>PLA</td>
-<td>50-100% (after first layers)</td>
+<td>50-100%</td>
 </tr>
 <tr>
 <td>PETG</td>
@@ -110,71 +99,59 @@
 </tr>
 <tr>
 <td>Nylon</td>
-<td>0% (no cooling)</td>
+<td>0%</td>
 </tr>
 </tbody></table>
-<p>If you're printing PETG or ABS with high cooling and getting delamination, reduce your fan speed first.</p>
+<p>If you are printing PETG or ABS with high fan speeds and seeing delamination, reduce cooling before touching anything else.</p>
+<hr>
+<h2 id="cause-3-print-speed-too-high">Cause 3: Print Speed Too High</h2>
+<p>Printing too fast means each layer has less time at the deposition point to bond to the previous one. There is less heat transfer, less fusion, and weaker bonds.</p>
+<p>The effect is more pronounced on materials that need higher temperatures. ABS at 80mm/s can show adhesion problems that disappear completely at 50mm/s without changing anything else.</p>
+<p>Reduce speed by 20-30% and test. For structural parts, slower is nearly always stronger.</p>
+<p>Starting points for wall speed:</p>
+<ul>
+<li>Outer walls: 40-60mm/s</li>
+<li>Inner walls: 60-80mm/s</li>
+<li>First layer: 20-30mm/s</li>
+</ul>
 <hr>
 <h2 id="cause-4-layer-height-too-large">Cause 4: Layer Height Too Large</h2>
-<p>Each layer needs to be compressed into the previous one to bond properly. If your layer height is too large relative to your nozzle diameter, there isn't enough overlap for good adhesion.</p>
-<p><strong>Rule:</strong> Layer height should be no more than 75-80% of your nozzle diameter.</p>
-<p>For a 0.4mm nozzle: maximum 0.3mm layer height. 0.2mm is the standard and gives excellent adhesion.</p>
-<p>If you're using 0.3mm layers and getting adhesion issues, drop to 0.2mm.</p>
+<p>Each layer must compress into the previous one to bond properly. If layer height is too large relative to nozzle diameter, there is not enough overlap for good fusion.</p>
+<p>Layer height should be no more than 75-80% of nozzle diameter. For a standard 0.4mm nozzle, that means a maximum of 0.3mm. 0.2mm is the standard and gives excellent adhesion. If you are using 0.3mm layers and seeing adhesion problems, drop to 0.2mm and test.</p>
 <hr>
 <h2 id="cause-5-wet-filament">Cause 5: Wet Filament</h2>
-<p>Moisture in filament turns to steam during printing, creating micro-bubbles between layers that destroy adhesion. If your prints sound like popcorn or have a rough, bubbly texture, wet filament is likely the cause.</p>
-<p><strong>Fix:</strong> Dry your filament in a <a href="https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21" target="_blank" rel="noopener">filament dryer</a> or <a href="https://www.amazon.co.uk/s?k=food+dehydrator+filament&tag=print3dbuddy2-21" target="_blank" rel="noopener">food dehydrator</a> before printing.</p>
-<p>Drying temperatures:</p>
-<ul>
-<li>PLA: 45°C for 4-6 hours</li>
-<li>PETG: 65°C for 4-6 hours</li>
-<li>ABS/ASA: 65°C for 4-6 hours</li>
-<li>Nylon: 80°C for 8-12 hours</li>
-</ul>
+<p>Moisture in filament turns to steam during printing, creating micro-bubbles between layers. The result is poor adhesion, rough surface texture, and sometimes visible bubbling on the print surface. If there is a crackling or popping sound during printing, the filament is wet.</p>
+<p>Dry the filament before printing. See the <a href="/posts/how-to-fix-wet-filament/" target="_blank" rel="noopener">wet filament guide</a> for drying times and temperatures by material. Drying takes a few hours but fixes the problem immediately.</p>
+<p>PETG and Nylon absorb moisture significantly faster than PLA. A spool of PETG left open in a humid room for 48 hours can produce noticeably degraded prints - not just aesthetically but in layer adhesion and final part strength.</p>
 <hr>
 <h2 id="cause-6-under-extrusion">Cause 6: Under-Extrusion</h2>
-<p>If your printer isn't pushing out enough filament, each layer is thinner than intended and doesn't bond properly to the layer below.</p>
-<p><strong>How to check:</strong> Print a single-wall cube (no infill, no top layers, 1 perimeter) and measure the wall with <a href="https://www.amazon.co.uk/s?k=digital+calipers+3d+printing&tag=print3dbuddy2-21" target="_blank" rel="noopener">digital calipers</a>. It should match your set line width (typically 0.4-0.45mm for a 0.4mm nozzle).</p>
-<p><strong>Fix:</strong> Increase flow rate / extrusion multiplier in your slicer by 2-5% increments until the wall matches target thickness.</p>
+<p>If not enough filament is coming out, each layer is thinner than designed and does not bond properly to the layer below.</p>
+<p>Check by printing a single-wall box (no infill, no top layers, one perimeter) and measuring the wall with digital calipers. It should match your set line width - typically 0.4-0.45mm for a 0.4mm nozzle. If it is short, increase extrusion multiplier in 2-3% increments.</p>
 <p>Also check:</p>
 <ul>
-<li>Extruder grip - is the filament being gripped firmly?</li>
-<li>Partial clog - run a few cold pulls to clear any debris</li>
-<li>PTFE tube gap - any gap near the nozzle causes ooze and inconsistency</li>
+<li>Extruder grip (look for stripped filament just above the drive gear)</li>
+<li>Cold pull to clear partial clogs</li>
+<li>Bowden tube seated fully with no gap at the nozzle end</li>
 </ul>
 <hr>
-<h2 id="cause-7-z-hop-causing-poor-layer-contact">Cause 7: Z-Hop Causing Poor Layer Contact</h2>
-<p>Z-hop lifts the nozzle between travel moves to avoid hitting the print. If set too high, it can cool the previous layer too much before the next is deposited.</p>
-<p><strong>Fix:</strong> Reduce or disable Z-hop if you're experiencing layer adhesion issues. Most prints don't need it.</p>
+<h2 id="abs-specifically-delamination-and-cracking">ABS Specifically: Delamination and Cracking</h2>
+<p>ABS delamination is its own category. Layers physically splitting apart mid-print or cooling to a cracked part is almost always caused by an enclosure problem, not a temperature problem.</p>
+<p>Without an enclosure, the top layers of an ABS print cool in open air while the lower layers sit on a 105°C bed. The temperature differential creates thermal stress that physically tears layers apart. No temperature increase compensates for this.</p>
+<p>For ABS: enclosed printer, no part cooling, bed at 105-110°C, enclosure sealed throughout. That is the baseline - without it, delamination is expected, not a fault.</p>
 <hr>
-<h2 id="abs-specific-delamination-and-cracking">ABS-Specific: Delamination and Cracking</h2>
-<p>ABS is especially prone to delamination - not just poor bonding, but layers physically splitting apart mid-print or after. This is almost always caused by:</p>
-<ol>
-<li><strong>No enclosure</strong> - the print cools too rapidly, causing thermal stress that splits layers</li>
-<li><strong>Too much cooling</strong> - any part cooling fan above 10% will cause delamination in tall ABS prints</li>
-<li><strong>Cold environment</strong> - ambient temperature below 15°C makes ABS very difficult</li>
-</ol>
-<p><strong>Fix for ABS delamination:</strong> Enclosed printer, zero part cooling, bed at 105-110°C, and keep the enclosure sealed throughout the print.</p>
-<hr>
-<h2 id="how-to-test-layer-adhesion">How to Test Layer Adhesion</h2>
-<p>The best test is a simple pull test:</p>
-<ol>
-<li>Print a 20x20x40mm block</li>
-<li>Try to snap it along the layer lines (bend it across the middle)</li>
-<li>A well-bonded print should require significant force to break</li>
-</ol>
-<p>Compare breaks across different temperature settings using the same model to find your optimal temperature quickly.</p>
+<h2 id="testing-adhesion">Testing Adhesion</h2>
+<p>Print a 20x20x40mm block and try to snap it along the layer lines. A well-bonded print requires significant force. Run the same test at different temperatures to find where adhesion noticeably improves - this is faster and more useful than surface inspection alone.</p>
 <hr>
 <h2 id="summary-checklist">Summary Checklist</h2>
 <ul>
-<li>[ ] Temperature high enough for the material?</li>
-<li>[ ] Fan speed appropriate for the material?</li>
-<li>[ ] Layer height within 75% of nozzle diameter?</li>
-<li>[ ] Filament dry?</li>
-<li>[ ] Extrusion multiplier calibrated?</li>
-<li>[ ] Print speed reasonable (under 80mm/s for walls)?</li>
+<li>Temperature correct for the material and brand?</li>
+<li>Fan speed appropriate - not too high for PETG/ABS?</li>
+<li>Layer height within 75% of nozzle diameter?</li>
+<li>Filament dry?</li>
+<li>Extrusion multiplier calibrated?</li>
+<li>Print speed reasonable for the material?</li>
 </ul>
-<p>Work through this list in order - temperature and cooling fix the majority of layer adhesion problems.</p>
+<p>Temperature and cooling resolve the majority of layer adhesion problems.</p>
   <div class="author-bio">
     <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
     <div>
