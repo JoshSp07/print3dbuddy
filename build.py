@@ -749,12 +749,16 @@ def build_privacy():
     body = f'''<div class="article-wrap">
   <h1>Privacy Policy</h1>
   <p>Last updated: {datetime.now().strftime("%B %Y")}</p>
-  <h2>What we collect</h2>
-  <p>This site uses standard web analytics (Google Analytics or similar) to understand which pages are read. This collects anonymised data such as page views, country, and device type. No personally identifiable information is collected.</p>
+  <h2>Analytics</h2>
+  <p>This site uses Google Analytics to understand which pages are read. This collects anonymised data such as page views, country, and device type. No personally identifiable information is collected through analytics.</p>
+  <h2>Advertising</h2>
+  <p>This site uses Google AdSense to display advertisements. Google AdSense uses cookies to serve ads based on your prior visits to this site and other sites on the web. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" rel="nofollow noopener">Google's Ads Settings</a>. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to this site and other sites on the internet.</p>
   <h2>Affiliate links</h2>
-  <p>Some links on this site are affiliate links. If you buy through them, we may earn a small commission at no extra cost to you. This helps keep the site running. We only link to products we would genuinely recommend.</p>
+  <p>Some links on this site are affiliate links (including Amazon Associates). If you buy through them, we may earn a small commission at no extra cost to you. This helps keep the site free. We only link to products we would genuinely recommend.</p>
   <h2>Cookies</h2>
-  <p>Analytics tools may set cookies. You can disable cookies in your browser settings at any time.</p>
+  <p>Google Analytics and Google AdSense use cookies to function. You can disable cookies in your browser settings at any time. Disabling cookies may affect how ads are displayed.</p>
+  <h2>Data we do not collect</h2>
+  <p>We do not collect your name, email address, or any other personal information unless you voluntarily submit it via the contact form.</p>
   <h2>Contact</h2>
   <p>Questions about this policy? <a href="/contact/">Contact us</a>.</p>
 </div>'''
@@ -762,7 +766,7 @@ def build_privacy():
     page = base_html(
         title=f'Privacy Policy | {SITE_NAME}',
         body=body,
-        description='Privacy policy for Budget3DPrint.',
+        description='Privacy policy for Print3DBuddy  -  covering analytics, Google AdSense advertising, affiliate links, and cookies.',
         canonical='/privacy/'
     )
     priv_dir = OUTPUT_DIR / 'privacy'
