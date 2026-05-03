@@ -106,6 +106,40 @@ Otherwise, start at 15% flow and 50% speed, run a quick test tile, and adjust fr
 
 ---
 
+## Getting Ironing Right by Material
+
+Each filament behaves a bit differently during the ironing pass.
+
+**PLA** gives the most consistent results. The temperature window is narrow enough that the nozzle remelts the surface without over-depositing. Start at 15% flow and 50% speed.
+
+**Silk PLA** tends to blob slightly during ironing because the additives lower viscosity. Try reducing flow to 10% first. If the surface still looks rough, slow the ironing speed down further before increasing flow.
+
+**PETG** works but stringing during the ironing pass is common. Make sure retraction is correctly set and run the ironing at the lower end of your PETG temperature range. Some people drop temperature by 5-10°C specifically for the ironing layer using custom G-code in their slicer, though this complicates the setup.
+
+**ABS and ASA** can iron reasonably well, but warping around the base of the model during a long print can disrupt the ironing pass if the model is partially lifting. An enclosure keeps things stable enough for it to work.
+
+**TPU** doesn't benefit from ironing. The soft surface just deforms under the nozzle rather than smoothing.
+
+---
+
+## Ironing and Print Orientation
+
+Ironing only smooths flat horizontal top surfaces. It can't do anything useful for angled or curved surfaces because the nozzle moves in a flat plane and can't follow a slope.
+
+If a model has an important angled surface that needs to look clean, the fix is print orientation rather than ironing. Rotate the model so that surface becomes a flat top, then print it that way, even if it means adding supports elsewhere. The ironing result on a properly oriented flat surface will look better than any other post-processing approach for most materials.
+
+For models with multiple important faces at different angles, sanding or acetone smoothing (for ABS) may be more practical.
+
+---
+
+## Multi-Colour Printing and Ironing
+
+If you're printing multi-colour models using filament swaps or a multi-material system, ironing over colour-change layers can drag small amounts of the previous colour across the freshly deposited surface during the ironing pass.
+
+The simplest solution is to disable ironing for the specific layers that sit directly above a colour change. Alternatively, make sure your colour-change purge is thorough enough that the nozzle is fully cleared before the ironing layer begins.
+
+---
+
 ## Is Ironing Worth It?
 
 For decorative prints, yes. The difference between an ironed and unironed flat top is immediately visible and gives prints a much more finished look.

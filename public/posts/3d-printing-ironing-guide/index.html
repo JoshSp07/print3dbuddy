@@ -114,6 +114,23 @@
 <li><strong>TPU:</strong> Not useful  -  soft surfaces don't respond to ironing in a meaningful way.</li>
 </ul>
 <hr>
+<h2 id="getting-ironing-right-by-material">Getting Ironing Right by Material</h2>
+<p>Each filament behaves a bit differently during the ironing pass.</p>
+<p><strong>PLA</strong> gives the most consistent results. The temperature window is narrow enough that the nozzle remelts the surface without over-depositing. Start at 15% flow and 50% speed.</p>
+<p><strong>Silk PLA</strong> tends to blob slightly during ironing because the additives lower viscosity. Try reducing flow to 10% first. If the surface still looks rough, slow the ironing speed down further before increasing flow.</p>
+<p><strong>PETG</strong> works but stringing during the ironing pass is common. Make sure retraction is correctly set and run the ironing at the lower end of your PETG temperature range. Some people drop temperature by 5-10°C specifically for the ironing layer using custom G-code in their slicer, though this complicates the setup.</p>
+<p><strong>ABS and ASA</strong> can iron reasonably well, but warping around the base of the model during a long print can disrupt the ironing pass if the model is partially lifting. An enclosure keeps things stable enough for it to work.</p>
+<p><strong>TPU</strong> doesn't benefit from ironing. The soft surface just deforms under the nozzle rather than smoothing.</p>
+<hr>
+<h2 id="ironing-and-print-orientation">Ironing and Print Orientation</h2>
+<p>Ironing only smooths flat horizontal top surfaces. It can't do anything useful for angled or curved surfaces because the nozzle moves in a flat plane and can't follow a slope.</p>
+<p>If a model has an important angled surface that needs to look clean, the fix is print orientation rather than ironing. Rotate the model so that surface becomes a flat top, then print it that way, even if it means adding supports elsewhere. The ironing result on a properly oriented flat surface will look better than any other post-processing approach for most materials.</p>
+<p>For models with multiple important faces at different angles, sanding or acetone smoothing (for ABS) may be more practical.</p>
+<hr>
+<h2 id="multi-colour-printing-and-ironing">Multi-Colour Printing and Ironing</h2>
+<p>If you're printing multi-colour models using filament swaps or a multi-material system, ironing over colour-change layers can drag small amounts of the previous colour across the freshly deposited surface during the ironing pass.</p>
+<p>The simplest solution is to disable ironing for the specific layers that sit directly above a colour change. Alternatively, make sure your colour-change purge is thorough enough that the nozzle is fully cleared before the ironing layer begins.</p>
+<hr>
 <h2 id="is-ironing-worth-it">Is Ironing Worth It?</h2>
 <p>For decorative prints, yes. The difference between an ironed and unironed flat top is immediately visible and gives prints a much more finished look.</p>
 <p>For functional prints, it's usually not worth the time. A bracket or a tool holder doesn't need a polished top face.</p>

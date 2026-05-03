@@ -97,6 +97,43 @@ Re-run this calibration if you change your extruder hardware, switch between dir
 
 ---
 
+## Typical Values by Printer Type
+
+If you want a sensible starting point before running the full calibration:
+
+| Setup | Typical PA / K Value |
+|---|---|
+| Direct drive, 0.4mm nozzle | 0.02 - 0.06 |
+| Direct drive, 0.6mm nozzle | 0.03 - 0.08 |
+| Bowden, standard tube length | 0.4 - 0.8 |
+| Bowden, long tube (300mm+) | 0.6 - 1.2 |
+
+These are ranges, not targets. Your specific extruder, filament, and hotend combination will land somewhere in there, which is why the calibration print matters.
+
+---
+
+## When Calibration Doesn't Help
+
+If you've set a PA value and corner quality hasn't improved, a few things might be going on.
+
+**Value is too high rather than too low:** A pressure advance setting that's too high causes under-extrusion at the start of lines and small gaps right before direction changes. If corners show gaps rather than blobs, reduce your PA value rather than increasing it.
+
+**Ghosting, not PA:** Corner blobs from excess pressure advance look different from ghosting or ringing, which appears as a wavy echo pattern alongside sharp features. Ghosting comes from mechanical resonance, not pressure. If the issue looks like ripples on surfaces near corners rather than blobs at the corners themselves, see the [ghosting fix guide](/posts/how-to-fix-ghosting-ringing/).
+
+**Flow rate is off:** Pressure advance works best when extrusion multiplier is already calibrated correctly. If you're significantly over-extruding, PA won't fully solve it. Calibrate [flow rate](/posts/how-to-calibrate-flow-rate-extrusion-multiplier/) first, then revisit PA.
+
+---
+
+## Pressure Advance and Print Speed
+
+PA values are somewhat speed-dependent. A value that looks perfect at 50mm/s may need slight adjustment if you later push to 150mm/s or more.
+
+On Klipper printers with input shaping tuned, you can typically push speeds high enough that this difference becomes meaningful. If you've dialled in resonance compensation and then significantly increased print speeds, it's worth running the PA calibration again at your new target speeds.
+
+For Marlin printers without input shaping, speeds typically stay moderate enough that one calibration holds across your usual speed range.
+
+---
+
 ## Related Guides
 
 - [How to Fix Over-Extrusion](/posts/how-to-fix-over-extrusion/) - blobs and corner issues that pressure advance alone may not fix

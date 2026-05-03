@@ -118,6 +118,42 @@ This is more of a project than a plug-and-play upgrade, but it's one of the best
 
 ---
 
+## How Hard Are These to Install?
+
+| Upgrade | Difficulty | What's involved |
+|---|---|---|
+| PEI sheet | Very easy | Remove old surface, clean bed, attach |
+| Capricorn tube | Easy | Unclip, cut to length, reinsert |
+| Digital calipers | None | Just a measuring tool |
+| Nozzle swap | Easy | Heat hotend to temp, swap nozzle |
+| Filament runout sensor | Easy to moderate | Mount bracket, enable in firmware |
+| All-metal hotend | Moderate | Remove hotend, install replacement, re-level |
+| BLTouch / CRTouch | Harder | Wiring and firmware flashing required |
+| Raspberry Pi + OctoPrint | Weekend project | SD card setup, network config |
+
+The BLTouch is the one to be careful with if you've never flashed firmware. There are detailed video tutorials for every popular printer, but it takes an afternoon the first time and there are a few steps where getting it wrong means re-flashing.
+
+---
+
+## Upgrade Order by Situation
+
+**Just got your first printer, struggling with adhesion:**
+PEI sheet first. Then calipers so you can measure what's actually happening.
+
+**Prints look okay but dimensions are wrong:**
+Calipers to diagnose. Then [flow rate calibration](/posts/how-to-calibrate-flow-rate-extrusion-multiplier/) (free, no hardware needed). Rarely requires hardware changes.
+
+**Want to print ABS or ASA:**
+All-metal hotend before anything else. ABS also benefits from an enclosure, which is a separate purchase.
+
+**Stringing that won't go away:**
+Capricorn tube if you're on a Bowden setup. On a direct drive printer, stringing is a settings issue rather than a hardware one.
+
+**Tired of watching prints in person:**
+Raspberry Pi + OctoPrint is the upgrade for this. Set up a cheap webcam alongside it and check remotely.
+
+---
+
 ## What Not to Waste Money On
 
 - **Fancy extruder knobs**  -  cosmetic, zero performance benefit

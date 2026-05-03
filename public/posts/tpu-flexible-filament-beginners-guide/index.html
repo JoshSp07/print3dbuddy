@@ -127,6 +127,46 @@
 <p>TPU is highly hygroscopic - it absorbs moisture quickly and prints worse when wet. Signs of wet TPU: popping sounds, surface bubbles, weaker parts.</p>
 <p>Store in an airtight container with <a href="https://www.amazon.co.uk/s?k=silica+gel+desiccant+packets&tag=print3dbuddy2-21" target="_blank" rel="noopener">silica gel desiccant</a>. Dry at 45-50°C for 4-6 hours in a <a href="https://www.amazon.co.uk/s?k=filament+dryer+box+3d+printing&tag=print3dbuddy2-21" target="_blank" rel="noopener">filament dryer</a> if prints are coming out poorly.</p>
 <hr>
+<h2 id="shore-hardness-what-the-numbers-actually-mean">Shore Hardness: What the Numbers Actually Mean</h2>
+<p>Shore A is the scale used for soft materials like rubbers and flexible plastics. The lower the number, the softer and stretchier the material.</p>
+<table><thead><tr>
+<th>Shore A</th>
+<th>Feel</th>
+<th>Typical Uses</th>
+</tr></thead><tbody>
+<tr>
+<td>85A</td>
+<td>Very soft, stretchy</td>
+<td>Soft gaskets, stress-relief grips</td>
+</tr>
+<tr>
+<td>90A</td>
+<td>Moderately flexible</td>
+<td>Shoe insoles, soft phone cases</td>
+</tr>
+<tr>
+<td>95A</td>
+<td>Firm flex</td>
+<td>Most hobby uses, wheels, general cases</td>
+</tr>
+<tr>
+<td>98A</td>
+<td>Slightly flexible</td>
+<td>Semi-rigid parts, snap fits</td>
+</tr>
+</tbody></table>
+<p>For most hobby printing, 95A is the practical default. It's flexible enough to be useful and firm enough to feed reliably. Softer variants (85A and 90A) are harder to print because they buckle more easily between the extruder gear and hotend. If you want to try very soft TPU, a well-dialled direct drive printer is basically required.</p>
+<hr>
+<h2 id="troubleshooting-tpu-problems">Troubleshooting TPU Problems</h2>
+<p><strong>Filament grinding in the extruder:</strong></p>
+<p>The gear is chewing through the soft filament instead of pulling it cleanly. This happens when print speed is too high or retraction is pulling the filament back into the drive mechanism where it buckles. Reduce speed and cut retraction to near zero.</p>
+<p><strong>Inconsistent extrusion and skipping:</strong></p>
+<p>The filament is buckling somewhere between the extruder and nozzle. On direct drive printers, check that the PTFE tube is fully seated against the nozzle with no gap. Even a 1-2mm gap gives the soft filament room to bunch. On Bowden printers this problem is essentially inherent at anything above very slow speeds.</p>
+<p><strong>Parts too stiff after printing:</strong></p>
+<p>Increase infill percentage, or switch infill pattern. Gyroid infill in TPU produces noticeably different flex characteristics than grid infill. Gyroid is generally better for parts that need uniform compression in all directions, like cushioning or vibration dampeners.</p>
+<p><strong>Parts feel brittle or crack when flexed:</strong></p>
+<p>Almost always wet filament. TPU absorbs moisture fast, and prints that were flexible when fresh become brittle as the material breaks down from moisture exposure. Dry at 45-50°C for 4-6 hours and reprint.</p>
+<hr>
 <h2 id="summary">Summary</h2>
 <p>TPU is rewarding once dialled in. The key rules:</p>
 <ol>

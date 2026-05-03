@@ -76,3 +76,33 @@ When fixed:
 2. Reduce bed temperature 5°C if Z-offset adjustment alone was not enough
 3. Check first layer flow rate and line width - set both to 100%
 4. Add 0.1-0.2mm elephant foot compensation in slicer as a fine-tune
+
+---
+
+## When Only One Corner Is Affected
+
+If elephant foot only appears on one side of the print, or is noticeably worse at one corner than the others, the cause is almost certainly bed level rather than Z-offset or flow rate.
+
+A bed that sits lower on one side squashes the first layer harder in that area. The fix is re-levelling, not adjusting Z-offset globally. On manual-level printers, raise the corner that's squashing. On printers with auto-levelling, check whether your mesh compensation is active and whether the mesh looks reasonable.
+
+The diagnostic print: slice a single-layer rectangle covering most of the bed surface and print it. Look at the result from the side. If layer thickness varies noticeably across the print, the bed is not level regardless of what the probe reported.
+
+---
+
+## Does Elephant Foot Compensation Actually Fix It?
+
+The slicer setting (elephant foot compensation in PrusaSlicer and OrcaSlicer, initial layer horizontal expansion in Cura) applies an inward offset to the first few layers. A setting of 0.2mm shrinks the base footprint by 0.2mm per side.
+
+It works well as a final fine-tune once you've addressed the physical causes. Using it as the only fix without sorting Z-offset or temperature means applying a mathematical correction to a physical problem, and it shows. The base footprint looks right but the texture and squash ratio of the first layers still differ from the rest of the print.
+
+Get the hardware setting approximately right first. The compensation handles the remaining gap.
+
+---
+
+## Material Differences Worth Knowing
+
+**PETG** is the most prone to elephant foot. It needs a warmer bed than PLA (70-85C), which keeps the first layer soft longer and allows more spread. If you've dialled in your settings for PLA and then switch to PETG, expect to revisit first-layer settings for the new material.
+
+**ABS and ASA** are less prone than you'd expect. These materials shrink as they cool, which partially compensates for first-layer spread. Elephant foot is usually less pronounced with ABS than with PLA at similar settings.
+
+**PLA** sits in the middle. Standard PLA is forgiving. Silk and metallic PLA variants often need slightly higher temperatures to print well and can be a bit more prone to squashing than basic PLA.

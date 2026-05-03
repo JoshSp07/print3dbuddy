@@ -105,6 +105,28 @@ Most PLA lands at 95-100%. PETG is often 97-100%. TPU may need tweaking dependin
 
 ---
 
+## When Calibration Looks Right But Prints Still Don't
+
+A correctly calibrated flow rate fixes the most common print quality problems, but not all of them. If walls measure correctly and you're still seeing issues:
+
+**Gappy top surfaces despite correct wall thickness:** Some slicers allow separate flow settings for different feature types. The top layer flow might be set differently from the perimeter flow. Check your slicer's top/bottom layer flow settings specifically, as they can be independently tuned.
+
+**Seam still bulging:** A raised seam where each layer loop starts and ends is partially a flow issue and partially a seam/coasting setting. If seam buildup persists after flow calibration, look at your seam position and consider enabling seam wipe or coasting in your slicer to release pressure before the nozzle returns to the start point.
+
+**Dimensional inaccuracy despite correct wall thickness:** If calibrated walls are the right thickness but whole parts come out the wrong size overall, the problem is probably XY calibration, not flow. Flow affects extrusion volume. Overall part dimensions depend on how accurately the motion system moves. Tight belts and correctly set steps-per-mm fix this.
+
+---
+
+## Filament Diameter Variation
+
+Flow rate calibration assumes your filament is a consistent 1.75mm. Budget filaments can vary noticeably, sometimes running 1.65-1.80mm within the same spool. This means your calibrated flow rate effectively drifts as the diameter changes.
+
+Quality filament from established brands specifies diameter tolerance of +/- 0.02mm or tighter. Budget options may only guarantee +/- 0.05mm or provide no tolerance figure at all.
+
+If you're seeing inconsistent results from a spool even after careful calibration, measure the filament diameter at several points along the spool with calipers. Significant variation (more than 0.05mm between measurements) is a sign that better filament would solve more than settings adjustments will.
+
+---
+
 ## Try It Yourself
 
 The [Flow Rate Test at tools.print3dbuddy.com](https://tools.print3dbuddy.com/test-prints) gives you all 5 tiles in one STL, ready to slice. Takes about 20 minutes to print and tells you exactly where your extrusion multiplier should be. Our free [Print Settings Calculator](https://tools.print3dbuddy.com) also gives you recommended starting settings for 14 common filaments.

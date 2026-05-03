@@ -124,6 +124,26 @@ Enable under **Perimeters > Perimeter generator > Arachne** in PrusaSlicer.
 
 ---
 
+## 11. Batch Your Prints
+
+The most overlooked speed gain: print multiple copies at once.
+
+Every print job has startup overhead: bed heating takes 5-10 minutes, nozzle heating takes 2-3 minutes, and bed levelling adds another 1-5 minutes. Printing four copies of the same part in one job costs one startup sequence instead of four.
+
+Most slicers make this simple. Copy the object several times, arrange them on the bed, and slice as normal. The only caveat is that if one object fails mid-print, it can affect the others depending on how the failure happens. Printing in "one at a time" mode (available in PrusaSlicer and Bambu Studio) prints each object fully before moving to the next, avoiding cross-contamination at the cost of some extra travel time between objects.
+
+---
+
+## 12. Firmware Makes a Difference
+
+Not all speed gains come from slicer settings. The firmware your printer runs sets hard limits on what's achievable.
+
+**Klipper printers** can typically push significantly higher speeds than equivalent Marlin printers. Klipper runs on a Raspberry Pi or similar processor that handles motion calculations faster, and it supports input shaping (resonance compensation), which lets you print at higher speeds without ghosting artifacts appearing on surfaces. With input shaping tuned, perimeter speeds of 100-150mm/s are achievable with good quality. Check your `printer.cfg` for max_velocity and max_accel settings if you're on Klipper, as the defaults are often conservative.
+
+**Marlin printers** without input shaping hit a quality ceiling at lower speeds. Resonance builds up and shows as ghosting or ringing on printed surfaces as you push beyond roughly 80-100mm/s for outer walls. For Marlin machines, layer height and infill changes give more reliable speed gains than pushing print speeds.
+
+---
+
 ## When NOT to Optimise for Speed
 
 Some situations where you should print slower and with more care:

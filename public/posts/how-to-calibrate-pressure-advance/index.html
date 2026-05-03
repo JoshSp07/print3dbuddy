@@ -81,6 +81,42 @@ M500        # save to EEPROM</code></pre>
 </ul>
 <p>Re-run this calibration if you change your extruder hardware, switch between direct drive and Bowden, or install a new hotend - the physical characteristics of the filament path have changed.</p>
 <hr>
+<h2 id="typical-values-by-printer-type">Typical Values by Printer Type</h2>
+<p>If you want a sensible starting point before running the full calibration:</p>
+<table><thead><tr>
+<th>Setup</th>
+<th>Typical PA / K Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Direct drive, 0.4mm nozzle</td>
+<td>0.02 - 0.06</td>
+</tr>
+<tr>
+<td>Direct drive, 0.6mm nozzle</td>
+<td>0.03 - 0.08</td>
+</tr>
+<tr>
+<td>Bowden, standard tube length</td>
+<td>0.4 - 0.8</td>
+</tr>
+<tr>
+<td>Bowden, long tube (300mm+)</td>
+<td>0.6 - 1.2</td>
+</tr>
+</tbody></table>
+<p>These are ranges, not targets. Your specific extruder, filament, and hotend combination will land somewhere in there, which is why the calibration print matters.</p>
+<hr>
+<h2 id="when-calibration-doesnt-help">When Calibration Doesn't Help</h2>
+<p>If you've set a PA value and corner quality hasn't improved, a few things might be going on.</p>
+<p><strong>Value is too high rather than too low:</strong> A pressure advance setting that's too high causes under-extrusion at the start of lines and small gaps right before direction changes. If corners show gaps rather than blobs, reduce your PA value rather than increasing it.</p>
+<p><strong>Ghosting, not PA:</strong> Corner blobs from excess pressure advance look different from ghosting or ringing, which appears as a wavy echo pattern alongside sharp features. Ghosting comes from mechanical resonance, not pressure. If the issue looks like ripples on surfaces near corners rather than blobs at the corners themselves, see the <a href="/posts/how-to-fix-ghosting-ringing/" target="_blank" rel="noopener">ghosting fix guide</a>.</p>
+<p><strong>Flow rate is off:</strong> Pressure advance works best when extrusion multiplier is already calibrated correctly. If you're significantly over-extruding, PA won't fully solve it. Calibrate <a href="/posts/how-to-calibrate-flow-rate-extrusion-multiplier/" target="_blank" rel="noopener">flow rate</a> first, then revisit PA.</p>
+<hr>
+<h2 id="pressure-advance-and-print-speed">Pressure Advance and Print Speed</h2>
+<p>PA values are somewhat speed-dependent. A value that looks perfect at 50mm/s may need slight adjustment if you later push to 150mm/s or more.</p>
+<p>On Klipper printers with input shaping tuned, you can typically push speeds high enough that this difference becomes meaningful. If you've dialled in resonance compensation and then significantly increased print speeds, it's worth running the PA calibration again at your new target speeds.</p>
+<p>For Marlin printers without input shaping, speeds typically stay moderate enough that one calibration holds across your usual speed range.</p>
+<hr>
 <h2 id="related-guides">Related Guides</h2>
 <ul>
 <li><a href="/posts/how-to-fix-over-extrusion/" target="_blank" rel="noopener">How to Fix Over-Extrusion</a> - blobs and corner issues that pressure advance alone may not fix</li>

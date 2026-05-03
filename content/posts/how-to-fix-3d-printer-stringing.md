@@ -89,3 +89,37 @@ At this point the issue is usually one of these:
 | Combing / avoid crossing | Enable | Enable |
 
 Work through temperature first, then combing, then retraction. That order solves the problem faster than going straight for retraction settings.
+
+---
+
+## Material-Specific Stringing Behaviour
+
+The settings above are based on standard PLA. Different materials string differently.
+
+**Silk and metallic PLA** string noticeably more than regular PLA at the same temperatures. The additives that give them their sheen reduce viscosity and increase ooze. Drop temperature an extra 5°C and enable combing before touching retraction. Going above 2mm retraction on silk PLA often causes grinding without improving stringing.
+
+**PETG** strings more than PLA and needs a different approach. Because PETG requires higher temperatures and loses layer adhesion if you cool it too aggressively, you have less room to drop temperature or increase fan speed. Combing and retraction are your main tools. Don't push retraction above 2mm on direct drive for PETG without checking for clogs.
+
+**ASA** strings somewhere between PLA and PETG. Printing ASA in an enclosure (which it needs anyway for warping) keeps ambient temperature consistent and actually reduces ooze variation between travel moves.
+
+**TPU** should have retraction very low or off entirely. This means some stringing is normal with flexible filament. The threads pull off easily once cooled and are less structural of a problem than they look.
+
+---
+
+## Model Design and Stringing
+
+If the same model keeps stringing in the same spots despite good settings, the issue might be the model itself rather than the printer.
+
+Strings form during travel moves that cross open air. Models with many thin towers close together, or isolated features the nozzle has to hop between repeatedly, generate a lot of crossing moves. A few things that help:
+
+Enable combing and avoid-crossing-perimeters to route travel moves through already-printed areas rather than across gaps. This is the first thing to try and often eliminates the majority of strings without touching retraction at all.
+
+If strings are always between the same two specific features, check whether those features can be reoriented. Sometimes rotating a model 45 degrees or printing at a different orientation eliminates the problematic travel move entirely.
+
+---
+
+## When You Can't Get Below Acceptable
+
+Some filaments string no matter what, and some model shapes create unavoidable crossing travel moves. If strings are thin and pull off cleanly, that's often good enough for functional parts.
+
+For display pieces or anything where appearance matters: a quick pass with a heat gun at low heat, or a lighter moved briefly past the print a few centimetres away, melts thin strings off without affecting the structure. Keep the heat source moving and don't linger in one spot.

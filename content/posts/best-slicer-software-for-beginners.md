@@ -125,9 +125,36 @@ All three are free. There's no penalty for trying more than one.
 
 ---
 
+## OrcaSlicer: Worth Knowing About
+
+OrcaSlicer has grown rapidly in popularity and deserves a mention, even though it sits slightly outside the pure beginner category.
+
+It's a fork of Bambu Studio with additional calibration tools built in: pressure advance towers, flow rate tests, temperature towers, resonance compensation, and more, all accessible directly from the slicer interface without needing to set up separate G-code files. For users who want to push beyond basic settings, it's very useful.
+
+If you're just starting out, Bambu Studio is the better entry point because OrcaSlicer's additional options can be overwhelming before you understand the basics. But once you've been printing for a few months and want more control, OrcaSlicer is a natural step up from Bambu Studio with no real learning curve since the interface is almost identical.
+
+[Download OrcaSlicer](https://github.com/SoftFever/OrcaSlicer/releases) - free and open source.
+
+---
+
+## Importing Community Profiles
+
+All three main slicers support community-made printer profiles. These are configuration files created by other users for specific printers, and they're often more accurate than the built-in defaults, especially for less common machines.
+
+**Bambu Studio and OrcaSlicer:** Built-in profile library covers most popular printers. Third-party profiles import as .json files via File > Import.
+
+**PrusaSlicer:** File > Import > Import Config, or use .ini profiles shared on the Prusa forum and various maker communities. The Prusa forum has profiles for hundreds of printers beyond just Prusa hardware.
+
+**Cura:** Marketplace tab inside the application has downloadable printer profiles. For printers not listed there, search for "[printer model] Cura profile" and import the .curaprofile file manually.
+
+For any printer that isn't a major Bambu, Prusa, or Creality machine, a community profile is almost always better than starting from scratch.
+
+---
+
 ## Where to Get Them
 
 - **Bambu Studio:** bambulab.com/en/software (free, Windows/Mac/Linux)
+- **OrcaSlicer:** [github.com/SoftFever/OrcaSlicer/releases](https://github.com/SoftFever/OrcaSlicer/releases) (free, open source)
 - **PrusaSlicer:** github.com/prusa3d/PrusaSlicer/releases (free, open source)
 - **Cura:** ultimaker.com/software/ultimaker-cura (free, Windows/Mac/Linux)
 

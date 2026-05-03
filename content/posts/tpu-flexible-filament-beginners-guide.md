@@ -114,6 +114,37 @@ Store in an airtight container with [silica gel desiccant](https://www.amazon.co
 
 ---
 
+## Shore Hardness: What the Numbers Actually Mean
+
+Shore A is the scale used for soft materials like rubbers and flexible plastics. The lower the number, the softer and stretchier the material.
+
+| Shore A | Feel | Typical Uses |
+|---|---|---|
+| 85A | Very soft, stretchy | Soft gaskets, stress-relief grips |
+| 90A | Moderately flexible | Shoe insoles, soft phone cases |
+| 95A | Firm flex | Most hobby uses, wheels, general cases |
+| 98A | Slightly flexible | Semi-rigid parts, snap fits |
+
+For most hobby printing, 95A is the practical default. It's flexible enough to be useful and firm enough to feed reliably. Softer variants (85A and 90A) are harder to print because they buckle more easily between the extruder gear and hotend. If you want to try very soft TPU, a well-dialled direct drive printer is basically required.
+
+---
+
+## Troubleshooting TPU Problems
+
+**Filament grinding in the extruder:**
+The gear is chewing through the soft filament instead of pulling it cleanly. This happens when print speed is too high or retraction is pulling the filament back into the drive mechanism where it buckles. Reduce speed and cut retraction to near zero.
+
+**Inconsistent extrusion and skipping:**
+The filament is buckling somewhere between the extruder and nozzle. On direct drive printers, check that the PTFE tube is fully seated against the nozzle with no gap. Even a 1-2mm gap gives the soft filament room to bunch. On Bowden printers this problem is essentially inherent at anything above very slow speeds.
+
+**Parts too stiff after printing:**
+Increase infill percentage, or switch infill pattern. Gyroid infill in TPU produces noticeably different flex characteristics than grid infill. Gyroid is generally better for parts that need uniform compression in all directions, like cushioning or vibration dampeners.
+
+**Parts feel brittle or crack when flexed:**
+Almost always wet filament. TPU absorbs moisture fast, and prints that were flexible when fresh become brittle as the material breaks down from moisture exposure. Dry at 45-50°C for 4-6 hours and reprint.
+
+---
+
 ## Summary
 
 TPU is rewarding once dialled in. The key rules:

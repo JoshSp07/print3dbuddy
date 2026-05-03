@@ -108,6 +108,36 @@ See the [PLA vs PETG vs ABS comparison](/posts/pla-vs-petg-vs-abs-which-filament
 
 ---
 
+## PETG for Outdoor Use
+
+PETG handles outdoor use significantly better than PLA. PLA degrades noticeably in direct sunlight over months and starts to soften at fairly low temperatures. PETG is more UV-stable and holds its shape in higher heat.
+
+That said, PETG isn't the best outdoor material either. It slowly yellows with prolonged sun exposure and has a heat deflection temperature of around 70-80°C, meaning it will deform in a hot car interior, direct summer sun in a south-facing window, or near heat sources. For parts that genuinely need long-term outdoor performance, ASA is the better choice. It's formulated specifically for UV and weather resistance and outperforms PETG over months of outdoor exposure.
+
+If PETG is what you have and outdoor performance matters, a UV-resistant clear coat spray extends the part's life noticeably.
+
+---
+
+## Brand Differences With PETG
+
+PETG is a material where brand quality matters more than with basic PLA. The spread between good and bad PETG is wider.
+
+Established brands like Polymaker, eSUN, and Bambu Lab print consistently and hit close to their stated temperature ranges. Their diameter tolerances are tighter, which means less flow variation mid-print.
+
+Budget PETG from unknown brands can have wider diameter inconsistencies, inconsistent flow, and sometimes needs significantly different temperatures than the label says. If you've tuned carefully and are still having repeated problems with PETG that don't respond to settings changes, switching to a more consistent brand is a legitimate troubleshooting step, not just a luxury.
+
+---
+
+## PETG vs PETG-CF
+
+Carbon fibre reinforced PETG (PETG-CF) has short chopped carbon fibres mixed into the base material. This makes it noticeably stiffer and reduces flex, which is useful for structural parts.
+
+The trade-offs: PETG-CF requires a hardened steel nozzle. The carbon particles are abrasive and will wear a brass nozzle down within a few hundred grams of printing. Surface finish is rougher than standard PETG, and the material tends to be more brittle at impact than unfilled PETG.
+
+For parts that need stiffness and rigidity, the upgrade is worth it. For general-purpose use where you want some flex and a decent surface finish, standard PETG is the right choice.
+
+---
+
 ## Related Guides
 
 - [How to Fix 3D Printer Stringing](/posts/how-to-fix-3d-printer-stringing/) - retraction, temperature, and travel settings

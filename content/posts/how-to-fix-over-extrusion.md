@@ -62,6 +62,38 @@ Fix: cold pull. Heat to printing temperature, push filament through manually, co
 
 ---
 
+## Fix 5: Check the Extruder Gear Set Screw
+
+The extruder gear has a small set screw that holds it to the motor shaft. If it's even slightly loose, the gear slips intermittently under load, causing inconsistent extrusion that shows up as patches of over-extrusion between normal-looking sections.
+
+Check this if the over-extrusion is inconsistent rather than uniform. With the motor off, grip the extruder gear and try to twist it relative to the shaft. Any play means the screw needs tightening. It's usually a 1.5mm or 2mm hex key.
+
+While you're looking at it: worn or clogged gear teeth from printing abrasive filaments can't grip filament reliably and cause erratic extrusion in both directions.
+
+---
+
+## What Looks Like Over-Extrusion But Isn't
+
+**First-layer squish:** A first layer that looks flat and wide is usually intentional. Printers squash the first layer for adhesion. If the first two layers look squashed but everything above them looks normal in width, that's correct first-layer behaviour, not over-extrusion. The test is always to measure a layer a few millimetres up, not right at the base.
+
+**Seam buildup:** Every print has a seam where each layer starts and ends. A small raised spot at the seam is normal. If blobs appear in multiple locations around the perimeter, or if the full outer perimeter has a ridge running its length, that's actual over-extrusion.
+
+---
+
+## Why It's Worth Fixing Properly
+
+Mild over-extrusion is easy to ignore, but it has practical consequences that add up:
+
+Holes and openings print undersized. An M3 bolt hole designed at 3.2mm prints at 2.9mm, which means drilling out every single print that needs hardware inserted.
+
+Mating parts don't fit. Brackets, enclosures, snap fits, anything that has to slot into something else will fail if each wall face is 0.1-0.2mm wider than designed. This is consistent and predictable once you know what's causing it.
+
+Top surfaces stay rough regardless of other settings. Over-extruded perimeters pile up slightly at the edges, and the top surface layers then bridge over a raised lip rather than lying flat.
+
+A five-minute flow rate calibration fixes all three at once.
+
+---
+
 ## Checklist
 
 1. Print a single-wall box and measure - adjust flow rate to match target line width
@@ -69,3 +101,4 @@ Fix: cold pull. Heat to printing temperature, push filament through manually, co
 3. Drop temperature 5-10°C and test
 4. If only the first layer is affected, see the [elephant foot guide](/posts/how-to-fix-elephant-foot/)
 5. If over-extrusion is inconsistent, do a cold pull to clear a partial clog
+6. Check extruder gear set screw if issue is intermittent and non-uniform

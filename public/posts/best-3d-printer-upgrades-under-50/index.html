@@ -110,6 +110,67 @@
 <p><strong>Want to print high-temp materials:</strong> All-metal hotend is essential before anything else.</p>
 <p><strong>Want remote monitoring:</strong> Raspberry Pi + OctoPrint.</p>
 <hr>
+<h2 id="how-hard-are-these-to-install">How Hard Are These to Install?</h2>
+<table><thead><tr>
+<th>Upgrade</th>
+<th>Difficulty</th>
+<th>What's involved</th>
+</tr></thead><tbody>
+<tr>
+<td>PEI sheet</td>
+<td>Very easy</td>
+<td>Remove old surface, clean bed, attach</td>
+</tr>
+<tr>
+<td>Capricorn tube</td>
+<td>Easy</td>
+<td>Unclip, cut to length, reinsert</td>
+</tr>
+<tr>
+<td>Digital calipers</td>
+<td>None</td>
+<td>Just a measuring tool</td>
+</tr>
+<tr>
+<td>Nozzle swap</td>
+<td>Easy</td>
+<td>Heat hotend to temp, swap nozzle</td>
+</tr>
+<tr>
+<td>Filament runout sensor</td>
+<td>Easy to moderate</td>
+<td>Mount bracket, enable in firmware</td>
+</tr>
+<tr>
+<td>All-metal hotend</td>
+<td>Moderate</td>
+<td>Remove hotend, install replacement, re-level</td>
+</tr>
+<tr>
+<td>BLTouch / CRTouch</td>
+<td>Harder</td>
+<td>Wiring and firmware flashing required</td>
+</tr>
+<tr>
+<td>Raspberry Pi + OctoPrint</td>
+<td>Weekend project</td>
+<td>SD card setup, network config</td>
+</tr>
+</tbody></table>
+<p>The BLTouch is the one to be careful with if you've never flashed firmware. There are detailed video tutorials for every popular printer, but it takes an afternoon the first time and there are a few steps where getting it wrong means re-flashing.</p>
+<hr>
+<h2 id="upgrade-order-by-situation">Upgrade Order by Situation</h2>
+<p><strong>Just got your first printer, struggling with adhesion:</strong></p>
+<p>PEI sheet first. Then calipers so you can measure what's actually happening.</p>
+<p><strong>Prints look okay but dimensions are wrong:</strong></p>
+<p>Calipers to diagnose. Then <a href="/posts/how-to-calibrate-flow-rate-extrusion-multiplier/" target="_blank" rel="noopener">flow rate calibration</a> (free, no hardware needed). Rarely requires hardware changes.</p>
+<p><strong>Want to print ABS or ASA:</strong></p>
+<p>All-metal hotend before anything else. ABS also benefits from an enclosure, which is a separate purchase.</p>
+<p><strong>Stringing that won't go away:</strong></p>
+<p>Capricorn tube if you're on a Bowden setup. On a direct drive printer, stringing is a settings issue rather than a hardware one.</p>
+<p><strong>Tired of watching prints in person:</strong></p>
+<p>Raspberry Pi + OctoPrint is the upgrade for this. Set up a cheap webcam alongside it and check remotely.</p>
+<hr>
 <h2 id="what-not-to-waste-money-on">What Not to Waste Money On</h2>
 <ul>
 <li><strong>Fancy extruder knobs</strong>  -  cosmetic, zero performance benefit</li>

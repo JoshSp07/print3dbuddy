@@ -65,6 +65,22 @@
 <p>Signs this is the cause: over-extrusion that appears randomly rather than consistently, combined with some under-extruded patches in the same print. Consistent over-extrusion everywhere is a flow rate or temperature problem, not a blockage.</p>
 <p>Fix: cold pull. Heat to printing temperature, push filament through manually, cool to around 90°C and pull sharply. Repeat until the pulled tip comes out clean with no brown or black discolouration. The <a href="/posts/complete-nozzle-guide-3d-printing/" target="_blank" rel="noopener">nozzle guide</a> has full cold pull instructions.</p>
 <hr>
+<h2 id="fix-5-check-the-extruder-gear-set-screw">Fix 5: Check the Extruder Gear Set Screw</h2>
+<p>The extruder gear has a small set screw that holds it to the motor shaft. If it's even slightly loose, the gear slips intermittently under load, causing inconsistent extrusion that shows up as patches of over-extrusion between normal-looking sections.</p>
+<p>Check this if the over-extrusion is inconsistent rather than uniform. With the motor off, grip the extruder gear and try to twist it relative to the shaft. Any play means the screw needs tightening. It's usually a 1.5mm or 2mm hex key.</p>
+<p>While you're looking at it: worn or clogged gear teeth from printing abrasive filaments can't grip filament reliably and cause erratic extrusion in both directions.</p>
+<hr>
+<h2 id="what-looks-like-over-extrusion-but-isnt">What Looks Like Over-Extrusion But Isn't</h2>
+<p><strong>First-layer squish:</strong> A first layer that looks flat and wide is usually intentional. Printers squash the first layer for adhesion. If the first two layers look squashed but everything above them looks normal in width, that's correct first-layer behaviour, not over-extrusion. The test is always to measure a layer a few millimetres up, not right at the base.</p>
+<p><strong>Seam buildup:</strong> Every print has a seam where each layer starts and ends. A small raised spot at the seam is normal. If blobs appear in multiple locations around the perimeter, or if the full outer perimeter has a ridge running its length, that's actual over-extrusion.</p>
+<hr>
+<h2 id="why-its-worth-fixing-properly">Why It's Worth Fixing Properly</h2>
+<p>Mild over-extrusion is easy to ignore, but it has practical consequences that add up:</p>
+<p>Holes and openings print undersized. An M3 bolt hole designed at 3.2mm prints at 2.9mm, which means drilling out every single print that needs hardware inserted.</p>
+<p>Mating parts don't fit. Brackets, enclosures, snap fits, anything that has to slot into something else will fail if each wall face is 0.1-0.2mm wider than designed. This is consistent and predictable once you know what's causing it.</p>
+<p>Top surfaces stay rough regardless of other settings. Over-extruded perimeters pile up slightly at the edges, and the top surface layers then bridge over a raised lip rather than lying flat.</p>
+<p>A five-minute flow rate calibration fixes all three at once.</p>
+<hr>
 <h2 id="checklist">Checklist</h2>
 <ol>
 <li>Print a single-wall box and measure - adjust flow rate to match target line width</li>
@@ -72,6 +88,7 @@
 <li>Drop temperature 5-10°C and test</li>
 <li>If only the first layer is affected, see the <a href="/posts/how-to-fix-elephant-foot/" target="_blank" rel="noopener">elephant foot guide</a></li>
 <li>If over-extrusion is inconsistent, do a cold pull to clear a partial clog</li>
+<li>Check extruder gear set screw if issue is intermittent and non-uniform</li>
 </ol>
   <div class="author-bio">
     <img src="/static/img/joshua-spencer.jpg" alt="Joshua Spencer" class="author-bio-avatar" onerror="this.style.display='none'">
